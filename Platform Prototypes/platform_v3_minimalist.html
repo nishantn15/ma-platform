@@ -1,0 +1,3173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="M&A Leadership Platform — India's first full-lifecycle M&A ecosystem for mid-market firms with INR 250-2,500 Cr revenue. From strategy to successful integration.">
+<title>M&A Leadership Platform — Full-Lifecycle M&A Ecosystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<noscript>
+<style>
+.scroll-reveal { opacity: 1 !important; transform: none !important; }
+.nav-hamburger { display: none !important; }
+.tab-content { display: block !important; }
+.day-card-body { display: block !important; max-height: none !important; }
+</style>
+</noscript>
+<style>
+/* ============================================================
+   CSS RESET & VARIABLES
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --charcoal: #36454f;
+  --slate: #708090;
+  --light-gray: #d3d3d3;
+  --white: #ffffff;
+  --off-white: #f4f4f2;
+  --dark-bg: #2a3439;
+  --accent: #4a6274;
+  --accent-light: #5a7a8f;
+  --success: #4a7c59;
+  --warning: #b8860b;
+  --info: #4682b4;
+  --border: #e0e0de;
+  --shadow-sm: 0 1px 3px rgba(54,69,79,0.08);
+  --shadow-md: 0 4px 16px rgba(54,69,79,0.10);
+  --shadow-lg: 0 8px 32px rgba(54,69,79,0.14);
+  --shadow-xl: 0 16px 48px rgba(54,69,79,0.18);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --nav-height: 64px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--nav-height) + 24px);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--off-white);
+  color: var(--charcoal);
+  line-height: 1.7;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+
+.section-label-light {
+  color: rgba(255,255,255,0.5);
+}
+
+.section-title {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 20px;
+  color: var(--charcoal);
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--slate);
+  max-width: 640px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(244, 244, 242, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  transition: box-shadow var(--transition);
+}
+
+.nav.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Newsreader', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--slate);
+  transition: color var(--transition);
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--charcoal);
+}
+
+.nav-links a.active::after,
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  background: none;
+  border: none;
+  z-index: 1001;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--charcoal);
+  transition: all var(--transition);
+}
+
+.nav-hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 5px);
+}
+
+.nav-hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px);
+}
+
+@media (max-width: 900px) {
+  .nav-hamburger { display: flex; }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--white);
+    flex-direction: column;
+    padding: 96px 32px 32px;
+    gap: 24px;
+    box-shadow: var(--shadow-xl);
+    transition: right var(--transition);
+    align-items: flex-start;
+  }
+  .nav-links.open {
+    right: 0;
+  }
+  .nav-links a {
+    font-size: 16px;
+  }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 80px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  width: 40px;
+  height: 1px;
+  background: var(--slate);
+}
+
+.hero-title {
+  font-size: clamp(42px, 7vw, 72px);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(20px, 3vw, 28px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--slate);
+  margin-bottom: 48px;
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 36px;
+  background: var(--charcoal);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  border: none;
+  cursor: pointer;
+}
+
+.hero-cta:hover {
+  background: var(--dark-bg);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.hero-cta-arrow {
+  transition: transform var(--transition);
+  font-size: 18px;
+}
+
+.hero-cta:hover .hero-cta-arrow {
+  transform: translateX(4px);
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 72px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.hero-stat {
+  text-align: left;
+}
+
+.hero-stat-value {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.hero-stat-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+  }
+  .hero {
+    padding-top: calc(var(--nav-height) + 48px);
+  }
+}
+
+/* ============================================================
+   PROBLEM SECTION
+   ============================================================ */
+.problem {
+  background: var(--white);
+}
+
+.problem-bigstat {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.problem-bigstat-number {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(64px, 10vw, 120px);
+  font-weight: 300;
+  color: var(--charcoal);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.problem-bigstat-text {
+  font-size: 20px;
+  color: var(--slate);
+  font-weight: 300;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.gap-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.gap-card {
+  padding: 28px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition);
+}
+
+.gap-card:hover {
+  border-color: var(--slate);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.gap-card-number {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--slate);
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+
+.gap-card-title {
+  font-family: 'Newsreader', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.gap-card-desc {
+  font-size: 13px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .gap-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gap-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================================
+   PLATFORM ARCHITECTURE
+   ============================================================ */
+.architecture {
+  background: var(--dark-bg);
+  color: var(--white);
+}
+
+.architecture .section-title {
+  color: var(--white);
+}
+
+.arch-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+
+.arch-module {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-md);
+  padding: 32px 20px;
+  text-align: center;
+  position: relative;
+  transition: all var(--transition);
+}
+
+.arch-module:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.2);
+  transform: translateY(-4px);
+}
+
+.arch-module-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+
+.arch-module-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.arch-module-title {
+  font-family: 'Newsreader', serif;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.arch-module-desc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+}
+
+.arch-connector {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .arch-flow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 480px;
+  }
+  .arch-module {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    grid-template-rows: auto auto;
+    gap: 0 16px;
+    padding: 20px 24px;
+  }
+  .arch-module-icon {
+    grid-row: 1 / 3;
+    align-self: center;
+    margin: 0;
+  }
+  .arch-module-num {
+    display: none;
+  }
+}
+
+/* ============================================================
+   WHO IT'S FOR
+   ============================================================ */
+.personas-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.persona-card {
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  transition: all var(--transition);
+}
+
+.persona-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: var(--slate);
+}
+
+.persona-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--off-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: var(--charcoal);
+  border: 1px solid var(--border);
+}
+
+.persona-title {
+  font-family: 'Newsreader', serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--charcoal);
+}
+
+.persona-desc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.65;
+}
+
+@media (max-width: 900px) {
+  .personas-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 500px) {
+  .personas-grid { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   EXPLORE SECTION (TABS)
+   ============================================================ */
+.explore {
+  background: var(--white);
+}
+
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.tab-btn {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 16px 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--slate);
+  position: relative;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--charcoal);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.tab-btn.active {
+  color: var(--charcoal);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-btn:hover {
+  color: var(--charcoal);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: tabFadeIn 0.4s ease;
+}
+
+@keyframes tabFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* TAB 1 — Leadership Institute */
+.institute-headline {
+  font-family: 'Newsreader', serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.institute-headline em {
+  font-style: italic;
+  color: var(--accent-light);
+}
+
+.institute-tagline {
+  font-size: 16px;
+  color: var(--slate);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.stats-row {
+  display: flex;
+  gap: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.stats-row-item {
+  text-align: center;
+}
+
+.stats-row-value {
+  font-family: 'Newsreader', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.stats-row-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--slate);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Day Cards Accordion */
+.day-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 64px;
+}
+
+.day-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: all var(--transition);
+  background: var(--off-white);
+}
+
+.day-card:hover {
+  border-color: var(--slate);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.day-card.expanded {
+  border-color: var(--charcoal);
+  box-shadow: var(--shadow-lg);
+  background: var(--white);
+}
+
+.day-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.day-card-day {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--white);
+  background: var(--charcoal);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: center;
+}
+
+.day-card-title {
+  font-family: 'Newsreader', serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--charcoal);
+  flex: 1;
+}
+
+.day-card-toggle {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: var(--slate);
+  transition: all var(--transition);
+  flex-shrink: 0;
+  background: var(--white);
+}
+
+.day-card.expanded .day-card-toggle {
+  transform: rotate(45deg);
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: var(--charcoal);
+}
+
+.day-card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day-card.expanded .day-card-body {
+  max-height: 800px;
+}
+
+.day-card-content {
+  padding: 0 28px 28px;
+  padding-left: 108px;
+}
+
+.day-card-sessions {
+  margin-bottom: 20px;
+}
+
+.day-card-sessions h4 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 12px;
+}
+
+.day-card-sessions ul {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.day-card-sessions li {
+  font-size: 14px;
+  color: var(--charcoal);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.day-card-sessions li::before {
+  content: '\2014';
+  position: absolute;
+  left: 0;
+  color: var(--slate);
+}
+
+.aha-moment {
+  background: linear-gradient(135deg, #f8f6f0, #f0ece4);
+  border-left: 3px solid var(--charcoal);
+  padding: 16px 20px;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-bottom: 16px;
+}
+
+.aha-moment-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  margin-bottom: 4px;
+}
+
+.aha-moment-text {
+  font-family: 'Newsreader', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--charcoal);
+  line-height: 1.6;
+}
+
+.toolkit-takeaway {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  color: var(--charcoal);
+}
+
+.toolkit-takeaway-icon {
+  color: var(--accent-light);
+}
+
+.war-room-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: var(--charcoal);
+  color: var(--white);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+@media (max-width: 640px) {
+  .day-card-content {
+    padding-left: 28px;
+  }
+  .day-card-header {
+    gap: 12px;
+    padding: 16px 20px;
+  }
+}
+
+/* Toolkit Grid */
+.toolkit-section {
+  margin-bottom: 64px;
+}
+
+.toolkit-section-title {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--charcoal);
+}
+
+.toolkit-section-desc {
+  font-size: 14px;
+  color: var(--slate);
+  margin-bottom: 24px;
+}
+
+.toolkit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.toolkit-item {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--off-white);
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.toolkit-item:hover {
+  border-color: var(--slate);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.toolkit-item-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  color: var(--slate);
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.toolkit-item-name {
+  font-family: 'Newsreader', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+@media (max-width: 640px) {
+  .toolkit-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Year-Long Engagement Timeline */
+.engagement-timeline {
+  margin-bottom: 64px;
+}
+
+.engagement-timeline-title {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  color: var(--charcoal);
+}
+
+.timeline-track {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 20px;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--light-gray);
+}
+
+.timeline-node {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  flex: 1;
+}
+
+.timeline-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--charcoal);
+  margin: 0 auto 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.timeline-node:first-child .timeline-dot {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.timeline-node-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 4px;
+}
+
+.timeline-node-text {
+  font-size: 13px;
+  color: var(--charcoal);
+  line-height: 1.5;
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+@media (max-width: 640px) {
+  .timeline-track {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0;
+  }
+  .timeline-track::before {
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    right: auto;
+    width: 2px;
+    height: 100%;
+  }
+  .timeline-node {
+    text-align: left;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .timeline-dot {
+    margin: 0;
+    flex-shrink: 0;
+  }
+  .timeline-node-text {
+    max-width: none;
+  }
+}
+
+/* Credential Strip */
+.credential-strip {
+  background: var(--charcoal);
+  color: var(--white);
+  padding: 24px 32px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.credential-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.credential-text h4 {
+  font-family: 'Newsreader', serif;
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.credential-text p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+}
+
+@media (max-width: 640px) {
+  .credential-strip {
+    flex-direction: column;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
+/* ============================================================
+   TAB 2 — PLATFORM VISION (DASHBOARD MOCKUP)
+   ============================================================ */
+.dashboard-preview-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dashboard-preview-label::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.browser-chrome {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  background: var(--white);
+}
+
+.browser-bar {
+  background: #f0f0ee;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.browser-dot.red { background: #ff5f56; }
+.browser-dot.yellow { background: #ffbd2e; }
+.browser-dot.green { background: #27c93f; }
+
+.browser-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  color: var(--slate);
+  flex: 1;
+  text-align: center;
+}
+
+.browser-body {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-height: 700px;
+}
+
+/* Sidebar */
+.dash-sidebar {
+  background: var(--dark-bg);
+  padding: 24px 0;
+  color: var(--white);
+}
+
+.dash-sidebar-brand {
+  font-family: 'Newsreader', serif;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 16px;
+}
+
+.dash-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.dash-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  cursor: default;
+  transition: all var(--transition);
+}
+
+.dash-sidebar-item:hover {
+  background: rgba(255,255,255,0.05);
+  color: rgba(255,255,255,0.9);
+}
+
+.dash-sidebar-item.active-item {
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  border-left: 3px solid var(--white);
+}
+
+.dash-sidebar-icon {
+  width: 18px;
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+/* Dashboard Main */
+.dash-main {
+  padding: 24px;
+  background: #fafaf8;
+  overflow-x: auto;
+}
+
+.dash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.dash-title {
+  font-family: 'Newsreader', serif;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--charcoal);
+}
+
+.dash-header-meta {
+  font-size: 12px;
+  color: var(--slate);
+}
+
+/* KPI Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.kpi-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  transition: all var(--transition);
+}
+
+.kpi-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.kpi-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 8px;
+}
+
+.kpi-value {
+  font-family: 'Newsreader', serif;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.kpi-delta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.kpi-delta.up { color: var(--success); }
+.kpi-delta.on-track { color: var(--info); }
+
+/* Deal Pipeline Table */
+.dash-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 24px;
+  transition: all var(--transition);
+}
+
+.dash-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-card-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+
+.deal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.deal-table th {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.deal-table td {
+  padding: 12px;
+  font-size: 13px;
+  color: var(--charcoal);
+  border-bottom: 1px solid #f0f0ee;
+}
+
+.deal-table tr:last-child td {
+  border-bottom: none;
+}
+
+.deal-table tr:hover td {
+  background: #fafaf8;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.status-active { background: #e8f5e9; color: #2e7d32; }
+.status-dd { background: #fff3e0; color: #ef6c00; }
+.status-closing { background: #e3f2fd; color: #1565c0; }
+.status-pmi { background: #f3e5f5; color: #7b1fa2; }
+
+/* Synergy Chart */
+.dash-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chart-legend {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--slate);
+}
+
+.legend-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+.legend-dot.target { background: var(--light-gray); }
+.legend-dot.actual { background: var(--charcoal); }
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bar-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--slate);
+  width: 64px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.bar-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.bar {
+  height: 14px;
+  border-radius: 2px;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.bar.target-bar { background: var(--light-gray); }
+.bar.actual-bar { background: var(--charcoal); }
+
+/* Sector Heatmap */
+.sector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.sector-tile {
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: all var(--transition);
+  cursor: default;
+}
+
+.sector-tile:hover {
+  transform: scale(1.03);
+}
+
+.sector-tile-name {
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+
+.sector-tile-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+}
+
+.sector-high {
+  background: var(--charcoal);
+  color: var(--white);
+}
+
+.sector-high .sector-tile-value { color: rgba(255,255,255,0.7); }
+
+.sector-med-high {
+  background: var(--slate);
+  color: var(--white);
+}
+
+.sector-med-high .sector-tile-value { color: rgba(255,255,255,0.7); }
+
+.sector-med {
+  background: var(--light-gray);
+  color: var(--charcoal);
+}
+
+.sector-med .sector-tile-value { color: var(--slate); }
+
+.sector-low {
+  background: #eae9e6;
+  color: var(--charcoal);
+}
+
+.sector-low .sector-tile-value { color: var(--slate); }
+
+/* Integration Timeline */
+.integration-timeline {
+  margin-bottom: 24px;
+}
+
+.integration-progress {
+  position: relative;
+  padding: 16px 0;
+}
+
+.integration-bar-bg {
+  height: 6px;
+  background: var(--light-gray);
+  border-radius: 3px;
+  position: relative;
+}
+
+.integration-bar-fill {
+  height: 100%;
+  background: var(--charcoal);
+  border-radius: 3px;
+  width: 62%;
+  transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.integration-markers {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.integration-marker {
+  text-align: center;
+  position: relative;
+}
+
+.integration-marker::before {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2px solid var(--charcoal);
+  margin: 0 auto 6px;
+}
+
+.integration-marker.completed::before {
+  background: var(--charcoal);
+}
+
+.integration-marker-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: var(--slate);
+  text-transform: uppercase;
+}
+
+.integration-marker-text {
+  font-size: 11px;
+  color: var(--charcoal);
+}
+
+/* Learning Progress */
+.learning-progress-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.learning-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafaf8;
+  border-radius: var(--radius-sm);
+}
+
+.learning-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.learning-circle svg {
+  width: 40px;
+  height: 40px;
+  transform: rotate(-90deg);
+}
+
+.learning-circle-bg {
+  fill: none;
+  stroke: var(--light-gray);
+  stroke-width: 3;
+}
+
+.learning-circle-fill {
+  fill: none;
+  stroke: var(--charcoal);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s ease;
+}
+
+.learning-pct {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.learning-info {
+  font-size: 12px;
+  color: var(--charcoal);
+}
+
+.learning-info span {
+  display: block;
+  font-size: 10px;
+  color: var(--slate);
+  margin-top: 1px;
+}
+
+@media (max-width: 900px) {
+  .browser-body {
+    grid-template-columns: 1fr;
+  }
+  .dash-sidebar {
+    display: none;
+  }
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dash-two-col {
+    grid-template-columns: 1fr;
+  }
+  .deal-table {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   MEMBERSHIP TIERS
+   ============================================================ */
+.membership-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.tier-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  background: var(--white);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.tier-card.highlighted {
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: var(--charcoal);
+}
+
+.tier-card.accent-border {
+  border-color: var(--charcoal);
+  border-width: 2px;
+}
+
+.tier-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.tier-card.highlighted .tier-badge {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+.tier-card:not(.highlighted) .tier-badge {
+  background: var(--off-white);
+  color: var(--slate);
+}
+
+.tier-name {
+  font-family: 'Newsreader', serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.tier-price {
+  font-family: 'Newsreader', serif;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.tier-price-period {
+  font-size: 14px;
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.tier-divider {
+  height: 1px;
+  margin: 24px 0;
+}
+
+.tier-card.highlighted .tier-divider {
+  background: rgba(255,255,255,0.15);
+}
+
+.tier-card:not(.highlighted) .tier-divider {
+  background: var(--border);
+}
+
+.tier-features li {
+  font-size: 14px;
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.tier-check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.tier-card.highlighted .tier-check {
+  background: rgba(255,255,255,0.15);
+  color: var(--white);
+}
+
+.tier-card:not(.highlighted) .tier-check {
+  background: var(--off-white);
+  color: var(--charcoal);
+}
+
+.tier-card.highlighted .tier-features li {
+  color: rgba(255,255,255,0.85);
+}
+
+.tier-card:not(.highlighted) .tier-features li {
+  color: var(--slate);
+}
+
+@media (max-width: 900px) {
+  .membership-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ============================================================
+   ROI SECTION
+   ============================================================ */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.roi-card {
+  padding: 36px 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--white);
+  transition: all var(--transition);
+}
+
+.roi-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.roi-card-tier {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+
+.roi-card-value {
+  font-family: 'Newsreader', serif;
+  font-size: 36px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+
+.roi-card-label {
+  font-size: 14px;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+
+.roi-card-highlight {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-light);
+  padding: 8px 14px;
+  background: var(--off-white);
+  border-radius: var(--radius-sm);
+  display: inline-block;
+}
+
+@media (max-width: 700px) {
+  .roi-grid { grid-template-columns: 1fr; max-width: 440px; margin-left: auto; margin-right: auto; }
+}
+
+/* ============================================================
+   INSTITUTIONAL ANCHORS
+   ============================================================ */
+.anchors {
+  background: var(--dark-bg);
+  color: var(--white);
+}
+
+.anchors .section-title {
+  color: var(--white);
+}
+
+.anchors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+}
+
+.anchor-col-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.anchor-list li {
+  font-size: 15px;
+  padding: 6px 0;
+  color: rgba(255,255,255,0.8);
+}
+
+.anchors-footnote {
+  margin-top: 48px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+}
+
+@media (max-width: 640px) {
+  .anchors-grid { grid-template-columns: 1fr; gap: 32px; }
+}
+
+/* ============================================================
+   ROADMAP
+   ============================================================ */
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.roadmap-item {
+  position: relative;
+  padding-left: 20px;
+}
+
+.roadmap-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--charcoal);
+}
+
+.roadmap-quarter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.roadmap-desc {
+  font-size: 14px;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .roadmap-timeline { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 440px) {
+  .roadmap-timeline { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   CTA SECTION
+   ============================================================ */
+.cta-section {
+  background: var(--charcoal);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-section .section-title {
+  color: var(--white);
+}
+
+.cta-benefits {
+  max-width: 600px;
+  margin: 32px auto;
+  text-align: left;
+}
+
+.cta-benefits li {
+  font-size: 15px;
+  padding: 8px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+.cta-benefits li span {
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--white);
+  color: var(--charcoal);
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  margin-top: 16px;
+  transition: all var(--transition);
+}
+
+.cta-button:hover {
+  background: var(--off-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.cta-fine-print {
+  margin-top: 24px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.footer-main {
+  font-family: 'Newsreader', serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 13px;
+  color: var(--slate);
+}
+
+.footer-confidential {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--light-gray);
+  margin-top: 12px;
+}
+
+/* ============================================================
+   TAB BAR MOBILE
+   ============================================================ */
+@media (max-width: 640px) {
+  .tab-bar {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab-btn {
+    font-size: 13px;
+    padding: 12px 16px;
+  }
+  .stats-row {
+    gap: 24px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+     ============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">M&amp;A Leadership Platform</div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#hero">Home</a>
+      <a href="#problem">Problem</a>
+      <a href="#architecture">Platform</a>
+      <a href="#personas">For You</a>
+      <a href="#explore">Explore</a>
+      <a href="#membership">Membership</a>
+      <a href="#cta">Access</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero section-padding" id="hero">
+  <div class="container">
+    <div class="scroll-reveal">
+      <div class="hero-eyebrow">India's First Full-Lifecycle M&amp;A Ecosystem</div>
+      <h1 class="hero-title">M&amp;A Leadership<br>Platform</h1>
+      <p class="hero-subtitle">From strategy to successful integration</p>
+      <a href="#explore" class="hero-cta">
+        Explore the Platform <span class="hero-cta-arrow">&rarr;</span>
+      </a>
+    </div>
+    <div class="hero-stats scroll-reveal">
+      <div class="hero-stat">
+        <div class="hero-stat-value">Rs.250-2,500 Cr</div>
+        <div class="hero-stat-label">Mid-Market Band</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">Rs.1L Cr+</div>
+        <div class="hero-stat-label">Annual M&amp;A</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">3-5x</div>
+        <div class="hero-stat-label">Strategic Returns</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">115,000+</div>
+        <div class="hero-stat-label">Enterprises</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE PROBLEM
+     ============================================================ -->
+<section class="problem section-padding" id="problem">
+  <div class="container">
+    <div class="problem-bigstat scroll-reveal">
+      <div class="problem-bigstat-number">70-90%</div>
+      <p class="problem-bigstat-text">of M&amp;A deals fail to deliver projected value</p>
+    </div>
+    <div class="scroll-reveal">
+      <p class="section-label" style="text-align:center;">The Five Critical Gaps</p>
+    </div>
+    <div class="gap-cards scroll-reveal">
+      <div class="gap-card">
+        <div class="gap-card-number">01</div>
+        <div class="gap-card-title">Strategy</div>
+        <p class="gap-card-desc">No structured strategic lens for acquisition decision-making in mid-market firms.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-number">02</div>
+        <div class="gap-card-title">Capability</div>
+        <p class="gap-card-desc">Leadership teams lack M&amp;A-specific skills in valuation, negotiation, and integration.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-number">03</div>
+        <div class="gap-card-title">Sourcing</div>
+        <p class="gap-card-desc">Target identification relies on fragmented networks and outdated deal pipelines.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-number">04</div>
+        <div class="gap-card-title">Execution</div>
+        <p class="gap-card-desc">Due diligence and deal rooms lack simulation-based training for real scenarios.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-card-number">05</div>
+        <div class="gap-card-title">Regulatory</div>
+        <p class="gap-card-desc">CCI, SEBI, and cross-border compliance remain opaque and unpredictable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PLATFORM ARCHITECTURE
+     ============================================================ -->
+<section class="architecture section-padding" id="architecture">
+  <div class="container">
+    <p class="section-label section-label-light scroll-reveal">Platform Architecture</p>
+    <h2 class="section-title scroll-reveal">Five Integrated Modules</h2>
+    <div class="arch-flow scroll-reveal">
+      <div class="arch-module">
+        <div class="arch-module-num">01</div>
+        <div class="arch-module-icon">&#9670;</div>
+        <div class="arch-module-title">Corporate Strategy Leadership</div>
+        <p class="arch-module-desc">Build the strategic foundation for acquisition-led growth with frameworks tailored to mid-market realities.</p>
+      </div>
+      <div class="arch-module">
+        <div class="arch-module-num">02</div>
+        <div class="arch-module-icon">&#9651;</div>
+        <div class="arch-module-title">Capability Building</div>
+        <p class="arch-module-desc">Immersive leadership programs with war-room simulations, case-based pedagogy, and expert mentorship.</p>
+      </div>
+      <div class="arch-module">
+        <div class="arch-module-num">03</div>
+        <div class="arch-module-icon">&#9673;</div>
+        <div class="arch-module-title">Target Sourcing Intelligence</div>
+        <p class="arch-module-desc">AI-augmented target screening with proprietary pipelines, sector mapping, and valuation benchmarks.</p>
+      </div>
+      <div class="arch-module">
+        <div class="arch-module-num">04</div>
+        <div class="arch-module-icon">&#9644;</div>
+        <div class="arch-module-title">Post-Merger Integration</div>
+        <p class="arch-module-desc">100-day PMI playbooks, synergy tracking dashboards, and culture alignment frameworks.</p>
+      </div>
+      <div class="arch-module">
+        <div class="arch-module-num">05</div>
+        <div class="arch-module-icon">&#9645;</div>
+        <div class="arch-module-title">Policy &amp; Governance</div>
+        <p class="arch-module-desc">Navigating CCI, SEBI, FEMA, and cross-border regulatory landscapes with policy intelligence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHO IT'S FOR
+     ============================================================ -->
+<section class="section-padding" id="personas">
+  <div class="container">
+    <p class="section-label scroll-reveal">Who It's For</p>
+    <h2 class="section-title scroll-reveal">Built for Decision-Makers</h2>
+    <div class="personas-grid scroll-reveal">
+      <div class="persona-card">
+        <div class="persona-icon">&#9632;</div>
+        <h3 class="persona-title">Corporate Acquirers</h3>
+        <p class="persona-desc">Mid-market companies with Rs.250-2,500 Cr revenue pursuing inorganic growth through strategic acquisitions.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">&#9650;</div>
+        <h3 class="persona-title">Promoter-Led Groups</h3>
+        <p class="persona-desc">Family-owned conglomerates transitioning from organic to acquisition-led growth across sectors.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">&#9679;</div>
+        <h3 class="persona-title">PE-Backed Platforms</h3>
+        <p class="persona-desc">Portfolio companies executing buy-and-build strategies with private equity backing and growth mandates.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">&#9674;</div>
+        <h3 class="persona-title">CFO / CEO Office</h3>
+        <p class="persona-desc">C-suite leaders accountable for M&amp;A strategy, capital allocation, and post-deal value creation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     EXPLORE SECTION (TABS)
+     ============================================================ -->
+<section class="explore section-padding" id="explore">
+  <div class="container">
+    <p class="section-label scroll-reveal">Explore</p>
+    <h2 class="section-title scroll-reveal">Inside the Platform</h2>
+    <p class="section-subtitle scroll-reveal" style="margin-bottom:48px;">Deep dive into what we deliver -- from immersive leadership intensives to a full-scale digital M&amp;A operating system.</p>
+
+    <div class="tab-bar scroll-reveal">
+      <button class="tab-btn active" data-tab="tab1">Leadership Institute &mdash; Phase 1</button>
+      <button class="tab-btn" data-tab="tab2">Platform Vision &mdash; Phase 2</button>
+    </div>
+
+    <!-- TAB 1: Leadership Institute -->
+    <div class="tab-content active" id="tab1">
+      <h3 class="institute-headline">How to Think About Acquisitions <em>Successfully</em></h3>
+      <p class="institute-tagline">A five-day executive intensive for M&amp;A leadership capability</p>
+
+      <div class="stats-row">
+        <div class="stats-row-item">
+          <div class="stats-row-value">5 Days</div>
+          <div class="stats-row-label">Intensive</div>
+        </div>
+        <div class="stats-row-item">
+          <div class="stats-row-value">3x/Year</div>
+          <div class="stats-row-label">Cohorts</div>
+        </div>
+        <div class="stats-row-item">
+          <div class="stats-row-value">7-10</div>
+          <div class="stats-row-label">Members</div>
+        </div>
+        <div class="stats-row-item">
+          <div class="stats-row-value">12 Months</div>
+          <div class="stats-row-label">Engagement</div>
+        </div>
+      </div>
+
+      <!-- Day Cards Accordion -->
+      <div class="day-cards">
+        <!-- DAY 1 -->
+        <div class="day-card" data-day="1">
+          <div class="day-card-header">
+            <div class="day-card-day mono">DAY 1</div>
+            <div class="day-card-title">Strategic Lens</div>
+            <div class="day-card-toggle">+</div>
+          </div>
+          <div class="day-card-body">
+            <div class="day-card-content">
+              <div class="day-card-sessions">
+                <h4>Session Breakdown</h4>
+                <ul>
+                  <li>M&amp;A as a strategic capability, not a transaction</li>
+                  <li>Build vs. Buy vs. Partner decision framework</li>
+                  <li>Strategy Canvas Workshop: mapping your acquisition thesis</li>
+                  <li>Case study: failed vs. successful acquisitions in India</li>
+                </ul>
+              </div>
+              <div class="aha-moment">
+                <div class="aha-moment-label">Aha Moment</div>
+                <p class="aha-moment-text">Most deals fail not because of bad targets, but because of unclear strategic intent. You build your own acquisition thesis before ever seeing a target.</p>
+              </div>
+              <div class="toolkit-takeaway">
+                <span class="toolkit-takeaway-icon">&#9744;</span>
+                Toolkit: Acquisition Strategy Canvas + Decision Matrix
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 2 -->
+        <div class="day-card" data-day="2">
+          <div class="day-card-header">
+            <div class="day-card-day mono">DAY 2</div>
+            <div class="day-card-title">Finding Targets</div>
+            <div class="day-card-toggle">+</div>
+          </div>
+          <div class="day-card-body">
+            <div class="day-card-content">
+              <div class="day-card-sessions">
+                <h4>Session Breakdown</h4>
+                <ul>
+                  <li>Target screening frameworks and filter design</li>
+                  <li>Building proprietary deal pipelines beyond investment banks</li>
+                  <li>Valuation fundamentals: DCF, comparable analysis, precedent transactions</li>
+                  <li>Sector-specific sourcing strategies and regional mapping</li>
+                </ul>
+              </div>
+              <div class="aha-moment">
+                <div class="aha-moment-label">Aha Moment</div>
+                <p class="aha-moment-text">The best targets are never on the open market. You learn to build a proprietary pipeline that gives you first-mover advantage in your sector.</p>
+              </div>
+              <div class="toolkit-takeaway">
+                <span class="toolkit-takeaway-icon">&#9744;</span>
+                Toolkit: Target Screening Scorecard + Valuation Template
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 3 -->
+        <div class="day-card" data-day="3">
+          <div class="day-card-header">
+            <div class="day-card-day mono">DAY 3</div>
+            <div class="day-card-title">Due Diligence &amp; Deal Room</div>
+            <div class="day-card-toggle">+</div>
+          </div>
+          <div class="day-card-body">
+            <div class="day-card-content">
+              <div class="day-card-sessions">
+                <h4>Session Breakdown</h4>
+                <ul>
+                  <li>Deep dive: financial, legal, operational, and technology DD</li>
+                  <li>Culture assessment frameworks -- the hidden deal breaker</li>
+                  <li>Negotiation psychology and term sheet strategy</li>
+                  <li>Live exercise: <strong>War Room Simulation</strong> <span class="war-room-badge">Signature Experience</span></li>
+                </ul>
+              </div>
+              <div class="aha-moment">
+                <div class="aha-moment-label">Aha Moment</div>
+                <p class="aha-moment-text">In the War Room, you face a real-time deal scenario with incomplete information, competing interests, and a ticking clock. This is where theory becomes instinct.</p>
+              </div>
+              <div class="toolkit-takeaway">
+                <span class="toolkit-takeaway-icon">&#9744;</span>
+                Toolkit: DD Checklist Framework + Culture Assessment Matrix
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 4 -->
+        <div class="day-card" data-day="4">
+          <div class="day-card-header">
+            <div class="day-card-day mono">DAY 4</div>
+            <div class="day-card-title">Post-Merger Integration</div>
+            <div class="day-card-toggle">+</div>
+          </div>
+          <div class="day-card-body">
+            <div class="day-card-content">
+              <div class="day-card-sessions">
+                <h4>Session Breakdown</h4>
+                <ul>
+                  <li>The 100-day integration plan: from day zero to operational</li>
+                  <li>Synergy identification, tracking, and realization frameworks</li>
+                  <li>People integration: retention, culture, and communication</li>
+                  <li>Building your PMI playbook: customized to your organization</li>
+                </ul>
+              </div>
+              <div class="aha-moment">
+                <div class="aha-moment-label">Aha Moment</div>
+                <p class="aha-moment-text">You realize that PMI starts before the deal closes. Building your integration playbook during the program means you leave with an actionable plan, not just theory.</p>
+              </div>
+              <div class="toolkit-takeaway">
+                <span class="toolkit-takeaway-icon">&#9744;</span>
+                Toolkit: 100-Day PMI Playbook + Synergy Tracker
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- DAY 5 -->
+        <div class="day-card" data-day="5">
+          <div class="day-card-header">
+            <div class="day-card-day mono">DAY 5</div>
+            <div class="day-card-title">The M&amp;A Machine</div>
+            <div class="day-card-toggle">+</div>
+          </div>
+          <div class="day-card-body">
+            <div class="day-card-content">
+              <div class="day-card-sessions">
+                <h4>Session Breakdown</h4>
+                <ul>
+                  <li>Governance and board readiness for acquisitions</li>
+                  <li>Regulatory navigation: CCI approvals, SEBI compliance, FEMA</li>
+                  <li>Building repeatable M&amp;A capability within your organization</li>
+                  <li>Capstone presentation and certification ceremony</li>
+                </ul>
+              </div>
+              <div class="aha-moment">
+                <div class="aha-moment-label">Aha Moment</div>
+                <p class="aha-moment-text">You present your full M&amp;A thesis -- strategy through integration -- to a panel of practitioners. You leave not just trained, but certified and connected to a powerful peer network.</p>
+              </div>
+              <div class="toolkit-takeaway">
+                <span class="toolkit-takeaway-icon">&#9744;</span>
+                Toolkit: M&amp;A Governance Blueprint + Regulatory Playbook
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Toolkit Portfolio -->
+      <div class="toolkit-section">
+        <h3 class="toolkit-section-title">Toolkit Portfolio</h3>
+        <p class="toolkit-section-desc">Nine proprietary frameworks you build and take home</p>
+        <div class="toolkit-grid">
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">01</div>
+            <div class="toolkit-item-name">Acquisition Strategy Canvas</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">02</div>
+            <div class="toolkit-item-name">Build-Buy-Partner Matrix</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">03</div>
+            <div class="toolkit-item-name">Target Screening Scorecard</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">04</div>
+            <div class="toolkit-item-name">Valuation Framework</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">05</div>
+            <div class="toolkit-item-name">DD Checklist System</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">06</div>
+            <div class="toolkit-item-name">Culture Assessment Matrix</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">07</div>
+            <div class="toolkit-item-name">100-Day PMI Playbook</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">08</div>
+            <div class="toolkit-item-name">Synergy Tracker Dashboard</div>
+          </div>
+          <div class="toolkit-item">
+            <div class="toolkit-item-num mono">09</div>
+            <div class="toolkit-item-name">M&amp;A Governance Blueprint</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Year-Long Engagement -->
+      <div class="engagement-timeline">
+        <h3 class="engagement-timeline-title">Year-Long Engagement</h3>
+        <div class="timeline-track">
+          <div class="timeline-node">
+            <div class="timeline-dot">M1</div>
+            <div class="timeline-node-label mono">Month 1</div>
+            <div class="timeline-node-text">5-Day Intensive<br>Full immersion</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot">M4</div>
+            <div class="timeline-node-label mono">Month 4</div>
+            <div class="timeline-node-text">Coaching #1<br>Progress review</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot">M8</div>
+            <div class="timeline-node-label mono">Month 8</div>
+            <div class="timeline-node-text">Coaching #2<br>Deal support</div>
+          </div>
+          <div class="timeline-node">
+            <div class="timeline-dot">M12</div>
+            <div class="timeline-node-label mono">Month 12</div>
+            <div class="timeline-node-text">Annual Review<br>Certification renewal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Credential -->
+      <div class="credential-strip">
+        <div class="credential-icon">&#9670;</div>
+        <div class="credential-text">
+          <h4>Certified M&amp;A Strategy &amp; Integration Professional</h4>
+          <p>IIT Roorkee &times; M&amp;A Leadership Platform</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2: Platform Vision -->
+    <div class="tab-content" id="tab2">
+      <div class="dashboard-preview-label">Conceptual Preview &mdash; Platform Vision</div>
+
+      <div class="browser-chrome">
+        <div class="browser-bar">
+          <div class="browser-dots">
+            <div class="browser-dot red"></div>
+            <div class="browser-dot yellow"></div>
+            <div class="browser-dot green"></div>
+          </div>
+          <div class="browser-title">M&amp;A Leadership Platform &mdash; Executive Dashboard</div>
+        </div>
+        <div class="browser-body">
+          <!-- Sidebar -->
+          <div class="dash-sidebar">
+            <div class="dash-sidebar-brand">M&amp;A Platform</div>
+            <div class="dash-sidebar-nav">
+              <div class="dash-sidebar-item active-item">
+                <span class="dash-sidebar-icon">&#9632;</span> Dashboard
+              </div>
+              <div class="dash-sidebar-item">
+                <span class="dash-sidebar-icon">&#9656;</span> Deal Pipeline
+              </div>
+              <div class="dash-sidebar-item">
+                <span class="dash-sidebar-icon">&#9673;</span> Target Sourcing
+              </div>
+              <div class="dash-sidebar-item">
+                <span class="dash-sidebar-icon">&#9644;</span> Integration Tracker
+              </div>
+              <div class="dash-sidebar-item">
+                <span class="dash-sidebar-icon">&#9670;</span> Learning Hub
+              </div>
+              <div class="dash-sidebar-item">
+                <span class="dash-sidebar-icon">&#9645;</span> Policy Forum
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Dashboard -->
+          <div class="dash-main">
+            <div class="dash-header">
+              <h3 class="dash-title">Executive Dashboard</h3>
+              <div class="dash-header-meta mono">Last updated: 2 hours ago</div>
+            </div>
+
+            <!-- KPI Cards -->
+            <div class="kpi-grid">
+              <div class="kpi-card">
+                <div class="kpi-label mono">Active Targets</div>
+                <div class="kpi-value">47</div>
+                <div class="kpi-delta up">+12 this quarter</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label mono">Pipeline Value</div>
+                <div class="kpi-value">Rs.840 Cr</div>
+                <div class="kpi-delta up">+23% QoQ</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label mono">Integration Health</div>
+                <div class="kpi-value">87%</div>
+                <div class="kpi-delta on-track">On track</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-label mono">Synergy Realized</div>
+                <div class="kpi-value">Rs.42 Cr</div>
+                <div class="kpi-delta up">68% of target</div>
+              </div>
+            </div>
+
+            <!-- Deal Pipeline Table -->
+            <div class="dash-card">
+              <div class="dash-card-title mono">Deal Pipeline</div>
+              <table class="deal-table">
+                <thead>
+                  <tr>
+                    <th>Company</th>
+                    <th>Sector</th>
+                    <th>Value</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>TechServe Solutions</td>
+                    <td>Technology</td>
+                    <td>Rs.320 Cr</td>
+                    <td><span class="status-badge status-active">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td>GreenPower Renewables</td>
+                    <td>Renewables</td>
+                    <td>Rs.185 Cr</td>
+                    <td><span class="status-badge status-dd">Due Diligence</span></td>
+                  </tr>
+                  <tr>
+                    <td>MedLife Diagnostics</td>
+                    <td>Healthcare</td>
+                    <td>Rs.210 Cr</td>
+                    <td><span class="status-badge status-closing">Closing</span></td>
+                  </tr>
+                  <tr>
+                    <td>AutoComp Industries</td>
+                    <td>Manufacturing</td>
+                    <td>Rs.125 Cr</td>
+                    <td><span class="status-badge status-pmi">PMI</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Two-Column: Synergy Chart + Sector Heatmap -->
+            <div class="dash-two-col">
+              <!-- Synergy Chart -->
+              <div class="dash-card">
+                <div class="dash-card-title mono">Synergy Realization</div>
+                <div class="chart-container">
+                  <div class="chart-legend">
+                    <div class="legend-item"><div class="legend-dot target"></div> Target</div>
+                    <div class="legend-item"><div class="legend-dot actual"></div> Actual</div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label mono">Revenue</div>
+                    <div class="bar-group">
+                      <div class="bar target-bar" style="width:80%"></div>
+                      <div class="bar actual-bar" style="width:68%"></div>
+                    </div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label mono">Cost</div>
+                    <div class="bar-group">
+                      <div class="bar target-bar" style="width:90%"></div>
+                      <div class="bar actual-bar" style="width:82%"></div>
+                    </div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label mono">People</div>
+                    <div class="bar-group">
+                      <div class="bar target-bar" style="width:70%"></div>
+                      <div class="bar actual-bar" style="width:55%"></div>
+                    </div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label mono">Tech</div>
+                    <div class="bar-group">
+                      <div class="bar target-bar" style="width:85%"></div>
+                      <div class="bar actual-bar" style="width:72%"></div>
+                    </div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label mono">Ops</div>
+                    <div class="bar-group">
+                      <div class="bar target-bar" style="width:75%"></div>
+                      <div class="bar actual-bar" style="width:60%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Sector Heatmap -->
+              <div class="dash-card">
+                <div class="dash-card-title mono">Target Sourcing &mdash; Sector Opportunities</div>
+                <div class="sector-grid">
+                  <div class="sector-tile sector-high">
+                    <div class="sector-tile-name">Healthcare</div>
+                    <div class="sector-tile-value mono">18 targets</div>
+                  </div>
+                  <div class="sector-tile sector-high">
+                    <div class="sector-tile-name">Renewables</div>
+                    <div class="sector-tile-value mono">14 targets</div>
+                  </div>
+                  <div class="sector-tile sector-med-high">
+                    <div class="sector-tile-name">EV / Mobility</div>
+                    <div class="sector-tile-value mono">11 targets</div>
+                  </div>
+                  <div class="sector-tile sector-med-high">
+                    <div class="sector-tile-name">Technology</div>
+                    <div class="sector-tile-value mono">9 targets</div>
+                  </div>
+                  <div class="sector-tile sector-med">
+                    <div class="sector-tile-name">Pharma</div>
+                    <div class="sector-tile-value mono">7 targets</div>
+                  </div>
+                  <div class="sector-tile sector-low">
+                    <div class="sector-tile-name">Manufacturing</div>
+                    <div class="sector-tile-value mono">5 targets</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Integration Timeline -->
+            <div class="dash-card integration-timeline">
+              <div class="dash-card-title mono">Integration Timeline &mdash; MedLife Diagnostics</div>
+              <div class="integration-progress">
+                <div class="integration-bar-bg">
+                  <div class="integration-bar-fill"></div>
+                </div>
+                <div class="integration-markers">
+                  <div class="integration-marker completed">
+                    <div class="integration-marker-label mono">Day 1</div>
+                    <div class="integration-marker-text">Close &amp; Announce</div>
+                  </div>
+                  <div class="integration-marker completed">
+                    <div class="integration-marker-label mono">Day 30</div>
+                    <div class="integration-marker-text">Quick Wins</div>
+                  </div>
+                  <div class="integration-marker">
+                    <div class="integration-marker-label mono">Day 100</div>
+                    <div class="integration-marker-text">Full Integration</div>
+                  </div>
+                  <div class="integration-marker">
+                    <div class="integration-marker-label mono">Year 1</div>
+                    <div class="integration-marker-text">Synergy Realized</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Learning Progress -->
+            <div class="dash-card">
+              <div class="dash-card-title mono">Learning &amp; Certification Progress</div>
+              <div class="learning-progress-grid">
+                <div class="learning-item">
+                  <div class="learning-circle">
+                    <svg viewBox="0 0 40 40">
+                      <circle class="learning-circle-bg" cx="20" cy="20" r="16"></circle>
+                      <circle class="learning-circle-fill" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="10.05"></circle>
+                    </svg>
+                    <span class="learning-pct">90%</span>
+                  </div>
+                  <div class="learning-info">
+                    Strategy Module<br><span>7 of 8 complete</span>
+                  </div>
+                </div>
+                <div class="learning-item">
+                  <div class="learning-circle">
+                    <svg viewBox="0 0 40 40">
+                      <circle class="learning-circle-bg" cx="20" cy="20" r="16"></circle>
+                      <circle class="learning-circle-fill" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="25.13"></circle>
+                    </svg>
+                    <span class="learning-pct">75%</span>
+                  </div>
+                  <div class="learning-info">
+                    Due Diligence<br><span>6 of 8 complete</span>
+                  </div>
+                </div>
+                <div class="learning-item">
+                  <div class="learning-circle">
+                    <svg viewBox="0 0 40 40">
+                      <circle class="learning-circle-bg" cx="20" cy="20" r="16"></circle>
+                      <circle class="learning-circle-fill" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="40.21"></circle>
+                    </svg>
+                    <span class="learning-pct">60%</span>
+                  </div>
+                  <div class="learning-info">
+                    PMI Certification<br><span>5 of 8 complete</span>
+                  </div>
+                </div>
+                <div class="learning-item">
+                  <div class="learning-circle">
+                    <svg viewBox="0 0 40 40">
+                      <circle class="learning-circle-bg" cx="20" cy="20" r="16"></circle>
+                      <circle class="learning-circle-fill" cx="20" cy="20" r="16" stroke-dasharray="100.53" stroke-dashoffset="60.32"></circle>
+                    </svg>
+                    <span class="learning-pct">40%</span>
+                  </div>
+                  <div class="learning-info">
+                    Governance<br><span>3 of 8 complete</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /dash-main -->
+        </div><!-- /browser-body -->
+      </div><!-- /browser-chrome -->
+    </div><!-- /tab2 -->
+
+  </div>
+</section>
+
+<!-- ============================================================
+     MEMBERSHIP
+     ============================================================ -->
+<section class="section-padding" id="membership" style="background:var(--off-white);">
+  <div class="container">
+    <p class="section-label scroll-reveal">Membership</p>
+    <h2 class="section-title scroll-reveal">Three Tiers of Access</h2>
+    <div class="membership-grid scroll-reveal">
+
+      <!-- Platform Partner -->
+      <div class="tier-card accent-border">
+        <div class="tier-badge">Most Exclusive</div>
+        <h3 class="tier-name">Platform Partner</h3>
+        <div class="tier-price">Rs.2.25 Cr<span class="tier-price-period">/year</span></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#10003;</span> Full Leadership Institute access (all cohorts)</li>
+          <li><span class="tier-check">&#10003;</span> Dedicated M&amp;A advisory and deal sourcing</li>
+          <li><span class="tier-check">&#10003;</span> Board-level governance consulting</li>
+          <li><span class="tier-check">&#10003;</span> Priority platform access with custom dashboard</li>
+          <li><span class="tier-check">&#10003;</span> Cross-border deal facilitation support</li>
+          <li><span class="tier-check">&#10003;</span> Annual strategy retreat with founding members</li>
+        </ul>
+      </div>
+
+      <!-- Elite Member -->
+      <div class="tier-card highlighted">
+        <div class="tier-badge">Most Popular</div>
+        <h3 class="tier-name">Elite Member</h3>
+        <div class="tier-price">Rs.1.35 Cr<span class="tier-price-period">/year</span></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#10003;</span> Full Leadership Institute access (1 cohort/year)</li>
+          <li><span class="tier-check">&#10003;</span> Platform deal pipeline and target sourcing</li>
+          <li><span class="tier-check">&#10003;</span> PMI playbook and integration support</li>
+          <li><span class="tier-check">&#10003;</span> Quarterly coaching and advisory sessions</li>
+          <li><span class="tier-check">&#10003;</span> Peer network access and roundtable invites</li>
+          <li><span class="tier-check">&#10003;</span> Regulatory navigation toolkit and updates</li>
+        </ul>
+      </div>
+
+      <!-- Growth Member -->
+      <div class="tier-card">
+        <div class="tier-badge">Entry Level</div>
+        <h3 class="tier-name">Growth Member</h3>
+        <div class="tier-price">Rs.85L<span class="tier-price-period">/year</span></div>
+        <div class="tier-divider"></div>
+        <ul class="tier-features">
+          <li><span class="tier-check">&#10003;</span> Leadership Institute access (1 cohort/year)</li>
+          <li><span class="tier-check">&#10003;</span> Platform access with standard dashboard</li>
+          <li><span class="tier-check">&#10003;</span> Toolkit portfolio and framework library</li>
+          <li><span class="tier-check">&#10003;</span> Bi-annual coaching sessions</li>
+          <li><span class="tier-check">&#10003;</span> Community forum and peer networking</li>
+          <li><span class="tier-check">&#10003;</span> Certification and credential renewal</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ROI SECTION
+     ============================================================ -->
+<section class="section-padding" id="roi" style="background:var(--white);">
+  <div class="container">
+    <p class="section-label scroll-reveal">Return on Investment</p>
+    <h2 class="section-title scroll-reveal">The Value Equation</h2>
+    <p class="section-subtitle scroll-reveal">What you would spend separately -- and what you gain together</p>
+    <div class="roi-grid scroll-reveal">
+      <div class="roi-card">
+        <div class="roi-card-tier mono">Platform Partner</div>
+        <div class="roi-card-value">Rs.7-12 Cr</div>
+        <p class="roi-card-label">Replaces fragmented advisory, sourcing, and integration spend</p>
+        <div class="roi-card-highlight">20-50x ROI</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-card-tier mono">Elite Member</div>
+        <div class="roi-card-value">Rs.5-9 Cr</div>
+        <p class="roi-card-label">Equivalent advisory and deal support savings per year</p>
+        <div class="roi-card-highlight">Rs.20-50 Cr Protected</div>
+      </div>
+      <div class="roi-card">
+        <div class="roi-card-tier mono">Growth Member</div>
+        <div class="roi-card-value">Rs.3-6 Cr</div>
+        <p class="roi-card-label">Value of capability building, frameworks, and network access</p>
+        <div class="roi-card-highlight">Rs.3-6 Cr Value Received</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     INSTITUTIONAL ANCHORS
+     ============================================================ -->
+<section class="anchors section-padding" id="anchors">
+  <div class="container">
+    <p class="section-label section-label-light scroll-reveal">Institutional Anchors</p>
+    <h2 class="section-title scroll-reveal">Designed with the Best</h2>
+    <div class="anchors-grid scroll-reveal">
+      <div>
+        <div class="anchor-col-label mono">Academic</div>
+        <ul class="anchor-list">
+          <li>IIT Roorkee</li>
+          <li>IIT Delhi</li>
+          <li>IIM Bangalore</li>
+        </ul>
+      </div>
+      <div>
+        <div class="anchor-col-label mono">Industry</div>
+        <ul class="anchor-list">
+          <li>KKR</li>
+          <li>BlackRock</li>
+          <li>Carlyle</li>
+          <li>Cisco</li>
+          <li>Google</li>
+          <li>Adani</li>
+          <li>Reliance</li>
+        </ul>
+      </div>
+      <div>
+        <div class="anchor-col-label mono">Policy</div>
+        <ul class="anchor-list">
+          <li>NITI Aayog</li>
+          <li>CCI</li>
+          <li>MCA</li>
+        </ul>
+      </div>
+    </div>
+    <p class="anchors-footnote scroll-reveal">* Institutional and industry partner names to be confirmed during founding phase</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     FIRST YEAR ROADMAP
+     ============================================================ -->
+<section class="section-padding" id="roadmap" style="background: var(--white);">
+  <div class="container">
+    <p class="section-label scroll-reveal">First Year Roadmap</p>
+    <h2 class="section-title scroll-reveal">From Launch to Scale</h2>
+    <div class="roadmap-timeline scroll-reveal">
+      <div class="roadmap-item">
+        <div class="roadmap-quarter mono">Q1</div>
+        <p class="roadmap-desc">Founding partner onboarding, academic partner agreements, curriculum finalization, and platform MVP design.</p>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-quarter mono">Q2</div>
+        <p class="roadmap-desc">First Leadership Institute cohort, deal pipeline activation, and industry advisory board formation.</p>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-quarter mono">Q3</div>
+        <p class="roadmap-desc">Platform beta launch, second cohort, first live deal facilitations, and policy forum inaugural session.</p>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-quarter mono">Q4</div>
+        <p class="roadmap-desc">Full platform launch, annual founding partners summit, third cohort, and Year 2 strategy planning.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="cta-section section-padding" id="cta">
+  <div class="container-narrow">
+    <p class="section-label section-label-light scroll-reveal">Join Us</p>
+    <h2 class="section-title scroll-reveal" style="color:var(--white);">Join as a Founding Partner</h2>
+    <ul class="cta-benefits scroll-reveal">
+      <li><span>&#9670;</span> Shape the platform roadmap alongside India's top M&amp;A minds</li>
+      <li><span>&#9670;</span> Secure exclusive sector rights before general availability</li>
+      <li><span>&#9670;</span> First access to proprietary deal pipelines and sourcing intelligence</li>
+      <li><span>&#9670;</span> Direct input into curriculum design and toolkit development</li>
+      <li><span>&#9670;</span> Founding member pricing locked for the lifetime of your membership</li>
+    </ul>
+    <div class="scroll-reveal" style="text-align:center;">
+      <button class="cta-button" onclick="void(0)">Request Access</button>
+      <p class="cta-fine-print">Exclusivity is assigned on a first-confirmed basis per industry sector.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <p class="footer-main">M&amp;A Leadership Platform</p>
+    <p class="footer-sub">Proposed academic anchors: IIT Roorkee &middot; IIT Delhi &middot; IIM Bangalore</p>
+    <p class="footer-confidential mono">Confidential</p>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+     ============================================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // ---- HAMBURGER MENU ----
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+
+    // Close menu on link click
+    var links = navLinks.querySelectorAll('a');
+    for (var i = 0; i < links.length; i++) {
+      links[i].addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    }
+  }
+
+  // ---- NAV SCROLL SHADOW ----
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function() {
+    if (nav) {
+      if (window.scrollY > 10) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }
+  });
+
+  // ---- ACTIVE NAV HIGHLIGHTING (IntersectionObserver) ----
+  var sections = document.querySelectorAll('section[id]');
+  var navItems = document.querySelectorAll('.nav-links a');
+
+  if ('IntersectionObserver' in window) {
+    var observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -60% 0px',
+      threshold: 0
+    };
+
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navItems.forEach(function(item) {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === '#' + id) {
+              item.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach(function(section) {
+      observer.observe(section);
+    });
+  }
+
+  // ---- SCROLL REVEAL ----
+  var reveals = document.querySelectorAll('.scroll-reveal');
+
+  if ('IntersectionObserver' in window) {
+    var revealObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.1
+    });
+
+    reveals.forEach(function(el) {
+      revealObserver.observe(el);
+    });
+  } else {
+    // Fallback: show all
+    reveals.forEach(function(el) {
+      el.classList.add('revealed');
+    });
+  }
+
+  // ---- TAB SWITCHING ----
+  var tabBtns = document.querySelectorAll('.tab-btn');
+  var tabContents = document.querySelectorAll('.tab-content');
+
+  tabBtns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var targetTab = btn.getAttribute('data-tab');
+
+      tabBtns.forEach(function(b) { b.classList.remove('active'); });
+      tabContents.forEach(function(c) { c.classList.remove('active'); });
+
+      btn.classList.add('active');
+      var targetEl = document.getElementById(targetTab);
+      if (targetEl) targetEl.classList.add('active');
+    });
+  });
+
+  // ---- DAY CARD ACCORDION ----
+  var dayCards = document.querySelectorAll('.day-card');
+
+  dayCards.forEach(function(card) {
+    var header = card.querySelector('.day-card-header');
+    if (header) {
+      header.addEventListener('click', function() {
+        var isExpanded = card.classList.contains('expanded');
+
+        // Close all others
+        dayCards.forEach(function(c) {
+          c.classList.remove('expanded');
+        });
+
+        // Toggle current
+        if (!isExpanded) {
+          card.classList.add('expanded');
+        }
+      });
+    }
+  });
+
+})();
+</script>
+</body>
+</html>

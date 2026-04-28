@@ -1,0 +1,1544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&A Leadership Platform | India's First Full-Lifecycle M&A Ecosystem</title>
+<meta name="description" content="India's first full-lifecycle M&A capability and execution platform for mid-market firms. Strategy, capability building, deal sourcing, integration support.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  /* Modern Minimalist — Charcoal + Slate Gray + Light Gray + White */
+  --charcoal: #36454f;
+  --charcoal-deep: #2a363e;
+  --slate: #708090;
+  --slate-light: #8a9baa;
+  --gray-light: #d3d3d3;
+  --gray-bg: #f4f4f2;
+  --gray-rule: #e4e4e0;
+  --white: #ffffff;
+  --text-primary: #2a2a2e;
+  --text-secondary: #5a5a66;
+  --text-tertiary: #8a8a96;
+  --accent: #36454f;
+  --accent-hover: #4a5c68;
+  --font-sans: 'Inter', -apple-system, sans-serif;
+  --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── Utility ─── */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.section-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--charcoal);
+  margin-bottom: 16px;
+}
+.section-desc {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 560px;
+}
+section { padding: 100px 0; }
+section:nth-child(even) { background: var(--gray-bg); }
+
+/* ─── Reveal ─── */
+.r { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.r.v { opacity: 1; transform: translateY(0); }
+.r-d1 { transition-delay: 0.08s; }
+.r-d2 { transition-delay: 0.16s; }
+.r-d3 { transition-delay: 0.24s; }
+.r-d4 { transition-delay: 0.32s; }
+
+/* ─── Nav ─── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--gray-rule);
+  transition: box-shadow 0.3s;
+}
+nav.shadow { box-shadow: 0 1px 8px rgba(0,0,0,0.04); }
+nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.nav-brand {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--charcoal);
+  text-decoration: none;
+  letter-spacing: -0.2px;
+}
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+  align-items: center;
+}
+.nav-links a {
+  display: block;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s;
+}
+.nav-links a:hover { color: var(--charcoal); }
+.nav-links a.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--charcoal);
+}
+.nav-cta-btn {
+  margin-left: 12px;
+  padding: 8px 18px !important;
+  background: var(--charcoal);
+  color: var(--white) !important;
+  border-radius: 4px;
+  font-size: 12px !important;
+  letter-spacing: 0.5px;
+  border: none !important;
+  transition: background 0.3s !important;
+}
+.nav-cta-btn:hover { background: var(--accent-hover) !important; }
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--charcoal);
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* ─── Hero ─── */
+.hero {
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding-top: 64px;
+  position: relative;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 20px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 5.5vw, 56px);
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 24px;
+  letter-spacing: -0.5px;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--slate);
+}
+.hero-desc {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--charcoal);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.hero-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+.hero-cta svg { transition: transform 0.3s; }
+.hero-cta:hover svg { transform: translateX(3px); }
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.h-stat {
+  padding: 28px;
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+}
+.h-stat-num {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.h-stat-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ─── Problem ─── */
+#problem { background: var(--gray-bg); }
+.problem-top {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.big-num {
+  font-family: var(--font-serif);
+  font-size: clamp(72px, 12vw, 110px);
+  font-weight: 400;
+  color: var(--charcoal);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+.big-num-sub {
+  font-size: 17px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  margin-bottom: 40px;
+}
+.gap-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--gray-rule);
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.gap-item {
+  background: var(--white);
+  padding: 32px 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.gap-item:hover { background: #fafaf8; }
+.gap-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate);
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+}
+.gap-item h4 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.gap-item p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ─── Architecture ─── */
+#architecture { background: var(--charcoal); color: var(--white); }
+#architecture .label { color: var(--slate-light); }
+#architecture .section-heading { color: var(--white); }
+#architecture .section-desc { color: var(--slate-light); }
+.arch-modules {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.arch-card {
+  padding: 28px 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+.arch-card:hover {
+  border-color: rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.04);
+}
+.arch-card-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--slate-light);
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+.arch-card-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 16px;
+}
+.arch-card h4 {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.arch-card p {
+  font-size: 12px;
+  color: var(--slate-light);
+  line-height: 1.5;
+}
+.arch-connector {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+.arch-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+}
+.arch-line {
+  width: 60px; height: 1px;
+  background: rgba(255,255,255,0.1);
+  align-self: center;
+}
+
+/* ─── Tabs ─── */
+#explore { background: var(--white); }
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--gray-rule);
+  margin-bottom: 48px;
+}
+.tab-btn {
+  padding: 14px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-tertiary);
+  border-bottom: 2px solid transparent;
+  transition: all 0.25s;
+  margin-bottom: -1px;
+}
+.tab-btn:hover { color: var(--text-primary); }
+.tab-btn.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--charcoal);
+}
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* Institute tab */
+.inst-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.inst-header h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 500;
+  color: var(--charcoal);
+  margin-bottom: 10px;
+}
+.inst-header h3 em { font-style: italic; color: var(--slate); }
+.inst-metrics {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 28px 0 48px;
+}
+.inst-metric { text-align: center; }
+.inst-metric-val {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.inst-metric-lbl {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-top: 2px;
+}
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-bottom: 48px;
+}
+.day-card {
+  padding: 24px 18px;
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+.day-card:hover {
+  border-color: var(--charcoal);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+.day-card .day-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--slate);
+  margin-bottom: 10px;
+}
+.day-card h5 {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+  line-height: 1.25;
+}
+.day-card p {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+.day-card .day-tool {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-rule);
+  font-size: 11px;
+  color: var(--charcoal);
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+.toolkit-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+  padding: 36px;
+  margin-bottom: 24px;
+}
+.toolkit-box h4 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.toolkit-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.toolkit-chip {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--white);
+  border: 1px solid var(--gray-rule);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.toolkit-chip::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: var(--charcoal);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.cred-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 36px;
+  background: var(--charcoal);
+  border-radius: 6px;
+  color: var(--white);
+}
+.cred-strip h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 500;
+}
+.cred-strip span {
+  font-size: 13px;
+  color: var(--slate-light);
+}
+
+/* Dashboard tab */
+.dash-wrap {
+  border: 1px solid var(--gray-rule);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.06);
+}
+.dash-chrome {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: var(--charcoal);
+}
+.dc { width: 10px; height: 10px; border-radius: 50%; }
+.dc-r { background: #ff5f57; }
+.dc-y { background: #febc2e; }
+.dc-g { background: #28c840; }
+.dash-chrome-title {
+  margin-left: 10px;
+  font-size: 12px;
+  color: var(--slate-light);
+  font-weight: 500;
+}
+.dash-body {
+  display: flex;
+  min-height: 480px;
+}
+.dash-side {
+  width: 180px;
+  background: #f8f8f6;
+  border-right: 1px solid var(--gray-rule);
+  padding: 16px 0;
+  flex-shrink: 0;
+}
+.ds-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.ds-item:hover { background: var(--gray-rule); color: var(--text-primary); }
+.ds-item.act {
+  color: var(--charcoal);
+  font-weight: 600;
+  background: var(--white);
+  border-left: 2px solid var(--charcoal);
+}
+.ds-icon { width: 14px; text-align: center; font-size: 12px; }
+.dash-content {
+  flex: 1;
+  padding: 20px;
+  background: var(--white);
+}
+.dash-hi {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--charcoal);
+  margin-bottom: 2px;
+}
+.dash-hi-sub {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 20px;
+}
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.kpi {
+  padding: 16px;
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-rule);
+  border-radius: 4px;
+}
+.kpi-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+.kpi-val {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.kpi-delta {
+  font-size: 11px;
+  color: #4a9;
+  margin-top: 3px;
+}
+.dash-panels {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 12px;
+}
+.dp {
+  padding: 16px;
+  border: 1px solid var(--gray-rule);
+  border-radius: 4px;
+}
+.dp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+.dp-badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  background: var(--gray-bg);
+  border-radius: 2px;
+  color: var(--slate);
+  font-weight: 500;
+}
+.pipe-r {
+  display: flex;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-rule);
+  font-size: 12px;
+  align-items: center;
+}
+.pipe-r:last-child { border: none; }
+.pr-name { flex: 1.4; font-weight: 500; color: var(--text-primary); }
+.pr-sec { flex: 1; color: var(--text-tertiary); }
+.pr-val { flex: 0.8; font-family: var(--font-mono); font-size: 11px; color: var(--text-secondary); }
+.pr-st { flex: 0.6; text-align: right; }
+.st {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+.st-g { background: #e6f4ea; color: #1e7e34; }
+.st-y { background: #fff8e1; color: #c77700; }
+.st-b { background: #e8f0fe; color: #1a73e8; }
+.st-p { background: #f3e8fd; color: #7c3aed; }
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  height: 120px;
+  padding-top: 8px;
+}
+.bar-g {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+}
+.bar-pair {
+  display: flex;
+  gap: 2px;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+}
+.bar {
+  width: 12px;
+  border-radius: 2px 2px 0 0;
+}
+.bar-t { background: var(--gray-light); }
+.bar-a { background: var(--charcoal); }
+.bar-lbl {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+}
+.bar-legend {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+.bar-legend span { display: flex; align-items: center; gap: 4px; }
+.bl-dot { width: 8px; height: 8px; border-radius: 1px; }
+
+/* ─── Membership ─── */
+#membership { background: var(--white); }
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.tier {
+  padding: 36px 28px;
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.tier:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.05);
+}
+.tier.highlight {
+  background: var(--charcoal);
+  color: var(--white);
+  border-color: transparent;
+}
+.tier.accent-border { border-color: var(--charcoal); border-width: 2px; }
+.tier-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--slate);
+  margin-bottom: 16px;
+}
+.tier.highlight .tier-tag { color: var(--slate-light); }
+.tier-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.tier-price {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.tier.highlight .tier-price { color: var(--gray-light); }
+.tier-period {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-bottom: 24px;
+}
+.tier.highlight .tier-period { color: var(--slate-light); }
+.tier-feats {
+  list-style: none;
+  margin-bottom: 28px;
+}
+.tier-feats li {
+  font-size: 13px;
+  padding: 7px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  display: flex;
+  gap: 8px;
+  line-height: 1.5;
+}
+.tier.highlight .tier-feats li { border-color: rgba(255,255,255,0.08); color: var(--slate-light); }
+.tier-check { color: var(--charcoal); font-weight: 700; flex-shrink: 0; }
+.tier.highlight .tier-check { color: var(--gray-light); }
+.tier-btn {
+  display: block;
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.tier-btn-outline {
+  border: 1px solid var(--charcoal);
+  color: var(--charcoal);
+}
+.tier-btn-outline:hover { background: var(--charcoal); color: var(--white); }
+.tier-btn-fill {
+  background: var(--white);
+  color: var(--charcoal);
+}
+.tier-btn-fill:hover { background: var(--gray-light); }
+
+/* ─── ROI ─── */
+#roi { background: var(--gray-bg); }
+.roi-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+.roi-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--white);
+  border: 1px solid var(--gray-rule);
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+.roi-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+.roi-sup {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 6px;
+}
+.roi-num {
+  font-family: var(--font-serif);
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.roi-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.roi-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-rule);
+  border-radius: 4px;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+/* ─── Anchors ─── */
+#anchors { background: var(--charcoal); color: var(--white); }
+#anchors .label { color: var(--slate-light); }
+#anchors .section-heading { color: var(--white); }
+.anchor-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 48px;
+}
+.anchor-col h4 {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--slate-light);
+  margin-bottom: 18px;
+  text-align: center;
+}
+.anchor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+.anchor-tag {
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 4px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  transition: all 0.3s;
+}
+.anchor-tag:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
+.anchor-fn {
+  text-align: center;
+  margin-top: 32px;
+  font-size: 12px;
+  color: var(--slate-light);
+  font-style: italic;
+}
+
+/* ─── Personas ─── */
+#audience { background: var(--white); }
+.persona-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.persona {
+  padding: 28px 20px;
+  border-left: 3px solid var(--charcoal);
+  background: var(--gray-bg);
+  border-radius: 0 6px 6px 0;
+  transition: all 0.3s;
+}
+.persona:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.04); }
+.persona h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 8px;
+}
+.persona p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ─── Roadmap ─── */
+#roadmap { background: var(--gray-bg); }
+.tl {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+  position: relative;
+}
+.tl::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  right: 40px;
+  height: 1px;
+  background: var(--gray-light);
+}
+.tl-item {
+  text-align: center;
+  position: relative;
+}
+.tl-q {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--slate);
+  font-weight: 600;
+}
+.tl-dot {
+  width: 14px; height: 14px;
+  border: 2px solid var(--charcoal);
+  border-radius: 50%;
+  background: var(--gray-bg);
+  margin: 18px auto 18px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+}
+.tl-item:hover .tl-dot { background: var(--charcoal); }
+.tl-title {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--charcoal);
+  margin-bottom: 6px;
+}
+.tl-desc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+/* ─── CTA ─── */
+#cta {
+  background: var(--charcoal);
+  text-align: center;
+  padding: 100px 0;
+}
+#cta .label { color: var(--slate-light); }
+.cta-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.cta-sub {
+  font-size: 16px;
+  color: var(--slate-light);
+  max-width: 500px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.cta-perks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+  margin-bottom: 40px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-perk {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+}
+.cta-perk::before {
+  content: '';
+  width: 5px; height: 5px;
+  background: var(--slate-light);
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+.cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: var(--white);
+  color: var(--charcoal);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.cta-btn:hover { background: var(--gray-light); transform: translateY(-1px); }
+.cta-fine {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--slate);
+  font-style: italic;
+}
+
+/* ─── Footer ─── */
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--gray-rule);
+  background: var(--white);
+}
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer p { font-size: 12px; color: var(--text-tertiary); }
+
+/* ─── Responsive ─── */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .gap-row { grid-template-columns: repeat(3, 1fr); }
+  .arch-modules { grid-template-columns: repeat(3, 1fr); }
+  .days-grid { grid-template-columns: repeat(3, 1fr); }
+  .persona-row { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; position: absolute; top: 64px; left: 0; right: 0; background: var(--white); flex-direction: column; border-bottom: 1px solid var(--gray-rule); padding: 8px 0; }
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .gap-row, .arch-modules, .days-grid, .tiers, .roi-cards, .anchor-cols, .persona-row, .tl { grid-template-columns: 1fr; }
+  .toolkit-list { grid-template-columns: 1fr; }
+  .tl::before { display: none; }
+  .dash-body { flex-direction: column; }
+  .dash-side { width: 100%; }
+  .kpi-row { grid-template-columns: 1fr 1fr; }
+  .dash-panels { grid-template-columns: 1fr; }
+  .inst-metrics { flex-wrap: wrap; gap: 16px; }
+  .cred-strip { flex-direction: column; gap: 8px; text-align: center; }
+  .cta-perks { flex-direction: column; align-items: center; }
+  footer .container { flex-direction: column; gap: 6px; text-align: center; }
+  .tab-bar { overflow-x: auto; }
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav id="nav">
+  <div class="container">
+    <a href="#" class="nav-brand">M&A Leadership Platform</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#problem" data-section="problem">The Gap</a></li>
+      <li><a href="#architecture" data-section="architecture">Architecture</a></li>
+      <li><a href="#explore" data-section="explore">Institute & Platform</a></li>
+      <li><a href="#membership" data-section="membership">Membership</a></li>
+      <li><a href="#roi" data-section="roi">ROI</a></li>
+      <li><a href="#anchors" data-section="anchors">Anchors</a></li>
+      <li><a href="#cta" class="nav-cta-btn">Request Access</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-eyebrow r v">India's First Full-Lifecycle M&A Ecosystem</p>
+        <h1 class="hero-title r v">M&A Leadership <em>Platform</em></h1>
+        <p class="hero-desc r v">From strategy to successful integration — preparing leaders and their firms for success in India's growing mid-market arena.</p>
+        <a href="#explore" class="hero-cta r v">
+          Explore the Platform
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="h-stat r r-d1">
+          <div class="h-stat-num">Rs.250–2,500 Cr</div>
+          <div class="h-stat-label">Mid-market revenue band — the arena we serve</div>
+        </div>
+        <div class="h-stat r r-d2">
+          <div class="h-stat-num">Rs.1L Cr+</div>
+          <div class="h-stat-label">Annual M&A deal value in India's mid-market</div>
+        </div>
+        <div class="h-stat r r-d3">
+          <div class="h-stat-num">3–5x</div>
+          <div class="h-stat-label">Higher returns from strategic acquisitions</div>
+        </div>
+        <div class="h-stat r r-d4">
+          <div class="h-stat-num">115,000+</div>
+          <div class="h-stat-label">Mid-market enterprises in India</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-top r">
+      <p class="label">The Problem</p>
+      <div class="big-num">70–90%</div>
+      <p class="big-num-sub">of M&A deals fail to deliver projected value</p>
+      <p class="section-desc" style="margin:0 auto; text-align:center;">Five persistent gaps hinder value creation across India's mid-market M&A ecosystem.</p>
+    </div>
+    <div class="gap-row r">
+      <div class="gap-item"><p class="gap-num">01</p><h4>Strategy</h4><p>M&A treated as opportunistic, not a strategic capability</p></div>
+      <div class="gap-item"><p class="gap-num">02</p><h4>Capability</h4><p>Limited corporate development team maturity across firms</p></div>
+      <div class="gap-item"><p class="gap-num">03</p><h4>Sourcing</h4><p>Weak target identification and proprietary pipeline building</p></div>
+      <div class="gap-item"><p class="gap-num">04</p><h4>Execution</h4><p>High post-merger failure driven by poor integration readiness</p></div>
+      <div class="gap-item"><p class="gap-num">05</p><h4>Regulatory</h4><p>Fragmented alignment across CCI, MCA, and FEMA</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture -->
+<section id="architecture">
+  <div class="container">
+    <div style="text-align:center;" class="r">
+      <p class="label">Platform Architecture</p>
+      <h2 class="section-heading">Five Integrated Modules</h2>
+      <p class="section-desc" style="margin:0 auto; text-align:center; color:var(--slate-light);">Full M&A lifecycle coverage — from boardroom strategy to regulatory influence.</p>
+    </div>
+    <div class="arch-modules">
+      <div class="arch-card r r-d1"><p class="arch-card-num">01</p><div class="arch-card-icon">&#9670;</div><h4>Corporate Strategy Leadership</h4><p>CEO & Corp Dev roundtables. Cross-industry cohorts.</p></div>
+      <div class="arch-card r r-d2"><p class="arch-card-num">02</p><div class="arch-card-icon">&#9632;</div><h4>Capability Building</h4><p>Diagnostics, roadmaps, workshops by IIT/IIM faculty.</p></div>
+      <div class="arch-card r r-d3"><p class="arch-card-num">03</p><div class="arch-card-icon">&#9678;</div><h4>Target Sourcing Intelligence</h4><p>Daily monitoring, weekly refreshes, Top Targets Dashboard.</p></div>
+      <div class="arch-card r r-d1"><p class="arch-card-num">04</p><div class="arch-card-icon">&#9881;</div><h4>Post-Merger Integration</h4><p>Day 1–Year 1 support. Synergy dashboards & checkpoints.</p></div>
+      <div class="arch-card r r-d2"><p class="arch-card-num">05</p><div class="arch-card-icon">&#9883;</div><h4>Policy & Governance</h4><p>Advisory input to NITI Aayog, MCA & CCI.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Explore: Tabs -->
+<section id="explore">
+  <div class="container">
+    <div class="r">
+      <p class="label">Explore</p>
+      <h2 class="section-heading">From Institute to Ecosystem</h2>
+    </div>
+    <div class="tab-bar">
+      <button class="tab-btn active" data-tab="inst">Leadership Institute — Phase 1</button>
+      <button class="tab-btn" data-tab="plat">Platform Vision — Phase 2</button>
+    </div>
+
+    <!-- Tab 1 -->
+    <div id="tab-inst" class="tab-panel active">
+      <div class="inst-header">
+        <h3>How to Think About Acquisitions <em>Successfully</em></h3>
+        <p style="font-size:15px; color:var(--text-secondary); max-width:560px; margin:10px auto 0;">A 5-day executive immersion for corporate development teams — with year-long engagement, real-deal advisory, and platform access.</p>
+        <div class="inst-metrics">
+          <div class="inst-metric"><div class="inst-metric-val">5 Days</div><div class="inst-metric-lbl">Intensive Course</div></div>
+          <div class="inst-metric"><div class="inst-metric-val">3x / Year</div><div class="inst-metric-lbl">Coaching Sessions</div></div>
+          <div class="inst-metric"><div class="inst-metric-val">7–10</div><div class="inst-metric-lbl">Members per Cohort</div></div>
+          <div class="inst-metric"><div class="inst-metric-val">12 Months</div><div class="inst-metric-lbl">Full Engagement</div></div>
+        </div>
+      </div>
+      <div class="days-grid">
+        <div class="day-card"><p class="day-tag">DAY 01</p><h5>Strategic Lens</h5><p>M&A as strategic capability. Programmatic acquirer advantage. Strategy Canvas workshop.</p><p class="day-tool">&#9670; M&A Strategy Canvas</p></div>
+        <div class="day-card"><p class="day-tag">DAY 02</p><h5>Finding Targets</h5><p>Screening frameworks, proprietary pipelines, valuation essentials. Build your shortlist.</p><p class="day-tool">&#9670; Target Screening Scorecard</p></div>
+        <div class="day-card"><p class="day-tag">DAY 03</p><h5>Due Diligence & Deal Room</h5><p>Beyond financial DD. Culture assessment. Deal structuring. War Room simulation.</p><p class="day-tool">&#9670; DD Checklist + Deal Framework</p></div>
+        <div class="day-card"><p class="day-tag">DAY 04</p><h5>Post-Merger Integration</h5><p>First 100 days. Synergy tracking. People integration. Build your PMI playbook.</p><p class="day-tool">&#9670; 100-Day PMI Playbook</p></div>
+        <div class="day-card"><p class="day-tag">DAY 05</p><h5>The M&A Machine</h5><p>Governance frameworks. CCI/SEBI navigation. From one deal to repeatable capability.</p><p class="day-tool">&#9670; Capability Roadmap</p></div>
+      </div>
+      <div class="toolkit-box">
+        <h4>Toolkit Portfolio — What You Take Home</h4>
+        <div class="toolkit-list">
+          <div class="toolkit-chip">M&A Strategy Canvas</div>
+          <div class="toolkit-chip">Target Screening Scorecard</div>
+          <div class="toolkit-chip">Pipeline Building Playbook</div>
+          <div class="toolkit-chip">DD Checklist (India Mid-Market)</div>
+          <div class="toolkit-chip">Deal Structuring Framework</div>
+          <div class="toolkit-chip">100-Day PMI Playbook</div>
+          <div class="toolkit-chip">Synergy Tracking Dashboard</div>
+          <div class="toolkit-chip">M&A Governance Framework</div>
+          <div class="toolkit-chip">Capability Roadmap</div>
+        </div>
+      </div>
+      <div class="cred-strip">
+        <h4>Certified M&A Strategy & Integration Professional</h4>
+        <span>Issued by IIT Roorkee × M&A Leadership Platform</span>
+      </div>
+    </div>
+
+    <!-- Tab 2 -->
+    <div id="tab-plat" class="tab-panel">
+      <div class="dash-wrap">
+        <div class="dash-chrome">
+          <div class="dc dc-r"></div><div class="dc dc-y"></div><div class="dc dc-g"></div>
+          <span class="dash-chrome-title">M&A Leadership Platform — Dashboard</span>
+        </div>
+        <div class="dash-body">
+          <div class="dash-side">
+            <div class="ds-item act"><span class="ds-icon">&#9632;</span> Dashboard</div>
+            <div class="ds-item"><span class="ds-icon">&#9670;</span> Deal Pipeline</div>
+            <div class="ds-item"><span class="ds-icon">&#9678;</span> Target Sourcing</div>
+            <div class="ds-item"><span class="ds-icon">&#9881;</span> Integration Tracker</div>
+            <div class="ds-item"><span class="ds-icon">&#9733;</span> Learning Hub</div>
+            <div class="ds-item"><span class="ds-icon">&#9883;</span> Policy Forum</div>
+          </div>
+          <div class="dash-content">
+            <p style="font-size:10px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-tertiary); margin-bottom:12px; font-family:var(--font-mono);">Conceptual Preview — Platform Vision</p>
+            <p class="dash-hi">Welcome back, Corp Dev Team</p>
+            <p class="dash-hi-sub">Q2 2026 · 3 active deals · 2 integrations in progress</p>
+            <div class="kpi-row">
+              <div class="kpi"><p class="kpi-label">Active Targets</p><p class="kpi-val">47</p><p class="kpi-delta">+12 this month</p></div>
+              <div class="kpi"><p class="kpi-label">Pipeline Value</p><p class="kpi-val">Rs.840 Cr</p><p class="kpi-delta">+23% QoQ</p></div>
+              <div class="kpi"><p class="kpi-label">Integration Health</p><p class="kpi-val">87%</p><p class="kpi-delta">On track</p></div>
+              <div class="kpi"><p class="kpi-label">Synergy Realized</p><p class="kpi-val">Rs.42 Cr</p><p class="kpi-delta">68% of target</p></div>
+            </div>
+            <div class="dash-panels">
+              <div class="dp">
+                <div class="dp-head">Deal Pipeline <span class="dp-badge">4 Active</span></div>
+                <div class="pipe-r" style="font-weight:600; color:var(--text-tertiary); font-size:10px; text-transform:uppercase; letter-spacing:0.5px;">
+                  <span class="pr-name">Target</span><span class="pr-sec">Sector</span><span class="pr-val">Value</span><span class="pr-st">Status</span>
+                </div>
+                <div class="pipe-r"><span class="pr-name">MedCare Hospitals</span><span class="pr-sec">Healthcare</span><span class="pr-val">Rs.320 Cr</span><span class="pr-st"><span class="st st-y">DD</span></span></div>
+                <div class="pipe-r"><span class="pr-name">SolarGrid India</span><span class="pr-sec">Renewables</span><span class="pr-val">Rs.185 Cr</span><span class="pr-st"><span class="st st-b">Closing</span></span></div>
+                <div class="pipe-r"><span class="pr-name">VoltCharge EV</span><span class="pr-sec">EV / Mobility</span><span class="pr-val">Rs.95 Cr</span><span class="pr-st"><span class="st st-g">Active</span></span></div>
+                <div class="pipe-r"><span class="pr-name">NexGen Diagnostics</span><span class="pr-sec">Healthcare</span><span class="pr-val">Rs.240 Cr</span><span class="pr-st"><span class="st st-p">PMI</span></span></div>
+              </div>
+              <div class="dp">
+                <div class="dp-head">Synergy Tracking <span class="dp-badge">NexGen</span></div>
+                <div class="bars">
+                  <div class="bar-g"><div class="bar-pair"><div class="bar bar-t" style="height:80px;"></div><div class="bar bar-a" style="height:64px;"></div></div><span class="bar-lbl">Revenue</span></div>
+                  <div class="bar-g"><div class="bar-pair"><div class="bar bar-t" style="height:62px;"></div><div class="bar bar-a" style="height:58px;"></div></div><span class="bar-lbl">Cost</span></div>
+                  <div class="bar-g"><div class="bar-pair"><div class="bar bar-t" style="height:45px;"></div><div class="bar bar-a" style="height:34px;"></div></div><span class="bar-lbl">People</span></div>
+                  <div class="bar-g"><div class="bar-pair"><div class="bar bar-t" style="height:52px;"></div><div class="bar bar-a" style="height:48px;"></div></div><span class="bar-lbl">Tech</span></div>
+                  <div class="bar-g"><div class="bar-pair"><div class="bar bar-t" style="height:36px;"></div><div class="bar bar-a" style="height:38px;"></div></div><span class="bar-lbl">Ops</span></div>
+                </div>
+                <div class="bar-legend">
+                  <span><span class="bl-dot" style="background:var(--gray-light)"></span> Target</span>
+                  <span><span class="bl-dot" style="background:var(--charcoal)"></span> Actual</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Membership -->
+<section id="membership">
+  <div class="container">
+    <div style="text-align:center;" class="r">
+      <p class="label">Membership</p>
+      <h2 class="section-heading">Choose Your Level</h2>
+      <p class="section-desc" style="margin:0 auto; text-align:center;">One Platform Partner per industry cohort — exclusivity is guaranteed.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier accent-border r r-d1">
+        <p class="tier-tag">Most Exclusive</p>
+        <h3 class="tier-name">Platform Partner</h3>
+        <p class="tier-price">Rs.2.25 Cr</p>
+        <p class="tier-period">per year</p>
+        <ul class="tier-feats">
+          <li><span class="tier-check">&#10003;</span> Exclusive — no competitor from your sector</li>
+          <li><span class="tier-check">&#10003;</span> Co-creator role in platform evolution</li>
+          <li><span class="tier-check">&#10003;</span> Full access across all 5 modules</li>
+          <li><span class="tier-check">&#10003;</span> Direct policy forum access</li>
+          <li><span class="tier-check">&#10003;</span> Priority deal flow & intelligence</li>
+          <li><span class="tier-check">&#10003;</span> Seat on Steering Committee</li>
+        </ul>
+        <a href="#cta" class="tier-btn tier-btn-outline">Apply as Founder</a>
+      </div>
+      <div class="tier highlight r r-d2">
+        <p class="tier-tag">Most Popular</p>
+        <h3 class="tier-name">Elite Member</h3>
+        <p class="tier-price">Rs.1.35 Cr</p>
+        <p class="tier-period">per year</p>
+        <ul class="tier-feats">
+          <li><span class="tier-check">&#10003;</span> Premium access (shared cohort)</li>
+          <li><span class="tier-check">&#10003;</span> Leadership forums & diagnostics</li>
+          <li><span class="tier-check">&#10003;</span> Full capability building program</li>
+          <li><span class="tier-check">&#10003;</span> Target sourcing intelligence</li>
+          <li><span class="tier-check">&#10003;</span> PMI support for 1 deal annually</li>
+          <li><span class="tier-check">&#10003;</span> Media & branding presence</li>
+        </ul>
+        <a href="#cta" class="tier-btn tier-btn-fill">Request Membership</a>
+      </div>
+      <div class="tier r r-d3">
+        <p class="tier-tag">Entry Level</p>
+        <h3 class="tier-name">Growth Member</h3>
+        <p class="tier-price">Rs.85L</p>
+        <p class="tier-period">per year</p>
+        <ul class="tier-feats">
+          <li><span class="tier-check">&#10003;</span> Platform insights & intelligence</li>
+          <li><span class="tier-check">&#10003;</span> 1 integration feature annually</li>
+          <li><span class="tier-check">&#10003;</span> Observer forum access</li>
+          <li><span class="tier-check">&#10003;</span> Target database (view-only)</li>
+          <li><span class="tier-check">&#10003;</span> On-ramp to higher tiers</li>
+          <li><span class="tier-check">&#10003;</span> Ideal for emerging acquirers</li>
+        </ul>
+        <a href="#cta" class="tier-btn tier-btn-outline">Get Started</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROI -->
+<section id="roi">
+  <div class="container">
+    <div style="text-align:center;" class="r">
+      <p class="label">The Business Case</p>
+      <h2 class="section-heading">What Membership Replaces</h2>
+    </div>
+    <div class="roi-cards">
+      <div class="roi-card r r-d1">
+        <p class="roi-sup">Platform Partner Replaces</p>
+        <p class="roi-num">Rs.7–12 Cr</p>
+        <p class="roi-text">Annual spend on strategy consulting, banking & PMI advisory</p>
+        <div class="roi-badge">20–50x ROI</div>
+        <p style="font-size:12px; color:var(--text-tertiary); margin-top:6px;">from one successful deal</p>
+      </div>
+      <div class="roi-card r r-d2">
+        <p class="roi-sup">Elite Member Saves</p>
+        <p class="roi-num">Rs.5–9 Cr</p>
+        <p class="roi-text">Equivalent consulting coverage across the full 12-month calendar</p>
+        <div class="roi-badge">Rs.20–50 Cr</div>
+        <p style="font-size:12px; color:var(--text-tertiary); margin-top:6px;">value protected per PMI success</p>
+      </div>
+      <div class="roi-card r r-d3">
+        <p class="roi-sup">Growth Member Receives</p>
+        <p class="roi-num">Rs.3–6 Cr</p>
+        <p class="roi-text">Worth of insights & integration features at standalone rates</p>
+        <div class="roi-badge">Ready</div>
+        <p style="font-size:12px; color:var(--text-tertiary); margin-top:6px;">to scale when pipeline grows</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Anchors -->
+<section id="anchors">
+  <div class="container">
+    <div style="text-align:center;" class="r">
+      <p class="label">Institutional Foundation</p>
+      <h2 class="section-heading">Academic Rigour · Policy Access · Industry Depth</h2>
+    </div>
+    <div class="anchor-cols">
+      <div class="anchor-col r r-d1">
+        <h4>Academic</h4>
+        <div class="anchor-tags">
+          <span class="anchor-tag">IIT Roorkee</span>
+          <span class="anchor-tag">IIT Delhi</span>
+          <span class="anchor-tag">IIM Bangalore</span>
+        </div>
+      </div>
+      <div class="anchor-col r r-d2">
+        <h4>Industry</h4>
+        <div class="anchor-tags">
+          <span class="anchor-tag">KKR</span>
+          <span class="anchor-tag">BlackRock</span>
+          <span class="anchor-tag">Carlyle</span>
+          <span class="anchor-tag">Cisco</span>
+          <span class="anchor-tag">Google</span>
+          <span class="anchor-tag">Adani</span>
+          <span class="anchor-tag">Reliance</span>
+        </div>
+      </div>
+      <div class="anchor-col r r-d3">
+        <h4>Policy</h4>
+        <div class="anchor-tags">
+          <span class="anchor-tag">NITI Aayog</span>
+          <span class="anchor-tag">CCI</span>
+          <span class="anchor-tag">MCA</span>
+        </div>
+      </div>
+    </div>
+    <p class="anchor-fn">* Institutional and industry partner names to be confirmed during founding phase</p>
+  </div>
+</section>
+
+<!-- Audience -->
+<section id="audience">
+  <div class="container">
+    <div class="r">
+      <p class="label">Who It's For</p>
+      <h2 class="section-heading">Built for India's M&A Decision-Makers</h2>
+    </div>
+    <div class="persona-row">
+      <div class="persona r r-d1"><h4>Corporate Acquirers</h4><p>CEOs, Strategy Heads & Corp Dev Leaders at acquisitive firms — large or mid-market.</p></div>
+      <div class="persona r r-d2"><h4>Promoter-Led Groups</h4><p>Family-run conglomerates building inorganic growth capability and professionalizing M&A.</p></div>
+      <div class="persona r r-d3"><h4>PE-Backed Platforms</h4><p>Portfolio companies and PE firms building acquisition readiness and deal flow.</p></div>
+      <div class="persona r r-d4"><h4>CFO / CEO Office</h4><p>Senior executives with deal governance responsibility needing structured frameworks.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section id="roadmap">
+  <div class="container">
+    <div style="text-align:center;" class="r">
+      <p class="label">Year One</p>
+      <h2 class="section-heading">First-Year Roadmap</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item r r-d1"><p class="tl-q">Q1</p><div class="tl-dot"></div><p class="tl-title">Foundation</p><p class="tl-desc">Founding conversations, priority mapping, agenda design</p></div>
+      <div class="tl-item r r-d2"><p class="tl-q">Q2</p><div class="tl-dot"></div><p class="tl-title">Leadership</p><p class="tl-desc">Closed-door roundtable, capability themes, first cohort</p></div>
+      <div class="tl-item r r-d3"><p class="tl-q">Q3</p><div class="tl-dot"></div><p class="tl-title">Capability</p><p class="tl-desc">Diagnostic workshops, synthesis sessions, platform beta</p></div>
+      <div class="tl-item r r-d4"><p class="tl-q">Q4</p><div class="tl-dot"></div><p class="tl-title">Scale</p><p class="tl-desc">Annual insight note, performance review, next cycle</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="container">
+    <p class="label">Limited Founding Cohort</p>
+    <h2 class="cta-heading">Join as a Founding Partner</h2>
+    <p class="cta-sub">Help shape India's first M&A capability and execution platform. The founding cohort is being formed now.</p>
+    <div class="cta-perks">
+      <span class="cta-perk">Exclusive cohort — no competitor from your sector</span>
+      <span class="cta-perk">Co-creator role in shaping the platform</span>
+      <span class="cta-perk">Full access across all 5 modules from Day 1</span>
+      <span class="cta-perk">Priority access to deal flow & intelligence</span>
+      <span class="cta-perk">Seat on the Platform Steering Committee</span>
+    </div>
+    <a href="#" class="cta-btn">
+      Request Access
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <p class="cta-fine">Exclusivity is assigned on a first-confirmed basis per industry sector.</p>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>M&A Leadership Platform — Confidential</p>
+    <p>Proposed academic anchors: IIT Roorkee · IIT Delhi · IIM Bangalore</p>
+  </div>
+</footer>
+
+<script>
+// Scroll reveal
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('v'); });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.r').forEach(el => obs.observe(el));
+
+// noscript handled via style tag below
+
+// Nav scroll shadow
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('shadow', scrollY > 20);
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id]');
+const navAs = document.querySelectorAll('.nav-links a[data-section]');
+const setActive = () => {
+  let current = '';
+  sections.forEach(s => {
+    if (scrollY >= s.offsetTop - 100) current = s.id;
+  });
+  navAs.forEach(a => {
+    a.classList.toggle('active', a.dataset.section === current);
+  });
+};
+window.addEventListener('scroll', setActive);
+setActive();
+
+// Tabs
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+  });
+});
+
+// Hamburger
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+
+// Close mobile nav on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    document.getElementById('navLinks').classList.remove('open');
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+<noscript><style>.r { opacity: 1 !important; transform: none !important; }</style></noscript>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Source decks contain embedded contact info — kept locally only
+Reference Decks/
+*.pptx
+*.pdf
+*.jpg
+*.jpeg
+*.png
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
