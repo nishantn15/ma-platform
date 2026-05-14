@@ -1,0 +1,2097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>M&A Leadership Platform — India's First Full-Lifecycle M&A Ecosystem</title>
+<meta name="description" content="India's first full-lifecycle M&A ecosystem. Three integrated cohort layers — Enterprise, Execution, Champions — onboarded as one company account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<noscript>
+<style>
+.fade-up { opacity: 1 !important; transform: none !important; }
+.nav-links { display: flex !important; }
+</style>
+</noscript>
+<style>
+/* ========== RESET & BASE ========== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #0f1f3a;
+  --navy-mid: #162a4a;
+  --gold: #c9a84c;
+  --gold-light: #ddc06a;
+  --gold-dim: rgba(201,168,76,0.15);
+  --gold-glow: rgba(201,168,76,0.08);
+  --cream: #f8f6f0;
+  --cream-dark: #eee9df;
+  --white: #ffffff;
+  --text-dark: #1a1a2e;
+  --text-muted: #5a5a6e;
+  --text-light: rgba(255,255,255,0.78);
+  --text-light-dim: rgba(255,255,255,0.6);
+  --nav-height: 72px;
+  --section-pad: 120px;
+  --max-w: 1240px;
+  --radius: 8px;
+  --radius-lg: 16px;
+  --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text-dark);
+  background: var(--navy);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  letter-spacing: 0.04em;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
+
+/* ========== ANIMATIONS ========== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulse-gold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.25); }
+  50% { box-shadow: 0 0 24px 4px rgba(201,168,76,0.12); }
+}
+
+@keyframes flowDot {
+  0%, 100% { transform: translateX(0); opacity: 0.4; }
+  50% { transform: translateX(8px); opacity: 1; }
+}
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--nav-height);
+  background: rgba(10, 22, 40, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(201,168,76,0.14);
+  z-index: 1000;
+  transition: background var(--transition);
+}
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.01em;
+}
+.brand em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+}
+.nav-links a {
+  color: var(--text-light);
+  font-size: 13.5px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+  transition: color var(--transition);
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--gold);
+}
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -8px; left: 0; right: 0;
+  height: 1px;
+  background: var(--gold);
+}
+.nav-cta {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 10px 22px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+}
+.nav-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(201,168,76,0.3);
+}
+.hamburger {
+  display: none;
+  width: 28px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+}
+.hamburger span {
+  position: absolute;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--gold);
+  transition: all 0.3s ease;
+}
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 10px; }
+.hamburger span:nth-child(3) { top: 20px; }
+.hamburger.open span:nth-child(1) { top: 10px; transform: rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { top: 10px; transform: rotate(-45deg); }
+
+/* ========== COMMON SECTION TOKENS ========== */
+section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+.sec-navy { background: var(--navy); color: var(--white); }
+.sec-cream { background: var(--cream); color: var(--text-dark); }
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  display: inline-block;
+}
+.eyebrow::before {
+  content: '— ';
+  opacity: 0.7;
+}
+h1.display {
+  font-size: clamp(44px, 6.4vw, 78px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+h2.section-title {
+  font-size: clamp(34px, 4.6vw, 54px);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  margin-bottom: 16px;
+}
+h2 em, h1 em {
+  font-style: italic;
+  color: var(--gold);
+  font-weight: 500;
+}
+.sec-cream h2 em { color: #a8862e; }
+.section-sub {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 640px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.sec-navy .section-sub { color: var(--text-light); }
+
+.center { text-align: center; }
+.center .section-sub { margin: 0 auto; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 4px;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(201,168,76,0.32);
+}
+.btn-white {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-white:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(255,255,255,0.18);
+}
+.btn-arrow::after {
+  content: '→';
+  font-size: 16px;
+  transition: transform var(--transition);
+}
+.btn:hover .btn-arrow::after, .btn-arrow:hover::after {
+  transform: translateX(4px);
+}
+
+/* ========== HERO ========== */
+.hero {
+  background: var(--navy);
+  color: var(--white);
+  padding-top: calc(var(--nav-height) + 80px);
+  padding-bottom: 120px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%; right: -10%;
+  width: 60%; height: 80%;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-left .eyebrow { margin-bottom: 28px; }
+.hero h1 {
+  margin-bottom: 28px;
+  color: var(--white);
+}
+.hero-sub {
+  font-size: 18.5px;
+  line-height: 1.55;
+  color: var(--text-light);
+  max-width: 540px;
+  margin-bottom: 40px;
+}
+.hero-cta-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 56px;
+  flex-wrap: wrap;
+}
+.hero-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  max-width: 520px;
+}
+.hero-stat {
+  padding: 22px 22px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+.hero-stat:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.05);
+  transform: translateY(-2px);
+}
+.hero-stat .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.hero-stat .lbl {
+  font-size: 12.5px;
+  color: var(--text-light-dim);
+  line-height: 1.4;
+}
+.hero-right {
+  position: relative;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.hero-image-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.4) 75%, transparent 100%);
+  mask-image: radial-gradient(ellipse at center, rgba(0,0,0,1) 35%, rgba(0,0,0,0.4) 75%, transparent 100%);
+}
+
+/* ========== PROBLEM ========== */
+.problem-numeral {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(120px, 18vw, 220px);
+  font-weight: 600;
+  color: #a8862e;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 18px;
+}
+.problem-sub {
+  font-size: clamp(20px, 2.3vw, 26px);
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: var(--text-dark);
+  max-width: 720px;
+  margin: 0 auto 14px;
+  line-height: 1.35;
+}
+.problem-caption {
+  font-size: 15px;
+  color: var(--text-muted);
+  max-width: 580px;
+  margin: 0 auto 80px;
+}
+.gap-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.gap-card {
+  padding: 28px 22px;
+  background: var(--white);
+  border-radius: 6px;
+  border-bottom: 2px solid transparent;
+  transition: all var(--transition);
+}
+.gap-card:hover {
+  border-bottom-color: var(--gold);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(10,22,40,0.08);
+}
+.gap-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.gap-card h4 {
+  font-size: 17px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.gap-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* ========== MODULES (5) ========== */
+.module-flow {
+  position: relative;
+  margin-top: 64px;
+}
+.module-flow::before {
+  content: '';
+  position: absolute;
+  top: 38px; left: 6%; right: 6%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+  z-index: 0;
+}
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+  position: relative;
+  z-index: 1;
+}
+.module-card {
+  text-align: center;
+  padding: 0 8px;
+}
+.module-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: var(--navy);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+  font-size: 28px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  position: relative;
+  transition: all var(--transition);
+}
+.module-card:hover .module-icon {
+  background: var(--gold);
+  color: var(--navy);
+  transform: scale(1.05);
+}
+.module-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.module-card h4 {
+  font-size: 16px;
+  color: var(--white);
+  margin-bottom: 10px;
+  line-height: 1.3;
+  min-height: 42px;
+}
+.module-card p {
+  font-size: 13px;
+  color: var(--text-light-dim);
+  line-height: 1.5;
+}
+
+/* ========== 3-LAYER COHORT ARCHITECTURE ========== */
+.cohort-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 56px;
+}
+.cohort-image-card {
+  background: var(--navy);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 18px;
+  position: relative;
+  overflow: hidden;
+}
+.cohort-image-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--gold) 0%, transparent 30%, transparent 70%, var(--gold) 100%);
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+.cohort-image-card img {
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 580px;
+  object-fit: cover;
+}
+.cohort-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+.cohort-tier {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 26px 28px;
+  border-left: 3px solid var(--gold);
+  position: relative;
+  transition: all var(--transition);
+}
+.cohort-tier:hover {
+  transform: translateX(4px);
+  box-shadow: 0 12px 32px rgba(10,22,40,0.10);
+}
+.tier-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tier-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tier-num {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 600;
+}
+.tier-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+.tier-name small {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.tier-duration {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: var(--cream);
+  color: #6b5a1f;
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--gold-dim);
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+.tier-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.pill-sm {
+  font-size: 11.5px;
+  padding: 4px 10px;
+  background: var(--cream);
+  border-radius: 12px;
+  color: var(--text-muted);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.tier-promise {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.4;
+}
+
+/* ========== ACCOUNT MODEL ========== */
+.account-stages {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-top: 56px;
+  margin-bottom: 64px;
+}
+.stage-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.22);
+  border-radius: 8px;
+  padding: 32px 26px;
+  text-align: center;
+  transition: all var(--transition);
+}
+.stage-card:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.06);
+  transform: translateY(-3px);
+}
+.stage-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1.5px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 24px;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+}
+.stage-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.stage-card h4 {
+  font-size: 19px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.stage-card p {
+  font-size: 13.5px;
+  color: var(--text-light-dim);
+  line-height: 1.5;
+}
+.stage-arrow {
+  font-size: 28px;
+  color: var(--gold);
+  line-height: 1;
+  opacity: 0.6;
+  animation: flowDot 2.4s ease-in-out infinite;
+}
+.account-quote {
+  text-align: center;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  border-top: 1px solid rgba(201,168,76,0.2);
+  border-bottom: 1px solid rgba(201,168,76,0.2);
+}
+.account-quote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 26px);
+  color: var(--gold);
+  line-height: 1.4;
+}
+.account-quote .qmark {
+  font-size: 38px;
+  color: var(--gold);
+  opacity: 0.4;
+  margin-bottom: 10px;
+  display: block;
+}
+
+/* ========== L1 / L2 / L3 DEEP DIVES ========== */
+.deep-dive {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-bottom: 64px;
+}
+.deep-dive.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+.deep-image {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.4);
+  box-shadow: 0 18px 50px rgba(10,22,40,0.18);
+}
+.deep-image img {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+.deep-content .eyebrow { margin-bottom: 16px; }
+.deep-content h2 {
+  font-size: clamp(32px, 4vw, 46px);
+  margin-bottom: 18px;
+}
+.duration-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 7px 16px;
+  border-radius: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  margin-bottom: 22px;
+}
+.deep-content > p {
+  font-size: 15.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+  max-width: 560px;
+}
+.sec-navy .deep-content > p { color: var(--text-light); }
+
+.audience-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-bottom: 26px;
+}
+.audience-pill {
+  font-size: 12px;
+  padding: 5px 12px;
+  background: rgba(201,168,76,0.10);
+  color: var(--gold);
+  border-radius: 16px;
+  border: 1px solid rgba(201,168,76,0.25);
+  font-weight: 500;
+}
+.sec-cream .audience-pill {
+  background: rgba(201,168,76,0.08);
+  color: #7a611c;
+  border-color: rgba(201,168,76,0.3);
+}
+
+.signature {
+  background: linear-gradient(135deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+  border: 1.5px solid var(--gold);
+  border-radius: 8px;
+  padding: 24px 26px;
+  margin-top: 4px;
+}
+.signature-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.signature h4 {
+  font-size: 22px;
+  font-style: italic;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.sec-navy .signature h4 { color: var(--white); }
+.signature p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.sec-navy .signature p { color: var(--text-light); }
+
+/* day cards row */
+.day-row {
+  display: grid;
+  gap: 18px;
+  margin-top: 48px;
+}
+.day-row.three { grid-template-columns: repeat(3, 1fr); }
+.day-row.five { grid-template-columns: repeat(5, 1fr); }
+.day-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 22px 20px;
+  border-top: 3px solid var(--gold);
+  transition: all var(--transition);
+}
+.sec-navy .day-card {
+  background: rgba(255,255,255,0.04);
+  border-color: var(--gold);
+  border-top-width: 3px;
+}
+.day-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(10,22,40,0.12);
+}
+.sec-navy .day-card:hover {
+  background: rgba(201,168,76,0.06);
+  box-shadow: 0 12px 32px rgba(201,168,76,0.10);
+}
+.day-chip {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 4px 9px;
+  border-radius: 3px;
+  margin-bottom: 12px;
+}
+.day-card h5 {
+  font-size: 15.5px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+  min-height: 40px;
+}
+.sec-navy .day-card h5 { color: var(--white); }
+.day-card .sim {
+  font-size: 12px;
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+}
+.day-card p {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.sec-navy .day-card p { color: var(--text-light-dim); }
+
+/* artifact grid */
+.artifact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 40px;
+  padding: 28px;
+  background: rgba(201,168,76,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 8px;
+}
+.artifact-grid::before {
+  content: 'Toolkit you leave with';
+  grid-column: 1 / -1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.artifact-pill {
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 12px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid rgba(201,168,76,0.25);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 0.02em;
+}
+
+/* persona tracks for L3 */
+.persona-tracks {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+.track-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 26px 24px;
+  border: 1px solid rgba(201,168,76,0.25);
+  border-top: 3px solid var(--gold);
+  transition: all var(--transition);
+}
+.track-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(10,22,40,0.08);
+}
+.track-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10.5px;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+.track-card h5 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.25;
+}
+.track-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+/* ========== CAPABILITY STACK (FEATURED BUNDLE) ========== */
+.stack-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+  margin-top: 56px;
+}
+.stack-image-wrap {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+.stack-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at center, rgba(201,168,76,0.4), transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+}
+.stack-image-wrap img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(201,168,76,0.3);
+}
+.stack-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 30px;
+}
+.stack-block {
+  display: grid;
+  grid-template-columns: 80px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 22px;
+  background: rgba(255,255,255,0.04);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+.stack-block:hover {
+  background: rgba(201,168,76,0.06);
+  transform: translateX(4px);
+}
+.stack-block.anchor { background: rgba(201,168,76,0.10); }
+.block-tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--gold);
+  font-weight: 600;
+}
+.block-mid {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+}
+.block-mid small {
+  display: block;
+  font-size: 12px;
+  color: var(--text-light-dim);
+  margin-top: 3px;
+  font-weight: 400;
+}
+.block-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11.5px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+}
+.stack-tagline {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 19px;
+  color: var(--gold);
+  margin-top: 28px;
+  line-height: 1.4;
+}
+
+/* ========== MEMBERSHIP ========== */
+.tiers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 56px;
+  align-items: stretch;
+}
+.tier {
+  background: var(--white);
+  border-radius: 10px;
+  padding: 36px 30px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+  transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.tier:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(10,22,40,0.12); }
+.tier.partner {
+  border: 1.5px solid var(--gold);
+  box-shadow: 0 14px 40px rgba(201,168,76,0.18);
+}
+.tier.elite {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.tier-flag {
+  position: absolute;
+  top: -12px;
+  left: 30px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  background: var(--gold);
+  color: var(--navy);
+  padding: 5px 12px;
+  border-radius: 3px;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+}
+.tier.elite .tier-flag {
+  background: var(--white);
+}
+.tier h4 {
+  font-size: 22px;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+}
+.tier.elite h4 { color: var(--white); }
+.tier-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+.tier.partner .tier-price { color: #a8862e; }
+.tier.elite .tier-price { color: var(--gold); }
+.tier-price small {
+  font-size: 14px;
+  color: var(--text-muted);
+  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+}
+.tier.elite .tier-price small { color: var(--text-light-dim); }
+.tier-features {
+  list-style: none;
+  margin-top: 22px;
+  flex: 1;
+}
+.tier-features li {
+  font-size: 13.5px;
+  line-height: 1.5;
+  padding: 8px 0 8px 22px;
+  position: relative;
+  color: var(--text-muted);
+  border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+.tier.elite .tier-features li {
+  color: var(--text-light);
+  border-bottom-color: rgba(255,255,255,0.06);
+}
+.tier-features li::before {
+  content: '◆';
+  position: absolute;
+  left: 0; top: 8px;
+  color: var(--gold);
+  font-size: 10px;
+}
+
+/* ========== ROI ========== */
+.roi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 56px;
+}
+.roi-card {
+  background: var(--white);
+  border-radius: 8px;
+  padding: 32px 28px;
+  border-left: 3px solid var(--gold);
+  transition: all var(--transition);
+}
+.roi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(10,22,40,0.08);
+}
+.roi-card .tier-name-sm {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 14px;
+}
+.roi-card p {
+  font-size: 15px;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
+.roi-badge {
+  display: inline-block;
+  background: rgba(201,168,76,0.12);
+  color: #7a611c;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(201,168,76,0.3);
+}
+
+/* ========== ANCHORS ========== */
+.anchors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-top: 56px;
+}
+.anchor-col h5 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--gold);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(201,168,76,0.25);
+}
+.anchor-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.anchor-pills span {
+  font-size: 13px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 20px;
+  color: var(--white);
+  transition: all var(--transition);
+}
+.anchor-pills span:hover {
+  border-color: var(--gold);
+  background: rgba(201,168,76,0.08);
+}
+.anchor-footnote {
+  margin-top: 40px;
+  font-size: 12px;
+  color: var(--text-light-dim);
+  font-style: italic;
+  text-align: center;
+}
+
+/* ========== ROADMAP ========== */
+.roadmap {
+  position: relative;
+  margin-top: 60px;
+  padding: 40px 0;
+}
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 7%; right: 7%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+}
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  gap: 16px;
+}
+.q-card {
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+}
+.q-card::before {
+  content: '';
+  position: absolute;
+  top: 36px; left: 50%;
+  transform: translateX(-50%);
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 6px rgba(201,168,76,0.15);
+}
+.q-card .q-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.q-card h5 {
+  font-size: 17px;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+.q-card p {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  padding: 0 8px;
+}
+
+/* ========== CTA ========== */
+.cta-section {
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%; height: 100%;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.18) 0%, transparent 60%);
+  pointer-events: none;
+}
+.cta-section .container { position: relative; z-index: 1; }
+.cta-section h2 {
+  margin-bottom: 18px;
+}
+.cta-sub {
+  max-width: 680px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+.cta-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 50px;
+  max-width: 920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.benefit-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.25);
+  padding: 10px 18px;
+  border-radius: 24px;
+  font-size: 13px;
+  color: var(--white);
+}
+.benefit-pill::before {
+  content: '';
+  display: inline-block;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+.cta-fineprint {
+  margin-top: 28px;
+  font-size: 12.5px;
+  color: var(--text-light-dim);
+  font-style: italic;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--navy);
+  padding: 36px 0;
+  border-top: 1px solid rgba(201,168,76,0.15);
+  color: var(--text-light-dim);
+  font-size: 12.5px;
+  text-align: center;
+}
+footer .brand-foot {
+  font-family: 'Playfair Display', serif;
+  color: var(--white);
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  :root { --section-pad: 90px; }
+  .hero-inner, .cohort-layout, .deep-dive, .stack-layout { grid-template-columns: 1fr; gap: 40px; }
+  .hero-right { height: 420px; }
+  .deep-image img, .cohort-image-card img, .stack-image-wrap img { height: 440px; }
+  .gap-grid, .modules-grid { grid-template-columns: repeat(3, 1fr); }
+  .day-row.five { grid-template-columns: repeat(2, 1fr); }
+  .artifact-grid { grid-template-columns: repeat(2, 1fr); }
+  .tiers, .roi-grid, .anchors-grid, .roadmap-grid, .persona-tracks { grid-template-columns: 1fr; }
+  .roadmap::before { display: none; }
+  .roi-grid, .anchors-grid { grid-template-columns: repeat(2, 1fr); }
+  .account-stages { grid-template-columns: 1fr; }
+  .account-stages .stage-arrow { transform: rotate(90deg); justify-self: center; }
+  .module-flow::before { display: none; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    flex-direction: column;
+    background: var(--navy);
+    padding: 24px;
+    gap: 20px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+  }
+  .nav-links.open { display: flex; }
+  .hamburger { display: block; }
+  .nav-cta { display: none; }
+}
+
+@media (max-width: 768px) {
+  :root { --section-pad: 70px; }
+  .container { padding: 0 20px; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .gap-grid, .modules-grid, .day-row.three, .day-row.five, .tiers, .roi-grid, .anchors-grid, .persona-tracks { grid-template-columns: 1fr; }
+  .artifact-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 40px; }
+  .problem-numeral { font-size: 100px; }
+}
+
+@media (max-width: 480px) {
+  .hero-cta-row .btn { width: 100%; justify-content: center; }
+  .tier-head { flex-direction: column; align-items: flex-start; }
+  .stack-block { grid-template-columns: 70px 1fr; }
+  .stack-block .block-meta { grid-column: 1 / -1; padding-left: 88px; margin-top: -8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== NAV ========== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">M&amp;A Leadership <em>Platform</em></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#gap" data-target="gap">The Gap</a>
+      <a href="#architecture" data-target="architecture">Architecture</a>
+      <a href="#cohorts" data-target="cohorts">Cohorts</a>
+      <a href="#stack" data-target="stack">Capability Stack</a>
+      <a href="#membership" data-target="membership">Membership</a>
+      <a href="#roi" data-target="roi">ROI</a>
+      <a href="#cta" class="nav-cta">Request Access</a>
+    </div>
+    <div class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-left fade-up">
+        <div class="eyebrow">India's First · Full-Lifecycle · M&amp;A Ecosystem</div>
+        <h1 class="display">M&amp;A Leadership <em>Platform</em></h1>
+        <p class="hero-sub">From strategy to successful integration — preparing leaders and their firms for India's growth.</p>
+        <div class="hero-cta-row">
+          <a href="#cohorts" class="btn btn-gold btn-arrow">Explore the Cohorts</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="num">Rs.250-2,500 Cr</span>
+            <span class="lbl">Mid-market revenue band</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">Rs.1L Cr+</span>
+            <span class="lbl">Annual deal value</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">3-5x</span>
+            <span class="lbl">Strategic returns potential</span>
+          </div>
+          <div class="hero-stat">
+            <span class="num">115,000+</span>
+            <span class="lbl">Mid-market enterprises in India</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right fade-up">
+        <div class="hero-image-wrap">
+          <img src="../assets/pyramid_hero.jpg" alt="Three-tier gold pyramid with lion at the apex, symbolising the three cohort layers" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PROBLEM ========== -->
+<section class="sec-cream" id="gap">
+  <div class="container center">
+    <div class="fade-up">
+      <div class="problem-numeral">70-90%</div>
+      <p class="problem-sub">of M&amp;A deals fail to deliver projected value.</p>
+      <p class="problem-caption">Five persistent gaps hinder value creation across India's mid-market M&amp;A ecosystem.</p>
+    </div>
+    <div class="gap-grid fade-up">
+      <div class="gap-card">
+        <div class="gap-num">01 · Strategy</div>
+        <h4>Strategic Conviction</h4>
+        <p>Acquisitions launched without a tested thesis or board-level alignment.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-num">02 · Capability</div>
+        <h4>Internal Capability</h4>
+        <p>Few leaders trained to lead deals, integration, or post-merger value capture.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-num">03 · Sourcing</div>
+        <h4>Target Sourcing</h4>
+        <p>Limited structured access to high-quality, strategically-fit acquisition targets.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-num">04 · Execution</div>
+        <h4>Integration Discipline</h4>
+        <p>Day 1 and 100-day plans missing, leading to predictable value leakage.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-num">05 · Regulatory</div>
+        <h4>Policy &amp; Governance</h4>
+        <p>Unseen regulatory complexity erodes deal value and time-to-close.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ARCHITECTURE — 5 MODULES ========== -->
+<section class="sec-navy" id="architecture">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Platform Architecture</div>
+      <h2 class="section-title">Five Integrated <em>Modules</em></h2>
+      <p class="section-sub">A connected system covering the full M&amp;A lifecycle — from strategy to influence.</p>
+    </div>
+    <div class="module-flow fade-up">
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-icon">◇</div>
+          <div class="module-num">01</div>
+          <h4>Corporate Strategy Leadership</h4>
+          <p>Board-grade conviction and acquisition strategy.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">◈</div>
+          <div class="module-num">02</div>
+          <h4>Capability Building</h4>
+          <p>Three-layer cohort architecture across the firm.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">◉</div>
+          <div class="module-num">03</div>
+          <h4>Target Sourcing Intelligence</h4>
+          <p>Curated deal flow matched to strategic fit.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">◊</div>
+          <div class="module-num">04</div>
+          <h4>Post-Merger Integration</h4>
+          <p>Day 1, 100-day, and value-capture playbooks.</p>
+        </div>
+        <div class="module-card">
+          <div class="module-icon">◆</div>
+          <div class="module-num">05</div>
+          <h4>Policy &amp; Governance Influence</h4>
+          <p>Voice with NITI Aayog, CCI, and MCA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 3-LAYER COHORT ARCHITECTURE ========== -->
+<section class="sec-cream" id="cohorts">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">The Cohort Architecture</div>
+      <h2 class="section-title">Three Layers. One Account. <em>Holistic Capability.</em></h2>
+      <p class="section-sub">Companies are the account. Onboard once — all three layers unlock.</p>
+    </div>
+    <div class="cohort-layout">
+      <div class="cohort-image-card fade-up">
+        <img src="../assets/pyramid_hero.jpg" alt="Three-tier gold pyramid representing L1, L2, L3 cohort layers" loading="lazy">
+      </div>
+      <div class="cohort-stack fade-up">
+        <div class="cohort-tier">
+          <div class="tier-head">
+            <div class="tier-badge">
+              <div class="tier-num">L1</div>
+              <div class="tier-name">
+                <small>Top Tier · Enterprise</small>
+                Enterprise M&amp;A Leaders
+              </div>
+            </div>
+            <div class="tier-duration">2.5 days</div>
+          </div>
+          <div class="tier-pills">
+            <span class="pill-sm">CXOs</span>
+            <span class="pill-sm">Board</span>
+            <span class="pill-sm">Promoters</span>
+            <span class="pill-sm">Corp Dev Heads</span>
+            <span class="pill-sm">PE Op Partners</span>
+          </div>
+          <div class="tier-promise">Strategic judgment &amp; boardroom governance.</div>
+        </div>
+        <div class="cohort-tier">
+          <div class="tier-head">
+            <div class="tier-badge">
+              <div class="tier-num">L2</div>
+              <div class="tier-name">
+                <small>Middle Tier · Execution</small>
+                M&amp;A Execution Leaders
+              </div>
+            </div>
+            <div class="tier-duration">5 days</div>
+          </div>
+          <div class="tier-pills">
+            <span class="pill-sm">VPs</span>
+            <span class="pill-sm">BU Heads</span>
+            <span class="pill-sm">Integration Leaders</span>
+            <span class="pill-sm">Functional Heads</span>
+          </div>
+          <div class="tier-promise">Deal thesis to 100-day execution.</div>
+        </div>
+        <div class="cohort-tier">
+          <div class="tier-head">
+            <div class="tier-badge">
+              <div class="tier-num">L3</div>
+              <div class="tier-name">
+                <small>Bottom Tier · Champions</small>
+                Implementation Champions
+              </div>
+            </div>
+            <div class="tier-duration">5 days</div>
+          </div>
+          <div class="tier-pills">
+            <span class="pill-sm">Senior Managers</span>
+            <span class="pill-sm">Analysts</span>
+            <span class="pill-sm">Sales/Marketing Integrators</span>
+            <span class="pill-sm">Workstream Leads</span>
+          </div>
+          <div class="tier-promise">Ground-level integration fluency.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ACCOUNT MODEL ========== -->
+<section class="sec-navy">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Account Model</div>
+      <h2 class="section-title">We onboard <em>companies</em>, not individuals.</h2>
+      <p class="section-sub">One account opens all three layers — strategy, execution, and the shop floor moving in sync.</p>
+    </div>
+    <div class="account-stages fade-up">
+      <div class="stage-card">
+        <div class="stage-icon">◇</div>
+        <div class="stage-num">Stage 01</div>
+        <h4>Onboard the Account</h4>
+        <p>Company becomes a platform account — one entry, one relationship.</p>
+      </div>
+      <div class="stage-arrow">→</div>
+      <div class="stage-card">
+        <div class="stage-icon">◈</div>
+        <div class="stage-num">Stage 02</div>
+        <h4>All 3 Layers Unlock</h4>
+        <p>L1, L2, L3 cohort access granted to the firm at the moment of onboarding.</p>
+      </div>
+      <div class="stage-arrow">→</div>
+      <div class="stage-card">
+        <div class="stage-icon">◆</div>
+        <div class="stage-num">Stage 03</div>
+        <h4>Develop Holistically</h4>
+        <p>Strategy, execution, ground — moving in sync, one capability stack.</p>
+      </div>
+    </div>
+    <div class="account-quote fade-up">
+      <span class="qmark">"</span>
+      <p>We develop the M&amp;A capability across the entire company — boardroom to ground floor — to know acquisition and integration of companies.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== L1 ENTERPRISE DEEP-DIVE ========== -->
+<section class="sec-cream">
+  <div class="container">
+    <div class="deep-dive">
+      <div class="deep-image fade-up">
+        <img src="../assets/boardroom_l1.jpg" alt="Round gold council table with eight chairs and a lion at the head of the table" loading="lazy">
+      </div>
+      <div class="deep-content fade-up">
+        <div class="eyebrow">Layer 1 · Enterprise</div>
+        <h2>Enterprise M&amp;A <em>Leaders</em></h2>
+        <div class="duration-chip">2.5 DAYS + CAPSTONE</div>
+        <p>Premium discussion-led leadership forum for those who approve, sponsor, govern, and communicate acquisitions. Boardroom-quality peer forum — not a compressed M&amp;A course.</p>
+        <div class="audience-row">
+          <span class="audience-pill">CXOs</span>
+          <span class="audience-pill">Board</span>
+          <span class="audience-pill">Promoters</span>
+          <span class="audience-pill">Corp Dev Heads</span>
+          <span class="audience-pill">CFO / CHRO / CSO</span>
+          <span class="audience-pill">PE Op Partners</span>
+        </div>
+        <div class="signature">
+          <div class="signature-label">Signature Feature</div>
+          <h4>Billion-Dollar Lessons</h4>
+          <p>Curated M&amp;A failure-case discussions tailored to acquisition failures, value leakage, cultural mismatch, synergy overclaiming, and integration governance breakdowns.</p>
+        </div>
+      </div>
+    </div>
+    <div class="day-row three fade-up">
+      <div class="day-card">
+        <span class="day-chip">DAY 01</span>
+        <h5>Strategic Judgment &amp; Failure Recognition</h5>
+        <p><strong>Output:</strong> Failure Pattern Map + Deal Approval Checklist.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 02</span>
+        <h5>Governance, Integration Oversight, Stakeholder Conviction</h5>
+        <p><strong>Output:</strong> Governance Model + Narrative Template + Capability Roadmap.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 03 · HALF</span>
+        <h5>Capstone — M&amp;A Leadership War Room</h5>
+        <p><strong>Output:</strong> Verdict + Top Risks + 100-day Priorities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== L2 EXECUTION DEEP-DIVE ========== -->
+<section class="sec-navy">
+  <div class="container">
+    <div class="center fade-up" style="margin-bottom: 40px;">
+      <div class="eyebrow">Layer 2 · Execution</div>
+      <h2 class="section-title">M&amp;A Execution <em>Leaders</em></h2>
+      <div class="duration-chip" style="margin: 8px auto 22px;">5 DAYS · DAY 5 HALF</div>
+      <p class="section-sub">Flagship practical program for leaders who translate acquisition intent into operating results. Template-driven, simulation-heavy.</p>
+    </div>
+    <div class="audience-row fade-up" style="justify-content: center; max-width: 920px; margin: 0 auto 32px;">
+      <span class="audience-pill">BU Heads</span>
+      <span class="audience-pill">VPs</span>
+      <span class="audience-pill">Strategy</span>
+      <span class="audience-pill">Finance</span>
+      <span class="audience-pill">HR</span>
+      <span class="audience-pill">IT</span>
+      <span class="audience-pill">Ops</span>
+      <span class="audience-pill">Sales</span>
+      <span class="audience-pill">Transformation</span>
+      <span class="audience-pill">Integration Leaders</span>
+    </div>
+    <div class="day-row five fade-up">
+      <div class="day-card">
+        <span class="day-chip">DAY 01</span>
+        <h5>Deal Thesis to Integration Thesis</h5>
+        <div class="sim">Sim: Deal Thesis Defense</div>
+        <p>Translate strategic intent into a testable, measurable integration thesis.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 02</span>
+        <h5>Day 1 Readiness &amp; 100-Day Plan</h5>
+        <div class="sim">Sim: Announcement Day Tabletop</div>
+        <p>Build the bridge between signing, closing, and operating reality.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 03</span>
+        <h5>Workstreams, Governance, Decision Rights</h5>
+        <div class="sim">Sim: IMO Sprint Room</div>
+        <p>Run an integration management office that holds momentum.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 04</span>
+        <h5>Synergy, Risk, Stakeholder</h5>
+        <div class="sim">Sim: Synergy Pressure Test</div>
+        <p>Defend value with evidence; pre-empt leakage and stakeholder fatigue.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 05 · HALF</span>
+        <h5>Capstone Blueprint</h5>
+        <div class="sim">Final: CXO Panel Presentation</div>
+        <p>Present an integration blueprint to a panel of CXOs for live critique.</p>
+      </div>
+    </div>
+    <div class="artifact-grid fade-up">
+      <span class="artifact-pill">Deal Thesis Canvas</span>
+      <span class="artifact-pill">Integration Thesis</span>
+      <span class="artifact-pill">Day 1 Readiness</span>
+      <span class="artifact-pill">100-Day Plan</span>
+      <span class="artifact-pill">Workstream Charter</span>
+      <span class="artifact-pill">Decision Rights Matrix</span>
+      <span class="artifact-pill">Synergy Tracker</span>
+      <span class="artifact-pill">Value Leakage Risk Register</span>
+      <span class="artifact-pill">Stakeholder Comms Map</span>
+    </div>
+  </div>
+</section>
+
+<!-- ========== L3 CHAMPIONS DEEP-DIVE ========== -->
+<section class="sec-cream">
+  <div class="container">
+    <div class="center fade-up" style="margin-bottom: 30px;">
+      <div class="eyebrow">Layer 3 · Champions</div>
+      <h2 class="section-title">Implementation <em>Champions</em></h2>
+      <div class="duration-chip" style="margin: 8px auto 22px;">5 DAYS · DAY 5 HALF</div>
+      <p class="section-sub">Practical, role-aware program for the people who deliver integration on the ground — including the often-overlooked sales and marketing integrators.</p>
+    </div>
+    <div class="persona-tracks fade-up">
+      <div class="track-card">
+        <div class="track-label">Track A</div>
+        <h5>Functional Track</h5>
+        <p>Workstream members, analysts, and workstream leads who execute the integration day to day.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-label">Track B</div>
+        <h5>Sales / Marketing Integrator Track</h5>
+        <p>GTM unification, customer continuity, brand and channel decisions during transition.</p>
+      </div>
+      <div class="track-card">
+        <div class="track-label">Track C</div>
+        <h5>High-Potential Track</h5>
+        <p>Future M&amp;A leaders building fluency before they own their first integration.</p>
+      </div>
+    </div>
+    <div class="day-row five fade-up">
+      <div class="day-card">
+        <span class="day-chip">DAY 01</span>
+        <h5>Foundations Through Your Lens</h5>
+        <p>M&amp;A vocabulary, value drivers, and the integration arc — framed by your role.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 02</span>
+        <h5>Day 1 &amp; the Role-Shift Moment</h5>
+        <p>What changes on Day 1 — process, identity, ownership, communication.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 03</span>
+        <h5>Workstream Execution &amp; Escalation</h5>
+        <p>Running a workstream, raising risks, and unblocking decisions early.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 04</span>
+        <h5>Communication, Change, Local Leadership</h5>
+        <div class="sim">Sim: Rumour-Mill Simulation</div>
+        <p>Lead through ambiguity, manage rumour, hold teams steady.</p>
+      </div>
+      <div class="day-card">
+        <span class="day-chip">DAY 05 · HALF</span>
+        <h5>Carousel + Monday Action Plan</h5>
+        <p>Four scenarios, then a personal "Day 1 Monday Action Plan" to take back to work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CAPABILITY STACK BUNDLE ========== -->
+<section class="sec-navy" id="stack">
+  <div class="container">
+    <div class="stack-layout">
+      <div class="stack-image-wrap fade-up">
+        <img src="../assets/capability_stack.jpg" alt="Three stacked gold cubes with a lion cub on top, symbolising the L1+L2+L3 capability stack" loading="lazy">
+      </div>
+      <div class="fade-up">
+        <div class="eyebrow">The Corporate Package</div>
+        <h2 class="section-title">M&amp;A Capability <em>Building Stack</em></h2>
+        <p class="section-sub" style="margin-bottom: 8px;">The end-to-end bundle: L1 + L2 + L3 sold as one capability stack.</p>
+        <div class="stack-blocks">
+          <div class="stack-block anchor">
+            <div class="block-tag">L1</div>
+            <div class="block-mid">Enterprise<small>Strategic judgment &amp; boardroom governance</small></div>
+            <div class="block-meta">2.5 days · Anchor</div>
+          </div>
+          <div class="stack-block">
+            <div class="block-tag">L2</div>
+            <div class="block-mid">Execution<small>Deal thesis to 100-day execution</small></div>
+            <div class="block-meta">5 days · Flagship</div>
+          </div>
+          <div class="stack-block">
+            <div class="block-tag">L3</div>
+            <div class="block-mid">Champions<small>Ground-level integration fluency</small></div>
+            <div class="block-meta">5 days · Scale</div>
+          </div>
+        </div>
+        <p class="stack-tagline">One account. Three layers. Acquisition capability — top to bottom.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MEMBERSHIP ========== -->
+<section class="sec-cream" id="membership">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Membership</div>
+      <h2 class="section-title">Choose Your <em>Level</em></h2>
+      <p class="section-sub">One Platform Partner per industry cohort — exclusivity is guaranteed.</p>
+    </div>
+    <div class="tiers fade-up">
+      <div class="tier partner">
+        <span class="tier-flag">MOST EXCLUSIVE</span>
+        <h4>Platform Partner</h4>
+        <div class="tier-price">Rs.2.25 Cr<small> / year</small></div>
+        <ul class="tier-features">
+          <li>Exclusive cohort — one per sector</li>
+          <li>Co-creator role in shaping the platform</li>
+          <li>Full access — all 5 modules</li>
+          <li>NITI Aayog &amp; CCI engagement access</li>
+          <li>Priority deal flow &amp; intelligence</li>
+          <li>Seat on the Platform Steering Committee</li>
+        </ul>
+      </div>
+      <div class="tier elite">
+        <span class="tier-flag">MOST POPULAR</span>
+        <h4>Elite Member</h4>
+        <div class="tier-price">Rs.1.35 Cr<small> / year</small></div>
+        <ul class="tier-features">
+          <li>Premium shared cohort access</li>
+          <li>Leadership forum participation</li>
+          <li>Full capability program — L1, L2, L3</li>
+          <li>Sourcing intelligence access</li>
+          <li>PMI support for one deal per year</li>
+          <li>Branding presence across the platform</li>
+        </ul>
+      </div>
+      <div class="tier">
+        <span class="tier-flag">ENTRY LEVEL</span>
+        <h4>Growth Member</h4>
+        <div class="tier-price">Rs.85 L<small> / year</small></div>
+        <ul class="tier-features">
+          <li>Platform insights subscription</li>
+          <li>One integration feature engagement</li>
+          <li>Observer access to forums</li>
+          <li>Target database — view-only</li>
+          <li>On-ramp for emerging acquirers</li>
+          <li>Pathway to Elite Member upgrade</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ROI ========== -->
+<section class="sec-cream" id="roi" style="padding-top: 0;">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Return on Membership</div>
+      <h2 class="section-title">Value <em>Captured</em></h2>
+      <p class="section-sub">Membership replaces multiples of advisory spend — and protects deal value.</p>
+    </div>
+    <div class="roi-grid fade-up">
+      <div class="roi-card">
+        <div class="tier-name-sm">Platform Partner</div>
+        <p>Replaces Rs.7-12 Cr of annual consulting and strategic advisory spend.</p>
+        <span class="roi-badge">20-50x ROI</span>
+      </div>
+      <div class="roi-card">
+        <div class="tier-name-sm">Elite Member</div>
+        <p>Saves Rs.5-9 Cr of equivalent consulting; protects deal value at risk.</p>
+        <span class="roi-badge">Rs.20-50 Cr value protected</span>
+      </div>
+      <div class="roi-card">
+        <div class="tier-name-sm">Growth Member</div>
+        <p>Receives Rs.3-6 Cr of advisory-equivalent insight and engagement.</p>
+        <span class="roi-badge">Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INSTITUTIONAL ANCHORS ========== -->
+<section class="sec-navy">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Institutional Anchors</div>
+      <h2 class="section-title">Built with <em>India's Best</em></h2>
+      <p class="section-sub">Academic depth, industry credibility, and policy influence in one platform.</p>
+    </div>
+    <div class="anchors-grid fade-up">
+      <div class="anchor-col">
+        <h5>Academic</h5>
+        <div class="anchor-pills">
+          <span>IIT Roorkee</span>
+          <span>IIT Delhi</span>
+          <span>IIM Bangalore</span>
+        </div>
+      </div>
+      <div class="anchor-col">
+        <h5>Industry</h5>
+        <div class="anchor-pills">
+          <span>KKR</span>
+          <span>BlackRock</span>
+          <span>Carlyle</span>
+          <span>Cisco</span>
+          <span>Google</span>
+          <span>Adani</span>
+          <span>Reliance</span>
+        </div>
+      </div>
+      <div class="anchor-col">
+        <h5>Policy</h5>
+        <div class="anchor-pills">
+          <span>NITI Aayog</span>
+          <span>CCI</span>
+          <span>MCA</span>
+        </div>
+      </div>
+    </div>
+    <p class="anchor-footnote">* Institutional and industry partner names to be confirmed during founding phase.</p>
+  </div>
+</section>
+
+<!-- ========== ROADMAP ========== -->
+<section class="sec-cream">
+  <div class="container">
+    <div class="center fade-up">
+      <div class="eyebrow">Roadmap</div>
+      <h2 class="section-title">The Year <em>Ahead</em></h2>
+      <p class="section-sub">From foundation to scale — four quarters, one trajectory.</p>
+    </div>
+    <div class="roadmap fade-up">
+      <div class="roadmap-grid">
+        <div class="q-card">
+          <div class="q-label">Q1</div>
+          <h5>Foundation</h5>
+          <p>Founding conversations, agenda design, anchor commitments.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-label">Q2</div>
+          <h5>Leadership</h5>
+          <p>First cohort assembled; capability themes published.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-label">Q3</div>
+          <h5>Capability</h5>
+          <p>Diagnostic workshops, platform beta access, early sourcing.</p>
+        </div>
+        <div class="q-card">
+          <div class="q-label">Q4</div>
+          <h5>Scale</h5>
+          <p>Annual insights release; planning for the next cycle.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA ========== -->
+<section class="sec-navy cta-section" id="cta">
+  <div class="container">
+    <div class="fade-up">
+      <div class="eyebrow">Limited Founding Cohort</div>
+      <h2 class="section-title">Join as a <em>Founding Partner</em></h2>
+      <p class="cta-sub">Help shape India's first M&amp;A capability and execution platform. The founding cohort is being formed now.</p>
+      <div class="cta-benefits">
+        <span class="benefit-pill">Exclusive cohort — no competitor from your sector</span>
+        <span class="benefit-pill">Co-creator role in shaping the platform</span>
+        <span class="benefit-pill">All 3 layers unlocked from Day 1</span>
+        <span class="benefit-pill">Priority access to deal flow &amp; intelligence</span>
+        <span class="benefit-pill">Seat on the Platform Steering Committee</span>
+      </div>
+      <a href="#cta" class="btn btn-white btn-arrow">Request Access</a>
+      <p class="cta-fineprint">Exclusivity is assigned on a first-confirmed basis per industry sector.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+  <div class="container">
+    <div class="brand-foot">M&amp;A Leadership Platform — Confidential</div>
+    <div>Proposed academic anchors: IIT Roorkee · IIT Delhi · IIM Bangalore</div>
+  </div>
+</footer>
+
+<script>
+(function() {
+  // ---- Hamburger ----
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', function() {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(function(a) {
+      a.addEventListener('click', function() {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+  }
+
+  // ---- Fade-up reveal ----
+  var fadeEls = document.querySelectorAll('.fade-up');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(function(el) { io.observe(el); });
+  } else {
+    fadeEls.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // ---- Section highlighting on scroll ----
+  var navAnchors = document.querySelectorAll('.nav-links a[data-target]');
+  var sectionsMap = {};
+  navAnchors.forEach(function(a) {
+    var id = a.getAttribute('data-target');
+    var sec = document.getElementById(id);
+    if (sec) sectionsMap[id] = { el: sec, link: a };
+  });
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        var id = e.target.id;
+        if (sectionsMap[id] && e.isIntersecting) {
+          navAnchors.forEach(function(a) { a.classList.remove('active'); });
+          sectionsMap[id].link.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+    Object.keys(sectionsMap).forEach(function(id) { so.observe(sectionsMap[id].el); });
+  }
+})();
+</script>
+</body>
+</html>
