@@ -1,0 +1,505 @@
+isin,nse_symbol,name,industry,series,in_nifty500,in_midcap150,in_smallcap250,bucket
+DU1205A01025,DUMMYVEDL1,Dummy Vedanta Ltd. 1,Metals & Mining,EQ,True,False,False,large_cap
+DU2205A01025,DUMMYVEDL2,Dummy Vedanta Ltd. 2,Power,EQ,True,False,False,large_cap
+DU3205A01025,DUMMYVEDL3,Dummy Vedanta Ltd. 3,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+DU4205A01025,DUMMYVEDL4,Dummy Vedanta Ltd. 4,Metals & Mining,EQ,True,False,False,large_cap
+INE002A01018,RELIANCE,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE002L01015,SJVN,SJVN Ltd.,Power,EQ,True,True,False,mid_cap
+INE002S01010,MGL,Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE003A01024,SIEMENS,Siemens Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE006I01046,ASTRAL,Astral Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE007A01025,CRISIL,CRISIL Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE008A01015,IDBI,IDBI Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE009A01021,INFY,Infosys Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE00E101023,BIKAJI,Bikaji Foods International Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE00FF01025,ACUTAAS,Acutaas Chemicals Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE00H001014,SWIGGY,Swiggy Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE00LO01017,CRAFTSMAN,Craftsman Automation Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE00R701025,DALBHARAT,Dalmia Bharat Ltd.,Construction Materials,EQ,True,True,False,mid_cap
+INE00WC01027,AFFLE,Affle 3i Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE010B01027,ZYDUSLIFE,Zydus Lifesciences Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE010J01012,TEJASNET,Tejas Networks Ltd.,Telecommunication,EQ,True,False,True,small_cap
+INE010V01017,LTTS,L&T Technology Services Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE011K01018,TEGA,Tega Industries Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE012A01025,ACC,ACC Ltd.,Construction Materials,EQ,True,True,False,mid_cap
+INE013P01021,ONESOURCE,Onesource Specialty Pharma Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE016A01026,DABUR,Dabur India Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE017A01032,GESHIP,Great Eastern Shipping Co. Ltd.,Services,EQ,True,False,True,small_cap
+INE018A01030,LT,Larsen & Toubro Ltd.,Construction,EQ,True,False,False,large_cap
+INE018E01016,SBICARD,SBI Cards and Payment Services Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE019A01038,JSWSTEEL,JSW Steel Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE019C01026,HSCL,Himadri Speciality Chemical Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE01EA01019,VMM,Vishal Mega Mart Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE01TY01017,CANHLIFE,Canara HSBC Life Insurance Company Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE020B01018,RECLTD,REC Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE021A01026,ASIANPAINT,Asian Paints Ltd.,Consumer Durables,EQ,True,False,False,large_cap
+INE022Q01020,IEX,Indian Energy Exchange Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE024L01027,GRAVITA,Gravita India Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE027H01010,MAXHEALTH,Max Healthcare Institute Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE028A01039,BANKBARODA,Bank of Baroda,Financial Services,EQ,True,False,False,large_cap
+INE029A01011,BPCL,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE02RE01045,FIRSTCRY,Brainbees Solutions Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE030A01027,HINDUNILVR,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE031A01017,HUDCO,Housing & Urban Development Corporation Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE031B01049,AJANTPHARM,Ajanta Pharmaceuticals Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE036D01028,KARURVYSYA,Karur Vysya Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE038A01020,HINDALCO,Hindalco Industries Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE039A01010,IFCI,IFCI Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE03JT01014,GODIGIT,Go Digit General Insurance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE03QK01018,COHANCE,Cohance Lifesciences Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE040A01034,HDFCBANK,HDFC Bank Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE040H01021,SUZLON,Suzlon Energy Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE042A01014,ESCORTS,Escorts Kubota Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE043W01024,VIJAYA,Vijaya Diagnostic Centre Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE044A01036,SUNPHARMA,Sun Pharmaceutical Industries Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE047A01021,GRASIM,Grasim Industries Ltd.,Construction Materials,EQ,True,False,False,large_cap
+INE048G01026,NAVINFLUOR,Navin Fluorine International Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE049B01025,WOCKPHARMA,Wockhardt Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE04I401011,KPITTECH,KPIT Technologies Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE050A01025,BBTC,Bombay Burmah Trading Corporation Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE053A01029,INDHOTEL,Indian Hotels Co. Ltd.,Consumer Services,EQ,True,False,False,large_cap
+INE053F01010,IRFC,Indian Railway Finance Corporation Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE055A01016,ABREL,Aditya Birla Real Estate Ltd.,Realty,EQ,True,False,True,small_cap
+INE059A01026,CIPLA,Cipla Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE061F01013,FORTIS,Fortis Healthcare Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE062A01020,SBIN,State Bank of India,Financial Services,EQ,True,False,False,large_cap
+INE064C01022,TRIDENT,Trident Ltd.,Textiles,EQ,True,False,True,small_cap
+INE065X01017,INDGN,Indegene Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE066A01021,EICHERMOT,Eicher Motors Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE066F01020,HAL,Hindustan Aeronautics Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE066P01011,INOXWIND,Inox Wind Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE067A01029,CGPOWER,CG Power and Industrial Solutions Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE068V01023,GLAND,Gland Pharma Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE070A01015,SHREECEM,Shree Cement Ltd.,Construction Materials,EQ,True,False,False,large_cap
+INE073K01018,SONACOMS,Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE075A01022,WIPRO,Wipro Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE079A01024,AMBUJACEM,Ambuja Cements Ltd.,Construction Materials,EQ,True,False,False,large_cap
+INE07Y701011,POWERINDIA,Hitachi Energy India Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE081A01020,TATASTEEL,Tata Steel Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE084A01016,BANKINDIA,Bank of India,Financial Services,EQ,True,True,False,mid_cap
+INE085A01013,CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE088F01024,PARADEEP,Paradeep Phosphates Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE089A01031,DRREDDY,Dr. Reddy's Laboratories Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE090A01021,ICICIBANK,ICICI Bank Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE092A01019,TATACHEM,Tata Chemicals Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE092T01019,IDFCFIRSTB,IDFC First Bank Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE093A01041,HEXT,Hexaware Technologies Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE093I01010,OBEROIRLTY,Oberoi Realty Ltd.,Realty,EQ,True,True,False,mid_cap
+INE094A01015,HINDPETRO,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,EQ,True,True,False,mid_cap
+INE094J01016,UTIAMC,UTI Asset Management Company Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE095A01012,INDUSINDBK,IndusInd Bank Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE095N01031,NBCC,NBCC (India) Ltd.,Construction,EQ,True,False,True,small_cap
+INE09N301011,FLUOROCHEM,Gujarat Fluorochemicals Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE0AQ201015,THELEELA,Leela Palaces Hotels & Resorts Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE0BS701011,PREMIERENE,Premier Energies Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE0BV301023,MAPMYINDIA,C.E. Info Systems Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE0BY001018,JUBLINGREA,Jubilant Ingrevia Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE0CAZ01013,URBANCO,Urban Company Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE0CZ201020,ANTHEM,Anthem Biosciences Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE0DD101019,RAILTEL,Railtel Corporation Of India Ltd.,Telecommunication,EQ,True,False,True,small_cap
+INE0DK501011,PPLPHARMA,Piramal Pharma Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE0DYJ01015,SYRMA,Syrma SGS Technology Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE0FS801015,MSUMI,Motherson Sumi Wiring India Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE0HOQ01053,GROWW,Billionbrains Garage Ventures Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE0I7C01011,LATENTVIEW,Latent View Analytics Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE0INX01018,AEGISVOPAK,Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE0IX101010,DATAPATTNS,Data Patterns (India) Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE0J1Y01017,LICI,Life Insurance Corporation of India,Financial Services,EQ,True,True,False,mid_cap
+INE0J5401028,HONASA,Honasa Consumer Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE0KBH01020,BLUEJET,Blue Jet Healthcare Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE0LEZ01016,ATHERENERG,Ather Energy Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE0LP301011,PWL,Physicswallah Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE0LXG01040,OLAELEC,Ola Electric Mobility Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE0NNS01018,NSLNISP,NMDC Steel Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE0NT901020,NETWEB,Netweb Technologies India Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE0ONG01011,NTPCGREEN,NTPC Green Energy Ltd.,Power,EQ,True,True,False,mid_cap
+INE0Q9301021,IGIL,International Gemological Institute Ltd.,Services,EQ,True,False,True,small_cap
+INE0V6F01027,HYUNDAI,Hyundai Motor India Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE0VDM01015,MEESHO,Meesho Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE0W2G01015,SAGILITY,Sagility Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE0YD401026,JAINREC,Jain Resource Recycling Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE100A01010,ATUL,Atul Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE101A01026,M&M,Mahindra & Mahindra Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE101D01020,GRANULES,Granules India Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE101I01011,AFCONS,Afcons Infrastructure Ltd.,Construction,EQ,True,False,True,small_cap
+INE102B01014,CHOICEIN,Choice International Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE102D01028,GODREJCP,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE103A01014,MRPL,Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE103V01028,TRAVELFOOD,Travel Food Services Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE109A01011,SCI,Shipping Corporation of India Ltd.,Services,EQ,True,False,True,small_cap
+INE111A01025,CONCOR,Container Corporation of India Ltd.,Services,EQ,True,True,False,mid_cap
+INE114A01011,SAIL,Steel Authority of India Ltd.,Metals & Mining,EQ,True,True,False,mid_cap
+INE115A01026,LICHSGFIN,LIC Housing Finance Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE115Q01022,IKS,Inventurus Knowledge Solutions Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE117A01022,ABB,ABB India Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE118A01012,BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE118D01016,NUVOCO,Nuvoco Vistas Corporation Ltd.,Construction Materials,EQ,True,False,True,small_cap
+INE118H01025,BSE,BSE Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE119A01028,BALRAMCHIN,Balrampur Chini Mills Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE120A01034,CARBORUNIV,Carborundum Universal Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE121A01024,CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE121E01018,JSWENERGY,JSW Energy Ltd.,Power,EQ,True,True,False,mid_cap
+INE121J01017,INDUSTOWER,Indus Towers Ltd.,Telecommunication,EQ,True,True,False,mid_cap
+INE123F01029,MMTC,MMTC Ltd.,Services,EQ,True,False,True,small_cap
+INE123W01016,SBILIFE,SBI Life Insurance Company Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE126A01031,EIDPARRY,E.I.D. Parry (India) Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE127D01025,HDFCAMC,HDFC Asset Management Company Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE128S01021,FIVESTAR,Five-Star Business Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE129A01019,GAIL,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE131A01031,GMDCLTD,Gujarat Mineral Development Corporation Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE133A01011,JSWDULUX,JSW Dulux Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE134E01011,PFC,Power Finance Corporation Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE136B01020,CYIENT,Cyient Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE138Y01010,KFINTECH,Kfin Technologies Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE139A01034,NATIONALUM,National Aluminium Co. Ltd.,Metals & Mining,EQ,True,True,False,mid_cap
+INE142M01025,TATATECH,Tata Technologies Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE146L01010,KIRLOSENG,Kirloskar Oil Eng Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE148I01020,SAMMAANCAP,Sammaan Capital Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE148O01028,DELHIVERY,Delhivery Ltd.,Services,EQ,True,False,True,small_cap
+INE149A01033,CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE14LE01019,ABLBL,Aditya Birla Lifestyle Brands Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE151A01013,TATACOMM,Tata Communications Ltd.,Telecommunication,EQ,True,True,False,mid_cap
+INE152A01029,THERMAX,Thermax Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE152M01016,TRITURBINE,Triveni Turbine Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE153T01027,BLS,BLS International Services Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE154A01025,ITC,ITC Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE155A01022,TMPV,Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE158A01026,HEROMOTOCO,Hero MotoCorp Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE159A01016,GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE15B701018,PINELABS,Pine Labs Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE160A01022,PNB,Punjab National Bank,Financial Services,EQ,True,False,False,large_cap
+INE168A01041,J&KBANK,Jammu & Kashmir Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE168P01015,EMCURE,Emcure Pharmaceuticals Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE169A01031,COROMANDEL,Coromandel International Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE171A01029,FEDERALBNK,Federal Bank Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE171Z01026,BDL,Bharat Dynamics Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE172A01027,CASTROLIND,Castrol India Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE176A01028,BATAINDIA,Bata India Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE176B01034,HAVELLS,Havells India Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE177H01039,GPIL,Godawari Power & Ispat Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE178A01016,CHENNPETRO,Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE180A01020,MFSL,Max Financial Services Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE180C01042,CGCL,Capri Global Capital Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE182A01018,PFIZER,Pfizer Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE188A01015,FACT,Fertilisers and Chemicals Travancore Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE191B01025,WELCORP,Welspun Corp Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE191H01014,PVRINOX,PVR INOX Ltd.,Media Entertainment & Publication,EQ,True,False,True,small_cap
+INE192A01025,TATACONSUM,Tata Consumer Products Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE192B01031,WELSPUNLIV,Welspun Living Ltd.,Textiles,EQ,True,False,True,small_cap
+INE192R01011,DMART,Avenue Supermarts Ltd.,Consumer Services,EQ,True,False,False,large_cap
+INE195A01028,SUPREMEIND,Supreme Industries Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE196A01026,MARICO,Marico Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE19RI01016,TENNIND,Tenneco Clean Air India Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE1C6T01020,EMMVEE,Emmvee Photovoltaic Power Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE1NPP01017,ENRIN,Siemens Energy India Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE1TAE01010,TMCV,Tata Motors Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE200A01026,GVT&D,GE Vernova T&D India Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE200M01039,VBL,Varun Beverages Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE202B01038,PIRAMALFIN,Piramal Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE202E01016,IREDA,Indian Renewable Energy Development Agency Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE203G01027,IGL,Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE205A01025,VEDL,Vedanta Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE205B01031,ELECON,Elecon Engineering Co. Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE205C01021,POLYMED,Poly Medicure Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE206F01022,AIIL,Authum Investment & Infrastructure Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE208A01029,ASHOKLEY,Ashok Leyland Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE208C01025,AEGISLOG,Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,True,small_cap
+INE209L01016,JWL,Jupiter Wagons Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE211B01039,PHOENIXLTD,Phoenix Mills Ltd.,Realty,EQ,True,True,False,mid_cap
+INE212H01026,AIAENG,AIA Engineering Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE213A01029,ONGC,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE214T01019,LTM,LTM Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE216A01030,BRITANNIA,Britannia Industries Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE216P01012,AAVAS,Aavas Financiers Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE217B01036,KAJARIACER,Kajaria Ceramics Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE220B01022,KPIL,Kalpataru Projects International Ltd.,Construction,EQ,True,False,True,small_cap
+INE220G01021,JSL,Jindal Stainless Ltd.,Metals & Mining,EQ,True,True,False,mid_cap
+INE226A01021,VOLTAS,Voltas Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE227W01023,CLEAN,Clean Science and Technology Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE228A01035,USHAMART,Usha Martin Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE230A01023,EIHOTEL,EIH Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE233A01035,GODREJIND,Godrej Industries Ltd.,Diversified,EQ,True,True,False,mid_cap
+INE233B01017,BLUEDART,Blue Dart Express Ltd.,Services,EQ,True,False,True,small_cap
+INE235A01022,FINCABLES,Finolex Cables Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE237A01036,KOTAKBANK,Kotak Mahindra Bank Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE238A01034,AXISBANK,Axis Bank Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE239A01024,NESTLEIND,Nestle India Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE242A01010,IOC,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE242C01024,ANANTRAJ,Anant Raj Ltd.,Realty,EQ,True,False,True,small_cap
+INE245A01021,TATAPOWER,Tata Power Co. Ltd.,Power,EQ,True,False,False,large_cap
+INE248A01017,ITI,ITI Ltd.,Telecommunication,EQ,True,False,True,small_cap
+INE249Z01020,MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE251B01027,ZENTEC,Zen Technologies Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE256A01028,ZEEL,Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,EQ,True,False,True,small_cap
+INE257A01026,BHEL,Bharat Heavy Electricals Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE258A01024,BEML,BEML Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE258G01013,SUMICHEM,Sumitomo Chemical India Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE259A01022,COLPAL,Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE260B01028,GODFRYPHLP,Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE260D01016,OLECTRA,Olectra Greentech Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE262H01021,PERSISTENT,Persistent Systems Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE263A01024,BEL,Bharat Electronics Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE267A01025,HINDZINC,Hindustan Zinc Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE269A01021,SONATSOFTW,Sonata Software Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE271C01023,DLF,DLF Ltd.,Realty,EQ,True,False,False,large_cap
+INE274J01014,OIL,Oil India Ltd.,Oil Gas & Consumable Fuels,EQ,True,True,False,mid_cap
+INE280A01028,TITAN,Titan Company Ltd.,Consumer Durables,EQ,True,False,False,large_cap
+INE281B01032,LLOYDSME,Lloyds Metals And Energy Ltd.,Metals & Mining,EQ,True,True,False,mid_cap
+INE285A01027,ELGIEQUIP,Elgi Equipments Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE285K01026,TECHNOE,Techno Electric & Engineering Company Ltd.,Construction,EQ,True,False,True,small_cap
+INE288B01029,DEEPAKNTR,Deepak Nitrite Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE290S01011,CARTRADE,Cartrade Tech Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE292B01021,HBLENGINE,HBL Engineering Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE296A01032,BAJFINANCE,Bajaj Finance Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE297H01019,GALLANTT,Gallantt Ispat Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE298A01020,CUMMINSIND,Cummins India Ltd.,Capital Goods,EQ,True,False,False,large_cap
+INE298J01013,NAM-INDIA,Nippon Life India Asset Management Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE299U01018,CROMPTON,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE302A01020,EXIDEIND,Exide Industries Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE303R01014,KALYANKJIL,Kalyan Jewellers India Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE306R01017,INTELLECT,Intellect Design Arena Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE318A01026,PIDILITIND,Pidilite Industries Ltd.,Chemicals,EQ,True,False,False,large_cap
+INE320J01015,RITES,RITES Ltd.,Construction,EQ,True,False,True,small_cap
+INE321T01012,DOMS,DOMS Industries Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE322A01010,GILLETTE,Gillette India Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE323A01026,BOSCHLTD,Bosch Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE324A01032,JINDALSAW,Jindal Saw Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE324D01010,LGEINDIA,LG Electronics India Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE325A01013,TIMKEN,Timken India Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE326A01037,LUPIN,Lupin Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE331A01037,RAMCOCEM,The Ramco Cements Ltd.,Construction Materials,EQ,True,False,True,small_cap
+INE335Y01020,IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE338H01029,CONCORDBIO,Concord Biotech Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE338I01027,MOTILALOFS,Motilal Oswal Financial Services Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE342J01019,ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE343G01021,BHARTIHEXA,Bharti Hexacom Ltd.,Telecommunication,EQ,True,True,False,mid_cap
+INE343H01029,SOLARINDS,Solar Industries India Ltd.,Chemicals,EQ,True,False,False,large_cap
+INE346A01027,ICICIAMC,ICICI Prudential Asset Management Company Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE347G01014,PETRONET,Petronet LNG Ltd.,Oil Gas & Consumable Fuels,EQ,True,True,False,mid_cap
+INE351F01018,JPPOWER,Jaiprakash Power Ventures Ltd.,Power,EQ,True,False,True,small_cap
+INE356A01018,MPHASIS,MphasiS Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE358A01014,ABBOTINDIA,Abbott India Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE361B01024,DIVISLAB,Divi's Laboratories Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE364U01010,ADANIGREEN,Adani Green Energy Ltd.,Power,EQ,True,False,False,large_cap
+INE371A01025,GRAPHITE,Graphite India Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE371P01015,AMBER,Amber Enterprises India Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE372A01015,APARINDS,Apar Industries Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE376G01013,BIOCON,Biocon Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE377N01017,WAAREEENER,Waaree Energies Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE377Y01014,BAJAJHFL,Bajaj Housing Finance Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE379A01028,ITCHOTELS,ITC Hotels Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE382Z01011,GRSE,Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE383A01012,INDIACEM,India Cements Ltd.,Construction Materials,EQ,True,False,True,small_cap
+INE385C01021,SARDAEN,Sarda Energy and Minerals Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE388Y01029,NYKAA,FSN E-Commerce Ventures Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE389H01022,KEC,Kec International Ltd.,Construction,EQ,True,False,True,small_cap
+INE397D01024,BHARTIARTL,Bharti Airtel Ltd.,Telecommunication,EQ,True,False,False,large_cap
+INE398R01022,SYNGENE,Syngene International Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE399G01023,RKFORGE,Ramkrishna Forgings Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE399L01023,ATGL,Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,EQ,True,True,False,mid_cap
+INE404A01024,ABSLAMC,Aditya Birla Sun Life AMC Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE405E01023,UNOMINDA,UNO Minda Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE406A01037,AUROPHARMA,Aurobindo Pharma Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE406M01024,ERIS,Eris Lifesciences Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE410P01011,NH,Narayana Hrudayalaya Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE414G01012,MUTHOOTFIN,Muthoot Finance Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE415G01027,RVNL,Rail Vikas Nigam Ltd.,Construction,EQ,True,True,False,mid_cap
+INE417T01026,POLICYBZR,PB Fintech Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE421D01022,CCL,CCL Products (I) Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE423A01024,ADANIENT,Adani Enterprises Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE423Y01016,SBFC,SBFC Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE424H01027,SUNTV,Sun TV Network Ltd.,Media Entertainment & Publication,EQ,True,False,True,small_cap
+INE427F01016,CHALET,Chalet Hotels Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE437A01024,APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE438A01022,APOLLOTYRE,Apollo Tyres Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE439A01020,ASAHIINDIA,Asahi India Glass Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE451A01017,FORCEMOT,Force Motors Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE455K01017,POLYCAB,Polycab India Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE457A01014,MAHABANK,Bank of Maharashtra,Financial Services,EQ,True,True,False,mid_cap
+INE457L01029,PGEL,PG Electroplast Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE462A01022,BAYERCROP,Bayer Cropscience Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE463A01038,BERGEPAINT,Berger Paints India Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE463V01026,ANANDRATHI,Anand Rathi Wealth Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE465A01025,BHARATFORG,Bharat Forge Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE466L01038,360ONE,360 ONE WAM Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE467B01029,TCS,Tata Consultancy Services Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE470A01017,3MINDIA,3M India Ltd.,Diversified,EQ,True,True,False,mid_cap
+INE470Y01017,NIACL,The New India Assurance Company Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE472A01039,BLUESTARCO,Blue Star Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE473A01011,LINDEINDIA,Linde India Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE474Q01031,MEDANTA,Global Health Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE475E01026,CAPLIPOINT,Caplin Point Laboratories Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE476A01022,CANBK,Canara Bank,Financial Services,EQ,True,False,False,large_cap
+INE477A01020,CANFINHOME,Can Fin Homes Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE481G01011,ULTRACEMCO,UltraTech Cement Ltd.,Construction Materials,EQ,True,False,False,large_cap
+INE481N01025,HOMEFIRST,Home First Finance Company India Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE481Y01014,GICRE,General Insurance Corporation of India,Financial Services,EQ,True,True,False,mid_cap
+INE482A01020,CEATLTD,Ceat Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE483A01010,CENTRALBK,Central Bank of India,Financial Services,EQ,True,False,True,small_cap
+INE484J01027,GODREJPROP,Godrej Properties Ltd.,Realty,EQ,True,True,False,mid_cap
+INE486A01021,CESC,CESC Ltd.,Power,EQ,True,False,True,small_cap
+INE491A01021,CUB,City Union Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE494B01023,TVSMOTOR,TVS Motor Company Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE498L01015,LTF,L&T Finance Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE499A01024,DCMSHRIRAM,DCM Shriram Ltd.,Diversified,EQ,True,False,True,small_cap
+INE501A01019,DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE510A01028,ENGINERSIN,Engineers India Ltd.,Construction,EQ,True,False,True,small_cap
+INE511C01022,POONAWALLA,Poonawalla Fincorp Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE513A01022,SCHAEFFLER,Schaeffler India Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE517B01013,TTML,Tata Teleservices (Maharashtra) Ltd.,Telecommunication,EQ,True,False,True,small_cap
+INE520A01027,ZENSARTECH,Zensar Technolgies Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE522D01027,MANAPPURAM,Manappuram Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE522F01014,COALINDIA,Coal India Ltd.,Oil Gas & Consumable Fuels,EQ,True,False,False,large_cap
+INE524A01029,GABRIEL,Gabriel India Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE528G01035,YESBANK,Yes Bank Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE530B01024,IIFL,IIFL Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE531E01026,HINDCOPPER,Hindustan Copper Ltd.,Metals & Mining,EQ,True,False,True,small_cap
+INE531F01023,NUVAMA,Nuvama Wealth Management Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE536H01010,CIEINDIA,CIE Automotive India Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE540L01014,ALKEM,Alkem Laboratories Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE545A01024,HEG,H.E.G. Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE545U01014,BANDHANBNK,Bandhan Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE548A01028,HFCL,HFCL Ltd.,Telecommunication,EQ,True,False,True,small_cap
+INE548C01032,EMAMILTD,Emami Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE552Z01027,ABDL,Allied Blenders and Distillers Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE562A01011,INDIANB,Indian Bank,Financial Services,EQ,True,True,False,mid_cap
+INE565A01014,IOB,Indian Overseas Bank,Financial Services,EQ,True,False,True,small_cap
+INE570L01029,SAILIFE,Sai Life Sciences Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE571A01038,IPCALAB,Ipca Laboratories Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE572A01036,JBCHEPHARM,J.B. Chemicals & Pharmaceuticals Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE572E01012,PNBHOUSING,PNB Housing Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE573A01042,JKTYRE,JK Tyre & Industries Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE575P01011,STARHEALTH,Star Health and Allied Insurance Company Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE584A01023,NMDC,NMDC Ltd.,Metals & Mining,EQ,True,True,False,mid_cap
+INE585B01010,MARUTI,Maruti Suzuki India Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE589A01014,NLCINDIA,NLC India Ltd.,Power,EQ,True,True,False,mid_cap
+INE591G01025,COFORGE,Coforge Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE596F01018,PTCIL,PTC Industries Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE596I01020,CAMS,Computer Age Management Services Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE600L01024,LALPATHLAB,Dr. Lal Path Labs Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE602A01031,PCBL,PCBL Chemical Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE603J01030,PIIND,PI Industries Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE614G01033,RPOWER,Reliance Power Ltd.,Power,EQ,True,False,True,small_cap
+INE615H01020,TITAGARH,Titagarh Rail Systems Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE619A01035,PATANJALI,Patanjali Foods Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE619B01017,NEWGEN,Newgen Software Technologies Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE622W01025,ACMESOLAR,ACME Solar Holdings Ltd.,Power,EQ,True,False,True,small_cap
+INE628A01036,UPL,UPL Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE634S01028,MANKIND,Mankind Pharma Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE646L01027,INDIGO,InterGlobe Aviation Ltd.,Services,EQ,True,False,False,large_cap
+INE647A01010,SRF,SRF Ltd.,Chemicals,EQ,True,True,False,mid_cap
+INE647O01011,ABFRL,Aditya Birla Fashion and Retail Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE660A01013,SUNDARMFIN,Sundaram Finance Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE663A01033,SPLPETRO,Supreme Petrochem Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE663F01032,NAUKRI,Info Edge (India) Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE665A01038,SWANCORP,Swan Corp Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE669C01036,TECHM,Tech Mahindra Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE669E01016,IDEA,Vodafone Idea Ltd.,Telecommunication,EQ,True,True,False,mid_cap
+INE670A01012,TATAELXSI,Tata Elxsi Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE670K01029,LODHA,Lodha Developers Ltd.,Realty,EQ,True,False,False,large_cap
+INE671A01010,HONAUT,Honeywell Automation India Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE671H01015,SOBHA,Sobha Ltd.,Realty,EQ,True,False,True,small_cap
+INE672A01026,TATAINVEST,Tata Investment Corporation Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE673O01025,TBOTEK,TBO Tek Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE674K01013,ABCAPITAL,Aditya Birla Capital Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE684F01012,FSL,Firstsource Solutions Ltd.,Services,EQ,True,False,True,small_cap
+INE685A01028,TORNTPHARM,Torrent Pharmaceuticals Ltd.,Healthcare,EQ,True,False,False,large_cap
+INE686A01026,CEMPRO,Cemindia Projects Ltd.,Construction,EQ,True,False,True,small_cap
+INE686F01025,UBL,United Breweries Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE691A01018,UCOBANK,UCO Bank,Financial Services,EQ,True,False,True,small_cap
+INE692A01016,UNIONBANK,Union Bank of India,Financial Services,EQ,True,False,False,large_cap
+INE699H01024,AWL,AWL Agri Business Ltd.,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE700A01033,JUBLPHARMA,Jubilant Pharmova Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE702C01027,APLAPOLLO,APL Apollo Tubes Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE704P01025,COCHINSHIP,Cochin Shipyard Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE716A01013,WHIRLPOOL,Whirlpool of India Ltd.,Consumer Durables,EQ,True,False,True,small_cap
+INE718I01012,JSWCEMENT,JSW Cement Ltd.,Construction Materials,EQ,True,False,True,small_cap
+INE721A01047,SHRIRAMFIN,Shriram Finance Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE725A01030,NAVA,Nava Ltd.,Power,EQ,True,False,True,small_cap
+INE726G01019,ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE731H01025,ACE,Action Construction Equipment Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE732I01021,ANGELONE,Angel One Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE733E01010,NTPC,NTPC Ltd.,Power,EQ,True,False,False,large_cap
+INE736A01011,CDSL,Central Depository Services (India) Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE738I01010,ECLERX,eClerx Services Ltd.,Services,EQ,True,False,True,small_cap
+INE741K01010,CREDITACC,CreditAccess Grameen Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE742F01042,ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,Services,EQ,True,False,False,large_cap
+INE743M01012,RHIM,RHI MAGNESITA INDIA LTD.,Capital Goods,EQ,True,False,True,small_cap
+INE745G01043,MCX,Multi Commodity Exchange of India Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE749A01030,JINDALSTEL,Jindal Steel Ltd.,Metals & Mining,EQ,True,False,False,large_cap
+INE752E01010,POWERGRID,Power Grid Corporation of India Ltd.,Power,EQ,True,False,False,large_cap
+INE756I01012,HDBFS,HDB Financial Services Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE758E01017,JIOFIN,Jio Financial Services Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE758T01015,ETERNAL,Eternal Ltd.,Consumer Services,EQ,True,False,False,large_cap
+INE761H01022,PAGEIND,Page Industries Ltd.,Textiles,EQ,True,True,False,mid_cap
+INE763I01026,TARIL,Transformers And Rectifiers (India) Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE765G01017,ICICIGI,ICICI Lombard General Insurance Company Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE768C01028,ZYDUSWELL,Zydus Wellness Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE769A01020,AARTIIND,Aarti Industries Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE774D01024,M&MFIN,Mahindra & Mahindra Financial Services Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE775A01035,MOTHERSON,Samvardhana Motherson International Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE776C01039,GMRAIRPORT,GMR Airports Ltd.,Services,EQ,True,True,False,mid_cap
+INE777K01022,RRKABEL,R R Kabel Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE780C01023,JMFINANCIL,JM Financial Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE787D01026,BALKRISIND,Balkrishna Industries Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE791I01019,BRIGADE,Brigade Enterprises Ltd.,Realty,EQ,True,False,True,small_cap
+INE794A01010,NEULANDLAB,Neuland Laboratories Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE795G01014,HDFCLIFE,HDFC Life Insurance Company Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE797F01020,JUBLFOOD,Jubilant Foodworks Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE806T01020,SAPPHIRE,Sapphire Foods India Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE810G01011,SHYAMMETL,Shyam Metalics and Energy Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE811K01011,PRESTIGE,Prestige Estates Projects Ltd.,Realty,EQ,True,True,False,mid_cap
+INE813H01021,TORNTPOWER,Torrent Power Ltd.,Power,EQ,True,True,False,mid_cap
+INE814H01029,ADANIPOWER,Adani Power Ltd.,Power,EQ,True,False,False,large_cap
+INE818H01020,LTFOODS,LT Foods Ltd.,Fast Moving Consumer Goods,EQ,True,False,True,small_cap
+INE819V01029,CPPLUS,Aditya Infotech Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE821I01022,IRB,IRB Infrastructure Developers Ltd.,Construction,EQ,True,False,True,small_cap
+INE823G01014,JKCEMENT,J.K. Cement Ltd.,Construction Materials,EQ,True,True,False,mid_cap
+INE825A01020,VTL,Vardhman Textiles Ltd.,Textiles,EQ,True,False,True,small_cap
+INE836A01035,BSOFT,Birlasoft Ltd.,Information Technology,EQ,True,False,True,small_cap
+INE839M01018,SCHNEIDER,Schneider Electric Infrastructure Ltd.,Capital Goods,BE,True,False,True,small_cap
+INE842C01021,MINDACORP,Minda Corporation Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE848E01016,NHPC,NHPC Ltd.,Power,EQ,True,True,False,mid_cap
+INE849A01020,TRENT,Trent Ltd.,Consumer Services,EQ,True,False,False,large_cap
+INE852O01025,APTUS,Aptus Value Housing Finance India Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE854D01024,UNITDSPR,United Spirits Ltd.,Fast Moving Consumer Goods,EQ,True,False,False,large_cap
+INE860A01027,HCLTECH,HCL Technologies Ltd.,Information Technology,EQ,True,False,False,large_cap
+INE868B01028,NCC,NCC Ltd.,Construction,EQ,True,False,True,small_cap
+INE872J01023,DEVYANI,Devyani International Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE878B01027,KEI,KEI Industries Ltd.,Capital Goods,EQ,True,True,False,mid_cap
+INE880J01026,JSWINFRA,JSW Infrastructure Ltd.,Services,EQ,True,True,False,mid_cap
+INE881D01027,OFSS,Oracle Financial Services Software Ltd.,Information Technology,EQ,True,True,False,mid_cap
+INE883A01011,MRF,MRF Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE883F01010,AADHARHFC,Aadhar Housing Finance Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE885A01032,ARE&M,Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE891D01026,REDINGTON,Redington Ltd.,Services,EQ,True,False,True,small_cap
+INE894V01022,BELRISE,Belrise Industries Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE903U01023,SIGNATURE,Signatureglobal (India) Ltd.,Realty,EQ,True,False,True,small_cap
+INE913H01037,ENDURANCE,Endurance Technologies Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE914M01019,ASTERDM,Aster DM Healthcare Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE917I01010,BAJAJ-AUTO,Bajaj Auto Ltd.,Automobile and Auto Components,EQ,True,False,False,large_cap
+INE918I01026,BAJAJFINSV,Bajaj Finserv Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE918Z01012,KAYNES,Kaynes Technology India Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE927D01051,JBMA,JBM Auto Ltd.,Automobile and Auto Components,EQ,True,False,True,small_cap
+INE930H01031,KPRMILL,K.P.R. Mill Ltd.,Textiles,EQ,True,True,False,mid_cap
+INE930P01018,ANURAS,Anupam Rasayan India Ltd.,Chemicals,EQ,True,False,True,small_cap
+INE931S01010,ADANIENSOL,Adani Energy Solutions Ltd.,Power,EQ,True,False,False,large_cap
+INE933S01016,INDIAMART,Indiamart Intermesh Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE935A01035,GLENMARK,Glenmark Pharmaceuticals Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE935N01020,DIXON,Dixon Technologies (India) Ltd.,Consumer Durables,EQ,True,True,False,mid_cap
+INE944F01028,RADICO,Radico Khaitan Ltd,Fast Moving Consumer Goods,EQ,True,True,False,mid_cap
+INE947Q01028,LAURUSLABS,Laurus Labs Ltd.,Healthcare,EQ,True,True,False,mid_cap
+INE949L01017,AUBANK,AU Small Finance Bank Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE956O01016,LENSKART,Lenskart Solutions Ltd.,Consumer Services,EQ,True,True,False,mid_cap
+INE961O01016,RAINBOW,Rainbow Childrens Medicare Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE962Y01021,IRCON,IRCON International Ltd.,Construction,EQ,True,False,True,small_cap
+INE967H01025,KIMS,Krishna Institute of Medical Sciences Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE970X01018,LEMONTREE,Lemon Tree Hotels Ltd.,Consumer Services,EQ,True,False,True,small_cap
+INE974X01010,TIINDIA,Tube Investments of India Ltd.,Automobile and Auto Components,EQ,True,True,False,mid_cap
+INE976G01028,RBLBANK,RBL Bank Ltd.,Financial Services,EQ,True,False,True,small_cap
+INE976I01016,TATACAP,Tata Capital Ltd.,Financial Services,EQ,True,False,False,large_cap
+INE979A01025,SAREGAMA,Saregama India Ltd,Media Entertainment & Publication,EQ,True,False,True,small_cap
+INE980O01024,JYOTICNC,Jyoti CNC Automation Ltd.,Capital Goods,EQ,True,False,True,small_cap
+INE982J01020,PAYTM,One 97 Communications Ltd.,Financial Services,EQ,True,True,False,mid_cap
+INE987B01026,NATCOPHARM,NATCO Pharma Ltd.,Healthcare,EQ,True,False,True,small_cap
+INE995S01015,NIVABUPA,Niva Bupa Health Insurance Company Ltd.,Financial Services,EQ,True,False,True,small_cap

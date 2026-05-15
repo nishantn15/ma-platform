@@ -1,0 +1,501 @@
+nse_symbol,name,sector,tier,tier_reason,outreach_status,notes,bucket
+RELIANCE,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+SJVN,SJVN Ltd.,Power,,,pending,,mid_cap
+MGL,Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+SIEMENS,Siemens Ltd.,Capital Goods,,,pending,,large_cap
+ASTRAL,Astral Ltd.,Capital Goods,,,pending,,mid_cap
+CRISIL,CRISIL Ltd.,Financial Services,,,pending,,mid_cap
+IDBI,IDBI Bank Ltd.,Financial Services,,,pending,,small_cap
+INFY,Infosys Ltd.,Information Technology,,,pending,,large_cap
+BIKAJI,Bikaji Foods International Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+ACUTAAS,Acutaas Chemicals Ltd.,Healthcare,,,pending,,small_cap
+SWIGGY,Swiggy Ltd.,Consumer Services,,,pending,,mid_cap
+CRAFTSMAN,Craftsman Automation Ltd.,Automobile and Auto Components,,,pending,,small_cap
+DALBHARAT,Dalmia Bharat Ltd.,Construction Materials,,,pending,,mid_cap
+AFFLE,Affle 3i Ltd.,Information Technology,,,pending,,small_cap
+ZYDUSLIFE,Zydus Lifesciences Ltd.,Healthcare,,,pending,,large_cap
+TEJASNET,Tejas Networks Ltd.,Telecommunication,,,pending,,small_cap
+LTTS,L&T Technology Services Ltd.,Information Technology,,,pending,,mid_cap
+TEGA,Tega Industries Ltd.,Capital Goods,,,pending,,small_cap
+ACC,ACC Ltd.,Construction Materials,,,pending,,mid_cap
+ONESOURCE,Onesource Specialty Pharma Ltd.,Healthcare,,,pending,,small_cap
+DABUR,Dabur India Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+GESHIP,Great Eastern Shipping Co. Ltd.,Services,,,pending,,small_cap
+LT,Larsen & Toubro Ltd.,Construction,,,pending,,large_cap
+SBICARD,SBI Cards and Payment Services Ltd.,Financial Services,,,pending,,mid_cap
+JSWSTEEL,JSW Steel Ltd.,Metals & Mining,,,pending,,large_cap
+HSCL,Himadri Speciality Chemical Ltd.,Chemicals,,,pending,,small_cap
+VMM,Vishal Mega Mart Ltd.,Consumer Services,,,pending,,mid_cap
+CANHLIFE,Canara HSBC Life Insurance Company Ltd.,Financial Services,,,pending,,small_cap
+RECLTD,REC Ltd.,Financial Services,,,pending,,large_cap
+ASIANPAINT,Asian Paints Ltd.,Consumer Durables,,,pending,,large_cap
+IEX,Indian Energy Exchange Ltd.,Financial Services,,,pending,,small_cap
+GRAVITA,Gravita India Ltd.,Metals & Mining,,,pending,,small_cap
+MAXHEALTH,Max Healthcare Institute Ltd.,Healthcare,,,pending,,large_cap
+BANKBARODA,Bank of Baroda,Financial Services,,,pending,,large_cap
+BPCL,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+FIRSTCRY,Brainbees Solutions Ltd.,Consumer Services,,,pending,,small_cap
+HINDUNILVR,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+HUDCO,Housing & Urban Development Corporation Ltd.,Financial Services,,,pending,,mid_cap
+AJANTPHARM,Ajanta Pharmaceuticals Ltd.,Healthcare,,,pending,,mid_cap
+KARURVYSYA,Karur Vysya Bank Ltd.,Financial Services,,,pending,,small_cap
+HINDALCO,Hindalco Industries Ltd.,Metals & Mining,,,pending,,large_cap
+IFCI,IFCI Ltd.,Financial Services,,,pending,,small_cap
+GODIGIT,Go Digit General Insurance Ltd.,Financial Services,,,pending,,small_cap
+COHANCE,Cohance Lifesciences Ltd.,Healthcare,,,pending,,small_cap
+HDFCBANK,HDFC Bank Ltd.,Financial Services,,,pending,,large_cap
+SUZLON,Suzlon Energy Ltd.,Capital Goods,,,pending,,mid_cap
+ESCORTS,Escorts Kubota Ltd.,Capital Goods,,,pending,,mid_cap
+VIJAYA,Vijaya Diagnostic Centre Ltd.,Healthcare,,,pending,,small_cap
+SUNPHARMA,Sun Pharmaceutical Industries Ltd.,Healthcare,,,pending,,large_cap
+GRASIM,Grasim Industries Ltd.,Construction Materials,,,pending,,large_cap
+NAVINFLUOR,Navin Fluorine International Ltd.,Chemicals,,,pending,,small_cap
+WOCKPHARMA,Wockhardt Ltd.,Healthcare,,,pending,,small_cap
+KPITTECH,KPIT Technologies Ltd.,Information Technology,,,pending,,mid_cap
+BBTC,Bombay Burmah Trading Corporation Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+INDHOTEL,Indian Hotels Co. Ltd.,Consumer Services,,,pending,,large_cap
+IRFC,Indian Railway Finance Corporation Ltd.,Financial Services,,,pending,,large_cap
+ABREL,Aditya Birla Real Estate Ltd.,Realty,,,pending,,small_cap
+CIPLA,Cipla Ltd.,Healthcare,,,pending,,large_cap
+FORTIS,Fortis Healthcare Ltd.,Healthcare,,,pending,,mid_cap
+SBIN,State Bank of India,Financial Services,,,pending,,large_cap
+TRIDENT,Trident Ltd.,Textiles,,,pending,,small_cap
+INDGN,Indegene Ltd.,Healthcare,,,pending,,small_cap
+EICHERMOT,Eicher Motors Ltd.,Automobile and Auto Components,,,pending,,large_cap
+HAL,Hindustan Aeronautics Ltd.,Capital Goods,,,pending,,large_cap
+INOXWIND,Inox Wind Ltd.,Capital Goods,,,pending,,small_cap
+CGPOWER,CG Power and Industrial Solutions Ltd.,Capital Goods,,,pending,,large_cap
+GLAND,Gland Pharma Ltd.,Healthcare,,,pending,,small_cap
+SHREECEM,Shree Cement Ltd.,Construction Materials,,,pending,,large_cap
+SONACOMS,Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,,,pending,,small_cap
+WIPRO,Wipro Ltd.,Information Technology,,,pending,,large_cap
+AMBUJACEM,Ambuja Cements Ltd.,Construction Materials,,,pending,,large_cap
+POWERINDIA,Hitachi Energy India Ltd.,Capital Goods,,,pending,,mid_cap
+TATASTEEL,Tata Steel Ltd.,Metals & Mining,,,pending,,large_cap
+BANKINDIA,Bank of India,Financial Services,,,pending,,mid_cap
+CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,Chemicals,,,pending,,small_cap
+PARADEEP,Paradeep Phosphates Ltd.,Chemicals,,,pending,,small_cap
+DRREDDY,Dr. Reddy's Laboratories Ltd.,Healthcare,,,pending,,large_cap
+ICICIBANK,ICICI Bank Ltd.,Financial Services,,,pending,,large_cap
+TATACHEM,Tata Chemicals Ltd.,Chemicals,,,pending,,small_cap
+IDFCFIRSTB,IDFC First Bank Ltd.,Financial Services,,,pending,,mid_cap
+HEXT,Hexaware Technologies Ltd.,Information Technology,,,pending,,mid_cap
+OBEROIRLTY,Oberoi Realty Ltd.,Realty,,,pending,,mid_cap
+HINDPETRO,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,,,pending,,mid_cap
+UTIAMC,UTI Asset Management Company Ltd.,Financial Services,,,pending,,small_cap
+INDUSINDBK,IndusInd Bank Ltd.,Financial Services,,,pending,,mid_cap
+NBCC,NBCC (India) Ltd.,Construction,,,pending,,small_cap
+FLUOROCHEM,Gujarat Fluorochemicals Ltd.,Chemicals,,,pending,,mid_cap
+THELEELA,Leela Palaces Hotels & Resorts Ltd.,Consumer Services,,,pending,,small_cap
+PREMIERENE,Premier Energies Ltd.,Capital Goods,,,pending,,mid_cap
+MAPMYINDIA,C.E. Info Systems Ltd.,Information Technology,,,pending,,small_cap
+JUBLINGREA,Jubilant Ingrevia Ltd.,Chemicals,,,pending,,small_cap
+URBANCO,Urban Company Ltd.,Consumer Services,,,pending,,small_cap
+ANTHEM,Anthem Biosciences Ltd.,Healthcare,,,pending,,mid_cap
+RAILTEL,Railtel Corporation Of India Ltd.,Telecommunication,,,pending,,small_cap
+PPLPHARMA,Piramal Pharma Ltd.,Healthcare,,,pending,,small_cap
+SYRMA,Syrma SGS Technology Ltd.,Capital Goods,,,pending,,small_cap
+MSUMI,Motherson Sumi Wiring India Ltd.,Automobile and Auto Components,,,pending,,small_cap
+GROWW,Billionbrains Garage Ventures Ltd.,Financial Services,,,pending,,mid_cap
+LATENTVIEW,Latent View Analytics Ltd.,Information Technology,,,pending,,small_cap
+AEGISVOPAK,Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+DATAPATTNS,Data Patterns (India) Ltd.,Capital Goods,,,pending,,small_cap
+LICI,Life Insurance Corporation of India,Financial Services,,,pending,,mid_cap
+HONASA,Honasa Consumer Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+BLUEJET,Blue Jet Healthcare Ltd.,Healthcare,,,pending,,small_cap
+ATHERENERG,Ather Energy Ltd.,Automobile and Auto Components,,,pending,,small_cap
+PWL,Physicswallah Ltd.,Consumer Services,,,pending,,small_cap
+OLAELEC,Ola Electric Mobility Ltd.,Automobile and Auto Components,,,pending,,small_cap
+NSLNISP,NMDC Steel Ltd.,Metals & Mining,,,pending,,small_cap
+NETWEB,Netweb Technologies India Ltd.,Information Technology,,,pending,,small_cap
+NTPCGREEN,NTPC Green Energy Ltd.,Power,,,pending,,mid_cap
+IGIL,International Gemological Institute Ltd.,Services,,,pending,,small_cap
+HYUNDAI,Hyundai Motor India Ltd.,Automobile and Auto Components,,,pending,,large_cap
+MEESHO,Meesho Ltd.,Consumer Services,,,pending,,small_cap
+SAGILITY,Sagility Ltd.,Information Technology,,,pending,,small_cap
+JAINREC,Jain Resource Recycling Ltd.,Metals & Mining,,,pending,,small_cap
+ATUL,Atul Ltd.,Chemicals,,,pending,,small_cap
+M&M,Mahindra & Mahindra Ltd.,Automobile and Auto Components,,,pending,,large_cap
+GRANULES,Granules India Ltd.,Healthcare,,,pending,,small_cap
+AFCONS,Afcons Infrastructure Ltd.,Construction,,,pending,,small_cap
+CHOICEIN,Choice International Ltd.,Financial Services,,,pending,,small_cap
+GODREJCP,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+MRPL,Mangalore Refinery & Petrochemicals Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+TRAVELFOOD,Travel Food Services Ltd.,Consumer Services,,,pending,,small_cap
+SCI,Shipping Corporation of India Ltd.,Services,,,pending,,small_cap
+CONCOR,Container Corporation of India Ltd.,Services,,,pending,,mid_cap
+SAIL,Steel Authority of India Ltd.,Metals & Mining,,,pending,,mid_cap
+LICHSGFIN,LIC Housing Finance Ltd.,Financial Services,,,pending,,mid_cap
+IKS,Inventurus Knowledge Solutions Ltd.,Information Technology,,,pending,,small_cap
+ABB,ABB India Ltd.,Capital Goods,,,pending,,large_cap
+BAJAJHLDNG,Bajaj Holdings & Investment Ltd.,Financial Services,,,pending,,large_cap
+NUVOCO,Nuvoco Vistas Corporation Ltd.,Construction Materials,,,pending,,small_cap
+BSE,BSE Ltd.,Financial Services,,,pending,,mid_cap
+BALRAMCHIN,Balrampur Chini Mills Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+CARBORUNIV,Carborundum Universal Ltd.,Capital Goods,,,pending,,small_cap
+CHOLAFIN,Cholamandalam Investment and Finance Company Ltd.,Financial Services,,,pending,,large_cap
+JSWENERGY,JSW Energy Ltd.,Power,,,pending,,mid_cap
+INDUSTOWER,Indus Towers Ltd.,Telecommunication,,,pending,,mid_cap
+MMTC,MMTC Ltd.,Services,,,pending,,small_cap
+SBILIFE,SBI Life Insurance Company Ltd.,Financial Services,,,pending,,large_cap
+EIDPARRY,E.I.D. Parry (India) Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+HDFCAMC,HDFC Asset Management Company Ltd.,Financial Services,,,pending,,large_cap
+FIVESTAR,Five-Star Business Finance Ltd.,Financial Services,,,pending,,small_cap
+GAIL,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+GMDCLTD,Gujarat Mineral Development Corporation Ltd.,Metals & Mining,,,pending,,small_cap
+JSWDULUX,JSW Dulux Ltd.,Consumer Durables,,,pending,,small_cap
+PFC,Power Finance Corporation Ltd.,Financial Services,,,pending,,large_cap
+CYIENT,Cyient Ltd.,Information Technology,,,pending,,small_cap
+KFINTECH,Kfin Technologies Ltd.,Financial Services,,,pending,,small_cap
+NATIONALUM,National Aluminium Co. Ltd.,Metals & Mining,,,pending,,mid_cap
+TATATECH,Tata Technologies Ltd.,Information Technology,,,pending,,small_cap
+KIRLOSENG,Kirloskar Oil Eng Ltd.,Capital Goods,,,pending,,small_cap
+SAMMAANCAP,Sammaan Capital Ltd.,Financial Services,,,pending,,small_cap
+DELHIVERY,Delhivery Ltd.,Services,,,pending,,small_cap
+CHOLAHLDNG,Cholamandalam Financial Holdings Ltd.,Financial Services,,,pending,,small_cap
+ABLBL,Aditya Birla Lifestyle Brands Ltd.,Consumer Services,,,pending,,small_cap
+TATACOMM,Tata Communications Ltd.,Telecommunication,,,pending,,mid_cap
+THERMAX,Thermax Ltd.,Capital Goods,,,pending,,mid_cap
+TRITURBINE,Triveni Turbine Ltd.,Capital Goods,,,pending,,small_cap
+BLS,BLS International Services Ltd.,Consumer Services,,,pending,,small_cap
+ITC,ITC Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+TMPV,Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,,,pending,,large_cap
+HEROMOTOCO,Hero MotoCorp Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+GLAXO,Glaxosmithkline Pharmaceuticals Ltd.,Healthcare,,,pending,,mid_cap
+PINELABS,Pine Labs Ltd.,Financial Services,,,pending,,small_cap
+PNB,Punjab National Bank,Financial Services,,,pending,,large_cap
+J&KBANK,Jammu & Kashmir Bank Ltd.,Financial Services,,,pending,,small_cap
+EMCURE,Emcure Pharmaceuticals Ltd.,Healthcare,,,pending,,small_cap
+COROMANDEL,Coromandel International Ltd.,Chemicals,,,pending,,mid_cap
+FEDERALBNK,Federal Bank Ltd.,Financial Services,,,pending,,mid_cap
+BDL,Bharat Dynamics Ltd.,Capital Goods,,,pending,,mid_cap
+CASTROLIND,Castrol India Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+BATAINDIA,Bata India Ltd.,Consumer Durables,,,pending,,small_cap
+HAVELLS,Havells India Ltd.,Consumer Durables,,,pending,,mid_cap
+GPIL,Godawari Power & Ispat Ltd.,Capital Goods,,,pending,,small_cap
+CHENNPETRO,Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+MFSL,Max Financial Services Ltd.,Financial Services,,,pending,,mid_cap
+CGCL,Capri Global Capital Ltd.,Financial Services,,,pending,,small_cap
+PFIZER,Pfizer Ltd.,Healthcare,,,pending,,small_cap
+FACT,Fertilisers and Chemicals Travancore Ltd.,Chemicals,,,pending,,small_cap
+WELCORP,Welspun Corp Ltd.,Capital Goods,,,pending,,small_cap
+PVRINOX,PVR INOX Ltd.,Media Entertainment & Publication,,,pending,,small_cap
+TATACONSUM,Tata Consumer Products Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+WELSPUNLIV,Welspun Living Ltd.,Textiles,,,pending,,small_cap
+DMART,Avenue Supermarts Ltd.,Consumer Services,,,pending,,large_cap
+SUPREMEIND,Supreme Industries Ltd.,Capital Goods,,,pending,,mid_cap
+MARICO,Marico Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+TENNIND,Tenneco Clean Air India Ltd.,Automobile and Auto Components,,,pending,,small_cap
+EMMVEE,Emmvee Photovoltaic Power Ltd.,Capital Goods,,,pending,,small_cap
+ENRIN,Siemens Energy India Ltd.,Capital Goods,,,pending,,large_cap
+TMCV,Tata Motors Ltd.,Capital Goods,,,pending,,large_cap
+GVT&D,GE Vernova T&D India Ltd.,Capital Goods,,,pending,,mid_cap
+VBL,Varun Beverages Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+PIRAMALFIN,Piramal Finance Ltd.,Financial Services,,,pending,,small_cap
+IREDA,Indian Renewable Energy Development Agency Ltd.,Financial Services,,,pending,,mid_cap
+IGL,Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+VEDL,Vedanta Ltd.,Metals & Mining,,,pending,,large_cap
+ELECON,Elecon Engineering Co. Ltd.,Capital Goods,,,pending,,small_cap
+POLYMED,Poly Medicure Ltd.,Healthcare,,,pending,,small_cap
+AIIL,Authum Investment & Infrastructure Ltd.,Financial Services,,,pending,,mid_cap
+ASHOKLEY,Ashok Leyland Ltd.,Capital Goods,,,pending,,mid_cap
+AEGISLOG,Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,,,pending,,small_cap
+JWL,Jupiter Wagons Ltd.,Capital Goods,,,pending,,small_cap
+PHOENIXLTD,Phoenix Mills Ltd.,Realty,,,pending,,mid_cap
+AIAENG,AIA Engineering Ltd.,Capital Goods,,,pending,,mid_cap
+ONGC,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+LTM,LTM Ltd.,Information Technology,,,pending,,large_cap
+BRITANNIA,Britannia Industries Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+AAVAS,Aavas Financiers Ltd.,Financial Services,,,pending,,small_cap
+KAJARIACER,Kajaria Ceramics Ltd.,Consumer Durables,,,pending,,small_cap
+KPIL,Kalpataru Projects International Ltd.,Construction,,,pending,,small_cap
+JSL,Jindal Stainless Ltd.,Metals & Mining,,,pending,,mid_cap
+VOLTAS,Voltas Ltd.,Consumer Durables,,,pending,,mid_cap
+CLEAN,Clean Science and Technology Ltd.,Chemicals,,,pending,,small_cap
+USHAMART,Usha Martin Ltd.,Capital Goods,,,pending,,small_cap
+EIHOTEL,EIH Ltd.,Consumer Services,,,pending,,small_cap
+GODREJIND,Godrej Industries Ltd.,Diversified,,,pending,,mid_cap
+BLUEDART,Blue Dart Express Ltd.,Services,,,pending,,small_cap
+FINCABLES,Finolex Cables Ltd.,Capital Goods,,,pending,,small_cap
+KOTAKBANK,Kotak Mahindra Bank Ltd.,Financial Services,,,pending,,large_cap
+AXISBANK,Axis Bank Ltd.,Financial Services,,,pending,,large_cap
+NESTLEIND,Nestle India Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+IOC,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+ANANTRAJ,Anant Raj Ltd.,Realty,,,pending,,small_cap
+TATAPOWER,Tata Power Co. Ltd.,Power,,,pending,,large_cap
+ITI,ITI Ltd.,Telecommunication,,,pending,,small_cap
+MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,Capital Goods,,,pending,,large_cap
+ZENTEC,Zen Technologies Ltd.,Capital Goods,,,pending,,small_cap
+ZEEL,Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,,,pending,,small_cap
+BHEL,Bharat Heavy Electricals Ltd.,Capital Goods,,,pending,,mid_cap
+BEML,BEML Ltd.,Capital Goods,,,pending,,small_cap
+SUMICHEM,Sumitomo Chemical India Ltd.,Chemicals,,,pending,,small_cap
+COLPAL,Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+GODFRYPHLP,Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+OLECTRA,Olectra Greentech Ltd.,Automobile and Auto Components,,,pending,,small_cap
+PERSISTENT,Persistent Systems Ltd.,Information Technology,,,pending,,mid_cap
+BEL,Bharat Electronics Ltd.,Capital Goods,,,pending,,large_cap
+HINDZINC,Hindustan Zinc Ltd.,Metals & Mining,,,pending,,large_cap
+SONATSOFTW,Sonata Software Ltd.,Information Technology,,,pending,,small_cap
+DLF,DLF Ltd.,Realty,,,pending,,large_cap
+OIL,Oil India Ltd.,Oil Gas & Consumable Fuels,,,pending,,mid_cap
+TITAN,Titan Company Ltd.,Consumer Durables,,,pending,,large_cap
+LLOYDSME,Lloyds Metals And Energy Ltd.,Metals & Mining,,,pending,,mid_cap
+ELGIEQUIP,Elgi Equipments Ltd.,Capital Goods,,,pending,,small_cap
+TECHNOE,Techno Electric & Engineering Company Ltd.,Construction,,,pending,,small_cap
+DEEPAKNTR,Deepak Nitrite Ltd.,Chemicals,,,pending,,small_cap
+CARTRADE,Cartrade Tech Ltd.,Consumer Services,,,pending,,small_cap
+HBLENGINE,HBL Engineering Ltd.,Capital Goods,,,pending,,small_cap
+BAJFINANCE,Bajaj Finance Ltd.,Financial Services,,,pending,,large_cap
+GALLANTT,Gallantt Ispat Ltd.,Capital Goods,,,pending,,small_cap
+CUMMINSIND,Cummins India Ltd.,Capital Goods,,,pending,,large_cap
+NAM-INDIA,Nippon Life India Asset Management Ltd.,Financial Services,,,pending,,mid_cap
+CROMPTON,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,,,pending,,small_cap
+EXIDEIND,Exide Industries Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+KALYANKJIL,Kalyan Jewellers India Ltd.,Consumer Durables,,,pending,,mid_cap
+INTELLECT,Intellect Design Arena Ltd.,Information Technology,,,pending,,small_cap
+PIDILITIND,Pidilite Industries Ltd.,Chemicals,,,pending,,large_cap
+RITES,RITES Ltd.,Construction,,,pending,,small_cap
+DOMS,DOMS Industries Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+GILLETTE,Gillette India Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+BOSCHLTD,Bosch Ltd.,Automobile and Auto Components,,,pending,,large_cap
+JINDALSAW,Jindal Saw Ltd.,Capital Goods,,,pending,,small_cap
+LGEINDIA,LG Electronics India Ltd.,Consumer Durables,,,pending,,mid_cap
+TIMKEN,Timken India Ltd.,Capital Goods,,,pending,,small_cap
+LUPIN,Lupin Ltd.,Healthcare,,,pending,,mid_cap
+RAMCOCEM,The Ramco Cements Ltd.,Construction Materials,,,pending,,small_cap
+IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,Consumer Services,,,pending,,mid_cap
+CONCORDBIO,Concord Biotech Ltd.,Healthcare,,,pending,,small_cap
+MOTILALOFS,Motilal Oswal Financial Services Ltd.,Financial Services,,,pending,,mid_cap
+ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,Automobile and Auto Components,,,pending,,small_cap
+BHARTIHEXA,Bharti Hexacom Ltd.,Telecommunication,,,pending,,mid_cap
+SOLARINDS,Solar Industries India Ltd.,Chemicals,,,pending,,large_cap
+ICICIAMC,ICICI Prudential Asset Management Company Ltd.,Financial Services,,,pending,,mid_cap
+PETRONET,Petronet LNG Ltd.,Oil Gas & Consumable Fuels,,,pending,,mid_cap
+JPPOWER,Jaiprakash Power Ventures Ltd.,Power,,,pending,,small_cap
+MPHASIS,MphasiS Ltd.,Information Technology,,,pending,,mid_cap
+ABBOTINDIA,Abbott India Ltd.,Healthcare,,,pending,,mid_cap
+DIVISLAB,Divi's Laboratories Ltd.,Healthcare,,,pending,,large_cap
+ADANIGREEN,Adani Green Energy Ltd.,Power,,,pending,,large_cap
+GRAPHITE,Graphite India Ltd.,Capital Goods,,,pending,,small_cap
+AMBER,Amber Enterprises India Ltd.,Consumer Durables,,,pending,,small_cap
+APARINDS,Apar Industries Ltd.,Capital Goods,,,pending,,mid_cap
+BIOCON,Biocon Ltd.,Healthcare,,,pending,,mid_cap
+WAAREEENER,Waaree Energies Ltd.,Capital Goods,,,pending,,mid_cap
+BAJAJHFL,Bajaj Housing Finance Ltd.,Financial Services,,,pending,,mid_cap
+ITCHOTELS,ITC Hotels Ltd.,Consumer Services,,,pending,,mid_cap
+GRSE,Garden Reach Shipbuilders & Engineers Ltd.,Capital Goods,,,pending,,small_cap
+INDIACEM,India Cements Ltd.,Construction Materials,,,pending,,small_cap
+SARDAEN,Sarda Energy and Minerals Ltd.,Metals & Mining,,,pending,,small_cap
+NYKAA,FSN E-Commerce Ventures Ltd.,Consumer Services,,,pending,,mid_cap
+KEC,Kec International Ltd.,Construction,,,pending,,small_cap
+BHARTIARTL,Bharti Airtel Ltd.,Telecommunication,,,pending,,large_cap
+SYNGENE,Syngene International Ltd.,Healthcare,,,pending,,small_cap
+RKFORGE,Ramkrishna Forgings Ltd.,Automobile and Auto Components,,,pending,,small_cap
+ATGL,Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,,,pending,,mid_cap
+ABSLAMC,Aditya Birla Sun Life AMC Ltd.,Financial Services,,,pending,,small_cap
+UNOMINDA,UNO Minda Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+AUROPHARMA,Aurobindo Pharma Ltd.,Healthcare,,,pending,,mid_cap
+ERIS,Eris Lifesciences Ltd.,Healthcare,,,pending,,small_cap
+NH,Narayana Hrudayalaya Ltd.,Healthcare,,,pending,,small_cap
+MUTHOOTFIN,Muthoot Finance Ltd.,Financial Services,,,pending,,large_cap
+RVNL,Rail Vikas Nigam Ltd.,Construction,,,pending,,mid_cap
+POLICYBZR,PB Fintech Ltd.,Financial Services,,,pending,,mid_cap
+CCL,CCL Products (I) Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+ADANIENT,Adani Enterprises Ltd.,Metals & Mining,,,pending,,large_cap
+SBFC,SBFC Finance Ltd.,Financial Services,,,pending,,small_cap
+SUNTV,Sun TV Network Ltd.,Media Entertainment & Publication,,,pending,,small_cap
+CHALET,Chalet Hotels Ltd.,Consumer Services,,,pending,,small_cap
+APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,Healthcare,,,pending,,large_cap
+APOLLOTYRE,Apollo Tyres Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+ASAHIINDIA,Asahi India Glass Ltd.,Automobile and Auto Components,,,pending,,small_cap
+FORCEMOT,Force Motors Ltd.,Automobile and Auto Components,,,pending,,small_cap
+POLYCAB,Polycab India Ltd.,Capital Goods,,,pending,,mid_cap
+MAHABANK,Bank of Maharashtra,Financial Services,,,pending,,mid_cap
+PGEL,PG Electroplast Ltd.,Consumer Durables,,,pending,,small_cap
+BAYERCROP,Bayer Cropscience Ltd.,Chemicals,,,pending,,small_cap
+BERGEPAINT,Berger Paints India Ltd.,Consumer Durables,,,pending,,mid_cap
+ANANDRATHI,Anand Rathi Wealth Ltd.,Financial Services,,,pending,,small_cap
+BHARATFORG,Bharat Forge Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+360ONE,360 ONE WAM Ltd.,Financial Services,,,pending,,mid_cap
+TCS,Tata Consultancy Services Ltd.,Information Technology,,,pending,,large_cap
+3MINDIA,3M India Ltd.,Diversified,,,pending,,mid_cap
+NIACL,The New India Assurance Company Ltd.,Financial Services,,,pending,,mid_cap
+BLUESTARCO,Blue Star Ltd.,Consumer Durables,,,pending,,mid_cap
+LINDEINDIA,Linde India Ltd.,Chemicals,,,pending,,mid_cap
+MEDANTA,Global Health Ltd.,Healthcare,,,pending,,mid_cap
+CAPLIPOINT,Caplin Point Laboratories Ltd.,Healthcare,,,pending,,small_cap
+CANBK,Canara Bank,Financial Services,,,pending,,large_cap
+CANFINHOME,Can Fin Homes Ltd.,Financial Services,,,pending,,small_cap
+ULTRACEMCO,UltraTech Cement Ltd.,Construction Materials,,,pending,,large_cap
+HOMEFIRST,Home First Finance Company India Ltd.,Financial Services,,,pending,,small_cap
+GICRE,General Insurance Corporation of India,Financial Services,,,pending,,mid_cap
+CEATLTD,Ceat Ltd.,Automobile and Auto Components,,,pending,,small_cap
+CENTRALBK,Central Bank of India,Financial Services,,,pending,,small_cap
+GODREJPROP,Godrej Properties Ltd.,Realty,,,pending,,mid_cap
+CESC,CESC Ltd.,Power,,,pending,,small_cap
+CUB,City Union Bank Ltd.,Financial Services,,,pending,,small_cap
+TVSMOTOR,TVS Motor Company Ltd.,Automobile and Auto Components,,,pending,,large_cap
+LTF,L&T Finance Ltd.,Financial Services,,,pending,,mid_cap
+DCMSHRIRAM,DCM Shriram Ltd.,Diversified,,,pending,,small_cap
+DEEPAKFERT,Deepak Fertilisers & Petrochemicals Corp. Ltd.,Chemicals,,,pending,,small_cap
+ENGINERSIN,Engineers India Ltd.,Construction,,,pending,,small_cap
+POONAWALLA,Poonawalla Fincorp Ltd.,Financial Services,,,pending,,small_cap
+SCHAEFFLER,Schaeffler India Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+TTML,Tata Teleservices (Maharashtra) Ltd.,Telecommunication,,,pending,,small_cap
+ZENSARTECH,Zensar Technolgies Ltd.,Information Technology,,,pending,,small_cap
+MANAPPURAM,Manappuram Finance Ltd.,Financial Services,,,pending,,small_cap
+COALINDIA,Coal India Ltd.,Oil Gas & Consumable Fuels,,,pending,,large_cap
+GABRIEL,Gabriel India Ltd.,Automobile and Auto Components,,,pending,,small_cap
+YESBANK,Yes Bank Ltd.,Financial Services,,,pending,,mid_cap
+IIFL,IIFL Finance Ltd.,Financial Services,,,pending,,small_cap
+HINDCOPPER,Hindustan Copper Ltd.,Metals & Mining,,,pending,,small_cap
+NUVAMA,Nuvama Wealth Management Ltd.,Financial Services,,,pending,,small_cap
+CIEINDIA,CIE Automotive India Ltd.,Automobile and Auto Components,,,pending,,small_cap
+ALKEM,Alkem Laboratories Ltd.,Healthcare,,,pending,,mid_cap
+HEG,H.E.G. Ltd.,Capital Goods,,,pending,,small_cap
+BANDHANBNK,Bandhan Bank Ltd.,Financial Services,,,pending,,small_cap
+HFCL,HFCL Ltd.,Telecommunication,,,pending,,small_cap
+EMAMILTD,Emami Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+ABDL,Allied Blenders and Distillers Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+INDIANB,Indian Bank,Financial Services,,,pending,,mid_cap
+IOB,Indian Overseas Bank,Financial Services,,,pending,,small_cap
+SAILIFE,Sai Life Sciences Ltd.,Healthcare,,,pending,,small_cap
+IPCALAB,Ipca Laboratories Ltd.,Healthcare,,,pending,,mid_cap
+JBCHEPHARM,J.B. Chemicals & Pharmaceuticals Ltd.,Healthcare,,,pending,,small_cap
+PNBHOUSING,PNB Housing Finance Ltd.,Financial Services,,,pending,,small_cap
+JKTYRE,JK Tyre & Industries Ltd.,Automobile and Auto Components,,,pending,,small_cap
+STARHEALTH,Star Health and Allied Insurance Company Ltd.,Financial Services,,,pending,,small_cap
+NMDC,NMDC Ltd.,Metals & Mining,,,pending,,mid_cap
+MARUTI,Maruti Suzuki India Ltd.,Automobile and Auto Components,,,pending,,large_cap
+NLCINDIA,NLC India Ltd.,Power,,,pending,,mid_cap
+COFORGE,Coforge Ltd.,Information Technology,,,pending,,mid_cap
+PTCIL,PTC Industries Ltd.,Capital Goods,,,pending,,small_cap
+CAMS,Computer Age Management Services Ltd.,Financial Services,,,pending,,small_cap
+LALPATHLAB,Dr. Lal Path Labs Ltd.,Healthcare,,,pending,,small_cap
+PCBL,PCBL Chemical Ltd.,Chemicals,,,pending,,small_cap
+PIIND,PI Industries Ltd.,Chemicals,,,pending,,mid_cap
+RPOWER,Reliance Power Ltd.,Power,,,pending,,small_cap
+TITAGARH,Titagarh Rail Systems Ltd.,Capital Goods,,,pending,,small_cap
+PATANJALI,Patanjali Foods Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+NEWGEN,Newgen Software Technologies Ltd.,Information Technology,,,pending,,small_cap
+ACMESOLAR,ACME Solar Holdings Ltd.,Power,,,pending,,small_cap
+UPL,UPL Ltd.,Chemicals,,,pending,,mid_cap
+MANKIND,Mankind Pharma Ltd.,Healthcare,,,pending,,mid_cap
+INDIGO,InterGlobe Aviation Ltd.,Services,,,pending,,large_cap
+SRF,SRF Ltd.,Chemicals,,,pending,,mid_cap
+ABFRL,Aditya Birla Fashion and Retail Ltd.,Consumer Services,,,pending,,small_cap
+SUNDARMFIN,Sundaram Finance Ltd.,Financial Services,,,pending,,mid_cap
+SPLPETRO,Supreme Petrochem Ltd.,Chemicals,,,pending,,small_cap
+NAUKRI,Info Edge (India) Ltd.,Consumer Services,,,pending,,mid_cap
+SWANCORP,Swan Corp Ltd.,Chemicals,,,pending,,small_cap
+TECHM,Tech Mahindra Ltd.,Information Technology,,,pending,,large_cap
+IDEA,Vodafone Idea Ltd.,Telecommunication,,,pending,,mid_cap
+TATAELXSI,Tata Elxsi Ltd.,Information Technology,,,pending,,mid_cap
+LODHA,Lodha Developers Ltd.,Realty,,,pending,,large_cap
+HONAUT,Honeywell Automation India Ltd.,Capital Goods,,,pending,,mid_cap
+SOBHA,Sobha Ltd.,Realty,,,pending,,small_cap
+TATAINVEST,Tata Investment Corporation Ltd.,Financial Services,,,pending,,mid_cap
+TBOTEK,TBO Tek Ltd.,Consumer Services,,,pending,,small_cap
+ABCAPITAL,Aditya Birla Capital Ltd.,Financial Services,,,pending,,mid_cap
+FSL,Firstsource Solutions Ltd.,Services,,,pending,,small_cap
+TORNTPHARM,Torrent Pharmaceuticals Ltd.,Healthcare,,,pending,,large_cap
+CEMPRO,Cemindia Projects Ltd.,Construction,,,pending,,small_cap
+UBL,United Breweries Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+UCOBANK,UCO Bank,Financial Services,,,pending,,small_cap
+UNIONBANK,Union Bank of India,Financial Services,,,pending,,large_cap
+AWL,AWL Agri Business Ltd.,Fast Moving Consumer Goods,,,pending,,mid_cap
+JUBLPHARMA,Jubilant Pharmova Ltd.,Healthcare,,,pending,,small_cap
+APLAPOLLO,APL Apollo Tubes Ltd.,Capital Goods,,,pending,,mid_cap
+COCHINSHIP,Cochin Shipyard Ltd.,Capital Goods,,,pending,,mid_cap
+WHIRLPOOL,Whirlpool of India Ltd.,Consumer Durables,,,pending,,small_cap
+JSWCEMENT,JSW Cement Ltd.,Construction Materials,,,pending,,small_cap
+SHRIRAMFIN,Shriram Finance Ltd.,Financial Services,,,pending,,large_cap
+NAVA,Nava Ltd.,Power,,,pending,,small_cap
+ICICIPRULI,ICICI Prudential Life Insurance Company Ltd.,Financial Services,,,pending,,mid_cap
+ACE,Action Construction Equipment Ltd.,Capital Goods,,,pending,,small_cap
+ANGELONE,Angel One Ltd.,Financial Services,,,pending,,small_cap
+NTPC,NTPC Ltd.,Power,,,pending,,large_cap
+CDSL,Central Depository Services (India) Ltd.,Financial Services,,,pending,,small_cap
+ECLERX,eClerx Services Ltd.,Services,,,pending,,small_cap
+CREDITACC,CreditAccess Grameen Ltd.,Financial Services,,,pending,,small_cap
+ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,Services,,,pending,,large_cap
+RHIM,RHI MAGNESITA INDIA LTD.,Capital Goods,,,pending,,small_cap
+MCX,Multi Commodity Exchange of India Ltd.,Financial Services,,,pending,,mid_cap
+JINDALSTEL,Jindal Steel Ltd.,Metals & Mining,,,pending,,large_cap
+POWERGRID,Power Grid Corporation of India Ltd.,Power,,,pending,,large_cap
+HDBFS,HDB Financial Services Ltd.,Financial Services,,,pending,,mid_cap
+JIOFIN,Jio Financial Services Ltd.,Financial Services,,,pending,,large_cap
+ETERNAL,Eternal Ltd.,Consumer Services,,,pending,,large_cap
+PAGEIND,Page Industries Ltd.,Textiles,,,pending,,mid_cap
+TARIL,Transformers And Rectifiers (India) Ltd.,Capital Goods,,,pending,,small_cap
+ICICIGI,ICICI Lombard General Insurance Company Ltd.,Financial Services,,,pending,,mid_cap
+ZYDUSWELL,Zydus Wellness Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+AARTIIND,Aarti Industries Ltd.,Chemicals,,,pending,,small_cap
+M&MFIN,Mahindra & Mahindra Financial Services Ltd.,Financial Services,,,pending,,mid_cap
+MOTHERSON,Samvardhana Motherson International Ltd.,Automobile and Auto Components,,,pending,,large_cap
+GMRAIRPORT,GMR Airports Ltd.,Services,,,pending,,mid_cap
+RRKABEL,R R Kabel Ltd.,Capital Goods,,,pending,,small_cap
+JMFINANCIL,JM Financial Ltd.,Financial Services,,,pending,,small_cap
+BALKRISIND,Balkrishna Industries Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+BRIGADE,Brigade Enterprises Ltd.,Realty,,,pending,,small_cap
+NEULANDLAB,Neuland Laboratories Ltd.,Healthcare,,,pending,,small_cap
+HDFCLIFE,HDFC Life Insurance Company Ltd.,Financial Services,,,pending,,large_cap
+JUBLFOOD,Jubilant Foodworks Ltd.,Consumer Services,,,pending,,mid_cap
+SAPPHIRE,Sapphire Foods India Ltd.,Consumer Services,,,pending,,small_cap
+SHYAMMETL,Shyam Metalics and Energy Ltd.,Capital Goods,,,pending,,small_cap
+PRESTIGE,Prestige Estates Projects Ltd.,Realty,,,pending,,mid_cap
+TORNTPOWER,Torrent Power Ltd.,Power,,,pending,,mid_cap
+ADANIPOWER,Adani Power Ltd.,Power,,,pending,,large_cap
+LTFOODS,LT Foods Ltd.,Fast Moving Consumer Goods,,,pending,,small_cap
+CPPLUS,Aditya Infotech Ltd.,Capital Goods,,,pending,,small_cap
+IRB,IRB Infrastructure Developers Ltd.,Construction,,,pending,,small_cap
+JKCEMENT,J.K. Cement Ltd.,Construction Materials,,,pending,,mid_cap
+VTL,Vardhman Textiles Ltd.,Textiles,,,pending,,small_cap
+BSOFT,Birlasoft Ltd.,Information Technology,,,pending,,small_cap
+SCHNEIDER,Schneider Electric Infrastructure Ltd.,Capital Goods,,,pending,,small_cap
+MINDACORP,Minda Corporation Ltd.,Automobile and Auto Components,,,pending,,small_cap
+NHPC,NHPC Ltd.,Power,,,pending,,mid_cap
+TRENT,Trent Ltd.,Consumer Services,,,pending,,large_cap
+APTUS,Aptus Value Housing Finance India Ltd.,Financial Services,,,pending,,small_cap
+UNITDSPR,United Spirits Ltd.,Fast Moving Consumer Goods,,,pending,,large_cap
+HCLTECH,HCL Technologies Ltd.,Information Technology,,,pending,,large_cap
+NCC,NCC Ltd.,Construction,,,pending,,small_cap
+DEVYANI,Devyani International Ltd.,Consumer Services,,,pending,,small_cap
+KEI,KEI Industries Ltd.,Capital Goods,,,pending,,mid_cap
+JSWINFRA,JSW Infrastructure Ltd.,Services,,,pending,,mid_cap
+OFSS,Oracle Financial Services Software Ltd.,Information Technology,,,pending,,mid_cap
+MRF,MRF Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+AADHARHFC,Aadhar Housing Finance Ltd.,Financial Services,,,pending,,small_cap
+ARE&M,Amara Raja Energy & Mobility Ltd.,Automobile and Auto Components,,,pending,,small_cap
+REDINGTON,Redington Ltd.,Services,,,pending,,small_cap
+BELRISE,Belrise Industries Ltd.,Automobile and Auto Components,,,pending,,small_cap
+SIGNATURE,Signatureglobal (India) Ltd.,Realty,,,pending,,small_cap
+ENDURANCE,Endurance Technologies Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+ASTERDM,Aster DM Healthcare Ltd.,Healthcare,,,pending,,small_cap
+BAJAJ-AUTO,Bajaj Auto Ltd.,Automobile and Auto Components,,,pending,,large_cap
+BAJAJFINSV,Bajaj Finserv Ltd.,Financial Services,,,pending,,large_cap
+KAYNES,Kaynes Technology India Ltd.,Capital Goods,,,pending,,small_cap
+JBMA,JBM Auto Ltd.,Automobile and Auto Components,,,pending,,small_cap
+KPRMILL,K.P.R. Mill Ltd.,Textiles,,,pending,,mid_cap
+ANURAS,Anupam Rasayan India Ltd.,Chemicals,,,pending,,small_cap
+ADANIENSOL,Adani Energy Solutions Ltd.,Power,,,pending,,large_cap
+INDIAMART,Indiamart Intermesh Ltd.,Consumer Services,,,pending,,small_cap
+GLENMARK,Glenmark Pharmaceuticals Ltd.,Healthcare,,,pending,,mid_cap
+DIXON,Dixon Technologies (India) Ltd.,Consumer Durables,,,pending,,mid_cap
+RADICO,Radico Khaitan Ltd,Fast Moving Consumer Goods,,,pending,,mid_cap
+LAURUSLABS,Laurus Labs Ltd.,Healthcare,,,pending,,mid_cap
+AUBANK,AU Small Finance Bank Ltd.,Financial Services,,,pending,,mid_cap
+LENSKART,Lenskart Solutions Ltd.,Consumer Services,,,pending,,mid_cap
+RAINBOW,Rainbow Childrens Medicare Ltd.,Healthcare,,,pending,,small_cap
+IRCON,IRCON International Ltd.,Construction,,,pending,,small_cap
+KIMS,Krishna Institute of Medical Sciences Ltd.,Healthcare,,,pending,,small_cap
+LEMONTREE,Lemon Tree Hotels Ltd.,Consumer Services,,,pending,,small_cap
+TIINDIA,Tube Investments of India Ltd.,Automobile and Auto Components,,,pending,,mid_cap
+RBLBANK,RBL Bank Ltd.,Financial Services,,,pending,,small_cap
+TATACAP,Tata Capital Ltd.,Financial Services,,,pending,,large_cap
+SAREGAMA,Saregama India Ltd,Media Entertainment & Publication,,,pending,,small_cap
+JYOTICNC,Jyoti CNC Automation Ltd.,Capital Goods,,,pending,,small_cap
+PAYTM,One 97 Communications Ltd.,Financial Services,,,pending,,mid_cap
+NATCOPHARM,NATCO Pharma Ltd.,Healthcare,,,pending,,small_cap
+NIVABUPA,Niva Bupa Health Insurance Company Ltd.,Financial Services,,,pending,,small_cap
