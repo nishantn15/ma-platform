@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leads Directory — M&A Leadership Platform</title>
+<meta name="description" content="Internal leads directory: 752 Indian listed companies tiered by M&A acquisition fit (cash-rich, low-debt, profitable). T1, T2, T3, slow-growth hot list.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0a1628;
+  --navy-light: #0f1f3a;
+  --navy-mid: #162a4a;
+  --gold: #c9a84c;
+  --gold-light: #ddc06a;
+  --gold-dim: rgba(201,168,76,.15);
+  --cream: #f8f6f0;
+  --gray-rule: rgba(255,255,255,.08);
+  --text-on-dark: rgba(255,255,255,.85);
+  --text-dim: rgba(255,255,255,.55);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', -apple-system, sans-serif;
+  background: var(--navy);
+  color: var(--text-on-dark);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+}
+
+/* ── Header ── */
+header {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(10,22,40,.97);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--gray-rule);
+  padding: 16px 24px;
+}
+.header-inner { max-width: 1400px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-mark { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--gold); font-weight: 700; }
+.brand-name { font-family: 'Playfair Display', serif; font-size: 18px; color: #fff; font-weight: 500; }
+.brand-sub { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; }
+.nav-back a { color: var(--gold); text-decoration: none; font-size: 13px; padding: 6px 14px; border: 1px solid var(--gold); border-radius: 3px; transition: all .2s; }
+.nav-back a:hover { background: var(--gold); color: var(--navy); }
+
+/* ── Stats Bar ── */
+.stats { max-width: 1400px; margin: 24px auto; padding: 0 24px; }
+.stats-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.stat { padding: 14px 16px; background: var(--navy-light); border: 1px solid var(--gray-rule); border-radius: 4px; }
+.stat.active { border-color: var(--gold); background: rgba(201,168,76,.06); }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: #fff; }
+.stat.active .stat-num { color: var(--gold); }
+.stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.2px; color: var(--text-dim); text-transform: uppercase; margin-top: 4px; }
+.stat-pill { cursor: pointer; transition: all .2s; }
+.stat-pill:hover { border-color: var(--gold-light); transform: translateY(-1px); }
+
+/* ── Filters ── */
+.filters { max-width: 1400px; margin: 24px auto; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+.search { flex: 1; min-width: 220px; max-width: 360px; }
+.search input {
+  width: 100%; padding: 10px 14px; background: var(--navy-light);
+  border: 1px solid var(--gray-rule); border-radius: 4px;
+  color: #fff; font-family: inherit; font-size: 14px;
+}
+.search input:focus { outline: none; border-color: var(--gold); }
+.filter-select { padding: 10px 14px; background: var(--navy-light); border: 1px solid var(--gray-rule); border-radius: 4px; color: #fff; font-family: inherit; font-size: 13px; cursor: pointer; }
+.filter-select:focus { outline: none; border-color: var(--gold); }
+.filter-result-count { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
+
+/* ── Table ── */
+.table-wrap { max-width: 1400px; margin: 0 auto 64px; padding: 0 24px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--gray-rule); vertical-align: middle; }
+thead th {
+  position: sticky; top: 99px;
+  background: var(--navy-mid);
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  text-transform: uppercase; letter-spacing: 1px;
+  color: var(--gold); font-weight: 500;
+  cursor: pointer; user-select: none; white-space: nowrap;
+}
+thead th:hover { color: var(--gold-light); }
+thead th.sorted::after { content: " ▲"; font-size: 9px; color: var(--gold-light); }
+thead th.sorted.desc::after { content: " ▼"; }
+tbody tr:hover { background: rgba(255,255,255,.02); }
+tbody tr.slow-growth { background: rgba(201,168,76,.06); }
+tbody tr.slow-growth:hover { background: rgba(201,168,76,.10); }
+.sym { font-family: 'JetBrains Mono', monospace; font-weight: 500; color: var(--gold-light); white-space: nowrap; }
+.name { color: #fff; max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.sector { color: var(--text-dim); font-size: 12px; white-space: nowrap; }
+.num { font-family: 'JetBrains Mono', monospace; font-size: 12px; text-align: right; }
+.tier {
+  display: inline-block; padding: 2px 8px; border-radius: 3px;
+  font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .5px; font-weight: 600;
+}
+.tier.T1 { background: var(--gold); color: var(--navy); }
+.tier.T2 { background: rgba(201,168,76,.6); color: #fff; }
+.tier.T3 { background: rgba(255,255,255,.15); color: var(--text-on-dark); }
+.tier.skip, .tier.skip_financial { background: rgba(255,255,255,.05); color: var(--text-dim); }
+.signal-badge { display: inline-block; margin-left: 4px; padding: 1px 5px; background: var(--gold); color: var(--navy); border-radius: 2px; font-size: 9px; font-weight: 700; letter-spacing: .5px; }
+
+.status-select { padding: 3px 6px; background: var(--navy-light); border: 1px solid var(--gray-rule); border-radius: 3px; color: var(--text-on-dark); font-family: 'JetBrains Mono', monospace; font-size: 11px; cursor: pointer; }
+.status-select:focus { outline: none; border-color: var(--gold); }
+.status-select[data-status="contacted"] { color: #ffe082; }
+.status-select[data-status="meeting"] { color: #90caf9; }
+.status-select[data-status="proposal"] { color: #ce93d8; }
+.status-select[data-status="won"] { color: #a5d6a7; }
+.status-select[data-status="lost"] { color: #ef9a9a; opacity: .6; }
+
+.detail-btn { padding: 3px 8px; background: transparent; border: 1px solid var(--gray-rule); border-radius: 3px; color: var(--text-dim); cursor: pointer; font-size: 11px; transition: all .2s; }
+.detail-btn:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── Detail Drawer ── */
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: 480px; max-width: 100%; background: var(--navy-light); border-left: 1px solid var(--gold); transform: translateX(100%); transition: transform .3s ease; z-index: 100; overflow-y: auto; }
+.drawer.open { transform: translateX(0); box-shadow: -20px 0 40px rgba(0,0,0,.4); }
+.drawer-head { padding: 24px; border-bottom: 1px solid var(--gray-rule); display: flex; align-items: flex-start; justify-content: space-between; }
+.drawer-head h3 { font-family: 'Playfair Display', serif; color: #fff; font-weight: 600; font-size: 22px; }
+.drawer-head .sym { font-size: 11px; margin-top: 4px; }
+.drawer-close { background: none; border: none; color: var(--text-dim); font-size: 24px; cursor: pointer; line-height: 1; }
+.drawer-close:hover { color: var(--gold); }
+.drawer-body { padding: 24px; }
+.drawer-section { margin-bottom: 24px; }
+.drawer-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
+.drawer-row { display: grid; grid-template-columns: 1fr 1.4fr; padding: 6px 0; border-bottom: 1px solid var(--gray-rule); font-size: 13px; gap: 12px; }
+.drawer-row span:first-child { color: var(--text-dim); font-size: 12px; }
+.drawer-row span:last-child { color: #fff; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-align: right; }
+.drawer-row.tier-reason span:last-child { font-family: inherit; text-align: left; font-style: italic; color: var(--gold-light); }
+.drawer-note { padding: 12px; background: var(--navy); border-radius: 4px; font-size: 12px; color: var(--text-on-dark); line-height: 1.5; }
+.drawer-textarea { width: 100%; padding: 10px; background: var(--navy); border: 1px solid var(--gray-rule); border-radius: 4px; color: #fff; font-family: inherit; font-size: 13px; min-height: 80px; resize: vertical; }
+.drawer-textarea:focus { outline: none; border-color: var(--gold); }
+.drawer-save { margin-top: 12px; padding: 8px 16px; background: var(--gold); color: var(--navy); border: none; border-radius: 3px; cursor: pointer; font-weight: 600; font-family: inherit; font-size: 12px; }
+.drawer-save:hover { background: var(--gold-light); }
+.drawer-input { width: 100%; padding: 8px 12px; background: var(--navy); border: 1px solid var(--gray-rule); border-radius: 4px; color: #fff; font-family: inherit; font-size: 13px; margin-bottom: 8px; }
+.drawer-input:focus { outline: none; border-color: var(--gold); }
+
+/* ── Backdrop ── */
+.backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.5); opacity: 0; pointer-events: none; transition: opacity .3s; z-index: 50; }
+.backdrop.show { opacity: 1; pointer-events: auto; }
+
+/* ── Loading state ── */
+.loading { text-align: center; padding: 80px 20px; font-family: 'Playfair Display', serif; font-style: italic; color: var(--text-dim); }
+.error { text-align: center; padding: 60px 20px; color: #ef9a9a; }
+
+/* ── Footer ── */
+footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rule); color: var(--text-dim); font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: 1px; }
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ── Focus ── */
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .stats-row { grid-template-columns: repeat(3, 1fr); }
+  .name { max-width: 140px; }
+  .drawer { width: 100%; }
+}
+@media (max-width: 600px) {
+  .stats-row { grid-template-columns: repeat(2, 1fr); }
+  .search { max-width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">M</span>
+      <div>
+        <div class="brand-name">Leads Directory</div>
+        <div class="brand-sub">M&A Leadership Platform · Internal</div>
+      </div>
+    </div>
+    <div class="nav-back"><a href="./">← Platform Home</a></div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-row" id="stats-row">
+    <div class="stat stat-pill" data-filter-tier="all"><div class="stat-num" id="stat-total">—</div><div class="stat-label">Total</div></div>
+    <div class="stat stat-pill" data-filter-tier="T1"><div class="stat-num" id="stat-t1">—</div><div class="stat-label">T1 Large</div></div>
+    <div class="stat stat-pill" data-filter-tier="T2"><div class="stat-num" id="stat-t2">—</div><div class="stat-label">T2 Mid</div></div>
+    <div class="stat stat-pill" data-filter-tier="T3"><div class="stat-num" id="stat-t3">—</div><div class="stat-label">T3 Pipeline</div></div>
+    <div class="stat stat-pill" data-filter-slow="1"><div class="stat-num" id="stat-slow">—</div><div class="stat-label">Slow-growth Hot List</div></div>
+    <div class="stat stat-pill" data-filter-tier="skip"><div class="stat-num" id="stat-skip">—</div><div class="stat-label">Skipped</div></div>
+  </div>
+</div>
+
+<div class="filters">
+  <div class="search"><input id="search" type="search" placeholder="Search name / ticker / sector …" /></div>
+  <select id="tier-filter" class="filter-select">
+    <option value="">All tiers</option>
+    <option value="T1">T1</option><option value="T2">T2</option><option value="T3">T3</option>
+    <option value="skip">skip</option><option value="skip_financial">skip_financial</option>
+  </select>
+  <select id="sector-filter" class="filter-select"><option value="">All sectors</option></select>
+  <select id="status-filter" class="filter-select">
+    <option value="">All statuses</option>
+    <option value="pending">pending</option><option value="contacted">contacted</option>
+    <option value="meeting">meeting</option><option value="proposal">proposal</option>
+    <option value="won">won</option><option value="lost">lost</option>
+  </select>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
+    <input id="slow-only" type="checkbox" /> SLOW-GROWTH ONLY
+  </label>
+  <div class="filter-result-count" id="result-count"></div>
+</div>
+
+<div class="table-wrap">
+  <table id="leads-table">
+    <thead>
+      <tr>
+        <th data-sort="nse_symbol">Symbol</th>
+        <th data-sort="name">Company</th>
+        <th data-sort="sector">Sector</th>
+        <th data-sort="tier">Tier</th>
+        <th data-sort="market_cap_cr" class="num">Mcap (Rs Cr)</th>
+        <th data-sort="cash_pct_mcap" class="num">Cash %</th>
+        <th data-sort="debt_to_equity" class="num">D/E</th>
+        <th data-sort="profit_5y_cagr" class="num">5y CAGR</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="tbody"><tr><td colspan="10" class="loading">Loading 752 leads…</td></tr></tbody>
+  </table>
+</div>
+
+<div class="backdrop" id="backdrop"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-hidden="true">
+  <div class="drawer-head">
+    <div>
+      <h3 id="d-name">—</h3>
+      <div class="sym" id="d-symbol">—</div>
+    </div>
+    <button class="drawer-close" id="drawer-close" aria-label="Close">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-section">
+      <div class="drawer-label">Tier &amp; Score</div>
+      <div class="drawer-row"><span>Tier</span><span id="d-tier">—</span></div>
+      <div class="drawer-row"><span>Score</span><span id="d-score">—</span></div>
+      <div class="drawer-row"><span>Slow-growth signal</span><span id="d-slow">—</span></div>
+      <div class="drawer-row tier-reason" id="d-tier-reason-row" style="display:none;"><span>Reason</span><span id="d-tier-reason">—</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-label">Fundamentals</div>
+      <div class="drawer-row"><span>Market cap</span><span id="d-mcap">—</span></div>
+      <div class="drawer-row"><span>Cash &amp; equiv.</span><span id="d-cash">—</span></div>
+      <div class="drawer-row"><span>Cash / Mcap</span><span id="d-cashpct">—</span></div>
+      <div class="drawer-row"><span>Total debt</span><span id="d-debt">—</span></div>
+      <div class="drawer-row"><span>Debt / Equity</span><span id="d-de">—</span></div>
+      <div class="drawer-row"><span>Revenue TTM</span><span id="d-rev">—</span></div>
+      <div class="drawer-row"><span>Net profit TTM</span><span id="d-np">—</span></div>
+      <div class="drawer-row"><span>5y profit CAGR</span><span id="d-cagr">—</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-label">Outreach</div>
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Status</label>
+      <select id="d-status" class="status-select" style="width:100%;margin:6px 0 12px;padding:8px 12px;">
+        <option value="pending">pending</option><option value="contacted">contacted</option>
+        <option value="meeting">meeting</option><option value="proposal">proposal</option>
+        <option value="won">won</option><option value="lost">lost</option>
+      </select>
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Lead Owner</label>
+      <input id="d-owner" class="drawer-input" type="text" placeholder="e.g. TK · Nishant" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Next Action</label>
+      <input id="d-action" class="drawer-input" type="text" placeholder="e.g. Send sector one-pager" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Next Action Date</label>
+      <input id="d-action-date" class="drawer-input" type="date" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">CFO Name</label>
+      <input id="d-cfo" class="drawer-input" type="text" placeholder="Discovery field" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">IR Email</label>
+      <input id="d-email" class="drawer-input" type="email" placeholder="ir@company.com" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Notes</label>
+      <textarea id="d-notes" class="drawer-textarea" placeholder="Free-form notes — saved locally"></textarea>
+      <button class="drawer-save" id="d-save">Save (local)</button>
+      <p style="font-size:11px;color:var(--text-dim);margin-top:8px;line-height:1.5;">Saves to this browser's localStorage. To persist server-side, export the data and upsert into leads.db via SQL.</p>
+    </div>
+  </div>
+</aside>
+
+<footer>M&amp;A Leadership Platform · Internal Leads Directory · Confidential</footer>
+
+<script>
+const STATE = { leads: [], filtered: [], sortKey: 'tier_score', sortDir: 'desc' };
+
+const $ = (id) => document.getElementById(id);
+const fmtNum = (n, d=0) => (n == null || isNaN(n)) ? '—' : Number(n).toLocaleString('en-IN', {minimumFractionDigits: d, maximumFractionDigits: d});
+
+// ── Load data ──
+fetch('assets/leads.json')
+  .then(r => r.json())
+  .then(data => {
+    STATE.leads = data.leads || [];
+    // Merge localStorage outreach data
+    const overrides = JSON.parse(localStorage.getItem('leads_outreach') || '{}');
+    STATE.leads.forEach(l => {
+      const o = overrides[l.nse_symbol];
+      if (o) Object.assign(l, o);
+    });
+    populateSectors();
+    renderStats(data);
+    applyFilters();
+  })
+  .catch(err => {
+    $('tbody').innerHTML = `<tr><td colspan="10" class="error">Failed to load leads.json — ${err.message}</td></tr>`;
+  });
+
+function populateSectors() {
+  const sectors = [...new Set(STATE.leads.map(l => l.sector).filter(Boolean))].sort();
+  const sel = $('sector-filter');
+  sectors.forEach(s => {
+    const opt = document.createElement('option');
+    opt.value = s; opt.textContent = s;
+    sel.appendChild(opt);
+  });
+}
+
+function renderStats(data) {
+  const c = data.by_tier || {};
+  $('stat-total').textContent = data.total || STATE.leads.length;
+  $('stat-t1').textContent = c.T1 || 0;
+  $('stat-t2').textContent = c.T2 || 0;
+  $('stat-t3').textContent = c.T3 || 0;
+  $('stat-slow').textContent = data.slow_growth_count || 0;
+  $('stat-skip').textContent = (c.skip || 0) + (c.skip_financial || 0);
+}
+
+// ── Filters / search / sort ──
+function applyFilters() {
+  const q = $('search').value.trim().toLowerCase();
+  const tier = $('tier-filter').value;
+  const sector = $('sector-filter').value;
+  const status = $('status-filter').value;
+  const slowOnly = $('slow-only').checked;
+
+  STATE.filtered = STATE.leads.filter(l => {
+    if (tier && l.tier !== tier) return false;
+    if (sector && l.sector !== sector) return false;
+    if (status && (l.outreach_status || 'pending') !== status) return false;
+    if (slowOnly && !l.slow_growth_signal) return false;
+    if (q) {
+      const hay = `${l.nse_symbol} ${l.name} ${l.sector}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+  sortFiltered();
+  renderTable();
+}
+
+function sortFiltered() {
+  const k = STATE.sortKey, dir = STATE.sortDir;
+  const dirMul = dir === 'asc' ? 1 : -1;
+  STATE.filtered.sort((a, b) => {
+    const av = a[k], bv = b[k];
+    if (av == null && bv == null) return 0;
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    if (typeof av === 'number' && typeof bv === 'number') return (av - bv) * dirMul;
+    return String(av).localeCompare(String(bv)) * dirMul;
+  });
+}
+
+function renderTable() {
+  const tb = $('tbody');
+  $('result-count').textContent = `${STATE.filtered.length} of ${STATE.leads.length}`;
+  if (!STATE.filtered.length) {
+    tb.innerHTML = '<tr><td colspan="10" class="loading">No leads match those filters.</td></tr>';
+    return;
+  }
+  tb.innerHTML = STATE.filtered.map(l => {
+    const tierBadge = `<span class="tier ${l.tier}">${l.tier || '—'}</span>${l.slow_growth_signal ? '<span class="signal-badge">SG</span>' : ''}`;
+    const status = l.outreach_status || 'pending';
+    return `<tr class="${l.slow_growth_signal ? 'slow-growth' : ''}" data-sym="${l.nse_symbol}">
+      <td class="sym">${l.nse_symbol}</td>
+      <td class="name" title="${escape(l.name)}">${escape(l.name)}</td>
+      <td class="sector">${escape(l.sector || '')}</td>
+      <td>${tierBadge}</td>
+      <td class="num">${fmtNum(l.market_cap_cr, 0)}</td>
+      <td class="num">${l.cash_pct_mcap != null ? fmtNum(l.cash_pct_mcap, 1) + '%' : '—'}</td>
+      <td class="num">${l.debt_to_equity != null ? fmtNum(l.debt_to_equity, 2) : '—'}</td>
+      <td class="num">${l.profit_5y_cagr != null ? fmtNum(l.profit_5y_cagr, 1) + '%' : '—'}</td>
+      <td><select class="status-select" data-status="${status}" data-sym="${l.nse_symbol}">
+        ${['pending','contacted','meeting','proposal','won','lost'].map(s => `<option value="${s}"${s===status?' selected':''}>${s}</option>`).join('')}
+      </select></td>
+      <td><button class="detail-btn" data-sym="${l.nse_symbol}">Open ›</button></td>
+    </tr>`;
+  }).join('');
+  // Update header sort indicator
+  document.querySelectorAll('thead th').forEach(th => {
+    th.classList.toggle('sorted', th.dataset.sort === STATE.sortKey);
+    th.classList.toggle('desc', th.dataset.sort === STATE.sortKey && STATE.sortDir === 'desc');
+  });
+}
+
+function escape(s) { return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
+
+// ── Event wiring ──
+$('search').addEventListener('input', () => applyFilters());
+$('tier-filter').addEventListener('change', () => applyFilters());
+$('sector-filter').addEventListener('change', () => applyFilters());
+$('status-filter').addEventListener('change', () => applyFilters());
+$('slow-only').addEventListener('change', () => applyFilters());
+
+document.querySelectorAll('thead th[data-sort]').forEach(th => {
+  th.addEventListener('click', () => {
+    const k = th.dataset.sort;
+    if (STATE.sortKey === k) STATE.sortDir = STATE.sortDir === 'asc' ? 'desc' : 'asc';
+    else { STATE.sortKey = k; STATE.sortDir = 'desc'; }
+    sortFiltered(); renderTable();
+  });
+});
+
+document.querySelectorAll('.stat-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    const t = pill.dataset.filterTier;
+    const s = pill.dataset.filterSlow;
+    if (s) { $('slow-only').checked = true; $('tier-filter').value = ''; }
+    else if (t === 'all') { $('tier-filter').value = ''; $('slow-only').checked = false; }
+    else { $('tier-filter').value = t; $('slow-only').checked = false; }
+    applyFilters();
+    document.querySelectorAll('.stat-pill').forEach(p => p.classList.remove('active'));
+    pill.classList.add('active');
+  });
+});
+
+document.body.addEventListener('click', e => {
+  if (e.target.classList.contains('detail-btn')) openDrawer(e.target.dataset.sym);
+  if (e.target.tagName === 'TD' && e.target.parentElement.dataset.sym && !e.target.querySelector('select, button')) {
+    openDrawer(e.target.parentElement.dataset.sym);
+  }
+});
+
+document.body.addEventListener('change', e => {
+  if (e.target.classList.contains('status-select') && e.target.dataset.sym) {
+    const sym = e.target.dataset.sym;
+    const status = e.target.value;
+    e.target.dataset.status = status;
+    saveOverride(sym, { outreach_status: status, last_contacted: status === 'contacted' ? new Date().toISOString().slice(0,10) : undefined });
+    const l = STATE.leads.find(x => x.nse_symbol === sym);
+    if (l) l.outreach_status = status;
+  }
+});
+
+// ── Drawer ──
+const drawer = $('drawer'), backdrop = $('backdrop');
+function openDrawer(sym) {
+  const l = STATE.leads.find(x => x.nse_symbol === sym);
+  if (!l) return;
+  drawer.dataset.sym = sym;
+  $('d-name').textContent = l.name;
+  $('d-symbol').textContent = l.nse_symbol + ' · ' + (l.sector || '');
+  $('d-tier').innerHTML = `<span class="tier ${l.tier}">${l.tier || '—'}</span>`;
+  $('d-score').textContent = l.tier_score != null ? fmtNum(l.tier_score, 1) : '—';
+  $('d-slow').textContent = l.slow_growth_signal ? '⚡ Yes — hot list' : 'No';
+  if (l.tier_reason) {
+    $('d-tier-reason-row').style.display = 'grid';
+    $('d-tier-reason').textContent = l.tier_reason;
+  } else {
+    $('d-tier-reason-row').style.display = 'none';
+  }
+  $('d-mcap').textContent = l.market_cap_cr != null ? 'Rs ' + fmtNum(l.market_cap_cr, 0) + ' Cr' : '—';
+  $('d-cash').textContent = l.cash_and_equivalents_cr != null ? 'Rs ' + fmtNum(l.cash_and_equivalents_cr, 0) + ' Cr' : '—';
+  $('d-cashpct').textContent = l.cash_pct_mcap != null ? fmtNum(l.cash_pct_mcap, 2) + '%' : '—';
+  $('d-debt').textContent = l.total_debt_cr != null ? 'Rs ' + fmtNum(l.total_debt_cr, 0) + ' Cr' : '—';
+  $('d-de').textContent = l.debt_to_equity != null ? fmtNum(l.debt_to_equity, 3) : '—';
+  $('d-rev').textContent = l.revenue_ttm_cr != null ? 'Rs ' + fmtNum(l.revenue_ttm_cr, 0) + ' Cr' : '—';
+  $('d-np').textContent = l.net_profit_ttm_cr != null ? 'Rs ' + fmtNum(l.net_profit_ttm_cr, 0) + ' Cr' : '—';
+  $('d-cagr').textContent = l.profit_5y_cagr != null ? fmtNum(l.profit_5y_cagr, 1) + '%' : '—';
+  $('d-status').value = l.outreach_status || 'pending';
+  $('d-owner').value = l.lead_owner || '';
+  $('d-action').value = l.next_action || '';
+  $('d-action-date').value = l.next_action_date || '';
+  $('d-cfo').value = l.cfo_name || '';
+  $('d-email').value = l.ir_email || '';
+  $('d-notes').value = l.notes || '';
+  drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
+  backdrop.classList.add('show');
+}
+function closeDrawer() {
+  drawer.classList.remove('open'); drawer.setAttribute('aria-hidden','true');
+  backdrop.classList.remove('show');
+}
+$('drawer-close').addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer(); });
+
+$('d-save').addEventListener('click', () => {
+  const sym = drawer.dataset.sym;
+  const patch = {
+    outreach_status: $('d-status').value,
+    lead_owner: $('d-owner').value,
+    next_action: $('d-action').value,
+    next_action_date: $('d-action-date').value,
+    cfo_name: $('d-cfo').value,
+    ir_email: $('d-email').value,
+    notes: $('d-notes').value,
+  };
+  saveOverride(sym, patch);
+  const l = STATE.leads.find(x => x.nse_symbol === sym);
+  if (l) Object.assign(l, patch);
+  renderTable();
+  $('d-save').textContent = 'Saved ✓'; setTimeout(() => $('d-save').textContent = 'Save (local)', 1400);
+});
+
+function saveOverride(sym, patch) {
+  const all = JSON.parse(localStorage.getItem('leads_outreach') || '{}');
+  all[sym] = Object.assign(all[sym] || {}, patch);
+  localStorage.setItem('leads_outreach', JSON.stringify(all));
+}
+</script>
+
+</body>
+</html>
