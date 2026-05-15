@@ -31,7 +31,8 @@ HEADERS = {
 NIFTY500_URL = "https://archives.nseindia.com/content/indices/ind_nifty500list.csv"
 NIFTY_MIDCAP150_URL = "https://archives.nseindia.com/content/indices/ind_niftymidcap150list.csv"
 NIFTY_SMALLCAP250_URL = "https://archives.nseindia.com/content/indices/ind_niftysmallcap250list.csv"
-BSE500_URL = "https://api.bseindia.com/BseIndiaAPI/api/EQDataAndScripCode/w?Indexcode=17&Indexname=BSE%20500&IndexType=index"
+NIFTY_MICROCAP250_URL = "https://archives.nseindia.com/content/indices/ind_niftymicrocap250_list.csv"
+NIFTY_TOTAL_MARKET_URL = "https://archives.nseindia.com/content/indices/ind_niftytotalmarket_list.csv"
 
 
 def fetch_csv(url, label):
@@ -69,9 +70,11 @@ def normalise_nse(df, index_tag):
 def main():
     frames = []
     for url, tag in [
+        (NIFTY_TOTAL_MARKET_URL, "in_total_market"),
         (NIFTY500_URL, "in_nifty500"),
         (NIFTY_MIDCAP150_URL, "in_midcap150"),
         (NIFTY_SMALLCAP250_URL, "in_smallcap250"),
+        (NIFTY_MICROCAP250_URL, "in_microcap250"),
     ]:
         try:
             df = fetch_csv(url, tag)
@@ -107,12 +110,16 @@ def main():
 
     # Tag bucket
     def bucket(row):
-        if row.get("in_nifty500") and not row.get("in_midcap150") and not row.get("in_smallcap250"):
-            return "large_cap"
-        if row.get("in_midcap150"):
-            return "mid_cap"
+        if row.get("in_microcap250"):
+            return "micro_cap"
         if row.get("in_smallcap250"):
             return "small_cap"
+        if row.get("in_midcap150"):
+            return "mid_cap"
+        if row.get("in_nifty500"):
+            return "large_cap"
+        if row.get("in_total_market"):
+            return "other_total_market"
         return "other"
     base["bucket"] = base.apply(bucket, axis=1)
 
@@ -123,10 +130,10 @@ def main():
     base.to_csv(out, index=False)
 
     print(f"\n[OK] wrote {out} — {len(base)} unique companies")
-    print(f"     large_cap:  {(base['bucket']=='large_cap').sum()}")
-    print(f"     mid_cap:    {(base['bucket']=='mid_cap').sum()}")
-    print(f"     small_cap:  {(base['bucket']=='small_cap').sum()}")
-    print(f"     other:      {(base['bucket']=='other').sum()}")
+    for b in ["large_cap", "mid_cap", "small_cap", "micro_cap", "other_total_market", "other"]:
+        n = (base['bucket']==b).sum()
+        if n > 0:
+            print(f"     {b:20s}  {n}")
 
 
 if __name__ == "__main__":

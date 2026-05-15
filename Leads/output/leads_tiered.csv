@@ -1,4 +1,5 @@
 nse_symbol,name,sector,tier,tier_score,slow_growth_signal,market_cap_cr,cash_and_equivalents_cr,cash_pct_mcap,debt_to_equity,profit_5y_cagr,outreach_status
+ROUTE,Route Mobile Ltd.,Communication Services,T3,71.1,0,3170.32,850.4,26.82,0.015,24.26,pending
 SUNPHARMA,Sun Pharmaceutical Industries Ltd.,Healthcare,T1,70.9,0,450043.26,10268.77,2.28,0.067,49.47,pending
 BEL,Bharat Electronics Ltd.,Industrials,T3,70.2,0,309971.18,713.45,0.23,0.003,30.42,pending
 ITC,ITC Ltd.,Consumer Defensive,T1,70.1,0,388664.13,620.0,0.16,0.005,31.61,pending
@@ -8,6 +9,7 @@ HONAUT,Honeywell Automation India Ltd.,Industrials,T2,64.9,1,25803.32,3130.4,12.
 NBCC,NBCC (India) Ltd.,Industrials,T2,64.3,0,25563.6,2998.69,11.73,0.0,34.11,pending
 CUMMINSIND,Cummins India Ltd.,Industrials,T1,63.9,0,149175.18,234.99,0.16,0.003,28.9,pending
 DLF,DLF Ltd.,Real Estate,T3,63.5,0,141451.68,313.81,0.22,0.041,42.77,pending
+PTC,PTC India Ltd.,Utilities,T2,62.4,0,6287.51,1709.82,27.19,0.329,21.16,pending
 RELIANCE,Reliance Industries Ltd.,Energy,T1,62.3,1,1805637.81,145977.0,8.08,0.367,6.59,pending
 VBL,Varun Beverages Ltd.,Consumer Defensive,T3,62.2,0,170822.86,1784.18,1.04,0.127,26.57,pending
 MAZDOCK,Mazagoan Dock Shipbuilders Ltd.,Industrials,T1,61.9,0,100683.64,2731.42,2.71,0.045,32.16,pending
@@ -24,18 +26,28 @@ HAL,Hindustan Aeronautics Ltd.,Industrials,T3,59.6,0,295598.53,4548.55,1.54,0.0,
 PIDILITIND,Pidilite Industries Ltd.,Basic Materials,T1,58.7,0,149765.65,232.49,0.16,0.038,24.36,pending
 BHEL,Bharat Heavy Electricals Ltd.,Industrials,T3,58.7,0,139804.84,1435.45,1.03,0.313,35.91,pending
 TORNTPHARM,Torrent Pharmaceuticals Ltd.,Healthcare,T3,58.6,0,149267.98,573.48,0.38,0.334,34.98,pending
+MASTEK,Mastek Ltd.,Technology,T3,58.5,1,4821.86,704.33,14.61,0.146,11.3,pending
 ADANIPORTS,Adani Ports and Special Economic Zone Ltd.,Industrials,T3,58.4,0,415426.86,5161.55,1.24,0.641,34.11,pending
 DRREDDY,Dr. Reddy's Laboratories Ltd.,Healthcare,T1,58.3,0,110318.81,1465.4,1.33,0.203,33.87,pending
 HEXT,Hexaware Technologies Ltd.,Technology,T2,58.2,1,29461.16,1970.8,6.69,0.105,15.69,pending
 MOTHERSON,Samvardhana Motherson International Ltd.,Consumer Cyclical,T1,57.8,0,136969.18,5636.5,4.12,0.499,63.27,pending
 TRENT,Trent Ltd.,Consumer Cyclical,T3,57.5,0,145415.71,281.36,0.19,0.36,56.97,pending
+CCAVENUE,AvenuesAI Ltd.,Technology,T3,57.1,0,4758.55,331.33,6.96,0.018,37.61,pending
+WABAG,Va Tech Wabag Ltd.,Industrials,T2,57.1,0,8704.25,717.7,8.25,0.103,30.82,pending
 HEROMOTOCO,Hero MotoCorp Ltd.,Consumer Cyclical,T1,57.0,0,101907.33,686.71,0.67,0.036,26.9,pending
+SKFINDIA,SKF India Ltd.,Industrials,T2,57.0,1,8358.97,710.77,8.5,0.002,12.74,pending
+MSTCLTD,MSTC Ltd.,Industrials,T3,56.4,0,2980.03,378.2,12.69,0.175,26.92,pending
+AURIONPRO,Aurionpro Solution Ltd.,Technology,T3,56.2,0,4156.75,268.65,6.46,0.035,38.11,pending
 COFORGE,Coforge Ltd.,Technology,T2,56.0,0,55042.09,1093.6,1.99,0.075,30.89,pending
 BSOFT,Birlasoft Ltd.,Technology,T3,56.0,1,8771.68,426.03,4.86,0.041,16.06,pending
 AUROPHARMA,Aurobindo Pharma Ltd.,Healthcare,T1,55.3,1,87962.4,5568.95,6.33,0.222,9.59,pending
+RATEGAIN,Rategain Travel Technologies Ltd.,Technology,T3,55.3,0,7404.73,347.36,4.69,0.008,191.68,pending
 WAAREEENER,Waaree Energies Ltd.,Technology,T3,55.0,0,87299.3,509.83,0.58,0.214,191.18,pending
+REFEX,Refex Industries Ltd.,Energy,T3,54.6,0,4064.56,281.49,6.93,0.137,51.8,pending
 ZENSARTECH,Zensar Technolgies Ltd.,Technology,T3,54.5,0,11031.92,416.3,3.77,0.017,33.22,pending
 ACC,ACC Ltd.,Basic Materials,T3,54.2,0,25730.61,537.35,2.09,0.021,48.74,pending
+LOTUSDEV,Sri Lotus Developers and Realty Ltd.,Industrials,T3,54.2,0,6795.7,334.33,4.92,0.068,160.15,pending
+FIEMIND,Fiem Industries Ltd,Consumer Cyclical,T2,54.2,0,5735.84,298.31,5.2,0.057,29.59,pending
 PERSISTENT,Persistent Systems Ltd.,Technology,T2,54.1,0,73516.08,1074.91,1.46,0.061,26.51,pending
 HINDUNILVR,Hindustan Unilever Ltd.,Consumer Defensive,T1,54.0,0,536458.66,2583.0,0.48,0.03,14.12,pending
 UNITDSPR,United Spirits Ltd.,Consumer Defensive,T3,53.8,0,96998.96,993.0,1.02,0.049,24.06,pending
@@ -45,126 +57,205 @@ LODHA,Lodha Developers Ltd.,Real Estate,T1,53.3,0,85592.04,2702.6,3.16,0.422,91.
 DIXON,Dixon Technologies (India) Ltd.,Technology,T3,53.3,0,66730.05,228.38,0.34,0.185,79.26,pending
 GODFRYPHLP,Godfrey Phillips India Ltd.,Consumer Defensive,T3,53.2,0,37911.37,14.25,0.04,0.03,34.76,pending
 WELCORP,Welspun Corp Ltd.,Basic Materials,T3,53.1,0,34677.07,1147.12,3.31,0.183,63.22,pending
+YATHARTH,Yatharth Hospital & Trauma Care Services Ltd.,Healthcare,T3,53.1,0,7895.76,204.96,2.6,0.015,43.52,pending
+LLOYDSENGG,Lloyds Engineering Works Ltd.,Industrials,T3,53.0,0,10132.27,336.39,3.32,0.065,72.76,pending
 MRF,MRF Ltd.,Consumer Cyclical,T3,52.9,0,54309.96,304.59,0.56,0.153,46.67,pending
 GRSE,Garden Reach Shipbuilders & Engineers Ltd.,Industrials,T3,52.8,0,30832.82,3.88,0.01,0.014,40.66,pending
+CRIZAC,Crizac Ltd.,Consumer Defensive,T3,52.8,0,3685.31,88.83,2.41,0.0,31.17,pending
 BIOCON,Biocon Ltd.,Healthcare,T1,52.7,1,69752.7,3226.7,4.63,0.5,16.05,pending
 ACUTAAS,Acutaas Chemicals Ltd.,Basic Materials,T3,52.6,0,22404.85,185.22,0.83,0.021,30.18,pending
+NAZARA,Nazara Technologies Ltd.,Communication Services,T3,52.6,0,10958.35,298.85,2.73,0.061,38.73,pending
 ABB,ABB India Ltd.,Industrials,T3,52.5,0,136087.55,1552.57,1.14,0.011,17.97,pending
 INDGN,Indegene Ltd.,Healthcare,T3,52.3,0,12391.95,241.0,1.94,0.046,35.15,pending
 DATAPATTNS,Data Patterns (India) Ltd.,Industrials,T3,52.2,0,21391.47,37.64,0.18,0.004,33.15,pending
 ENGINERSIN,Engineers India Ltd.,Industrials,T3,52.2,0,13986.42,138.64,0.99,0.007,60.77,pending
 NAVA,Nava Ltd.,Industrials,T2,52.2,0,18451.68,989.42,5.36,0.16,28.23,pending
 NATCOPHARM,NATCO Pharma Ltd.,Healthcare,T3,52.1,0,21446.62,120.0,0.56,0.03,123.01,pending
+KIRLPNU,Kirloskar Pneumatic Company Ltd.,Industrials,T3,52.1,0,10050.33,114.0,1.13,0.003,32.8,pending
 JPPOWER,Jaiprakash Power Ventures Ltd.,Utilities,T2,51.9,0,12569.24,754.95,6.01,0.266,101.09,pending
+QPOWER,Quality Power Electrical Equipments Ltd.,Industrials,T3,51.9,0,8614.11,180.89,2.1,0.052,58.83,pending
+AVANTIFEED,Avanti Feeds Ltd.,Consumer Defensive,T3,51.9,0,18162.9,26.13,0.14,0.004,33.64,pending
 OBEROIRLTY,Oberoi Realty Ltd.,Real Estate,T3,51.8,0,59056.27,267.67,0.45,0.158,28.57,pending
 ZENTEC,Zen Technologies Ltd.,Industrials,T3,51.8,0,14125.15,78.94,0.56,0.01,65.42,pending
 HBLENGINE,HBL Engineering Ltd.,Industrials,T3,51.8,0,21617.05,116.95,0.54,0.044,43.4,pending
+KIRLOSBROS,Kirloskar Brothers Ltd.,Industrials,T3,51.8,0,12839.63,323.13,2.52,0.099,63.88,pending
 ADANIENT,Adani Enterprises Ltd.,Energy,T3,51.7,0,375227.44,6266.67,1.67,1.196,55.92,pending
 CPPLUS,Aditya Infotech Ltd.,Industrials,T3,51.7,0,28460.02,135.93,0.48,0.08,53.61,pending
+TDPOWERSYS,TD Power Systems Ltd.,Industrials,T3,51.7,0,20348.75,74.96,0.37,0.037,35.29,pending
+SHAKTIPUMP,Shakti Pumps (India) Ltd.,Industrials,T2,51.7,0,6315.51,438.72,6.95,0.296,120.18,pending
+EUREKAFORB,Eureka Forbes Ltd.,Consumer Cyclical,T3,51.6,0,9945.48,95.51,0.96,0.02,298.44,pending
 ULTRACEMCO,UltraTech Cement Ltd.,Basic Materials,T3,51.5,0,340530.77,354.48,0.1,0.294,17.26,pending
 KEI,KEI Industries Ltd.,Industrials,T3,51.5,0,49006.78,1444.04,2.95,0.038,24.38,pending
 ANANTRAJ,Anant Raj Ltd.,Real Estate,T3,51.3,0,17650.16,330.02,1.87,0.117,96.04,pending
+LLOYDSENT,Lloyds Enterprises Ltd.,Basic Materials,T3,51.3,0,10876.68,341.6,3.14,0.147,79.81,pending
 EMMVEE,Emmvee Photovoltaic Power Ltd.,Technology,T3,51.2,0,18056.36,242.62,1.34,0.097,394.6,pending
 VMM,Vishal Mega Mart Ltd.,Consumer Cyclical,T3,51.0,0,56092.75,395.64,0.71,0.268,46.07,pending
 KFINTECH,Kfin Technologies Ltd.,Technology,T3,51.0,0,14132.0,30.98,0.22,0.033,30.83,pending
+TANLA,Tanla Platforms Ltd.,Technology,T2,51.0,1,6598.11,748.01,11.34,0.021,4.38,pending
+JYOTHYLAB,Jyothy Labs Ltd.,Consumer Defensive,T3,51.0,0,8060.36,77.18,0.96,0.037,31.75,pending
+MARKSANS,Marksans Pharma Ltd.,Healthcare,T2,51.0,0,9463.42,495.79,5.24,0.122,27.28,pending
 BBTC,Bombay Burmah Trading Corporation Ltd.,Consumer Defensive,T3,50.9,0,10684.17,341.17,3.19,0.166,160.64,pending
 SAGILITY,Sagility Ltd.,Healthcare,T3,50.9,0,19713.07,343.76,1.74,0.139,93.78,pending
+BALUFORGE,Balu Forge Industries Ltd.,Industrials,T3,50.9,0,5827.56,93.08,1.6,0.065,89.74,pending
 BAJAJ-AUTO,Bajaj Auto Ltd.,Consumer Cyclical,T1,50.8,0,288180.51,2989.97,1.04,0.563,21.03,pending
 PIIND,PI Industries Ltd.,Basic Materials,T3,50.8,0,47252.52,592.3,1.25,0.022,25.31,pending
 INDUSTOWER,Indus Towers Ltd.,Communication Services,T3,50.7,0,113463.53,47.3,0.04,0.533,51.86,pending
 IRCTC,Indian Railway Catering And Tourism Corporation Ltd.,Consumer Cyclical,T3,50.7,0,43060.0,377.51,0.88,0.018,25.86,pending
 PTCIL,PTC Industries Ltd.,Industrials,T3,50.7,0,24892.13,189.55,0.76,0.127,68.25,pending
+TI,Tilaknagar Industries Ltd.,Consumer Defensive,T3,50.7,0,10709.91,15.74,0.15,0.024,71.92,pending
 BHARTIARTL,Bharti Airtel Ltd.,Communication Services,T3,50.6,0,1162374.6,6105.6,0.53,0.997,99.05,pending
 RADICO,Radico Khaitan Ltd,Consumer Defensive,T3,50.6,0,46592.04,70.26,0.15,0.209,39.99,pending
+CUPID,Cupid Ltd.,Consumer Defensive,T3,50.6,0,16169.54,59.15,0.37,0.07,33.26,pending
+TIPSMUSIC,Tips Music Ltd.,Communication Services,T3,50.5,0,8275.82,7.18,0.09,0.02,41.49,pending
 BLS,BLS International Services Ltd.,Industrials,T3,50.4,0,10617.51,281.83,2.65,0.165,65.92,pending
+PARAS,Paras Defence and Space Technologies Ltd.,Industrials,T3,50.4,0,6078.7,34.47,0.57,0.037,32.89,pending
 HSCL,Himadri Speciality Chemical Ltd.,Basic Materials,T3,50.3,0,29944.55,164.76,0.55,0.161,51.52,pending
+JUSTDIAL,Justdial Ltd.,Communication Services,T3,50.3,0,4448.49,6.72,0.15,0.017,45.09,pending
 CARTRADE,Cartrade Tech Ltd.,Consumer Cyclical,T3,50.2,0,8842.24,31.4,0.36,0.054,87.19,pending
 GABRIEL,Gabriel India Ltd.,Consumer Cyclical,T3,50.2,0,15746.25,37.84,0.24,0.081,39.88,pending
+ORIENTCEM,Orient Cement Ltd.,Basic Materials,T3,50.2,0,2818.91,16.16,0.57,0.034,40.09,pending
 IGIL,International Gemological Institute Ltd.,Basic Materials,T3,50.1,0,14103.53,98.38,0.7,0.101,30.04,pending
 POLYMED,Poly Medicure Ltd.,Healthcare,T3,50.0,0,15489.83,8.7,0.06,0.082,32.21,pending
 RRKABEL,R R Kabel Ltd.,Industrials,T3,50.0,0,22157.37,85.53,0.39,0.131,37.37,pending
+PRICOLLTD,Pricol Ltd.,Consumer Cyclical,T3,50.0,0,7463.41,101.08,1.35,0.105,48.41,pending
 ACE,Action Construction Equipment Ltd.,Industrials,T3,49.9,0,10638.61,48.84,0.46,0.08,57.36,pending
+EIEL,Enviro Infra Engineers Ltd.,Industrials,T3,49.9,0,3407.74,162.37,4.76,0.259,72.16,pending
+AHLUCONT,Ahluwalia Contracts (India) Ltd.,Industrials,T2,49.9,1,5362.69,318.45,5.94,0.039,9.19,pending
 SYRMA,Syrma SGS Technology Ltd.,Technology,T3,49.8,0,19659.3,80.86,0.41,0.13,45.16,pending
+SUBROS,Subros Ltd.,Consumer Cyclical,T3,49.8,0,4905.73,36.36,0.74,0.07,66.71,pending
 CONCORDBIO,Concord Biotech Ltd.,Healthcare,T3,49.7,0,11985.88,0.9,0.01,0.001,28.55,pending
+KRN,KRN Heat Exchanger and Refrigeration Ltd.,Technology,T3,49.7,0,7333.24,10.26,0.14,0.058,70.92,pending
 JWL,Jupiter Wagons Ltd.,Industrials,T3,49.6,0,11848.84,440.74,3.72,0.267,97.43,pending
+JLHL,Jupiter Life Line Hospitals Ltd.,Healthcare,T3,49.6,0,8652.75,368.32,4.26,0.278,55.84,pending
 BOSCHLTD,Bosch Ltd.,Consumer Cyclical,T3,49.5,0,111294.24,352.9,0.32,0.008,18.26,pending
 NEULANDLAB,Neuland Laboratories Ltd.,Healthcare,T3,49.5,0,21455.42,131.93,0.61,0.161,59.73,pending
+ZAGGLE,Zaggle Prepaid Ocean Services Ltd.,Technology,T3,49.3,0,2873.39,38.18,1.33,0.014,28.0,pending
 HONASA,Honasa Consumer Ltd.,Consumer Defensive,T3,49.2,0,11548.15,32.97,0.29,0.112,66.62,pending
 DOMS,DOMS Industries Ltd.,Industrials,T3,49.1,0,13749.55,60.45,0.44,0.136,141.53,pending
+BECTORFOOD,Mrs. Bectors Food Specialities Ltd.,Consumer Defensive,T3,49.1,0,5610.56,86.16,1.54,0.15,35.84,pending
 SAILIFE,Sai Life Sciences Ltd.,Healthcare,T3,49.0,0,23231.42,91.12,0.39,0.184,201.2,pending
 MEDANTA,Global Health Ltd.,Healthcare,T3,48.9,0,33622.3,230.2,0.68,0.255,34.88,pending
+GRWRHITECH,Garware Hi-Tech Films Ltd.,Basic Materials,T3,48.9,0,12545.49,126.53,1.01,0.006,26.74,pending
 NATIONALUM,National Aluminium Co. Ltd.,Basic Materials,T3,48.8,0,73924.43,121.4,0.16,0.003,21.3,pending
+OSWALPUMPS,Oswal Pumps Ltd.,Industrials,T3,48.8,0,4417.69,0.42,0.01,0.083,140.19,pending
+SAFARI,Safari Industries (India) Ltd.,Consumer Cyclical,T3,48.7,0,7119.31,11.55,0.16,0.108,85.51,pending
 TBOTEK,TBO Tek Ltd.,Consumer Cyclical,T3,48.6,0,12443.54,961.61,7.73,0.519,89.62,pending
 KAYNES,Kaynes Technology India Ltd.,Technology,T3,48.6,0,21853.3,47.42,0.22,0.192,92.01,pending
+WAAREERTL,Waaree Renewable Technologies Ltd.,Utilities,T3,48.6,0,9840.85,71.82,0.73,0.156,105.17,pending
 AWL,AWL Agri Business Ltd.,Consumer Defensive,T2,48.4,0,25990.69,1677.01,6.45,0.106,21.42,pending
 AFFLE,Affle 3i Ltd.,Communication Services,T2,48.2,0,20769.81,1047.48,5.04,0.012,21.32,pending
 UNOMINDA,UNO Minda Ltd.,Consumer Cyclical,T3,48.2,0,64983.05,197.9,0.3,0.431,38.39,pending
+SUNTECK,Sunteck Realty Ltd.,Real Estate,T3,48.2,0,4687.2,54.42,1.16,0.173,425.43,pending
 BIKAJI,Bikaji Foods International Ltd.,Consumer Defensive,T3,48.0,0,16878.32,24.8,0.15,0.194,37.09,pending
 PGEL,PG Electroplast Ltd.,Technology,T3,47.9,0,13890.01,81.22,0.58,0.203,97.4,pending
 APLAPOLLO,APL Apollo Tubes Ltd.,Basic Materials,T3,47.9,0,52582.95,644.18,1.23,0.094,23.3,pending
+JAIBALAJI,Jai Balaji Industries Ltd.,Basic Materials,T3,47.9,0,7134.72,94.75,1.33,0.206,126.41,pending
+STYL,Seshaasai Technologies Ltd.,Technology,T3,47.5,0,4206.95,99.02,2.35,0.264,81.22,pending
+AZAD,Azad Engineering Ltd.,Industrials,T3,47.4,0,13627.39,40.83,0.3,0.211,43.65,pending
+SUDEEPPHRM,Sudeep Pharma Ltd.,Healthcare,T3,47.4,0,7341.66,36.81,0.5,0.193,49.18,pending
+ETHOSLTD,Ethos Ltd.,Consumer Cyclical,T3,47.2,0,6267.19,28.48,0.45,0.195,60.27,pending
 PETRONET,Petronet LNG Ltd.,Energy,T3,47.1,1,39832.5,1859.29,4.67,0.105,5.56,pending
 ABBOTINDIA,Abbott India Ltd.,Healthcare,T3,47.1,0,59041.19,560.59,0.95,0.036,20.99,pending
 REDINGTON,Redington Ltd.,Technology,T2,47.0,1,17230.31,1357.08,7.88,0.273,7.83,pending
+DATAMATICS,Datamatics Global Services Ltd.,Technology,T3,47.0,1,4408.75,217.64,4.94,0.129,9.19,pending
 TRAVELFOOD,Travel Food Services Ltd.,Consumer Cyclical,T3,46.9,0,14870.57,25.3,0.17,0.237,315.44,pending
 BEML,BEML Ltd.,Industrials,T3,46.8,0,14942.88,4.38,0.03,0.238,31.46,pending
+GPPL,Gujarat Pipavav Port Ltd.,Industrials,T3,46.7,0,7320.16,12.56,0.17,0.021,26.23,pending
+RALLIS,Rallis India Ltd.,Basic Materials,T3,46.7,0,5120.37,39.0,0.76,0.03,26.02,pending
+ASTRAMICRO,Astra Microwave Products Ltd.,Technology,T3,46.5,0,10502.82,25.02,0.24,0.239,59.44,pending
 CEMPRO,Cemindia Projects Ltd.,Industrials,T3,46.3,0,15734.88,357.67,2.27,0.377,75.64,pending
 ECLERX,eClerx Services Ltd.,Technology,T3,46.3,1,13870.42,541.7,3.91,0.15,9.04,pending
 TMPV,Tata Motors Passenger Vehicles Ltd.,Consumer Cyclical,skip,46.2,0,131775.96,34349.0,26.07,0.653,,pending
 JUBLPHARMA,Jubilant Pharmova Ltd.,Healthcare,T2,46.2,0,15903.66,1086.2,6.83,0.439,26.57,pending
 NETWEB,Netweb Technologies India Ltd.,Technology,T3,46.1,0,21945.51,365.52,1.67,0.39,63.68,pending
 NEWGEN,Newgen Software Technologies Ltd.,Technology,T3,46.1,0,6618.26,103.77,1.57,0.022,24.28,pending
+NESCO,NESCO Ltd.,Industrials,T3,45.9,0,8667.28,13.93,0.16,0.039,25.64,pending
 DMART,Avenue Supermarts Ltd.,Consumer Defensive,T3,45.8,0,283875.95,283.71,0.1,0.099,7.69,pending
+ASHOKA,Ashoka Buildcon Ltd.,Industrials,T3,45.7,0,3606.73,167.31,4.64,0.444,29.58,pending
+PGIL,Pearl Global Industries Ltd.,Consumer Cyclical,T3,45.7,0,7657.88,510.01,6.66,0.587,53.89,pending
 ASTERDM,Aster DM Healthcare Ltd.,Healthcare,T3,45.6,0,39132.1,164.59,0.42,0.438,117.04,pending
 MAXHEALTH,Max Healthcare Institute Ltd.,Healthcare,T3,45.5,0,102745.34,661.58,0.64,0.326,21.15,pending
 AEGISLOG,Aegis Logistics Ltd.,Energy,T2,45.5,0,23757.43,1410.79,5.94,0.284,22.88,pending
 3MINDIA,3M India Ltd.,Industrials,T2,45.4,0,35315.99,932.78,2.64,0.064,20.52,pending
 BRIGADE,Brigade Enterprises Ltd.,Real Estate,T3,45.4,0,16855.66,1486.29,8.82,0.756,30.28,pending
+SHAILY,Shaily Engineering Plastics Ltd.,Basic Materials,T3,45.4,0,12430.39,19.08,0.15,0.298,38.56,pending
+TEXRAIL,Texmaco Rail & Eng. Ltd.,Industrials,T3,45.4,0,4752.59,57.02,1.2,0.312,129.92,pending
 HCLTECH,HCL Technologies Ltd.,Technology,T1,45.2,0,305035.27,8265.0,2.71,0.069,3.87,pending
+TIMETECHNO,Time Technoplast Ltd.,Consumer Cyclical,T3,45.2,0,8860.76,126.38,1.43,0.22,27.31,pending
 TARIL,Transformers And Rectifiers (India) Ltd.,Industrials,T3,45.1,0,9068.01,8.1,0.09,0.296,86.53,pending
+JSLL,Jeena Sikho Lifecare Ltd.,Healthcare,T3,45.1,0,7878.18,24.45,0.31,0.3,100.64,pending
 JSWINFRA,JSW Infrastructure Ltd.,Industrials,T3,44.9,0,55859.49,611.25,1.09,0.59,66.11,pending
+TRANSRAILL,Transrail Lighting Ltd.,Industrials,T3,44.9,0,6930.97,141.45,2.04,0.391,71.54,pending
 AJANTPHARM,Ajanta Pharmaceuticals Ltd.,Healthcare,T3,44.7,0,39881.95,103.26,0.26,0.057,21.55,pending
+APOLLO,Apollo Micro Systems Ltd.,Industrials,T3,44.7,0,10628.04,40.27,0.38,0.335,56.84,pending
 OLECTRA,Olectra Greentech Ltd.,Industrials,T3,44.6,0,10245.32,5.67,0.06,0.325,57.79,pending
+WELENT,Welspun Enterprises Ltd.,Industrials,T3,44.6,0,6910.88,510.0,7.38,0.676,37.27,pending
 HAVELLS,Havells India Ltd.,Industrials,T3,44.5,0,75609.54,790.62,1.05,0.028,16.41,pending
 ENDURANCE,Endurance Technologies Ltd.,Consumer Cyclical,T3,44.5,0,35829.64,1018.86,2.84,0.196,21.99,pending
 ARE&M,Amara Raja Energy & Mobility Ltd.,Industrials,T3,44.4,0,15172.8,157.83,1.04,0.04,22.61,pending
 IKS,Inventurus Knowledge Solutions Ltd.,Healthcare,T3,44.3,0,26361.18,180.42,0.68,0.342,27.78,pending
 CAPLIPOINT,Caplin Point Laboratories Ltd.,Healthcare,T3,44.2,0,15222.1,199.45,1.31,0.002,21.39,pending
 LTFOODS,LT Foods Ltd.,Consumer Defensive,T3,44.2,0,14223.48,142.63,1.0,0.285,27.48,pending
+AARTIPHARM,Aarti Pharmalabs Ltd.,Healthcare,T3,44.2,0,6572.69,6.73,0.1,0.33,30.61,pending
 THERMAX,Thermax Ltd.,Industrials,T3,44.1,0,50921.7,417.68,0.82,0.422,26.65,pending
+JAMNAAUTO,Jamna Auto Industries Ltd.,Consumer Cyclical,T3,44.1,1,4653.52,139.69,3.0,0.146,8.59,pending
+AXISCADES,AXISCADES Technologies Ltd.,Industrials,T3,44.1,0,8752.45,52.31,0.6,0.371,49.93,pending
 TCS,Tata Consultancy Services Ltd.,Technology,T1,44.0,0,821414.38,6417.0,0.78,0.104,5.3,pending
 WIPRO,Wipro Ltd.,Technology,T1,43.9,0,199311.43,12197.4,6.12,0.229,2.44,pending
+RAYMONDLSL,Raymond Lifestyle Ltd.,Consumer Cyclical,T3,43.9,1,4759.79,236.35,4.97,0.257,8.63,pending
+SANOFICONR,Sanofi Consumer Healthcare India Ltd.,Healthcare,T3,43.8,0,11317.95,374.8,3.31,0.065,20.67,pending
+POWERMECH,Power Mech Projects Ltd.,Industrials,T3,43.7,0,7733.34,91.99,1.19,0.411,32.93,pending
 TORNTPOWER,Torrent Power Ltd.,Utilities,T3,43.6,0,74058.7,289.11,0.39,0.709,87.42,pending
 SONACOMS,Sona BLW Precision Forgings Ltd.,Consumer Cyclical,T3,43.5,0,35657.77,1046.71,2.94,0.072,18.47,pending
+KNRCON,KNR Constructions Ltd.,Industrials,T3,43.5,0,3644.8,103.33,2.83,0.487,37.92,pending
 NH,Narayana Hrudayalaya Ltd.,Healthcare,T3,43.4,0,37380.53,457.19,1.22,0.576,32.21,pending
 ASIANPAINT,Asian Paints Ltd.,Basic Materials,T1,43.2,0,250378.72,445.28,0.18,0.176,6.56,pending
 JBCHEPHARM,J.B. Chemicals & Pharmaceuticals Ltd.,Healthcare,T3,43.2,0,34335.48,115.09,0.34,0.011,19.62,pending
 OFSS,Oracle Financial Services Software Ltd.,Technology,T3,43.2,0,78791.51,1488.2,1.89,0.004,13.48,pending
+ELECTCAST,Electrosteel Castings Ltd.,Industrials,T3,43.1,0,5087.04,167.35,3.29,0.377,26.89,pending
+HERITGFOOD,Heritage Foods Ltd.,Consumer Defensive,T3,43.1,0,3090.57,64.48,2.09,0.21,24.93,pending
 TATACONSUM,Tata Consumer Products Ltd.,Consumer Defensive,T1,43.0,0,122059.55,2725.93,2.23,0.122,10.96,pending
 KPITTECH,KPIT Technologies Ltd.,Technology,T2,42.8,0,19196.1,1318.45,6.87,0.236,18.71,pending
 VEDL,Vedanta Ltd.,Basic Materials,T3,42.4,0,128799.89,1370.0,1.06,0.48,18.04,pending
 GODREJPROP,Godrej Properties Ltd.,Real Estate,T3,42.4,0,51759.54,1860.74,3.59,0.821,47.94,pending
 NCC,NCC Ltd.,Industrials,T2,42.4,0,10238.92,988.4,9.65,0.379,19.34,pending
+AGARWALEYE,Dr. Agarwal's Health Care Ltd.,Healthcare,T3,42.4,0,14278.95,103.61,0.73,0.487,30.34,pending
 NUVOCO,Nuvoco Vistas Corporation Ltd.,Basic Materials,T3,42.3,0,11514.71,88.11,0.77,0.481,183.08,pending
 ELGIEQUIP,Elgi Equipments Ltd.,Industrials,T3,42.3,0,16668.39,120.3,0.72,0.263,25.2,pending
+BANCOINDIA,Banco Products (India) Ltd.,Consumer Cyclical,T3,42.2,0,8774.62,22.49,0.26,0.446,36.99,pending
 HINDZINC,Hindustan Zinc Ltd.,Basic Materials,T3,41.9,0,270885.19,297.0,0.11,0.39,9.58,pending
 INFY,Infosys Ltd.,Technology,T1,41.7,0,451322.26,234.1,0.05,0.098,3.58,pending
 BHARATFORG,Bharat Forge Ltd.,Consumer Cyclical,T3,41.7,0,91673.49,847.88,0.92,0.765,26.9,pending
+CMSINFO,CMS Info Systems Ltd.,Industrials,T3,41.7,0,5028.03,230.85,4.59,0.095,18.46,pending
 AIAENG,AIA Engineering Ltd.,Industrials,T3,41.6,0,36371.61,397.11,1.09,0.139,19.62,pending
 VOLTAS,Voltas Ltd.,Consumer Cyclical,T3,41.2,0,41443.31,649.79,1.57,0.155,18.62,pending
+SAATVIKGL,Saatvik Green Energy Ltd.,Technology,T3,41.2,0,5736.88,5.39,0.09,0.472,229.89,pending
 CGPOWER,CG Power and Industrial Solutions Ltd.,Industrials,T3,41.0,0,132098.46,300.66,0.23,0.014,7.81,pending
 APOLLOTYRE,Apollo Tyres Ltd.,Consumer Cyclical,T3,40.9,0,25239.99,886.1,3.51,0.291,20.64,pending
+RATNAMANI,Ratnamani Metals & Tubes Ltd.,Basic Materials,T3,40.9,0,18837.93,223.7,1.19,0.061,19.02,pending
 MAPMYINDIA,C.E. Info Systems Ltd.,Technology,T3,40.7,0,5583.44,67.37,1.21,0.011,19.14,pending
+ASKAUTOLTD,ASK Automotive Ltd.,Consumer Cyclical,T3,40.6,0,9039.97,19.79,0.22,0.528,44.16,pending
+IONEXCHANG,Ion Exchange (India) Ltd.,Industrials,T3,40.6,1,4816.41,149.29,3.1,0.325,8.48,pending
 GRANULES,Granules India Ltd.,Healthcare,T3,40.5,1,18318.39,880.24,4.81,0.297,4.82,pending
 INDIAMART,Indiamart Intermesh Ltd.,Communication Services,T3,40.4,0,11874.58,80.4,0.68,0.01,18.7,pending
+MANORAMA,Manorama Industries Ltd.,Consumer Defensive,T3,40.4,0,7836.74,2.65,0.03,0.522,65.67,pending
+GOKEX,Gokaldas Exports Ltd.,Consumer Cyclical,T3,40.2,1,5048.55,164.75,3.26,0.461,10.63,pending
 VIJAYA,Vijaya Diagnostic Centre Ltd.,Healthcare,T3,40.1,0,13367.31,39.68,0.3,0.422,26.91,pending
 IRB,IRB Infrastructure Developers Ltd.,Industrials,T3,39.9,0,24590.81,1839.29,7.48,1.023,161.75,pending
+CELLO,Cello World Ltd.,Consumer Cyclical,T3,39.9,0,8817.73,51.69,0.59,0.002,18.43,pending
 BLUEJET,Blue Jet Healthcare Ltd.,Healthcare,T3,39.8,0,7545.75,32.98,0.44,0.016,18.9,pending
+INDIGOPNTS,Indigo Paints Ltd.,Basic Materials,T3,39.8,0,4700.82,37.11,0.79,0.022,19.03,pending
 CAMS,Computer Age Management Services Ltd.,Technology,T2,39.7,0,19601.94,12.11,0.06,0.049,18.61,pending
 M&M,Mahindra & Mahindra Ltd.,Consumer Cyclical,T1,39.6,0,375874.6,4292.24,1.14,1.251,18.48,pending
+ANUP,The Anup Engineering Ltd.,Industrials,T3,39.5,0,3944.2,2.51,0.06,0.248,24.0,pending
 MARICO,Marico Ltd.,Consumer Defensive,T1,39.4,0,109255.61,404.0,0.37,0.124,10.61,pending
 GRAVITA,Gravita India Ltd.,Industrials,T3,39.4,0,12464.58,80.32,0.64,0.299,23.5,pending
+INOXINDIA,INOX India Ltd.,Industrials,T3,39.4,0,12987.35,3.51,0.03,0.101,20.09,pending
 NTPCGREEN,NTPC Green Energy Ltd.,Utilities,T3,39.2,0,91349.84,36.04,0.04,1.158,66.64,pending
+SURYAROSNI,Surya Roshni Ltd.,Basic Materials,T3,39.1,0,5299.94,19.96,0.38,0.049,19.15,pending
+PICCADIL,Piccadily Agro Industries Ltd.,Consumer Defensive,T3,39.1,0,5849.11,14.89,0.25,0.589,83.23,pending
 NLCINDIA,NLC India Ltd.,Utilities,T3,39.0,0,49807.99,186.96,0.38,0.82,33.87,pending
+GOKULAGRO,Gokul Agro Resources Ltd.,Consumer Defensive,T3,39.0,0,7078.54,145.09,2.05,0.483,25.95,pending
 AMBER,Amber Enterprises India Ltd.,Consumer Cyclical,T3,38.8,0,29825.86,212.8,0.71,0.743,30.66,pending
 ABDL,Allied Blenders and Distillers Ltd.,Consumer Defensive,T3,38.8,0,15480.56,88.09,0.57,0.667,409.19,pending
 LT,Larsen & Toubro Ltd.,Industrials,T1,38.7,0,539440.76,15391.24,2.85,0.976,15.38,pending
@@ -172,55 +263,83 @@ CEATLTD,Ceat Ltd.,Consumer Cyclical,T3,38.7,0,13068.64,39.53,0.3,0.647,55.35,pen
 TECHNOE,Techno Electric & Engineering Company Ltd.,Industrials,T3,38.3,0,14029.22,32.33,0.23,0.016,17.03,pending
 NAVINFLUOR,Navin Fluorine International Ltd.,Basic Materials,T3,38.2,0,35823.24,22.55,0.06,0.32,20.93,pending
 SCHNEIDER,Schneider Electric Infrastructure Ltd.,Industrials,T3,37.9,0,30397.3,258.43,0.85,0.801,113.26,pending
+SKIPPER,Skipper Ltd.,Industrials,T3,37.9,0,5227.46,2.94,0.06,0.636,81.64,pending
+CERA,Cera Sanitaryware Ltd,Industrials,T3,37.9,0,7305.8,9.57,0.13,0.032,17.72,pending
 HINDALCO,Hindalco Industries Ltd.,Basic Materials,T3,37.8,0,240297.0,9808.0,4.08,0.576,5.23,pending
 EMCURE,Emcure Pharmaceuticals Ltd.,Healthcare,T3,37.8,0,32343.98,136.66,0.42,0.306,20.22,pending
 PATANJALI,Patanjali Foods Ltd.,Consumer Defensive,T3,37.8,0,50434.1,109.16,0.22,0.239,17.28,pending
+PNCINFRA,PNC Infratech Ltd.,Industrials,T3,37.7,0,5592.81,1140.98,20.4,0.765,12.02,pending
 TEGA,Tega Industries Ltd.,Industrials,T3,37.6,0,12020.43,114.3,0.95,0.207,19.63,pending
 ETERNAL,Eternal Ltd.,Consumer Cyclical,skip,37.5,0,223760.95,996.0,0.45,0.148,,pending
 GMDCLTD,Gujarat Mineral Development Corporation Ltd.,Energy,T3,37.3,0,21050.01,118.86,0.56,0.041,15.43,pending
 SCHAEFFLER,Schaeffler India Ltd.,Consumer Cyclical,T2,37.1,0,63574.95,963.8,1.52,0.009,9.37,pending
 BERGEPAINT,Berger Paints India Ltd.,Basic Materials,T3,37.1,0,62101.3,253.95,0.41,0.092,12.33,pending
+VOLTAMP,Voltamp Transformers Ltd,Industrials,T3,36.9,0,9614.3,73.1,0.76,0.0,15.16,pending
+SANSERA,Sansera Engineering Ltd.,Consumer Cyclical,T3,36.9,0,14900.48,51.51,0.35,0.152,18.15,pending
+PNGJL,P N Gadgil Jewellers Ltd.,Consumer Cyclical,T3,36.8,0,7788.3,93.59,1.2,0.759,55.9,pending
+KSB,KSB Ltd.,Industrials,T3,36.5,0,14834.23,166.83,1.12,0.003,13.97,pending
 COLPAL,Colgate Palmolive (India) Ltd.,Consumer Defensive,T3,36.3,0,58776.09,668.1,1.14,0.038,10.04,pending
 RAILTEL,Railtel Corporation Of India Ltd.,Communication Services,T3,36.2,0,10350.26,308.04,2.98,0.028,12.79,pending
 LTM,LTM Ltd.,Technology,T3,36.2,0,117499.44,2331.1,1.98,0.096,4.41,pending
+EPL,EPL Ltd.,Consumer Cyclical,T3,35.8,0,6859.75,190.9,2.78,0.323,18.75,pending
+ATLANTAELE,Atlanta Electricals Ltd.,Industrials,T3,35.6,0,13323.88,4.27,0.03,0.463,23.53,pending
+DYNAMATECH,Dynamatic Technologies Ltd.,Consumer Cyclical,T3,35.6,0,7313.03,33.11,0.45,0.777,40.65,pending
 KALYANKJIL,Kalyan Jewellers India Ltd.,Consumer Cyclical,T3,35.3,0,36553.84,370.33,1.01,0.97,47.18,pending
+SKYGOLD,SKY GOLD AND DIAMONDS Ltd.,Consumer Cyclical,T3,35.2,0,6987.14,10.88,0.16,0.785,98.54,pending
 BATAINDIA,Bata India Ltd.,Consumer Cyclical,T2,35.1,0,8950.66,202.93,2.27,0.904,47.52,pending
+THOMASCOOK,Thomas Cook (India) Ltd.,Consumer Cyclical,skip,35.1,0,4478.58,848.7,18.95,0.214,,pending
+ASHAPURMIN,Ashapura Minechem Ltd.,Basic Materials,T3,35.1,0,6155.7,109.35,1.78,0.864,50.65,pending
 TIMKEN,Timken India Ltd.,Industrials,T3,35.0,0,26702.65,394.35,1.48,0.006,11.0,pending
 JKTYRE,JK Tyre & Industries Ltd.,Consumer Cyclical,T3,34.9,0,10877.16,186.53,1.71,0.897,33.08,pending
 COCHINSHIP,Cochin Shipyard Ltd.,Industrials,T3,34.5,0,41961.38,316.67,0.75,0.203,13.63,pending
 LALPATHLAB,Dr. Lal Path Labs Ltd.,Healthcare,T3,34.4,0,26484.34,292.63,1.1,0.078,12.21,pending
+AVL,Aditya Vision Ltd.,Consumer Cyclical,T3,34.4,0,7134.88,26.11,0.37,0.832,44.07,pending
 GILLETTE,Gillette India Ltd.,Consumer Defensive,T3,34.3,0,25491.42,473.43,1.86,0.0,9.87,pending
+LUMAXTECH,Lumax Auto Technologies Ltd.,Consumer Cyclical,T3,34.3,0,11186.72,72.17,0.65,0.874,36.82,pending
+JAYNECOIND,Jayaswal Neco Industries Ltd.,Basic Materials,T3,34.2,0,10160.53,126.08,1.24,0.747,26.85,pending
 JSL,Jindal Stainless Ltd.,Basic Materials,T3,34.1,0,62088.74,415.12,0.67,0.375,14.73,pending
 USHAMART,Usha Martin Ltd.,Basic Materials,T3,33.7,0,14442.27,260.72,1.81,0.069,11.83,pending
 ZFCVINDIA,ZF Commercial Vehicle Control Systems India Ltd.,Consumer Cyclical,T3,33.2,0,27673.71,129.6,0.47,,48.02,pending
 ALKEM,Alkem Laboratories Ltd.,Healthcare,T3,33.2,0,65539.55,304.14,0.46,0.171,9.58,pending
 JAINREC,Jain Resource Recycling Ltd.,Basic Materials,T3,33.1,0,19794.12,23.59,0.12,0.948,37.23,pending
 ELECON,Elecon Engineering Co. Ltd.,Industrials,T3,33.1,0,10950.72,169.23,1.55,0.118,12.83,pending
+AETHER,Aether Industries Ltd.,Basic Materials,T3,33.1,0,14784.51,17.37,0.12,0.092,13.3,pending
+BBOX,Black Box Ltd.,Technology,T3,32.9,0,15635.56,213.76,1.37,1.147,41.21,pending
 SHREECEM,Shree Cement Ltd.,Basic Materials,T3,32.7,0,90544.64,114.92,0.13,0.381,11.12,pending
+PRAJIND,Praj Industries Ltd.,Industrials,T3,32.7,0,6875.53,125.92,1.83,0.161,13.37,pending
 FORTIS,Fortis Healthcare Ltd.,Healthcare,T3,32.6,0,73140.35,139.72,0.19,0.33,11.73,pending
+THANGAMAYL,Thangamayil Jewellery Ltd.,Consumer Cyclical,T3,32.6,0,10856.95,88.56,0.82,0.963,45.49,pending
 GALLANTT,Gallantt Ispat Ltd.,Basic Materials,T3,32.4,0,18328.91,101.65,0.55,,50.91,pending
 NTPC,NTPC Ltd.,Utilities,T3,32.4,0,384327.38,1426.56,0.37,1.181,11.99,pending
 HINDCOPPER,Hindustan Copper Ltd.,Basic Materials,T3,32.2,0,55284.76,17.52,0.03,0.048,7.55,pending
 PFIZER,Pfizer Ltd.,Healthcare,T3,31.9,0,21593.84,495.07,2.29,0.017,7.81,pending
 LATENTVIEW,Latent View Analytics Ltd.,Industrials,T3,31.8,0,6370.19,69.44,1.09,0.015,10.38,pending
 SAREGAMA,Saregama India Ltd,Communication Services,T3,31.8,0,8043.1,69.39,0.86,0.002,10.2,pending
+SHRIPISTON,Shriram Pistons & Rings Ltd.,Consumer Cyclical,T3,31.8,0,14904.26,42.08,0.28,,45.77,pending
 PAGEIND,Page Industries Ltd.,Consumer Cyclical,T2,31.7,0,41001.64,238.29,0.58,0.19,10.77,pending
+VGUARD,V-Guard Industries Ltd.,Industrials,T3,31.7,0,13940.59,49.98,0.36,0.069,11.28,pending
+PRIVISCL,Privi Speciality Chemicals Ltd.,Basic Materials,T3,31.7,0,12089.91,49.67,0.41,0.709,24.3,pending
 ATUL,Atul Ltd.,Basic Materials,T3,31.6,0,20986.08,85.06,0.41,0.029,9.66,pending
 TRITURBINE,Triveni Turbine Ltd.,Industrials,T3,31.6,0,19375.7,98.19,0.51,0.029,9.75,pending
 RAINBOW,Rainbow Childrens Medicare Ltd.,Healthcare,T3,31.6,0,13509.79,20.25,0.15,0.532,20.75,pending
 PAYTM,One 97 Communications Ltd.,Technology,T1,31.6,0,72462.0,3285.0,4.53,0.011,,pending
 MANKIND,Mankind Pharma Ltd.,Healthcare,T3,31.5,0,103442.39,407.36,0.39,0.539,11.57,pending
+ARVINDFASN,Arvind Fashions Ltd.,Consumer Cyclical,T3,31.5,0,5795.28,50.81,0.88,1.151,49.46,pending
 GVT&D,GE Vernova T&D India Ltd.,Industrials,skip,31.4,0,112532.46,471.19,0.42,0.015,,pending
 JINDALSAW,Jindal Saw Ltd.,Basic Materials,T3,31.4,0,14542.86,406.72,2.8,0.382,14.76,pending
+UTLSOLAR,Fujiyama Power Systems Ltd.,Technology,T3,31.0,0,8562.56,8.23,0.1,1.384,76.28,pending
+REDTAPE,Redtape Ltd.,Consumer Cyclical,T3,30.9,0,7201.98,13.69,0.19,1.084,80.23,pending
 BRITANNIA,Britannia Industries Ltd.,Consumer Defensive,T1,30.8,0,130369.97,220.0,0.17,0.269,2.95,pending
 CONCOR,Container Corporation of India Ltd.,Industrials,T3,30.3,0,39760.26,362.32,0.91,0.07,6.85,pending
 GLENMARK,Glenmark Pharmaceuticals Ltd.,Healthcare,T1,30.2,0,65803.58,1675.71,2.55,0.128,3.6,pending
 ADANIPOWER,Adani Power Ltd.,Utilities,T3,29.9,0,429701.6,927.88,0.22,0.823,6.16,pending
 SYNGENE,Syngene International Ltd.,Healthcare,T3,29.8,0,18400.76,366.9,1.99,0.095,7.83,pending
 UBL,United Breweries Ltd.,Consumer Defensive,T3,29.8,0,36276.39,460.08,1.27,0.291,10.77,pending
+KANSAINER,Kansai Nerolac Paints Ltd.,Basic Materials,T3,29.6,0,17915.83,196.79,1.1,0.045,7.57,pending
 IRCON,IRCON International Ltd.,Industrials,T3,29.5,0,13509.57,2279.84,16.88,0.792,7.09,pending
 MSUMI,Motherson Sumi Wiring India Ltd.,Consumer Cyclical,T3,29.4,0,26725.6,66.24,0.25,0.108,8.68,pending
 BLUESTARCO,Blue Star Ltd.,Industrials,T3,29.4,0,34344.25,368.99,1.07,0.236,9.63,pending
+SUPRIYA,Supriya Lifescience Ltd.,Healthcare,T3,29.2,0,5564.18,76.0,1.37,0.005,7.38,pending
 SUPREMEIND,Supreme Industries Ltd.,Industrials,T2,28.9,0,44697.21,648.84,1.45,0.015,3.3,pending
 CASTROLIND,Castrol India Ltd.,Energy,T2,28.7,0,17969.39,426.62,2.37,0.033,5.23,pending
 MEESHO,Meesho Ltd.,Consumer Cyclical,skip,28.7,0,88207.45,147.06,0.17,0.014,,pending
@@ -228,6 +347,7 @@ BDL,Bharat Dynamics Ltd.,Industrials,T3,28.4,0,48712.49,133.86,0.27,0.0,3.21,pen
 LTTS,L&T Technology Services Ltd.,Technology,T3,28.2,0,37029.82,1649.7,4.46,0.089,1.81,pending
 SUMICHEM,Sumitomo Chemical India Ltd.,Basic Materials,T3,28.2,0,23003.13,38.23,0.17,0.018,6.07,pending
 ANTHEM,Anthem Biosciences Ltd.,Healthcare,T3,28.0,0,44288.33,316.14,0.71,0.04,3.62,pending
+ARVIND,Arvind Ltd.,Consumer Cyclical,T3,27.9,0,11803.02,52.96,0.45,0.391,14.07,pending
 SUZLON,Suzlon Energy Ltd.,Industrials,skip,27.6,0,73749.21,901.07,1.22,0.051,,pending
 GODREJCP,Godrej Consumer Products Ltd.,Consumer Defensive,T3,27.6,0,106775.58,976.87,0.91,0.349,3.02,pending
 FINCABLES,Finolex Cables Ltd.,Industrials,T3,27.5,0,16245.22,90.13,0.55,0.004,5.36,pending
@@ -237,6 +357,7 @@ BELRISE,Belrise Industries Ltd.,Consumer Cyclical,T3,27.3,0,18717.72,77.33,0.41,
 IGL,Indraprastha Gas Ltd.,Utilities,T3,27.2,0,21445.22,144.62,0.67,0.009,4.57,pending
 ASTRAL,Astral Ltd.,Industrials,T2,27.0,0,41826.15,608.1,1.45,0.068,2.68,pending
 DABUR,Dabur India Ltd.,Consumer Defensive,T3,26.9,0,83221.54,184.17,0.22,0.109,0.54,pending
+ALIVUS,Alivus Life Sciences Ltd.,Healthcare,T3,26.5,0,12887.32,71.06,0.55,0.02,5.07,pending
 LUPIN,Lupin Ltd.,Healthcare,skip,26.4,0,104025.75,1930.78,1.86,0.294,,pending
 APOLLOHOSP,Apollo Hospitals Enterprise Ltd.,Healthcare,T3,26.4,0,116070.17,578.1,0.5,0.836,11.06,pending
 KEC,Kec International Ltd.,Industrials,T3,26.1,0,14726.18,542.21,3.68,0.941,19.78,pending
@@ -247,10 +368,18 @@ INDHOTEL,Indian Hotels Co. Ltd.,Consumer Cyclical,skip,25.8,0,93733.01,256.91,0.
 RVNL,Rail Vikas Nigam Ltd.,Industrials,T3,25.7,0,59172.87,3127.46,5.29,0.521,4.9,pending
 NYKAA,FSN E-Commerce Ventures Ltd.,Consumer Cyclical,T3,25.6,0,77959.0,124.94,0.16,0.977,17.17,pending
 SIEMENS,Siemens Ltd.,Industrials,T3,25.4,0,128516.78,2150.4,1.67,,10.9,pending
+ADVENZYMES,Advanced Enzyme Tech Ltd.,Basic Materials,T3,25.4,0,4084.89,94.22,2.31,0.023,3.12,pending
+GODREJAGRO,Godrej Agrovet Ltd.,Consumer Defensive,T3,25.4,0,10976.06,298.61,2.72,0.728,16.13,pending
+MAHSEAMLES,Maharashtra Seamless Ltd.,Basic Materials,T3,25.3,0,8667.07,41.82,0.48,0.002,3.97,pending
+SHILPAMED,Shilpa Medicare Ltd.,Healthcare,T3,25.2,0,9521.9,25.97,0.27,0.243,8.88,pending
+MEDPLUS,Medplus Health Services Ltd.,Healthcare,T3,25.2,0,11460.32,86.05,0.75,0.647,16.2,pending
 ZYDUSLIFE,Zydus Lifesciences Ltd.,Healthcare,T3,24.4,0,101941.56,826.8,0.81,0.343,0.28,pending
 SUNTV,Sun TV Network Ltd.,Communication Services,T3,24.4,0,21085.5,273.05,1.29,0.012,1.23,pending
 ATGL,Adani Total Gas Ltd.,Utilities,T3,24.2,0,68496.17,253.05,0.37,0.464,6.26,pending
+CAPILLARY,Capillary Technologies India Ltd.,Technology,skip,24.2,0,4207.25,201.25,4.78,0.052,,pending
 CHAMBLFERT,Chambal Fertilizers & Chemicals Ltd.,Basic Materials,T3,24.0,0,18079.43,107.75,0.6,0.01,1.75,pending
+MANYAVAR,Vedant Fashions Ltd.,Consumer Cyclical,T3,23.8,0,10687.17,17.21,0.16,0.233,7.25,pending
+KRBL,KRBL Ltd.,Consumer Defensive,T3,23.7,0,7842.91,154.09,1.96,0.013,1.19,pending
 ITCHOTELS,ITC Hotels Ltd.,Consumer Cyclical,skip,23.4,0,32758.97,78.71,0.24,0.007,,pending
 MGL,Mahanagar Gas Ltd.,Utilities,T3,23.0,0,10729.24,57.2,0.53,0.035,2.11,pending
 EIHOTEL,EIH Ltd.,Consumer Cyclical,skip,22.8,0,19955.37,377.85,1.89,0.052,,pending
@@ -263,12 +392,21 @@ PINELABS,Pine Labs Ltd.,Technology,T2,22.5,0,17661.64,951.46,5.39,0.231,,pending
 PARADEEP,Paradeep Phosphates Ltd.,Basic Materials,T3,22.3,0,12545.25,873.73,6.96,0.87,11.46,pending
 BALKRISIND,Balkrishna Industries Ltd.,Consumer Cyclical,T3,22.2,0,41828.04,80.24,0.19,0.353,4.86,pending
 CIEINDIA,CIE Automotive India Ltd.,Consumer Cyclical,skip,21.9,0,17454.46,227.55,1.3,0.057,,pending
+AKUMS,Akums Drugs and Pharmaceuticals Ltd.,Healthcare,skip,21.5,0,7978.91,101.19,1.27,0.029,,pending
+GREAVESCOT,Greaves Cotton Ltd.,Industrials,skip,21.4,0,3878.64,135.03,3.48,0.123,,pending
+BLACKBUCK,Blackbuck Ltd.,Technology,skip,21.3,0,9640.51,104.49,1.08,0.036,,pending
 DELHIVERY,Delhivery Ltd.,Industrials,skip,21.1,0,35594.03,335.97,0.94,0.172,,pending
+IXIGO,Le Travenues Technology Ltd.,Consumer Cyclical,skip,21.1,0,7273.85,81.05,1.11,0.036,,pending
 URBANCO,Urban Company Ltd.,Technology,skip,21.0,0,18930.27,61.1,0.32,0.063,,pending
 MMTC,MMTC Ltd.,Industrials,skip,20.9,0,9528.0,29.77,0.31,0.018,,pending
+APLLTD,Alembic Pharmaceuticals Ltd.,Healthcare,T3,20.3,0,15310.3,83.48,0.55,0.28,3.85,pending
+ENTERO,Entero Healthcare Solutions Ltd.,Healthcare,skip,20.0,0,5190.85,229.28,4.42,0.246,,pending
+INOXGREEN,Inox Green Energy Services Ltd.,Utilities,skip,19.9,0,7146.56,6.31,0.09,0.047,,pending
+VIKRAMSOLR,Vikram Solar Ltd.,Technology,skip,19.5,0,7360.38,39.16,0.53,0.089,,pending
 FSL,Firstsource Solutions Ltd.,Technology,T3,19.4,0,16327.66,258.58,1.58,0.666,9.5,pending
 INDIACEM,India Cements Ltd.,Basic Materials,skip,19.3,0,18417.17,13.76,0.07,0.129,,pending
 MINDACORP,Minda Corporation Ltd.,Consumer Cyclical,T3,19.2,0,12311.73,75.9,0.62,0.63,10.0,pending
+IFBIND,IFB Industries Ltd.,Consumer Cyclical,skip,19.2,0,4525.95,109.26,2.41,0.181,,pending
 SONATSOFTW,Sonata Software Ltd.,Technology,T2,19.1,0,7429.16,372.53,5.01,0.38,0.91,pending
 DALBHARAT,Dalmia Bharat Ltd.,Basic Materials,T3,19.0,0,32689.22,212.0,0.65,0.409,3.24,pending
 INOXWIND,Inox Wind Ltd.,Industrials,skip,18.7,0,16668.85,21.01,0.13,0.157,,pending
@@ -276,14 +414,23 @@ ATHERENERG,Ather Energy Ltd.,Consumer Cyclical,skip,18.7,0,35659.5,111.94,0.31,0
 ONESOURCE,Onesource Specialty Pharma Ltd.,Healthcare,skip,18.5,0,21074.19,156.48,0.74,0.219,,pending
 CRAFTSMAN,Craftsman Automation Ltd.,Consumer Cyclical,T3,18.4,0,20171.09,144.83,0.72,1.093,15.63,pending
 KPIL,Kalpataru Projects International Ltd.,Industrials,T3,18.4,0,21587.36,1601.69,7.42,0.697,2.73,pending
+OPTIEMUS,Optiemus Infracom Ltd.,Technology,skip,17.8,0,3696.99,144.22,3.9,0.324,,pending
+WEBELSOLAR,Websol Energy System Ltd.,Technology,skip,17.8,0,4511.39,66.32,1.47,0.207,,pending
+HAPPSTMNDS,Happiest Minds Technologies Ltd.,Technology,T3,17.7,0,5434.22,119.12,2.19,0.283,0.63,pending
+HEMIPROP,Hemisphere Properties India Ltd.,Real Estate,skip,17.6,0,4278.3,50.04,1.17,0.2,,pending
 FIRSTCRY,Brainbees Solutions Ltd.,Consumer Cyclical,skip,17.3,0,10979.78,271.17,2.47,0.315,,pending
 JSWDULUX,JSW Dulux Ltd.,Consumer Durables,T3,17.2,0,13278.64,248.2,1.87,,13.97,pending
+PCJEWELLER,PC Jeweller Ltd.,Consumer Cyclical,skip,17.2,0,8156.85,62.19,0.76,0.22,,pending
+BORORENEW,Borosil Renewables Ltd.,Technology,skip,16.9,0,7088.51,52.82,0.75,0.228,,pending
 PREMIERENE,Premier Energies Ltd.,Technology,skip,16.8,0,44105.21,802.58,1.82,0.47,,pending
 TATACHEM,Tata Chemicals Ltd.,Basic Materials,skip,16.7,0,19008.64,381.0,2.0,0.361,,pending
 SWANCORP,Swan Corp Ltd.,Industrials,skip,16.7,0,9967.93,136.76,1.37,0.282,,pending
+EMIL,Electronics Mart India Ltd.,Consumer Cyclical,T3,16.6,0,4607.37,30.53,0.66,1.261,15.49,pending
 THELEELA,Leela Palaces Hotels & Resorts Ltd.,Consumer Cyclical,skip,16.5,0,13981.15,99.67,0.71,0.281,,pending
 TITAGARH,Titagarh Rail Systems Ltd.,Industrials,skip,16.3,0,10386.04,25.27,0.24,0.251,,pending
+DBREALTY,Valor Estate Ltd.,Real Estate,skip,16.3,0,6446.5,37.19,0.58,0.248,,pending
 ZYDUSWELL,Zydus Wellness Ltd.,Consumer Defensive,T3,15.3,0,16087.62,66.7,0.41,0.533,3.95,pending
+CAMPUS,Campus Activewear Ltd.,Consumer Cyclical,T3,15.1,0,7324.46,17.44,0.24,0.48,3.74,pending
 WELSPUNLIV,Welspun Living Ltd.,Consumer Cyclical,T3,14.3,0,13199.02,257.02,1.95,0.55,2.06,pending
 AEGISVOPAK,Aegis Vopak Terminals Ltd.,Energy,skip,14.2,0,22000.28,105.57,0.48,0.423,,pending
 IDEA,Vodafone Idea Ltd.,Communication Services,skip,14.1,0,139545.83,256.8,0.18,,,pending
@@ -293,23 +440,44 @@ PPLPHARMA,Piramal Pharma Ltd.,Healthcare,skip,13.6,0,23167.13,1199.88,5.18,0.695
 WOCKPHARMA,Wockhardt Ltd.,Healthcare,skip,13.3,0,25327.66,217.0,0.86,0.504,,pending
 NSLNISP,NMDC Steel Ltd.,Basic Materials,skip,13.2,0,12941.56,7.04,0.05,0.408,,pending
 JKCEMENT,J.K. Cement Ltd.,Basic Materials,T3,12.8,0,42532.31,297.3,0.7,0.996,7.81,pending
+EMBDL,Embassy Developments Ltd.,Real Estate,skip,12.5,0,9876.19,68.7,0.7,0.459,,pending
 LLOYDSME,Lloyds Metals And Energy Ltd.,Basic Materials,skip,12.0,0,98396.72,2121.86,2.16,1.452,,pending
+VARROC,Varroc Engineering Ltd.,Consumer Cyclical,skip,11.5,0,8575.1,111.48,1.3,0.531,,pending
+TVSSCS,TVS Supply Chain Solutions Ltd.,Industrials,skip,11.2,0,5084.6,544.85,10.72,1.123,,pending
 GMRAIRPORT,GMR Airports Ltd.,Industrials,skip,10.8,0,102094.74,555.66,0.54,,,pending
+WAKEFIT,Wakefit Innovations Ltd.,Consumer Cyclical,skip,10.7,0,4642.3,7.12,0.15,0.497,,pending
+KSCL,Kaveri Seed Company Ltd.,Basic Materials,T3,10.7,0,4721.28,20.41,0.43,,9.81,pending
 PWL,Physicswallah Ltd.,Consumer Defensive,skip,10.1,0,33332.58,53.71,0.16,0.67,,pending
 OLAELEC,Ola Electric Mobility Ltd.,Consumer Cyclical,skip,9.4,0,15125.37,339.0,2.24,0.719,,pending
+SMLMAH,SML Mahindra Ltd.,Consumer Cyclical,skip,9.4,0,5209.36,3.1,0.06,0.557,,pending
 ASAHIINDIA,Asahi India Glass Ltd.,Consumer Cyclical,T3,9.3,0,20613.41,36.55,0.18,0.771,2.5,pending
+STAR,Strides Pharma Science Ltd.,Healthcare,skip,9.0,0,10671.76,112.56,1.05,0.658,,pending
+SENCO,Senco Gold Ltd.,Consumer Cyclical,T3,8.4,0,5537.48,33.25,0.6,1.166,7.26,pending
 KIMS,Krishna Institute of Medical Sciences Ltd.,Healthcare,T3,8.2,0,30582.62,56.0,0.18,1.237,4.94,pending
+NETWORK18,Network18 Media & Investments Ltd.,Communication Services,skip,8.1,0,4980.97,38.51,0.77,0.659,,pending
 CHALET,Chalet Hotels Ltd.,Consumer Cyclical,skip,7.8,0,17229.36,109.24,0.63,0.729,,pending
+BAJAJELEC,Bajaj Electricals Ltd,Consumer Cyclical,T3,7.4,0,4556.78,119.79,2.63,0.848,1.26,pending
 JSWCEMENT,JSW Cement Ltd.,Basic Materials,skip,7.0,0,16529.62,65.05,0.39,0.754,,pending
 PVRINOX,PVR INOX Ltd.,Communication Services,skip,6.2,0,10029.16,522.5,5.21,1.051,,pending
 ITI,ITI Ltd.,Technology,skip,5.9,0,27638.66,148.66,0.54,0.871,,pending
 RPOWER,Reliance Power Ltd.,Utilities,skip,5.9,0,11323.74,360.59,3.18,0.922,,pending
+KITEX,Kitex Garments Ltd.,Consumer Cyclical,T3,5.6,0,3135.74,39.4,1.26,0.976,3.5,pending
 PCBL,PCBL Chemical Ltd.,Basic Materials,T3,4.7,0,10938.26,318.53,2.91,1.241,0.67,pending
 FORCEMOT,Force Motors Ltd.,Consumer Cyclical,skip,4.6,0,26892.75,506.55,1.88,,,pending
+RTNPOWER,RattanIndia Power Ltd.,Utilities,skip,3.7,0,4988.83,10.25,0.21,0.849,,pending
+SAMHI,Samhi Hotels Ltd.,Consumer Cyclical,skip,3.4,0,3270.05,63.38,1.94,0.941,,pending
+BLUESTONE,BlueStone Jewellery and Lifestyle Ltd.,Consumer Cyclical,skip,2.2,0,7323.99,107.52,1.47,1.1,,pending
 TEJASNET,Tejas Networks Ltd.,Technology,skip,2.1,0,7963.59,102.68,1.29,1.425,,pending
+VMART,V-Mart Retail Ltd.,Consumer Cyclical,skip,2.0,0,5111.36,19.53,0.38,0.947,,pending
 SAPPHIRE,Sapphire Foods India Ltd.,Consumer Cyclical,skip,1.8,0,5797.76,68.11,1.17,1.021,,pending
+AEQUS,Aequs Ltd.,Industrials,skip,1.8,0,13100.36,60.94,0.47,1.08,,pending
+RENUKA,Shree Renuka Sugars Ltd.,Consumer Defensive,skip,1.7,0,5138.17,62.68,1.22,,,pending
 LEMONTREE,Lemon Tree Hotels Ltd.,Consumer Cyclical,skip,1.5,0,8852.86,55.42,0.63,1.096,,pending
+ALOKINDS,Alok Industries Ltd.,Consumer Cyclical,skip,1.1,0,6861.96,29.3,0.43,,,pending
+MOIL,MOIL Ltd.,Basic Materials,T3,1.1,0,6291.76,2.81,0.04,,0.41,pending
+DIACABS,Diamond Power Infrastructure Ltd.,Industrials,skip,1.1,0,10371.85,7.18,0.07,,,pending
 TTML,Tata Teleservices (Maharashtra) Ltd.,Communication Services,skip,1.0,0,8306.49,15.4,0.19,,,pending
+SPARC,Sun Pharma Advanced Research Company Ltd.,Healthcare,skip,0.6,0,5324.75,1.96,0.04,,,pending
 COALINDIA,Coal India Ltd.,Energy,T1,0.0,0,285211.07,8619.66,3.022203871680016,0.116,-0.71,pending
 CRISIL,CRISIL Ltd.,Financial Services,T1,0.0,0,30493.75,320.13,1.0498216847714694,0.098,10.72,pending
 TATAELXSI,Tata Elxsi Ltd.,Technology,T2,0.0,0,25622.78,194.52,0.7591682089140992,0.053,-5.94,pending
@@ -498,6 +666,88 @@ TIINDIA,Tube Investments of India Ltd.,Industrials,skip,0.0,0,55781.94,656.38,1.
 RBLBANK,RBL Bank Ltd.,Financial Services,skip_financial,0.0,0,20772.86,23065.85,111.038393365189,,-1.49,pending
 TATACAP,Tata Capital Ltd.,Financial Services,skip_financial,0.0,0,130886.14,3640.56,2.7814709792801593,5.021,,pending
 NIVABUPA,Niva Bupa Health Insurance Company Ltd.,Financial Services,skip_financial,0.0,0,14796.28,220.35,1.4892256702360323,0.073,,pending
+FEDFINA,Fedbank Financial Services Ltd.,Financial Services,skip_financial,0.0,0,5714.04,1339.73,23.446283190177176,4.673,24.02,pending
+PRUDENT,Prudent Corporate Advisory Services Ltd.,Financial Services,skip_financial,0.0,0,11767.78,13.08,0.11115095625513054,0.039,23.92,pending
+SWSOLAR,Sterling and Wilson Renewable Energy Ltd.,Technology,skip,0.0,0,4678.39,314.11,6.714061888812177,1.83,,pending
+PRSMJOHNSN,Prism Johnson Ltd.,Basic Materials,skip,0.0,0,6328.7,407.98,6.446505601466336,0.935,-4.5,pending
+GSFC,Gujarat State Fertilizers & Chemicals Ltd.,Basic Materials,skip,0.0,0,6788.06,285.45,4.205177915339582,0.0,-13.03,pending
+RCF,Rashtriya Chemicals & Fertilizers Ltd.,Basic Materials,skip,0.0,0,6914.31,987.03,14.275177132642302,0.564,-29.85,pending
+GAEL,Gujarat Ambuja Exports Ltd.,Consumer Defensive,skip,0.0,0,7558.89,1.22,0.01613993589005793,0.093,-19.36,pending
+BALAMINES,Balaji Amines Ltd.,Basic Materials,skip,0.0,0,5482.25,148.89,2.715855716174928,0.062,-24.66,pending
+VIPIND,V.I.P. Industries Ltd.,Consumer Cyclical,skip,0.0,0,4284.99,37.97,0.8861164203417045,1.678,,pending
+EQUITASBNK,Equitas Small Finance Bank Ltd.,Financial Services,skip_financial,0.0,0,7800.37,5536.3,70.97483837305154,0.942,-19.39,pending
+HCG,Healthcare Global Enterprises Ltd.,Healthcare,skip,0.0,0,9552.36,235.87,2.469232734109686,1.779,-6.15,pending
+RBA,Restaurant Brands Asia Ltd.,Consumer Cyclical,skip,0.0,0,3948.4,534.25,13.530797284976192,2.292,,pending
+WEWORK,WeWork India Management Ltd.,Real Estate,skip,0.0,0,6850.09,,,23.787,,pending
+STLTECH,Sterlite Technologies Ltd.,Technology,skip,0.0,0,20262.38,298.0,1.4707058104724124,0.856,-26.49,pending
+MIDHANI,Mishra Dhatu Nigam Ltd.,Basic Materials,skip,0.0,0,7644.41,50.88,0.6655843943482885,0.235,-14.38,pending
+GMRP&UI,GMR Power and Urban Infra Ltd.,Energy,skip,0.0,0,9005.91,688.67,7.646867445932726,7.312,,pending
+TARC,TARC Ltd.,Real Estate,skip,0.0,0,3845.4,48.26,1.2550059811723098,1.813,,pending
+AVALON,Avalon Technologies Ltd.,Technology,skip,0.0,0,8751.19,68.83,0.7865216044903607,0.251,-2.37,pending
+SMARTWORKS,Smartworks Coworking Spaces Ltd.,Real Estate,skip,0.0,0,5010.39,42.93,0.8568195290186992,9.004,,pending
+AWFIS,Awfis Space Solutions Ltd.,Industrials,skip,0.0,0,2282.14,32.62,1.4293601619532543,2.909,,pending
+METROPOLIS,Metropolis Healthcare Ltd.,Healthcare,skip,0.0,0,11021.77,39.48,0.3582001801888444,0.139,-12.2,pending
+GNFC,Gujarat Narmada Valley Fertilizers and Chemicals Ltd.,Basic Materials,skip,0.0,0,7588.02,18.55,0.2444643003049544,0.002,-29.56,pending
+PARKHOSPS,Park Medi World Ltd.,Healthcare,skip,0.0,0,10579.28,103.0,0.9736012280608888,0.173,-3.36,pending
+ACI,Archean Chemical Industries Ltd.,Basic Materials,skip,0.0,0,6516.13,40.54,0.6221484224532046,0.241,-4.85,pending
+RELAXO,Relaxo Footwears Ltd.,Consumer Cyclical,skip,0.0,0,7194.32,22.37,0.31093974135151065,0.102,-9.88,pending
+NEOGEN,NEOGEN CHEMICALS LTD.,Basic Materials,skip,0.0,0,4580.41,4.96,0.10828724939470485,1.415,-7.93,pending
+SANDUMA,Sandur Manganese & Iron Ores Ltd.,Basic Materials,skip,0.0,0,10908.19,14.01,0.12843560664051507,0.306,-11.36,pending
+ALKYLAMINE,Alkyl Amines Chemicals Ltd.,Basic Materials,skip,0.0,0,8888.84,94.15,1.0591933255632906,,-7.67,pending
+FINPIPE,Finolex Industries Ltd.,Industrials,skip,0.0,0,10313.48,44.39,0.43040758308543775,0.004,-8.7,pending
+STYRENIX,Styrenix Performance Materials Ltd.,Basic Materials,skip,0.0,0,4152.73,97.65,2.351465180736528,0.441,-10.0,pending
+TSFINV,TSF Investments Ltd.,Financial Services,skip_financial,0.0,0,8641.19,14.83,0.1716198810580487,0.046,36.88,pending
+CRAMC,Canara Robeco Asset Management Company Ltd.,Financial Services,skip_financial,0.0,0,4838.86,2.18,0.045051933719925774,0.024,6.87,pending
+SHARDACROP,Sharda Cropchem Ltd.,Basic Materials,skip,0.0,0,8762.21,127.21,1.4518026844825678,0.001,-4.48,pending
+TRIVENI,Triveni Engineering & Industries Ltd.,Consumer Defensive,skip,0.0,0,8243.54,46.08,0.5589831552949339,0.246,-16.92,pending
+WESTLIFE,Westlife Foodworld Ltd.,Consumer Cyclical,skip,0.0,0,7357.23,58.67,0.7974468651924705,2.915,,pending
+MAHSCOOTER,Maharashtra Scooters Ltd.,Financial Services,skip_financial,0.0,0,13875.42,0.06,0.0004324193429820503,,16.72,pending
+PURVA,Puravankara Ltd.,Real Estate,skip,0.0,0,5060.77,696.19,13.756602256178407,2.748,,pending
+BIRLACORPN,Birla Corporation Ltd.,Basic Materials,skip,0.0,0,7859.17,117.88,1.499903933875969,0.447,-9.52,pending
+CENTURYPLY,Century Plyboards (India) Ltd.,Basic Materials,skip,0.0,0,17040.67,20.17,0.11836389062167159,0.661,-16.03,pending
+PFOCUS,Prime Focus Ltd.,Communication Services,skip,0.0,0,19221.28,214.13,1.1140257048437983,2.464,,pending
+STARCEMENT,Star Cement Ltd.,Basic Materials,skip,0.0,0,8715.75,39.85,0.4572182543097267,0.214,-11.86,pending
+ICIL,Indo Count Industries Ltd.,Consumer Cyclical,skip,0.0,0,5706.94,106.23,1.861417852649581,0.539,-11.81,pending
+IIFLCAPS,IIFL Capital Services Ltd.,Financial Services,skip_financial,0.0,0,10686.88,424.76,3.9745931459883526,0.619,30.92,pending
+DCBBANK,DCB Bank Ltd.,Financial Services,skip_financial,0.0,0,5910.09,4220.43,71.41058765602554,,16.26,pending
+EDELWEISS,Edelweiss Financial Services Ltd.,Financial Services,skip_financial,0.0,0,10681.61,4938.14,46.230296743655686,3.507,28.31,pending
+GHCL,GHCL Ltd.,Basic Materials,skip,0.0,0,4346.72,98.63,2.26906725070858,0.027,-1.35,pending
+GMMPFAUDLR,GMM Pfaudler Ltd.,Industrials,skip,0.0,0,4060.09,444.81,10.955668470403365,0.896,-14.6,pending
+KPIGREEN,KPI Green Energy Ltd.,Utilities,skip,0.0,0,8327.79,115.58,1.3878832199178892,1.588,63.16,pending
+HCC,Hindustan Construction Co. Ltd.,Industrials,skip,0.0,0,5644.95,569.48,10.088309019566163,1.474,-41.51,pending
+UJJIVANSFB,Ujjivan Small Finance Bank Ltd.,Financial Services,skip_financial,0.0,0,10918.03,3443.67,31.541129672660727,,-14.29,pending
+INDIAGLYCO,India Glycols Ltd.,Basic Materials,skip,0.0,0,6836.73,6.84,0.10004782988358471,0.858,-12.09,pending
+LXCHEM,Laxmi Organic Industries Ltd.,Basic Materials,skip,0.0,0,4244.66,41.64,0.9809973001371135,0.173,-23.88,pending
+THYROCARE,Thyrocare Technologies Ltd.,Healthcare,skip,0.0,0,7362.02,17.68,0.2401514801644114,0.087,-19.61,pending
+KTKBANK,Karnataka Bank Ltd.,Financial Services,skip_financial,0.0,0,9331.63,16018.02,171.65296952408102,,35.82,pending
+QUESS,Quess Corp Ltd.,Industrials,skip,0.0,0,3039.64,249.12,8.195707386401022,0.107,-42.52,pending
+RELIGARE,Religare Enterprises Ltd.,Financial Services,skip_financial,0.0,0,7403.45,302.67,4.088229136416131,0.127,,pending
+SUDARSCHEM,Sudarshan Chemical Industries Ltd.,Basic Materials,skip,0.0,0,6836.67,1104.33,16.153039418313302,0.645,-24.58,pending
+TMB,Tamilnad Mercantile Bank Ltd.,Financial Services,skip_financial,0.0,0,10593.71,4214.94,39.78719447672251,,9.13,pending
+CSBBANK,CSB Bank Ltd.,Financial Services,skip_financial,0.0,0,6001.2,4096.8,68.26634673065386,,4.97,pending
+SOUTHBANK,South Indian Bank Ltd.,Financial Services,skip_financial,0.0,0,10182.43,10140.74,99.59056924525875,,23.37,pending
+AARTIDRUGS,Aarti Drugs Ltd.,Healthcare,skip,0.0,0,3358.74,4.58,0.13636065905667005,0.39,-6.4,pending
+JKLAKSHMI,JK Lakshmi Cement Ltd.,Basic Materials,skip,0.0,0,8235.12,76.01,0.9229980862452519,0.721,-15.79,pending
+JKPAPER,JK Paper Ltd.,Basic Materials,skip,0.0,0,6910.96,28.14,0.40717932096264486,0.372,-8.93,pending
+VIYASH,Viyash Scientific Ltd.,Healthcare,skip,0.0,0,9861.01,62.66,0.6354318675267543,0.553,-18.86,pending
+RTNINDIA,RattanIndia Enterprises Ltd.,Consumer Cyclical,skip,0.0,0,4715.73,30.08,0.637865187362296,1.073,-46.58,pending
+RAIN,Rain Industries Ltd,Basic Materials,skip,0.0,0,5368.08,925.7,17.244526907199596,1.277,-69.08,pending
+MTARTECH,MTAR Technologies Ltd.,Industrials,skip,0.0,0,22285.33,1.93,0.008660405746740119,0.251,-4.58,pending
+NFL,National Fertilizers Ltd.,Basic Materials,skip,0.0,0,3677.87,18.39,0.5000176732728454,1.769,,pending
+VAIBHAVGBL,Vaibhav Global Ltd.,Consumer Cyclical,skip,0.0,0,3575.82,88.14,2.464889172273772,0.157,-13.59,pending
+SFL,Sheela Foam Ltd.,Consumer Cyclical,skip,0.0,0,6512.32,41.25,0.6334148199105695,0.407,-23.82,pending
+DBL,Dilip Buildcon Ltd.,Industrials,skip,0.0,0,7259.66,353.11,4.86400189540557,1.706,,pending
+IMFA,Indian Metals & Ferro Alloys Ltd.,Basic Materials,skip,0.0,0,7998.7,7.26,0.09076474927175666,0.173,-9.28,pending
+INDIASHLTR,India Shelter Finance Corporation Ltd.,Financial Services,skip_financial,0.0,0,9005.23,129.38,1.4367206612157604,1.953,48.14,pending
+HGINFRA,H.G. Infra Engineering Ltd.,Industrials,skip,0.0,0,3951.98,87.09,2.203705484339496,1.827,9.97,pending
+SHAREINDIA,Share India Securities Ltd.,Financial Services,skip_financial,0.0,0,3035.11,474.66,15.638971898876811,0.227,17.65,pending
+V2RETAIL,V2 Retail Ltd.,Consumer Cyclical,skip,0.0,0,8227.32,9.01,0.10951318290767832,3.392,,pending
+JSFB,Jana Small Finance Bank Ltd.,Financial Services,skip_financial,0.0,0,5129.31,2558.18,49.87376469739594,,8.44,pending
 TENNIND,Tenneco Clean Air India Ltd.,Consumer Cyclical,T3,,0,,285.9,0.0,0.024,20.36,pending
 LGEINDIA,LG Electronics India Ltd.,Technology,skip,,0,107585.43,,,0.069,,pending
 LENSKART,Lenskart Solutions Ltd.,Healthcare,skip,,0,81917.8,,,0.442,,pending
+CORONA,CORONA Remedies Ltd.,Healthcare,T3,,0,,3.22,0.0,0.221,32.65,pending
+ORKLAINDIA,Orkla India Ltd.,Consumer Defensive,skip,,0,8762.52,,,0.025,,pending
+ELLEN,Ellenbarrie Industrial Gases Ltd.,Basic Materials,skip,,0,3909.55,,,0.129,,pending
+SKFINDUS,SKF India (Industrial) Ltd.,Industrials,skip,,0,10297.43,,,,,pending
+RUBICON,Rubicon Research Ltd.,Healthcare,skip,,0,15848.16,,,0.877,,pending
