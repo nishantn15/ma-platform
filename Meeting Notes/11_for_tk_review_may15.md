@@ -87,7 +87,7 @@ ITC · HUL · Nestle · Asian Paints · Pidilite · L&T · M&M · TCS · Infy ·
 Persistent · Coforge · KPIT · Tata Elxsi · CAMS · CDSL · MCX · Page · Bata · 3M India · Honeywell Automation · Schaeffler · Castrol · Care Ratings · Gujarat Gas · Supreme Industries · Astral
 
 ### Data caveat
-yfinance "cash" only captures Cash & Equivalents — not treasury investments. ITC/Infy/TCS look low on cash because of this. Real net cash is 5–50x higher. For dossier-grade truth we need annual report verification (or a Screener.in subscription at Rs 1,400/yr — recommended next spend).
+yfinance "cash" only captures Cash & Equivalents — not treasury investments. ITC/Infy/TCS look low on cash because of this. Real net cash is 5–50x higher. For dossier-grade truth we need annual report verification.
 
 ---
 
@@ -106,13 +106,12 @@ yfinance "cash" only captures Cash & Equivalents — not treasury investments. I
 ### Leads / outreach
 7. **First 10 to contact**: From the 19-name slow-growth hot list, which 10 do you want to engage first? My pick: HONAUT, SKFINDIA, MASTEK, TANLA, AHLUCONT, HEXAWARE, REDINGTON, GRANULES, AUROPHARMA, BIOCON (mid-cap concentration, easier first conversations than Reliance).
 8. **Outreach owner**: Who runs each account? You + me + others?
-9. **Screener.in subscription** (Rs 1,400/yr): approve to add the deeper financial fields (ROCE, dividend payout, capex ratio)?
 
 ### Institutional anchors
-10. **Status check**: IIT Roorkee MoU — drafted, signed, in discussion? Same for IIT Delhi / IIM Bangalore. NITI Aayog conversation status? CCI advisory? — need this to remove the "proposed" disclaimer.
+9. **Status check**: IIT Roorkee MoU — drafted, signed, in discussion? Same for IIT Delhi / IIM Bangalore. NITI Aayog conversation status? CCI advisory? — need this to remove the "proposed" disclaimer.
 
 ### Pricing model
-11. **Confirm pricing** (Rs 2.25 Cr / 1.35 Cr / 85L) holds for the account-based offering? Was originally per-cohort framing; now we've reframed as account-based with capacity differences.
+10. **Confirm pricing** (Rs 2.25 Cr / 1.35 Cr / 85L) holds for the account-based offering? Was originally per-cohort framing; now we've reframed as account-based with capacity differences.
 
 ---
 
@@ -121,7 +120,6 @@ yfinance "cash" only captures Cash & Equivalents — not treasury investments. I
 | Ask | Why |
 |-----|-----|
 | 1 hour to walk through v5 site (screen-share or in-person) | Catch what didn't translate, decide on theme, react to L2/L3 refinements |
-| Decision on Screener.in subscription | Rs 1,400 unlocks the screening layer that yfinance can't reach |
 | Names of practitioners we could approach for L2 faculty | Practitioner+Academic pairing is in the design; need the network |
 | Status on institutional MoUs | Removes "proposed" caveat; enables sharper external pitch |
 
@@ -160,4 +158,4 @@ ma-platform/
 
 ---
 
-**Bottom line:** v5 site + leads dashboard + 19-name hot list are share-ready. Awaiting your reaction on the 11 decisions above before we go further.
+**Bottom line:** v5 site + leads dashboard + 19-name hot list are share-ready. Awaiting your reaction on the 10 decisions above before we go further.
