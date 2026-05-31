@@ -272,9 +272,17 @@
       transition: background var(--transition), border-color var(--transition), backdrop-filter var(--transition);
     }
     .nav.scrolled {
-      background: rgba(10,22,40,0.96);
+      background: var(--navy);
       border-bottom-color: var(--gold-line);
     }
+    /* Patch P0: prevent section headlines bleeding behind sticky nav on anchor jump or scroll */
+    section[id], main[id] {
+      scroll-margin-top: calc(var(--nav-height) + 16px);
+    }
+    /* Patch P1: keep duration chips on a single line */
+    .duration-chip,
+    .duration-chip-light,
+    .day-tag { white-space: nowrap; }
     .nav-inner {
       display: flex;
       align-items: center;
@@ -572,6 +580,9 @@
       max-width: 540px;
       margin: 0 auto;
       border-radius: 4px;
+      /* Soft fade so the asset's painted-navy frame dissolves into the page navy */
+      -webkit-mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
     }
 
     @media (max-width: 1024px) {
@@ -1546,8 +1557,8 @@
      =========================================================== -->
 <section class="promise">
   <div class="container">
-    <span class="label">Platform Promise</span>
-    <p class="promise-line">Acquire with conviction. Integrate with discipline. Scale into an institution.</p>
+    <span class="label">The Brand</span>
+    <p class="promise-line">Boardroom judgment. Integration leadership. Enterprise-wide M&A capability.</p>
   </div>
 </section>
 
