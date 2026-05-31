@@ -11,10 +11,10 @@ Brand Assets/
 
 # But DO track the optimised public assets (overrides *.jpg / *.png above)
 !assets/
-!assets/*.jpg
-!assets/*.jpeg
-!assets/*.png
-!assets/*.webp
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.png
+!assets/**/*.webp
 
 # OS / editor noise
 .DS_Store
