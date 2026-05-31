@@ -70,19 +70,14 @@ def main():
     if added:
         print(f"[schema] added {added} new columns")
 
+    # Use SELECT * so new v0.5 columns flow through automatically
     rows = conn.execute("""
-        SELECT nse_symbol, name, sector, industry, tier, tier_reason, tier_score,
-               slow_growth_signal, market_cap_cr, cash_and_equivalents_cr,
-               cash_pct_mcap, total_debt_cr, debt_to_equity, revenue_ttm_cr,
-               net_profit_ttm_cr, profit_5y_cagr, enriched_at, outreach_status,
-               last_contacted, notes, contact_attempts, lead_owner, next_action,
-               next_action_date, cfo_name, cs_name, ir_email, ir_phone
-        FROM leads
+        SELECT * FROM leads
         ORDER BY
           CASE tier
             WHEN 'T1' THEN 1 WHEN 'T2' THEN 2 WHEN 'T3' THEN 3
             WHEN 'skip' THEN 4 WHEN 'skip_financial' THEN 5 ELSE 6 END,
-          tier_score DESC NULLS LAST
+          COALESCE(acquisition_ready_score, tier_score) DESC NULLS LAST
     """).fetchall()
     conn.close()
 
