@@ -23,3 +23,14 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Other AI harnesses installed by `npx impeccable skills install` (we use Claude only)
+.agents/
+.cursor/
+.gemini/
+.kiro/
+.opencode/
+.qoder/
+
+# Impeccable runtime/state
+.impeccable/
