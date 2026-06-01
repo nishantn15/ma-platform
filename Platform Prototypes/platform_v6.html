@@ -283,6 +283,79 @@
     .duration-chip,
     .duration-chip-light,
     .day-tag { white-space: nowrap; }
+
+    /* Polish P3a: apply hero-lion edge fade to every lion image for consistency */
+    .l1-image img,
+    .stack-image img {
+      -webkit-mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
+      mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
+    }
+
+    /* Polish P2: L3 day-list (differentiates from L2's day-card-grid) */
+    .day-list {
+      border-top: 1px solid var(--gold-line);
+      margin-top: 16px;
+    }
+    .day-list-row {
+      display: grid;
+      grid-template-columns: 100px minmax(0, 1fr) 220px;
+      gap: 32px;
+      align-items: baseline;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--gold-line);
+    }
+    .day-list-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+    .day-list-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: clamp(18px, 1.8vw, 22px);
+      line-height: 1.3;
+      color: inherit;
+    }
+    .day-list-meta {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-align: right;
+      white-space: nowrap;
+    }
+    .day-list.dark .day-list-title { color: var(--white); }
+    @media (max-width: 768px) {
+      .day-list-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+        padding: 18px 0;
+      }
+      .day-list-meta { text-align: left; }
+    }
+
+    /* Polish P3b: subtle module-row differentiator — small gold marker glyph in left gutter */
+    .module-row { position: relative; }
+    .module-row::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      top: 42px;
+      width: 6px;
+      height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      opacity: 0.35;
+      transition: opacity var(--transition);
+    }
+    .module-row:hover::before { opacity: 1; }
+    @media (max-width: 768px) {
+      .module-row::before { display: none; }
+    }
     .nav-inner {
       display: flex;
       align-items: center;
@@ -1915,30 +1988,32 @@
       </article>
     </div>
 
-    <div class="day-card-grid">
-      <article class="day-card dark reveal">
-        <span class="label-muted">Day 1</span>
-        <h4 class="day-card-title">Foundations Through Your Lens</h4>
-      </article>
-      <article class="day-card dark reveal">
-        <span class="label-muted">Day 2</span>
-        <h4 class="day-card-title">Day 1 &amp; the Role-Shift Moment</h4>
-      </article>
-      <article class="day-card dark reveal">
-        <span class="label-muted">Day 3</span>
-        <h4 class="day-card-title">Workstream Execution &amp; Escalation</h4>
-        <div class="day-card-sim">Sim &middot; Escalation Game</div>
-      </article>
-      <article class="day-card dark reveal">
-        <span class="label-muted">Day 4</span>
-        <h4 class="day-card-title">Communication, Change, Local Leadership</h4>
-        <div class="day-card-sim">Sim &middot; Rumour-Mill</div>
-      </article>
-      <article class="day-card dark reveal">
-        <span class="label-muted">Day 5 &middot; Half</span>
-        <h4 class="day-card-title">Carousel &amp; Monday Action Plan</h4>
-        <div class="day-card-sim">Final &middot; 4 Scenarios</div>
-      </article>
+    <div class="day-list dark">
+      <div class="day-list-row reveal">
+        <span class="day-list-tag">Day 1</span>
+        <h4 class="day-list-title">Foundations Through Your Lens</h4>
+        <span class="day-list-meta">&nbsp;</span>
+      </div>
+      <div class="day-list-row reveal">
+        <span class="day-list-tag">Day 2</span>
+        <h4 class="day-list-title">Day 1 &amp; the Role-Shift Moment</h4>
+        <span class="day-list-meta">&nbsp;</span>
+      </div>
+      <div class="day-list-row reveal">
+        <span class="day-list-tag">Day 3</span>
+        <h4 class="day-list-title">Workstream Execution &amp; Escalation</h4>
+        <span class="day-list-meta">Sim &middot; Escalation Game</span>
+      </div>
+      <div class="day-list-row reveal">
+        <span class="day-list-tag">Day 4</span>
+        <h4 class="day-list-title">Communication, Change, Local Leadership</h4>
+        <span class="day-list-meta">Sim &middot; Rumour-Mill</span>
+      </div>
+      <div class="day-list-row reveal">
+        <span class="day-list-tag">Day 5 &middot; Half</span>
+        <h4 class="day-list-title">Carousel &amp; Monday Action Plan</h4>
+        <span class="day-list-meta">Final &middot; 4 Scenarios</span>
+      </div>
     </div>
 
     <div class="toolkit dark">
