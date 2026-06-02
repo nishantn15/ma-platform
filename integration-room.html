@@ -1,0 +1,1131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Integration Leadership Room — M&A Leadership Platform</title>
+<meta name="description" content="A guided walkthrough of the M&A Leadership Platform across one acquisition end-to-end. Strategic intent through capability building. The institution at work.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-light: #0f1f3a;
+    --navy-mid: #162a4a;
+    --gold: #c9a84c;
+    --gold-light: #ddc06a;
+    --gold-dim: rgba(201,168,76,0.15);
+    --gold-line: rgba(201,168,76,0.18);
+    --cream: #f8f6f0;
+    --cream-dark: #eee9df;
+    --white: #ffffff;
+    --ink: #1a1a2e;
+    --ink-muted: #5a5a6e;
+    --text-on-dark: rgba(255,255,255,0.78);
+    --text-on-dark-dim: rgba(255,255,255,0.6);
+    --max-w: 1120px;
+    --section-pad: 100px;
+    --nav-height: 72px;
+    --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--text-on-dark);
+    font: 16px/1.65 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--gold); color: var(--navy); }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 18px;
+    font-weight: 600;
+    z-index: 200;
+  }
+  .skip-link:focus { left: 16px; top: 16px; }
+
+  /* Nav */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: var(--nav-height);
+    background: rgba(10,22,40,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    z-index: 100;
+    transition: background var(--transition), border-color var(--transition);
+  }
+  .nav.scrolled {
+    background: var(--navy);
+    border-bottom-color: var(--gold-line);
+  }
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    color: var(--white);
+    font: 600 17px/1 'Playfair Display', serif;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .brand-meta {
+    display: block;
+    font: 500 10px/1 'JetBrains Mono', monospace;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 6px;
+  }
+  .nav-cta {
+    color: var(--navy);
+    background: var(--gold);
+    border: none;
+    padding: 10px 22px;
+    border-radius: 4px;
+    font: 600 13px/1 'DM Sans', sans-serif;
+    text-decoration: none;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .nav-cta:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+  section[id] { scroll-margin-top: calc(var(--nav-height) + 16px); }
+
+  .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+  .label {
+    font: 500 11px/1 'JetBrains Mono', monospace;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    display: inline-block;
+  }
+
+  /* Hero */
+  .hero {
+    padding: calc(var(--nav-height) + 80px) 0 80px;
+    background: var(--navy);
+    border-bottom: 1px solid var(--gold-line);
+  }
+  .hero-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .hero h1 {
+    font: 700 clamp(40px, 5.4vw, 60px)/1.05 'Playfair Display', serif;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin: 24px 0 28px;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold); }
+  .hero p.lede {
+    font: 400 19px/1.6 'DM Sans', sans-serif;
+    color: var(--text-on-dark);
+    max-width: 560px;
+  }
+  .hero-meta {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid var(--gold-line);
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    gap: 32px;
+    max-width: 560px;
+  }
+  .hero-meta-item {
+    font: 500 12px/1.4 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-on-dark-dim);
+  }
+  .hero-meta-item strong {
+    display: block;
+    font: 600 14px/1.4 'DM Sans', sans-serif;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: var(--white);
+    margin-top: 6px;
+  }
+  .hero-image { align-self: center; }
+  .hero-image img {
+    width: 100%;
+    max-width: 520px;
+    margin-left: auto;
+    display: block;
+    border-radius: 4px;
+    -webkit-mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 78% 82% at center, #000 55%, transparent 100%);
+  }
+
+  /* Deal facts strip */
+  .deal-strip {
+    background: var(--cream);
+    color: var(--ink);
+    padding: 48px 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .deal-strip .container {
+    display: grid;
+    grid-template-columns: minmax(180px, 1fr) repeat(4, 1fr);
+    gap: 32px;
+    align-items: baseline;
+  }
+  .deal-strip h2 {
+    font: 600 22px/1.25 'Playfair Display', serif;
+    color: var(--ink);
+    grid-column: 1;
+  }
+  .deal-fact {
+    border-left: 1px solid var(--cream-dark);
+    padding-left: 20px;
+  }
+  .deal-fact .label { color: var(--ink-muted); font-size: 10.5px; }
+  .deal-fact .value {
+    display: block;
+    margin-top: 6px;
+    font: 500 16px/1.35 'DM Sans', sans-serif;
+    color: var(--ink);
+  }
+
+  /* Phase rail (left side fixed-position index) */
+  .room {
+    position: relative;
+    background: var(--cream);
+    color: var(--ink);
+  }
+  .room-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 80px 24px 80px 24px;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 56px;
+    align-items: start;
+  }
+  .phase-rail {
+    position: sticky;
+    top: calc(var(--nav-height) + 24px);
+    align-self: start;
+    border-left: 1px solid var(--cream-dark);
+    padding-left: 18px;
+  }
+  .phase-rail .label { color: var(--ink-muted); font-size: 10.5px; margin-bottom: 16px; }
+  .phase-rail ol {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .phase-rail li {
+    font: 500 13px/1.5 'DM Sans', sans-serif;
+    color: var(--ink-muted);
+  }
+  .phase-rail li a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+    padding: 7px 0;
+    transition: color var(--transition), border-color var(--transition);
+    border-bottom: 1px solid transparent;
+  }
+  .phase-rail li a:hover { color: var(--ink); }
+  .phase-rail li a.active {
+    color: var(--ink);
+    border-bottom-color: var(--gold);
+  }
+
+  /* Phase blocks */
+  .phase {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+  .phase:first-child { padding-top: 0; }
+  .phase:last-child { border-bottom: none; padding-bottom: 0; }
+  .phase-head { margin-bottom: 28px; }
+  .phase-head .label { color: var(--gold); margin-bottom: 16px; }
+  .phase-head h3 {
+    font: 600 clamp(28px, 3vw, 36px)/1.2 'Playfair Display', serif;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .phase-head p.intent {
+    margin-top: 10px;
+    font: 400 italic 18px/1.5 'Playfair Display', serif;
+    color: var(--ink-muted);
+    max-width: 600px;
+  }
+  .phase-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 36px;
+    align-items: start;
+  }
+  .phase-narrative h4 {
+    font: 600 14px/1.4 'JetBrains Mono', monospace;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .phase-narrative p {
+    margin-bottom: 14px;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    max-width: 60ch;
+  }
+  .phase-narrative p strong { font-weight: 600; color: var(--ink); }
+  .phase-narrative ul {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 0;
+  }
+  .phase-narrative ul li {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    color: var(--ink);
+  }
+  .phase-narrative ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 11px;
+    width: 8px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  /* Panel — the "platform demo" mockup card */
+  .panel {
+    background: var(--white);
+    border-top: 3px solid var(--gold);
+    border-radius: 0 0 6px 6px;
+    padding: 28px;
+    box-shadow: 0 12px 32px rgba(10,22,40,0.06);
+    font-size: 13.5px;
+  }
+  .panel-chrome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: -28px -28px 24px;
+    padding: 14px 28px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--cream-dark);
+    font: 500 11px/1 'JetBrains Mono', monospace;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .panel-chrome strong {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .panel-chrome .panel-stamp {
+    color: var(--gold);
+  }
+  .panel h5 {
+    font: 600 16px/1.35 'Playfair Display', serif;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .panel p.panel-sub {
+    color: var(--ink-muted);
+    font-size: 13px;
+    margin-bottom: 18px;
+  }
+
+  /* Panel internal patterns */
+  .row-list { border-top: 1px solid var(--cream-dark); }
+  .row-list-item {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: baseline;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--cream-dark);
+    font-size: 13.5px;
+    color: var(--ink);
+  }
+  .row-list-item .marker {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-top: 7px;
+  }
+  .row-list-item .marker.muted { background: var(--cream-dark); }
+  .row-list-item .marker.complete {
+    background: var(--gold);
+    box-shadow: 0 0 0 2px rgba(201,168,76,0.18);
+  }
+  .row-list-item .meta {
+    font: 500 10.5px/1 'JetBrains Mono', monospace;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+  .row-list-item .meta.gold { color: var(--gold); }
+
+  /* Phase-specific small components */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 4px;
+  }
+  .stat {
+    border-top: 1px solid var(--cream-dark);
+    padding-top: 12px;
+  }
+  .stat .label { color: var(--ink-muted); font-size: 10px; }
+  .stat .num {
+    display: block;
+    margin-top: 6px;
+    font: 600 22px/1.2 'Playfair Display', serif;
+    color: var(--ink);
+  }
+  .stat .delta {
+    font-size: 11px;
+    color: var(--gold);
+    margin-left: 6px;
+    letter-spacing: 0.04em;
+    font-weight: 500;
+  }
+  .stat .delta.warn { color: #b14b3a; }
+
+  .bar-row {
+    display: grid;
+    grid-template-columns: 90px 1fr 50px;
+    gap: 10px;
+    align-items: center;
+    padding: 10px 0;
+    font-size: 12.5px;
+  }
+  .bar-row + .bar-row { border-top: 1px solid var(--cream-dark); }
+  .bar-row .bar-label { color: var(--ink); }
+  .bar-track {
+    height: 6px;
+    background: var(--cream-dark);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    background: var(--gold);
+    border-radius: 3px;
+  }
+  .bar-row .bar-pct {
+    text-align: right;
+    font: 500 11px/1 'JetBrains Mono', monospace;
+    color: var(--ink-muted);
+  }
+
+  .cadence {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .cadence-cell {
+    border: 1px solid var(--cream-dark);
+    padding: 10px 12px;
+  }
+  .cadence-cell .label { color: var(--ink-muted); font-size: 9.5px; }
+  .cadence-cell strong {
+    display: block;
+    margin-top: 6px;
+    font: 500 13px/1.3 'DM Sans', sans-serif;
+    color: var(--ink);
+  }
+
+  /* CTA */
+  .cta {
+    padding: 96px 24px;
+    text-align: center;
+    background: var(--navy);
+    color: var(--white);
+  }
+  .cta .label { color: var(--gold); margin-bottom: 16px; }
+  .cta h2 {
+    font: 600 clamp(32px, 4vw, 48px)/1.15 'Playfair Display', serif;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    max-width: 720px;
+    margin: 0 auto 18px;
+  }
+  .cta p {
+    color: var(--text-on-dark);
+    max-width: 600px;
+    margin: 0 auto 32px;
+    font-size: 17px;
+  }
+  .cta-btn {
+    background: var(--white);
+    color: var(--navy);
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font: 600 14px/1 'DM Sans', sans-serif;
+    text-decoration: none;
+    display: inline-block;
+    transition: background var(--transition), transform var(--transition);
+  }
+  .cta-btn:hover { background: var(--cream); transform: translateY(-1px); }
+  .cta-fineprint {
+    margin-top: 22px;
+    color: var(--text-on-dark-dim);
+    font: 400 italic 13px/1.5 'Playfair Display', serif;
+  }
+
+  footer {
+    padding: 32px 24px;
+    background: var(--navy);
+    border-top: 1px solid var(--gold-line);
+    color: var(--text-on-dark-dim);
+    font: 400 12px/1.55 'DM Sans', sans-serif;
+  }
+  footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+    .hero-image { order: -1; }
+    .hero-image img { margin: 0 auto; max-width: 380px; }
+    .room-inner { grid-template-columns: 1fr; gap: 40px; }
+    .phase-rail { position: static; padding-left: 0; border-left: none; }
+    .phase-rail ol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 16px; }
+  }
+  @media (max-width: 768px) {
+    .hero { padding: calc(var(--nav-height) + 56px) 0 60px; }
+    .hero h1 { font-size: clamp(34px, 7vw, 44px); }
+    .deal-strip .container { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .deal-strip h2 { grid-column: 1 / -1; }
+    .deal-fact { border-left: none; padding-left: 0; border-top: 1px solid var(--cream-dark); padding-top: 14px; }
+    .phase-grid { grid-template-columns: 1fr; gap: 24px; }
+    .panel { padding: 22px; }
+    .panel-chrome { margin: -22px -22px 18px; padding: 12px 22px; font-size: 10px; }
+    .cadence { grid-template-columns: 1fr 1fr; }
+    .stat-grid { grid-template-columns: 1fr; }
+    .nav-cta { padding: 8px 16px; font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="#room" class="skip-link">Skip to the walkthrough</a>
+
+<nav class="nav" id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">
+      M&amp;A Leadership Platform
+      <span class="brand-meta">Integration Leadership Room</span>
+    </a>
+    <a class="nav-cta"
+       href="mailto:hello@ma-leadership-platform.example?subject=Request%20Access%20%E2%80%94%20Integration%20Leadership%20Room"
+    >Request Access</a>
+  </div>
+</nav>
+
+<!-- =====================================================
+     HERO
+     ===================================================== -->
+<header class="hero" id="top">
+  <div class="hero-grid">
+    <div>
+      <span class="label">A Guided Walkthrough · One Acquisition · Seven Phases</span>
+      <h1>The Integration <em>Leadership Room</em>.</h1>
+      <p class="lede">
+        The Room is what a member firm sees during a live acquisition. Strategic intent,
+        through diligence, into the first hundred days, into capability that compounds.
+        We follow one deal end to end. The institution at work.
+      </p>
+      <div class="hero-meta">
+        <div class="hero-meta-item">Member <strong>Anchor Tech Services Ltd</strong></div>
+        <div class="hero-meta-item">Target <strong>Polaris Data Group</strong></div>
+        <div class="hero-meta-item">Stage <strong>Day 0 → Year 1</strong></div>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img
+        src="assets/lions/lion_council_1600.jpg"
+        srcset="assets/lions/lion_council_800.jpg 800w, assets/lions/lion_council_1200.jpg 1200w, assets/lions/lion_council_1600.jpg 1600w"
+        sizes="(max-width: 1024px) 80vw, 40vw"
+        loading="eager"
+        alt="The pride elders council, three Asiatic lions seated in repose">
+    </div>
+  </div>
+</header>
+
+<!-- =====================================================
+     DEAL FACTS STRIP
+     ===================================================== -->
+<section class="deal-strip">
+  <div class="container">
+    <h2>The deal.</h2>
+    <div class="deal-fact">
+      <span class="label">Acquirer</span>
+      <span class="value">Anchor Tech Services<br>Rs 4,800 Cr revenue · Listed</span>
+    </div>
+    <div class="deal-fact">
+      <span class="label">Target</span>
+      <span class="value">Polaris Data Group<br>Rs 380 Cr · Founder-led</span>
+    </div>
+    <div class="deal-fact">
+      <span class="label">Consideration</span>
+      <span class="value">Rs 1,150 Cr · 3.0&times; revenue<br>Cash + earnout</span>
+    </div>
+    <div class="deal-fact">
+      <span class="label">Strategic logic</span>
+      <span class="value">Specialty data engineering<br>BFSI client unlock</span>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     ROOM — the 7-phase walkthrough
+     ===================================================== -->
+<main id="room">
+<section class="room">
+  <div class="room-inner">
+
+    <!-- LEFT RAIL -->
+    <aside class="phase-rail" aria-label="Phases">
+      <span class="label">Walkthrough</span>
+      <ol>
+        <li><a href="#strategic-intent">Strategic Intent</a></li>
+        <li><a href="#target-selection">Target Selection</a></li>
+        <li><a href="#deal-readiness">Deal Readiness</a></li>
+        <li><a href="#diligence">Diligence Guidance</a></li>
+        <li><a href="#planning">Integration Planning</a></li>
+        <li><a href="#milestones">Integration Milestones</a></li>
+        <li><a href="#capability">Capability Building</a></li>
+      </ol>
+    </aside>
+
+    <!-- RIGHT: PHASES -->
+    <div>
+
+      <!-- 1 STRATEGIC INTENT -->
+      <article class="phase" id="strategic-intent">
+        <header class="phase-head">
+          <span class="label">Phase 01 · Strategic Intent</span>
+          <h3>Begin with the thesis. Not the deal.</h3>
+          <p class="intent">Before a target is named, the board names the gap.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              The Room opens with thesis work. Anchor's growth runway in BFSI is bound by
+              specialty engineering capacity, not by client demand. The board commits the gap
+              in writing: a five-year capability shortfall, with named consequences if it isn't
+              closed. The thesis is the first instrument; everything downstream is a test of it.
+            </p>
+            <p>
+              <strong>The cohort's role:</strong> a closed peer forum stress-tests the thesis.
+              Two CXOs from non-competing sectors challenge the assumptions. The platform
+              documents the dissent. Strong theses survive contact with peers; brittle ones
+              don't make it past Phase 01.
+            </p>
+            <ul>
+              <li>Capability gap statement, board-approved</li>
+              <li>Five-year scenario with do-nothing baseline</li>
+              <li>Acquisition-vs-build comparison, signed by Strategy Head</li>
+              <li>Peer forum dissent recorded against the thesis</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Capability Thesis</strong> · Anchor 2026-2031</span>
+              <span class="panel-stamp">Board-Approved</span>
+            </div>
+            <h5>BFSI specialty engineering shortfall</h5>
+            <p class="panel-sub">Five-year baseline shows organic build closes 38% of the gap.</p>
+            <div class="bar-row">
+              <span class="bar-label">Demand</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 92%"></span></span>
+              <span class="bar-pct">92</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Organic</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 38%"></span></span>
+              <span class="bar-pct">38</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Inorganic</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 78%"></span></span>
+              <span class="bar-pct">78</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="label">Peer Dissent</span>
+                <span class="num">3 / 7</span>
+              </div>
+              <div class="stat">
+                <span class="label">Status</span>
+                <span class="num">Locked</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 2 TARGET SELECTION -->
+      <article class="phase" id="target-selection">
+        <header class="phase-head">
+          <span class="label">Phase 02 · Target Selection</span>
+          <h3>Map the field. Then commit to two.</h3>
+          <p class="intent">A serious shortlist always lists why each name was rejected.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              The platform's sourcing intelligence tracks 47 specialty data engineering firms in
+              India between Rs 200 Cr and Rs 800 Cr. The Room narrows them to two by applying
+              Anchor's thesis as a filter: founder-led, balance-sheet vulnerable, BFSI-friendly,
+              senior bench depth. Polaris and an unnamed alternative make the cut.
+            </p>
+            <p>
+              <strong>The discipline:</strong> the rejected 45 are documented with reasons. Future
+              revisits start from this map, not from scratch. The institution refuses to lose
+              its own work.
+            </p>
+            <ul>
+              <li>47 companies scanned, 45 rejected with named reasons</li>
+              <li>Two finalists, each with a thesis-fit memo</li>
+              <li>Sector-cohort peer review on selection rationale</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Top Targets</strong> · Specialty Data Engineering</span>
+              <span class="panel-stamp">47 Tracked</span>
+            </div>
+            <div class="row-list">
+              <div class="row-list-item">
+                <span class="marker complete"></span>
+                <span><strong>Polaris Data Group</strong> · Rs 380 Cr · Founder-led</span>
+                <span class="meta gold">Finalist</span>
+              </div>
+              <div class="row-list-item">
+                <span class="marker complete"></span>
+                <span><strong>Confidential</strong> · Rs 510 Cr · PE-backed</span>
+                <span class="meta gold">Finalist</span>
+              </div>
+              <div class="row-list-item">
+                <span class="marker"></span>
+                <span><strong>Stratagem Insights</strong> · Rs 290 Cr</span>
+                <span class="meta">Watch</span>
+              </div>
+              <div class="row-list-item">
+                <span class="marker muted"></span>
+                <span>43 more shortlisted, rejected with reason</span>
+                <span class="meta">Archived</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 3 DEAL READINESS -->
+      <article class="phase" id="deal-readiness">
+        <header class="phase-head">
+          <span class="label">Phase 03 · Deal Readiness</span>
+          <h3>Prepare before diligence tests you.</h3>
+          <p class="intent">Most acquirers are tested by diligence. Members arrive ready for it.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              Eight readiness gates before approach. Anchor has its capability thesis, its
+              integration thesis, its retention model for Polaris's senior bench, and its
+              announcement narrative draft. Advisors are scoped, not retained yet. The CFO has
+              run the price-discipline scenario through the board's risk envelope.
+            </p>
+            <p>
+              <strong>What changes:</strong> when Anchor calls Polaris's founder, the call is
+              shorter and clearer than it would have been. Readiness compresses time.
+            </p>
+            <ul>
+              <li>Integration thesis drafted and aligned to capability thesis</li>
+              <li>Retention design for Polaris top 24 engineers</li>
+              <li>Board-approved walk-away price</li>
+              <li>Advisor RFP scope sent to three firms</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Readiness Gates</strong> · Pre-Approach</span>
+              <span class="panel-stamp">7 / 8 Cleared</span>
+            </div>
+            <div class="row-list">
+              <div class="row-list-item"><span class="marker complete"></span><span>Capability thesis (Phase 01)</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Integration thesis</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Retention design, top 24</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Walk-away price</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Communication scaffolding</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Advisor RFP scope</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Cultural diagnostic, draft</span><span class="meta gold">Done</span></div>
+              <div class="row-list-item"><span class="marker"></span><span>Board pre-read packet</span><span class="meta">In Review</span></div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 4 DILIGENCE -->
+      <article class="phase" id="diligence">
+        <header class="phase-head">
+          <span class="label">Phase 04 · Diligence Guidance</span>
+          <h3>The questions you forgot to ask.</h3>
+          <p class="intent">Advisors run diligence. The Room asks where advisors don't look.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              Standard diligence catches the standard risks. The Room layers an institution-
+              specific prompt set: founder dependence on three named clients, attrition signal
+              in the senior architecture bench, undisclosed pricing concessions in the Q4
+              renewal book, the cultural translation gap between Polaris's product stance and
+              Anchor's services contract model.
+            </p>
+            <p>
+              <strong>What it surfaces here:</strong> two prompts hit. The pricing concessions
+              were real and material; price is renegotiated by Rs 80 Cr.
+            </p>
+            <ul>
+              <li>Institution prompt set: 34 questions outside standard diligence</li>
+              <li>Founder-dependence risk quantified</li>
+              <li>Senior bench attrition baseline established</li>
+              <li>Material finding triggers price reset</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Issue Register</strong> · Polaris Diligence</span>
+              <span class="panel-stamp">2 Material</span>
+            </div>
+            <div class="row-list">
+              <div class="row-list-item"><span class="marker complete"></span><span><strong>P-04</strong> Q4 pricing concessions undisclosed</span><span class="meta gold">Material</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span><strong>P-11</strong> Senior bench attrition trend</span><span class="meta gold">Material</span></div>
+              <div class="row-list-item"><span class="marker"></span><span><strong>P-17</strong> Three-client revenue concentration</span><span class="meta">Tracked</span></div>
+              <div class="row-list-item"><span class="marker"></span><span><strong>P-22</strong> Cultural translation gap</span><span class="meta">Tracked</span></div>
+              <div class="row-list-item"><span class="marker muted"></span><span>30 prompts cleared, no issue</span><span class="meta">Cleared</span></div>
+            </div>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="label">Price reset</span>
+                <span class="num">−Rs 80 Cr</span>
+              </div>
+              <div class="stat">
+                <span class="label">New consideration</span>
+                <span class="num">Rs 1,070 Cr</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 5 INTEGRATION PLANNING -->
+      <article class="phase" id="planning">
+        <header class="phase-head">
+          <span class="label">Phase 05 · Integration Planning</span>
+          <h3>Day 1, Day 30, Day 100. In writing.</h3>
+          <p class="intent">The thesis becomes a calendar. Or it doesn't survive.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              Twelve workstreams. Each with a charter, decision rights, escalation rules,
+              and a Day 1 readiness scorecard. The IMO (Integration Management Office) is
+              standing before close. The cadence is set: weekly steering for Day 1 to Day 30,
+              fortnightly through Day 100, monthly to Year 1.
+            </p>
+            <p>
+              <strong>The non-obvious move:</strong> the platform's Integration Planning
+              template is borrowed and adapted, not invented from scratch. Anchor saves
+              eight weeks. Eight weeks is one quarter of synergy.
+            </p>
+            <ul>
+              <li>Twelve workstream charters, signed</li>
+              <li>Day 1 / Day 30 / Day 100 milestone map</li>
+              <li>IMO Director appointed, two months pre-close</li>
+              <li>Decision rights matrix, escalation paths documented</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Integration Plan</strong> · Anchor × Polaris</span>
+              <span class="panel-stamp">12 Workstreams</span>
+            </div>
+            <h5>Cadence</h5>
+            <div class="cadence">
+              <div class="cadence-cell"><span class="label">Day 1</span><strong>Continuity</strong></div>
+              <div class="cadence-cell"><span class="label">Day 30</span><strong>Operating</strong></div>
+              <div class="cadence-cell"><span class="label">Day 100</span><strong>Synergy live</strong></div>
+              <div class="cadence-cell"><span class="label">Year 1</span><strong>Capability</strong></div>
+            </div>
+            <p class="panel-sub" style="margin-top:18px;">Top three workstreams by leadership attention</p>
+            <div class="row-list">
+              <div class="row-list-item"><span class="marker complete"></span><span><strong>Talent retention</strong> · top 24 engineers</span><span class="meta">Lead: CHRO</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span><strong>Client reassurance</strong> · top 12 BFSI accounts</span><span class="meta">Lead: CRO</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span><strong>Product-services translation</strong></span><span class="meta">Lead: COO</span></div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 6 INTEGRATION MILESTONES -->
+      <article class="phase" id="milestones">
+        <header class="phase-head">
+          <span class="label">Phase 06 · Integration Milestones</span>
+          <h3>The hundred days the deal pays for.</h3>
+          <p class="intent">Synergy isn't the slide deck. Synergy is the Friday review.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              The Friday review runs for ninety minutes, every week of the first hundred days.
+              Synergy capture against plan, value leakage flags, retention pulse, governance
+              decisions. The platform tracks it. The institution holds itself to it. The
+              cohort sees the redacted dashboard and asks the questions Anchor's own people
+              are too close to ask.
+            </p>
+            <p>
+              <strong>Where it earns the brand:</strong> when Polaris's biggest BFSI client
+              issues a stop-work in week six, the response runtime is 36 hours. In a less
+              prepared firm it would have been three weeks.
+            </p>
+            <ul>
+              <li>Weekly synergy capture against thesis</li>
+              <li>Retention pulse: top 24 named, weekly</li>
+              <li>Value-leakage register, gold-flagged</li>
+              <li>Cohort review: redacted dashboard, every fortnight</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Day 1 → Day 100</strong> · Live</span>
+              <span class="panel-stamp">Day 64 of 100</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Synergy</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 58%"></span></span>
+              <span class="bar-pct">58</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Retention</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 92%"></span></span>
+              <span class="bar-pct">92</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Client Health</span>
+              <span class="bar-track"><span class="bar-fill" style="width: 86%"></span></span>
+              <span class="bar-pct">86</span>
+            </div>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="label">Synergy / Plan</span>
+                <span class="num">58% <span class="delta">+6 vs plan</span></span>
+              </div>
+              <div class="stat">
+                <span class="label">Talent attrition</span>
+                <span class="num">2 / 24 <span class="delta warn">flagged</span></span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+      <!-- 7 CAPABILITY BUILDING -->
+      <article class="phase" id="capability">
+        <header class="phase-head">
+          <span class="label">Phase 07 · Capability Building</span>
+          <h3>The deal becomes a discipline.</h3>
+          <p class="intent">A first acquisition is a project. A repeatable acquirer is an institution.</p>
+        </header>
+        <div class="phase-grid">
+          <div class="phase-narrative">
+            <h4>What the institution does</h4>
+            <p>
+              Year 1 closes. Anchor has its specialty data practice. The Room does the harder
+              work: it converts the deal into an asset that compounds. A postmortem captures
+              what worked. The integration playbook is updated with three new entries. The L2
+              Execution cohort gets the redacted case. Two senior engineers from Polaris
+              graduate from L3 Champions to L2 Execution Leaders.
+            </p>
+            <p>
+              <strong>What's different by Year 2:</strong> when Anchor evaluates a second
+              acquisition, the thesis work is faster, the diligence prompt set is sharper, the
+              IMO is a known operating mode rather than a one-off. The next deal pays for
+              itself faster than this one did.
+            </p>
+            <ul>
+              <li>Postmortem: 14 entries · 3 promoted to standard playbook</li>
+              <li>Cohort case study, redacted, shared in L2</li>
+              <li>Two engineers move from L3 Champions to L2 Execution</li>
+              <li>Capability roadmap revised, board signed</li>
+            </ul>
+          </div>
+
+          <aside class="panel">
+            <div class="panel-chrome">
+              <span><strong>Capability Compounding</strong> · Year 1 Close</span>
+              <span class="panel-stamp">Institution-Mode</span>
+            </div>
+            <div class="row-list">
+              <div class="row-list-item"><span class="marker complete"></span><span>Postmortem captured</span><span class="meta gold">14 entries</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>Playbook updated</span><span class="meta gold">+3 standards</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>L2 cohort case study, redacted</span><span class="meta gold">Published</span></div>
+              <div class="row-list-item"><span class="marker complete"></span><span>L3 → L2 promotion</span><span class="meta gold">2 engineers</span></div>
+              <div class="row-list-item"><span class="marker"></span><span>Next-deal readiness map</span><span class="meta">In Draft</span></div>
+            </div>
+            <div class="stat-grid">
+              <div class="stat">
+                <span class="label">Synergy captured</span>
+                <span class="num">Rs 196 Cr</span>
+              </div>
+              <div class="stat">
+                <span class="label">Time saved · Deal 2</span>
+                <span class="num">~9 weeks</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- =====================================================
+     CTA
+     ===================================================== -->
+<section class="cta" id="cta">
+  <div class="container">
+    <span class="label">The Room. Live.</span>
+    <h2>The Integration Leadership Room is unlocked at the account level.</h2>
+    <p>
+      Member firms enter the Room from Day 0 of every acquisition. The institution's work
+      is what they see. The platform is what carries it. Founding-cohort access is being
+      formed now.
+    </p>
+    <a class="cta-btn"
+       href="mailto:hello@ma-leadership-platform.example?subject=Request%20Access%20%E2%80%94%20Integration%20Leadership%20Room"
+    >Request Access</a>
+    <p class="cta-fineprint">Exclusivity is assigned on a first-confirmed basis per industry sector.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span>M&amp;A Leadership Platform &middot; Integration Leadership Room &middot; Confidential</span>
+    <span>Names, numbers, and dashboards are illustrative · A guided demo of one fictional deal</span>
+  </div>
+</footer>
+
+<noscript>
+  <style>.reveal { opacity: 1 !important; transform: none !important; }</style>
+</noscript>
+
+<script>
+(function () {
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    if (window.scrollY > 24) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Reveal
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    els.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+  }
+
+  // Phase rail active state
+  const phaseLinks = document.querySelectorAll('.phase-rail a[href^="#"]');
+  const phases = Array.from(phaseLinks).map(a => document.getElementById(a.getAttribute('href').slice(1)));
+  const railIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        phaseLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id));
+      }
+    });
+  }, { rootMargin: '-30% 0px -55% 0px', threshold: 0 });
+  phases.forEach(p => p && railIO.observe(p));
+})();
+</script>
+</body>
+</html>
