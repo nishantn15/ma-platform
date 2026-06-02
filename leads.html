@@ -72,10 +72,164 @@ header {
 .filter-select:focus { outline: none; border-color: var(--gold); }
 .filter-result-count { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-dim); letter-spacing: 1px; }
 
+/* ── ARS info-card ── */
+.ars-card {
+  max-width: 1400px;
+  margin: 24px auto 16px;
+  padding: 20px 24px;
+  background: var(--navy-light);
+  border: 1px solid var(--gray-rule);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+}
+.ars-card-head { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.6fr); gap: 32px; align-items: center; }
+.ars-card-eyebrow { font: 500 10px/1 'JetBrains Mono', monospace; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 6px; }
+.ars-card-title { font: 600 italic 18px/1.35 'Playfair Display', serif; color: #fff; max-width: 38ch; }
+.ars-card-formula { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.ars-component { padding: 8px 12px; background: rgba(201,168,76,0.06); border-left: 1px solid var(--gold); }
+.ars-component .ars-pct { font: 700 16px/1 'Playfair Display', serif; color: var(--gold); display: block; }
+.ars-component .ars-name { font-size: 11.5px; color: #fff; display: block; margin-top: 4px; }
+.ars-component .ars-meta { font: 400 10px/1.3 'JetBrains Mono', monospace; letter-spacing: 0.06em; color: var(--text-dim); display: block; margin-top: 3px; }
+.ars-card-foot { margin-top: 12px; font-size: 12px; color: var(--text-dim); padding-top: 12px; border-top: 1px solid var(--gray-rule); }
+@media (max-width: 1024px) {
+  .ars-card-head { grid-template-columns: 1fr; gap: 16px; }
+  .ars-card-formula { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Group toggles ── */
+.group-toggles {
+  max-width: 1400px;
+  margin: 0 auto 16px;
+  padding: 0 24px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.group-toggles-label {
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-right: 4px;
+}
+.group-toggle {
+  background: transparent;
+  border: 1px solid var(--gray-rule);
+  color: var(--text-dim);
+  padding: 7px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  font: 500 12px/1 'DM Sans', sans-serif;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color .2s, border-color .2s, background .2s;
+}
+.group-toggle .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-rule); }
+.group-toggle.is-on { color: #fff; border-color: var(--gold); }
+.group-toggle.is-on .dot { background: var(--gold); }
+.group-toggle:hover { color: #fff; border-color: rgba(201,168,76,0.5); }
+.group-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
 /* ── Table ── */
 .table-wrap { max-width: 1400px; margin: 0 auto 64px; padding: 0 24px; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th, td { padding: 9px 10px; text-align: left; border-bottom: 1px solid var(--gray-rule); vertical-align: middle; }
+
+/* Group row (top of thead) */
+thead tr.group-row th.g {
+  background: rgba(255,255,255,0.02);
+  font: 500 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding: 10px;
+  border-bottom: 1px solid var(--gold-dim);
+  text-align: left;
+  position: sticky; top: 99px;
+}
+thead tr.group-row th.g + th.g { border-left: 1px solid var(--gray-rule); }
+thead tr.group-row th span { display: inline-block; padding-left: 4px; }
+
+/* Column-group hide/show */
+table[data-hide-scale] th.g-scale,
+table[data-hide-scale] td.g-scale { display: none; }
+table[data-hide-financial] th.g-financial,
+table[data-hide-financial] td.g-financial { display: none; }
+table[data-hide-identity] th.g-identity,
+table[data-hide-identity] td.g-identity { display: none; }
+table[data-hide-outreach] th.g-outreach,
+table[data-hide-outreach] td.g-outreach { display: none; }
+table[data-hide-scale] thead tr.group-row th.g.g-scale,
+table[data-hide-financial] thead tr.group-row th.g.g-financial,
+table[data-hide-identity] thead tr.group-row th.g.g-identity,
+table[data-hide-outreach] thead tr.group-row th.g.g-outreach { display: none; }
+
+/* ARS column emphasis */
+th.ars-th { color: var(--gold); }
+th.ars-th .ars-help {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px; height: 16px;
+  margin-left: 6px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  font-size: 9px;
+  color: var(--gold);
+  cursor: help;
+  position: relative;
+}
+th.ars-th .ars-help-popover {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%; transform: translateX(-50%);
+  width: 280px;
+  padding: 12px 14px;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  font: 400 11px/1.5 'DM Sans', sans-serif;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--text-on-dark);
+  z-index: 30;
+  box-shadow: 0 12px 32px rgba(0,0,0,.4);
+}
+th.ars-th .ars-help-popover strong { color: var(--gold); display: block; margin-bottom: 6px; }
+th.ars-th .ars-help:hover .ars-help-popover,
+th.ars-th .ars-help:focus .ars-help-popover { display: block; }
+
+/* ARS cell rendering */
+td.ars-cell { color: var(--gold); font-weight: 600; position: relative; cursor: help; }
+td.ars-cell .ars-row-popover {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 240px;
+  padding: 10px 12px;
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  font: 400 11px/1.5 'DM Sans', sans-serif;
+  letter-spacing: 0;
+  color: var(--text-on-dark);
+  z-index: 30;
+  box-shadow: 0 12px 32px rgba(0,0,0,.4);
+  white-space: normal;
+}
+td.ars-cell .ars-row-popover .row { display: flex; justify-content: space-between; padding: 3px 0; }
+td.ars-cell .ars-row-popover .row .pct { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; }
+td.ars-cell:hover .ars-row-popover { display: block; }
+td.ars-cell .ars-low { color: rgba(201,168,76,0.45); }
+td.ars-cell .ars-high { color: var(--gold-light); }
+td.sg-flag { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; }
+td.sg-flag.muted { color: var(--text-dim); opacity: 0.4; }
+
 thead th {
   position: sticky; top: 99px;
   background: var(--navy-mid);
@@ -214,22 +368,112 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
 </div>
 
 <div class="table-wrap">
+  <!-- ARS info-card -->
+  <aside class="ars-card" aria-labelledby="ars-card-title">
+    <div class="ars-card-head">
+      <div>
+        <span class="ars-card-eyebrow">Acquisition Ready Score</span>
+        <h2 id="ars-card-title" class="ars-card-title">A composite signal of who's most ready to acquire.</h2>
+      </div>
+      <div class="ars-card-formula" aria-label="Formula">
+        <span class="ars-component">
+          <span class="ars-pct">40%</span>
+          <span class="ars-name">Disposable cash</span>
+          <span class="ars-meta">cash / market cap</span>
+        </span>
+        <span class="ars-component">
+          <span class="ars-pct">25%</span>
+          <span class="ars-name">Revenue growth slowing</span>
+          <span class="ars-meta">5y CAGR sweet-spot 3-12%</span>
+        </span>
+        <span class="ars-component">
+          <span class="ars-pct">20%</span>
+          <span class="ars-name">Operating margin shrinking</span>
+          <span class="ars-meta">5y pp trend</span>
+        </span>
+        <span class="ars-component">
+          <span class="ars-pct">15%</span>
+          <span class="ars-name">Profit growth slowing</span>
+          <span class="ars-meta">5y profit CAGR</span>
+        </span>
+      </div>
+    </div>
+    <p class="ars-card-foot">
+      Per TK May 23 brief. Higher score &equals; stronger M&A intent profile.
+      Hover the score on any row to see that company's component breakdown.
+    </p>
+  </aside>
+
+  <!-- Column-group toggles -->
+  <div class="group-toggles" role="group" aria-label="Toggle column groups">
+    <span class="group-toggles-label">Columns</span>
+    <button type="button" class="group-toggle is-on" data-group="identity" aria-pressed="true">
+      <span class="dot"></span>Identity
+    </button>
+    <button type="button" class="group-toggle" data-group="scale" aria-pressed="false">
+      <span class="dot"></span>Scale
+    </button>
+    <button type="button" class="group-toggle" data-group="financial" aria-pressed="false">
+      <span class="dot"></span>Financial Detail
+    </button>
+    <button type="button" class="group-toggle is-on" data-group="outreach" aria-pressed="true">
+      <span class="dot"></span>Outreach
+    </button>
+  </div>
+
   <table id="leads-table">
     <thead>
+      <!-- Group header row -->
+      <tr class="group-row">
+        <th class="g g-identity" colspan="6"><span>Identity &middot; Acquisition Ready Score</span></th>
+        <th class="g g-scale" colspan="4"><span>Scale</span></th>
+        <th class="g g-financial" colspan="9"><span>Financial Detail</span></th>
+        <th class="g g-outreach" colspan="3"><span>Outreach</span></th>
+      </tr>
+      <!-- Column header row -->
       <tr>
-        <th data-sort="nse_symbol">Symbol</th>
-        <th data-sort="name">Company</th>
-        <th data-sort="sector">Sector</th>
-        <th data-sort="tier">Tier</th>
-        <th data-sort="market_cap_cr" class="num">Mcap (Rs Cr)</th>
-        <th data-sort="cash_pct_mcap" class="num">Cash %</th>
-        <th data-sort="debt_to_equity" class="num">D/E</th>
-        <th data-sort="profit_5y_cagr" class="num">5y CAGR</th>
-        <th>Status</th>
-        <th></th>
+        <!-- Identity (always on) -->
+        <th class="g-identity" data-sort="nse_symbol">Symbol</th>
+        <th class="g-identity" data-sort="name">Company</th>
+        <th class="g-identity" data-sort="sector">Sector</th>
+        <th class="g-identity" data-sort="tier">Tier</th>
+        <th class="g-identity num ars-th" data-sort="acquisition_ready_score">
+          ARS
+          <span class="ars-help" tabindex="0" aria-describedby="ars-help-popover" data-help>?
+            <span class="ars-help-popover" id="ars-help-popover" role="tooltip">
+              <strong>Acquisition Ready Score (0-100)</strong><br>
+              40% Disposable cash &middot; 25% Revenue growth slowing &middot;
+              20% Margin shrinking &middot; 15% Profit growth slowing.
+              Higher = stronger M&A intent.
+            </span>
+          </span>
+        </th>
+        <th class="g-identity">SG</th>
+
+        <!-- Scale (collapsible) -->
+        <th class="g-scale num" data-sort="market_cap_cr">Mcap (Cr)</th>
+        <th class="g-scale num" data-sort="market_cap_5y_change_pct">5y Mcap &Delta;</th>
+        <th class="g-scale num" data-sort="revenue_last_yr_cr">Revenue (Cr)</th>
+        <th class="g-scale num" data-sort="revenue_5y_cagr_pct">5y Rev CAGR</th>
+
+        <!-- Financial Detail (collapsible) -->
+        <th class="g-financial num" data-sort="cash_and_equivalents_cr">Cash (Cr)</th>
+        <th class="g-financial num" data-sort="cash_pct_mcap">Cash / Mcap</th>
+        <th class="g-financial num" data-sort="cash_pct_revenue_pct">Cash / Rev</th>
+        <th class="g-financial num" data-sort="total_debt_cr">Debt (Cr)</th>
+        <th class="g-financial num" data-sort="debt_to_equity">D/E</th>
+        <th class="g-financial num" data-sort="npat_last_yr_cr">NPAT (Cr)</th>
+        <th class="g-financial num" data-sort="npat_pct_revenue_pct">NPAT / Rev</th>
+        <th class="g-financial num" data-sort="op_margin_last_yr_pct">Op Margin</th>
+        <th class="g-financial num" data-sort="op_margin_5y_growth_pct">5y Op &Delta;pp</th>
+
+        <!-- Outreach (always on) -->
+        <th class="g-outreach">Status</th>
+        <th class="g-outreach">Owner</th>
+        <th class="g-outreach"></th>
       </tr>
     </thead>
-    <tbody id="tbody"><tr><td colspan="10" class="loading">Loading 752 leads…</td></tr></tbody>
+    <tbody id="tbody"><tr><td colspan="22" class="loading">Loading 752 leads…</td></tr></tbody>
   </table>
 </div>
 
@@ -370,29 +614,82 @@ function sortFiltered() {
   });
 }
 
+function fmtPct(n, d=1) { return n == null || isNaN(n) ? '—' : fmtNum(n, d) + '%'; }
+function fmtPP(n)        { return n == null || isNaN(n) ? '—' : (n > 0 ? '+' : '') + fmtNum(n, 1) + 'pp'; }
+function fmtCr(n)        { return n == null || isNaN(n) ? '—' : fmtNum(n, 0); }
+
+function arsRowPopover(l) {
+  const c = (() => { try { return JSON.parse(l.ars_components || '{}'); } catch { return {}; } })();
+  const w = { cash_disposable: 40, revenue_slowing: 25, margin_shrinking: 20, profit_slowing: 15 };
+  const labels = {
+    cash_disposable:  'Disposable cash',
+    revenue_slowing:  'Revenue slowing',
+    margin_shrinking: 'Margin shrinking',
+    profit_slowing:   'Profit slowing',
+  };
+  return Object.keys(w).map(k => {
+    const score = c[k];
+    const contrib = score != null ? Math.round(score * w[k] / 100) : null;
+    return `<div class="row"><span>${labels[k]}</span><span class="pct">${score != null ? Math.round(score) : '—'}/100 &middot; ${w[k]}% &rarr; ${contrib != null ? contrib : '—'}</span></div>`;
+  }).join('');
+}
+
+function arsCell(l) {
+  const ars = l.acquisition_ready_score;
+  if (ars == null) return `<td class="ars-cell num">—</td>`;
+  const cls = ars >= 70 ? 'ars-high' : ars < 40 ? 'ars-low' : '';
+  return `<td class="ars-cell num g-identity">
+    <span class="${cls}">${fmtNum(ars, 0)}</span>
+    <span class="ars-row-popover" role="tooltip">
+      <strong style="color:var(--gold)">${escape(l.nse_symbol)} &middot; ARS ${fmtNum(ars, 1)}</strong>
+      <div style="font-size:10px;color:var(--text-dim);margin:4px 0 8px;letter-spacing:0.06em;text-transform:uppercase;font-family:'JetBrains Mono',monospace;">Component &middot; weight &middot; contribution</div>
+      ${arsRowPopover(l)}
+    </span>
+  </td>`;
+}
+
 function renderTable() {
   const tb = $('tbody');
   $('result-count').textContent = `${STATE.filtered.length} of ${STATE.leads.length}`;
   if (!STATE.filtered.length) {
-    tb.innerHTML = '<tr><td colspan="10" class="loading">No leads match those filters.</td></tr>';
+    tb.innerHTML = '<tr><td colspan="22" class="loading">No leads match those filters.</td></tr>';
     return;
   }
   tb.innerHTML = STATE.filtered.map(l => {
-    const tierBadge = `<span class="tier ${l.tier}">${l.tier || '—'}</span>${l.slow_growth_signal ? '<span class="signal-badge">SG</span>' : ''}`;
+    const tierBadge = `<span class="tier ${l.tier}">${l.tier || '—'}</span>`;
+    const sgFlag = l.slow_growth_signal
+      ? `<td class="g-identity sg-flag" title="Slow-growth + strong-fundamentals hot list">SG</td>`
+      : `<td class="g-identity sg-flag muted">—</td>`;
     const status = l.outreach_status || 'pending';
-    return `<tr class="${l.slow_growth_signal ? 'slow-growth' : ''}" data-sym="${l.nse_symbol}">
-      <td class="sym">${l.nse_symbol}</td>
-      <td class="name" title="${escape(l.name)}">${escape(l.name)}</td>
-      <td class="sector">${escape(l.sector || '')}</td>
-      <td>${tierBadge}</td>
-      <td class="num">${fmtNum(l.market_cap_cr, 0)}</td>
-      <td class="num">${l.cash_pct_mcap != null ? fmtNum(l.cash_pct_mcap, 1) + '%' : '—'}</td>
-      <td class="num">${l.debt_to_equity != null ? fmtNum(l.debt_to_equity, 2) : '—'}</td>
-      <td class="num">${l.profit_5y_cagr != null ? fmtNum(l.profit_5y_cagr, 1) + '%' : '—'}</td>
-      <td><select class="status-select" data-status="${status}" data-sym="${l.nse_symbol}">
+
+    return `<tr class="${l.slow_growth_signal ? 'slow-growth' : ''}" data-sym="${escape(l.nse_symbol)}">
+      <td class="sym g-identity">${escape(l.nse_symbol)}</td>
+      <td class="name g-identity" title="${escape(l.name)}">${escape(l.name)}</td>
+      <td class="sector g-identity">${escape(l.sector || '')}</td>
+      <td class="g-identity">${tierBadge}</td>
+      ${arsCell(l)}
+      ${sgFlag}
+
+      <td class="num g-scale">${fmtCr(l.market_cap_cr)}</td>
+      <td class="num g-scale">${fmtPP(l.market_cap_5y_change_pct).replace('pp','%')}</td>
+      <td class="num g-scale">${fmtCr(l.revenue_last_yr_cr)}</td>
+      <td class="num g-scale">${fmtPct(l.revenue_5y_cagr_pct)}</td>
+
+      <td class="num g-financial">${fmtCr(l.cash_and_equivalents_cr)}</td>
+      <td class="num g-financial">${fmtPct(l.cash_pct_mcap)}</td>
+      <td class="num g-financial">${fmtPct(l.cash_pct_revenue_pct)}</td>
+      <td class="num g-financial">${fmtCr(l.total_debt_cr)}</td>
+      <td class="num g-financial">${l.debt_to_equity != null ? fmtNum(l.debt_to_equity, 2) : '—'}</td>
+      <td class="num g-financial">${fmtCr(l.npat_last_yr_cr)}</td>
+      <td class="num g-financial">${fmtPct(l.npat_pct_revenue_pct)}</td>
+      <td class="num g-financial">${fmtPct(l.op_margin_last_yr_pct)}</td>
+      <td class="num g-financial">${fmtPP(l.op_margin_5y_growth_pct)}</td>
+
+      <td class="g-outreach"><select class="status-select" data-status="${status}" data-sym="${escape(l.nse_symbol)}">
         ${['pending','contacted','meeting','proposal','won','lost'].map(s => `<option value="${s}"${s===status?' selected':''}>${s}</option>`).join('')}
       </select></td>
-      <td><button class="detail-btn" data-sym="${l.nse_symbol}">Open ›</button></td>
+      <td class="g-outreach">${escape(l.lead_owner || '—')}</td>
+      <td class="g-outreach"><button class="detail-btn" data-sym="${escape(l.nse_symbol)}">Open ›</button></td>
     </tr>`;
   }).join('');
   // Update header sort indicator
@@ -401,6 +698,27 @@ function renderTable() {
     th.classList.toggle('desc', th.dataset.sort === STATE.sortKey && STATE.sortDir === 'desc');
   });
 }
+
+// ── Group toggle (collapse/expand column groups) ──
+const tableEl = document.getElementById('leads-table');
+function applyGroupToggles() {
+  document.querySelectorAll('.group-toggle').forEach(btn => {
+    const key = btn.dataset.group;
+    const on = btn.classList.contains('is-on');
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (on) tableEl.removeAttribute('data-hide-' + key);
+    else    tableEl.setAttribute('data-hide-' + key, '');
+  });
+}
+document.querySelectorAll('.group-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.classList.toggle('is-on');
+    applyGroupToggles();
+  });
+});
+// Default: hide Scale and Financial Detail
+tableEl.setAttribute('data-hide-scale', '');
+tableEl.setAttribute('data-hide-financial', '');
 
 function escape(s) { return String(s || '').replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])); }
 
