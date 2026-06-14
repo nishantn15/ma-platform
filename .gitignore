@@ -34,3 +34,6 @@ Thumbs.db
 
 # Impeccable runtime/state
 .impeccable/
+
+# Video render outputs (build artifacts; regenerate via Video/render.sh)
+Video/renders/

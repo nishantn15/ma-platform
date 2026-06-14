@@ -59,3 +59,16 @@ Master brand line, mono gold, centered:
 1. VO or text-only (silent + music)? (affects scene timing)
 2. Length: 75s (this) vs a tighter 45s cut for social?
 3. End on the founder line or the master brand line?
+
+---
+
+## Render status
+- **Draft v1 rendered** 2026-06-15: `Video/renders/brand-film-draft.mp4`
+  — 1920×1080, 24fps, 75.0s, 7.9 MB, H.264. ~12.5 min render (screenshot mode).
+- All 8 scenes verified in the final MP4 (frame extract + contact sheet).
+- Known polish items for v2:
+  - Scenes 6/7: manifesto text overlaps the centred lion slightly — add scrim
+    or offset text to lower third (as done for scenes 3/8).
+  - Scene 8 small lion shows faint rectangular edge at 300px — tighten mask.
+  - Add music bed (sparse cello/piano), then VO if approved.
+  - Final render: 30fps, --quality high.
