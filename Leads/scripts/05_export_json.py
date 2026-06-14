@@ -83,6 +83,36 @@ def main():
 
     leads = [dict(row) for row in rows]
 
+    # Merge AS research (M&A intel) fields per company, if the research table exists.
+    research_fields = [
+        "ma_deal_count_5y", "ma_deals_json", "parent_company", "promoter_holding_pct",
+        "subsidiary_count", "subsidiaries_json", "minority_count", "minority_json",
+        "cash_warchest_cr", "inorganic_intent_flag", "strategic_review_flag",
+        "activist_flag", "signals_summary", "citation_count",
+    ]
+    try:
+        rconn = sqlite3.connect(DB_PATH)
+        rconn.row_factory = sqlite3.Row
+        research = {}
+        for r in rconn.execute("SELECT * FROM research WHERE query_type='ma_readiness'"):
+            d = dict(r)
+            research[d["nse_symbol"]] = {f: d.get(f) for f in research_fields}
+        rconn.close()
+        merged = 0
+        for l in leads:
+            rec = research.get(l["nse_symbol"])
+            if rec:
+                # prefix research keys so they're unambiguous in the dashboard
+                for k, v in rec.items():
+                    l["research_" + k] = v
+                l["has_research"] = 1
+                merged += 1
+            else:
+                l["has_research"] = 0
+        print(f"[research] merged M&A intel into {merged} leads")
+    except sqlite3.OperationalError:
+        print("[research] no research table — skipping merge")
+
     # Summary stats
     by_tier = {}
     slow_count = 0
@@ -105,6 +135,7 @@ def main():
         "slow_growth_count": slow_count,
         "compound_strong_count": compound_strong,
         "compound_aligned_count": compound_aligned,
+        "research_count": sum(1 for l in leads if l.get("has_research")),
         "leads": leads,
     }
 
