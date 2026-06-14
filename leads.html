@@ -58,6 +58,9 @@ header {
 .stat-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1.2px; color: var(--text-dim); text-transform: uppercase; margin-top: 4px; }
 .stat-pill { cursor: pointer; transition: all .2s; }
 .stat-pill:hover { border-color: var(--gold-light); transform: translateY(-1px); }
+.stat-signal { border-color: var(--gold-line); background: var(--gold-dim); }
+.stat-signal .stat-num { color: var(--gold); }
+.stat-signal .stat-label { color: var(--gold-light); }
 
 /* ── Filters ── */
 .filters { max-width: 1400px; margin: 24px auto; padding: 0 24px; display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
@@ -229,6 +232,10 @@ td.ars-cell .ars-low { color: rgba(201,168,76,0.45); }
 td.ars-cell .ars-high { color: var(--gold-light); }
 td.sg-flag { color: var(--gold); font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.1em; }
 td.sg-flag.muted { color: var(--text-dim); opacity: 0.4; }
+td.flag-cell { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; white-space: nowrap; cursor: help; }
+td.flag-cell.strong { color: var(--navy); background: var(--gold); font-weight: 600; }
+td.flag-cell.aligned { color: var(--gold); }
+td.flag-cell.muted { color: var(--text-dim); opacity: 0.4; cursor: default; }
 
 thead th {
   position: sticky; top: 99px;
@@ -342,7 +349,8 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
     <div class="stat stat-pill" data-filter-tier="T1"><div class="stat-num" id="stat-t1">—</div><div class="stat-label">T1 Large</div></div>
     <div class="stat stat-pill" data-filter-tier="T2"><div class="stat-num" id="stat-t2">—</div><div class="stat-label">T2 Mid</div></div>
     <div class="stat stat-pill" data-filter-tier="T3"><div class="stat-num" id="stat-t3">—</div><div class="stat-label">T3 Pipeline</div></div>
-    <div class="stat stat-pill" data-filter-slow="1"><div class="stat-num" id="stat-slow">—</div><div class="stat-label">Slow-growth Hot List</div></div>
+    <div class="stat stat-pill stat-signal" data-filter-slow="1"><div class="stat-num" id="stat-slow">—</div><div class="stat-label">⚡ Slow-growth Hot List</div></div>
+    <div class="stat stat-pill stat-signal" data-filter-compound="1"><div class="stat-num" id="stat-compound">—</div><div class="stat-label">◆ Compound-flag Targets</div></div>
     <div class="stat stat-pill" data-filter-tier="skip"><div class="stat-num" id="stat-skip">—</div><div class="stat-label">Skipped</div></div>
   </div>
 </div>
@@ -363,6 +371,9 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
   </select>
   <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
     <input id="slow-only" type="checkbox" /> SLOW-GROWTH ONLY
+  </label>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
+    <input id="compound-only" type="checkbox" /> COMPOUND-FLAG ONLY
   </label>
   <div class="filter-result-count" id="result-count"></div>
 </div>
@@ -425,8 +436,8 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
     <thead>
       <!-- Group header row -->
       <tr class="group-row">
-        <th class="g g-identity" colspan="6"><span>Identity &middot; Acquisition Ready Score</span></th>
-        <th class="g g-scale" colspan="4"><span>Scale</span></th>
+        <th class="g g-identity" colspan="7"><span>Identity &middot; Acquisition Ready Score</span></th>
+        <th class="g g-scale" colspan="6"><span>Scale &middot; Industry Standing</span></th>
         <th class="g g-financial" colspan="9"><span>Financial Detail</span></th>
         <th class="g g-outreach" colspan="3"><span>Outreach</span></th>
       </tr>
@@ -448,13 +459,16 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
             </span>
           </span>
         </th>
-        <th class="g-identity">SG</th>
+        <th class="g-identity" title="Slow-growth + strong-fundamentals hot list">SG</th>
+        <th class="g-identity flag-th" data-sort="ars_compound_flag" title="Compound flag: cash firepower + multiple growth-fatigue signals aligned">Flag</th>
 
-        <!-- Scale (collapsible) -->
+        <!-- Scale + industry standing (collapsible) -->
         <th class="g-scale num" data-sort="market_cap_cr">Mcap (Cr)</th>
         <th class="g-scale num" data-sort="market_cap_5y_change_pct">5y Mcap &Delta;</th>
         <th class="g-scale num" data-sort="revenue_last_yr_cr">Revenue (Cr)</th>
         <th class="g-scale num" data-sort="revenue_5y_cagr_pct">5y Rev CAGR</th>
+        <th class="g-scale" data-sort="industry_rank" title="Rank within industry by market cap (1 = largest)">Ind. Rank</th>
+        <th class="g-scale" data-sort="industry_size_tier" title="Large / Mid / Small within the company's industry">Size Tier</th>
 
         <!-- Financial Detail (collapsible) -->
         <th class="g-financial num" data-sort="cash_and_equivalents_cr">Cash (Cr)</th>
@@ -473,7 +487,7 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
         <th class="g-outreach"></th>
       </tr>
     </thead>
-    <tbody id="tbody"><tr><td colspan="22" class="loading">Loading 752 leads…</td></tr></tbody>
+    <tbody id="tbody"><tr><td colspan="25" class="loading">Loading 752 leads…</td></tr></tbody>
   </table>
 </div>
 
@@ -488,21 +502,40 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
   </div>
   <div class="drawer-body">
     <div class="drawer-section">
-      <div class="drawer-label">Tier &amp; Score</div>
+      <div class="drawer-label">Tier &amp; Acquisition Ready Score</div>
       <div class="drawer-row"><span>Tier</span><span id="d-tier">—</span></div>
-      <div class="drawer-row"><span>Score</span><span id="d-score">—</span></div>
+      <div class="drawer-row"><span>ARS (0-100)</span><span id="d-ars">—</span></div>
+      <div class="drawer-row"><span>Compound flag</span><span id="d-compound">—</span></div>
+      <div class="drawer-row"><span>Tier score (legacy)</span><span id="d-score">—</span></div>
       <div class="drawer-row"><span>Slow-growth signal</span><span id="d-slow">—</span></div>
       <div class="drawer-row tier-reason" id="d-tier-reason-row" style="display:none;"><span>Reason</span><span id="d-tier-reason">—</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-label">ARS Component Breakdown</div>
+      <div class="drawer-row"><span>Disposable cash (40%)</span><span id="d-ars-cash">—</span></div>
+      <div class="drawer-row"><span>Revenue slowing (25%)</span><span id="d-ars-rev">—</span></div>
+      <div class="drawer-row"><span>Margin shrinking (20%)</span><span id="d-ars-margin">—</span></div>
+      <div class="drawer-row"><span>Profit slowing (15%)</span><span id="d-ars-profit">—</span></div>
+    </div>
+    <div class="drawer-section">
+      <div class="drawer-label">Industry Standing</div>
+      <div class="drawer-row"><span>Industry</span><span id="d-industry">—</span></div>
+      <div class="drawer-row"><span>Rank in industry</span><span id="d-ind-rank">—</span></div>
+      <div class="drawer-row"><span>Size tier</span><span id="d-ind-tier">—</span></div>
+      <div class="drawer-row"><span>5y Mcap change</span><span id="d-mcap5y">—</span></div>
     </div>
     <div class="drawer-section">
       <div class="drawer-label">Fundamentals</div>
       <div class="drawer-row"><span>Market cap</span><span id="d-mcap">—</span></div>
       <div class="drawer-row"><span>Cash &amp; equiv.</span><span id="d-cash">—</span></div>
       <div class="drawer-row"><span>Cash / Mcap</span><span id="d-cashpct">—</span></div>
+      <div class="drawer-row"><span>Cash / Revenue</span><span id="d-cashrev">—</span></div>
       <div class="drawer-row"><span>Total debt</span><span id="d-debt">—</span></div>
       <div class="drawer-row"><span>Debt / Equity</span><span id="d-de">—</span></div>
-      <div class="drawer-row"><span>Revenue TTM</span><span id="d-rev">—</span></div>
-      <div class="drawer-row"><span>Net profit TTM</span><span id="d-np">—</span></div>
+      <div class="drawer-row"><span>Revenue (last yr)</span><span id="d-rev">—</span></div>
+      <div class="drawer-row"><span>5y Revenue CAGR</span><span id="d-revcagr">—</span></div>
+      <div class="drawer-row"><span>NPAT (last yr)</span><span id="d-np">—</span></div>
+      <div class="drawer-row"><span>Op margin</span><span id="d-opm">—</span></div>
       <div class="drawer-row"><span>5y profit CAGR</span><span id="d-cagr">—</span></div>
     </div>
     <div class="drawer-section">
@@ -519,10 +552,21 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
       <input id="d-action" class="drawer-input" type="text" placeholder="e.g. Send sector one-pager" />
       <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Next Action Date</label>
       <input id="d-action-date" class="drawer-input" type="date" />
-      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">CFO Name</label>
-      <input id="d-cfo" class="drawer-input" type="text" placeholder="Discovery field" />
-      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">IR Email</label>
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Primary Contact (name &amp; role)</label>
+      <input id="d-cfo" class="drawer-input" type="text" placeholder="e.g. Priya Rao, CFO" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Contact Email</label>
       <input id="d-email" class="drawer-input" type="email" placeholder="ir@company.com" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Contact Phone</label>
+      <input id="d-phone" class="drawer-input" type="tel" placeholder="+91 …" />
+      <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Preferred Channel</label>
+      <select id="d-channel" class="drawer-input" style="padding:8px 12px;">
+        <option value="">— select —</option>
+        <option value="email">Email</option>
+        <option value="phone">Phone</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="warm_intro">Warm intro</option>
+        <option value="event">Event / conference</option>
+      </select>
       <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Notes</label>
       <textarea id="d-notes" class="drawer-textarea" placeholder="Free-form notes — saved locally"></textarea>
       <button class="drawer-save" id="d-save">Save (local)</button>
@@ -555,7 +599,7 @@ fetch('assets/leads.json')
     applyFilters();
   })
   .catch(err => {
-    $('tbody').innerHTML = `<tr><td colspan="10" class="error">Failed to load leads.json — ${err.message}</td></tr>`;
+    $('tbody').innerHTML = `<tr><td colspan="25" class="error">Failed to load leads.json — ${err.message}</td></tr>`;
   });
 
 function populateSectors() {
@@ -575,6 +619,11 @@ function renderStats(data) {
   $('stat-t2').textContent = c.T2 || 0;
   $('stat-t3').textContent = c.T3 || 0;
   $('stat-slow').textContent = data.slow_growth_count || 0;
+  const cs = data.compound_strong_count, ca = data.compound_aligned_count;
+  const compoundTotal = (cs != null || ca != null)
+    ? (cs || 0) + (ca || 0)
+    : STATE.leads.filter(l => l.ars_compound_flag).length;
+  $('stat-compound').textContent = compoundTotal;
   $('stat-skip').textContent = (c.skip || 0) + (c.skip_financial || 0);
 }
 
@@ -585,12 +634,14 @@ function applyFilters() {
   const sector = $('sector-filter').value;
   const status = $('status-filter').value;
   const slowOnly = $('slow-only').checked;
+  const compoundOnly = $('compound-only').checked;
 
   STATE.filtered = STATE.leads.filter(l => {
     if (tier && l.tier !== tier) return false;
     if (sector && l.sector !== sector) return false;
     if (status && (l.outreach_status || 'pending') !== status) return false;
     if (slowOnly && !l.slow_growth_signal) return false;
+    if (compoundOnly && !l.ars_compound_flag) return false;
     if (q) {
       const hay = `${l.nse_symbol} ${l.name} ${l.sector}`.toLowerCase();
       if (!hay.includes(q)) return false;
@@ -648,11 +699,18 @@ function arsCell(l) {
   </td>`;
 }
 
+function compoundCell(l) {
+  const f = l.ars_compound_flag;
+  if (f === 'strong') return `<td class="g-identity flag-cell strong" title="${escape(l.ars_compound_reason || 'Strong compound signal')}">◆ Strong</td>`;
+  if (f === 'aligned') return `<td class="g-identity flag-cell aligned" title="${escape(l.ars_compound_reason || 'Aligned signals')}">◇ Aligned</td>`;
+  return `<td class="g-identity flag-cell muted">—</td>`;
+}
+
 function renderTable() {
   const tb = $('tbody');
   $('result-count').textContent = `${STATE.filtered.length} of ${STATE.leads.length}`;
   if (!STATE.filtered.length) {
-    tb.innerHTML = '<tr><td colspan="22" class="loading">No leads match those filters.</td></tr>';
+    tb.innerHTML = '<tr><td colspan="25" class="loading">No leads match those filters.</td></tr>';
     return;
   }
   tb.innerHTML = STATE.filtered.map(l => {
@@ -661,6 +719,9 @@ function renderTable() {
       ? `<td class="g-identity sg-flag" title="Slow-growth + strong-fundamentals hot list">SG</td>`
       : `<td class="g-identity sg-flag muted">—</td>`;
     const status = l.outreach_status || 'pending';
+    const indRank = (l.industry_rank != null && l.industry_size != null)
+      ? `${l.industry_rank} / ${l.industry_size}` : '—';
+    const sizeTier = l.industry_size_tier || '—';
 
     return `<tr class="${l.slow_growth_signal ? 'slow-growth' : ''}" data-sym="${escape(l.nse_symbol)}">
       <td class="sym g-identity">${escape(l.nse_symbol)}</td>
@@ -669,11 +730,14 @@ function renderTable() {
       <td class="g-identity">${tierBadge}</td>
       ${arsCell(l)}
       ${sgFlag}
+      ${compoundCell(l)}
 
       <td class="num g-scale">${fmtCr(l.market_cap_cr)}</td>
       <td class="num g-scale">${fmtPP(l.market_cap_5y_change_pct).replace('pp','%')}</td>
       <td class="num g-scale">${fmtCr(l.revenue_last_yr_cr)}</td>
       <td class="num g-scale">${fmtPct(l.revenue_5y_cagr_pct)}</td>
+      <td class="g-scale" title="${escape(l.industry || '')}">${indRank}</td>
+      <td class="g-scale">${escape(sizeTier)}</td>
 
       <td class="num g-financial">${fmtCr(l.cash_and_equivalents_cr)}</td>
       <td class="num g-financial">${fmtPct(l.cash_pct_mcap)}</td>
@@ -728,6 +792,7 @@ $('tier-filter').addEventListener('change', () => applyFilters());
 $('sector-filter').addEventListener('change', () => applyFilters());
 $('status-filter').addEventListener('change', () => applyFilters());
 $('slow-only').addEventListener('change', () => applyFilters());
+$('compound-only').addEventListener('change', () => applyFilters());
 
 document.querySelectorAll('thead th[data-sort]').forEach(th => {
   th.addEventListener('click', () => {
@@ -742,9 +807,14 @@ document.querySelectorAll('.stat-pill').forEach(pill => {
   pill.addEventListener('click', () => {
     const t = pill.dataset.filterTier;
     const s = pill.dataset.filterSlow;
-    if (s) { $('slow-only').checked = true; $('tier-filter').value = ''; }
-    else if (t === 'all') { $('tier-filter').value = ''; $('slow-only').checked = false; }
-    else { $('tier-filter').value = t; $('slow-only').checked = false; }
+    const cf = pill.dataset.filterCompound;
+    // reset the cross-filters each time a pill is clicked
+    $('slow-only').checked = false;
+    $('compound-only').checked = false;
+    if (cf) { $('compound-only').checked = true; $('tier-filter').value = ''; }
+    else if (s) { $('slow-only').checked = true; $('tier-filter').value = ''; }
+    else if (t === 'all') { $('tier-filter').value = ''; }
+    else { $('tier-filter').value = t; }
     applyFilters();
     document.querySelectorAll('.stat-pill').forEach(p => p.classList.remove('active'));
     pill.classList.add('active');
@@ -778,6 +848,10 @@ function openDrawer(sym) {
   $('d-name').textContent = l.name;
   $('d-symbol').textContent = l.nse_symbol + ' · ' + (l.sector || '');
   $('d-tier').innerHTML = `<span class="tier ${l.tier}">${l.tier || '—'}</span>`;
+  $('d-ars').textContent = l.acquisition_ready_score != null ? fmtNum(l.acquisition_ready_score, 1) : '—';
+  if (l.ars_compound_flag === 'strong') $('d-compound').innerHTML = '<span style="color:var(--gold);font-weight:600">◆ Strong</span>';
+  else if (l.ars_compound_flag === 'aligned') $('d-compound').innerHTML = '<span style="color:var(--gold)">◇ Aligned</span>';
+  else $('d-compound').textContent = '—';
   $('d-score').textContent = l.tier_score != null ? fmtNum(l.tier_score, 1) : '—';
   $('d-slow').textContent = l.slow_growth_signal ? '⚡ Yes — hot list' : 'No';
   if (l.tier_reason) {
@@ -786,13 +860,28 @@ function openDrawer(sym) {
   } else {
     $('d-tier-reason-row').style.display = 'none';
   }
+  // ARS component breakdown
+  const cc = (() => { try { return JSON.parse(l.ars_components || '{}'); } catch { return {}; } })();
+  const compPart = (score, w) => score != null ? `${Math.round(score)}/100 · ${w}% → ${Math.round(score*w/100)}` : '—';
+  $('d-ars-cash').textContent = compPart(cc.cash_disposable, 40);
+  $('d-ars-rev').textContent = compPart(cc.revenue_slowing, 25);
+  $('d-ars-margin').textContent = compPart(cc.margin_shrinking, 20);
+  $('d-ars-profit').textContent = compPart(cc.profit_slowing, 15);
+  // Industry standing
+  $('d-industry').textContent = l.industry || '—';
+  $('d-ind-rank').textContent = (l.industry_rank != null && l.industry_size != null) ? `${l.industry_rank} of ${l.industry_size}` : '—';
+  $('d-ind-tier').textContent = l.industry_size_tier || '—';
+  $('d-mcap5y').textContent = l.market_cap_5y_change_pct != null ? (l.market_cap_5y_change_pct > 0 ? '+' : '') + fmtNum(l.market_cap_5y_change_pct, 1) + '%' : '—';
   $('d-mcap').textContent = l.market_cap_cr != null ? 'Rs ' + fmtNum(l.market_cap_cr, 0) + ' Cr' : '—';
   $('d-cash').textContent = l.cash_and_equivalents_cr != null ? 'Rs ' + fmtNum(l.cash_and_equivalents_cr, 0) + ' Cr' : '—';
   $('d-cashpct').textContent = l.cash_pct_mcap != null ? fmtNum(l.cash_pct_mcap, 2) + '%' : '—';
+  $('d-cashrev').textContent = l.cash_pct_revenue_pct != null ? fmtNum(l.cash_pct_revenue_pct, 1) + '%' : '—';
   $('d-debt').textContent = l.total_debt_cr != null ? 'Rs ' + fmtNum(l.total_debt_cr, 0) + ' Cr' : '—';
   $('d-de').textContent = l.debt_to_equity != null ? fmtNum(l.debt_to_equity, 3) : '—';
-  $('d-rev').textContent = l.revenue_ttm_cr != null ? 'Rs ' + fmtNum(l.revenue_ttm_cr, 0) + ' Cr' : '—';
-  $('d-np').textContent = l.net_profit_ttm_cr != null ? 'Rs ' + fmtNum(l.net_profit_ttm_cr, 0) + ' Cr' : '—';
+  $('d-rev').textContent = l.revenue_last_yr_cr != null ? 'Rs ' + fmtNum(l.revenue_last_yr_cr, 0) + ' Cr' : (l.revenue_ttm_cr != null ? 'Rs ' + fmtNum(l.revenue_ttm_cr, 0) + ' Cr' : '—');
+  $('d-revcagr').textContent = l.revenue_5y_cagr_pct != null ? fmtNum(l.revenue_5y_cagr_pct, 1) + '%' : '—';
+  $('d-np').textContent = l.npat_last_yr_cr != null ? 'Rs ' + fmtNum(l.npat_last_yr_cr, 0) + ' Cr' : (l.net_profit_ttm_cr != null ? 'Rs ' + fmtNum(l.net_profit_ttm_cr, 0) + ' Cr' : '—');
+  $('d-opm').textContent = l.op_margin_last_yr_pct != null ? fmtNum(l.op_margin_last_yr_pct, 1) + '%' : '—';
   $('d-cagr').textContent = l.profit_5y_cagr != null ? fmtNum(l.profit_5y_cagr, 1) + '%' : '—';
   $('d-status').value = l.outreach_status || 'pending';
   $('d-owner').value = l.lead_owner || '';
@@ -800,6 +889,8 @@ function openDrawer(sym) {
   $('d-action-date').value = l.next_action_date || '';
   $('d-cfo').value = l.cfo_name || '';
   $('d-email').value = l.ir_email || '';
+  $('d-phone').value = l.ir_phone || '';
+  $('d-channel').value = l.preferred_channel || '';
   $('d-notes').value = l.notes || '';
   drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
   backdrop.classList.add('show');
@@ -821,6 +912,8 @@ $('d-save').addEventListener('click', () => {
     next_action_date: $('d-action-date').value,
     cfo_name: $('d-cfo').value,
     ir_email: $('d-email').value,
+    ir_phone: $('d-phone').value,
+    preferred_channel: $('d-channel').value,
     notes: $('d-notes').value,
   };
   saveOverride(sym, patch);

@@ -86,16 +86,25 @@ def main():
     # Summary stats
     by_tier = {}
     slow_count = 0
+    compound_strong = 0
+    compound_aligned = 0
     for r in leads:
         by_tier[r["tier"] or "untiered"] = by_tier.get(r["tier"] or "untiered", 0) + 1
         if r.get("slow_growth_signal"):
             slow_count += 1
+        cf = r.get("ars_compound_flag")
+        if cf == "strong":
+            compound_strong += 1
+        elif cf == "aligned":
+            compound_aligned += 1
 
     payload = {
         "generated_at": __import__("time").strftime("%Y-%m-%d %H:%M:%S"),
         "total": len(leads),
         "by_tier": by_tier,
         "slow_growth_count": slow_count,
+        "compound_strong_count": compound_strong,
+        "compound_aligned_count": compound_aligned,
         "leads": leads,
     }
 
@@ -109,6 +118,7 @@ def main():
     print(f"  mirror:  {mirror}")
     print(f"  tiers: {by_tier}")
     print(f"  slow-growth signal: {slow_count}")
+    print(f"  compound: strong={compound_strong} aligned={compound_aligned}")
 
 
 if __name__ == "__main__":
