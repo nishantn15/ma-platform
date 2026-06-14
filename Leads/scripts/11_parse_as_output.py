@@ -18,26 +18,60 @@ import time
 from pathlib import Path
 
 
-def extract_json_block(md):
-    # Prefer a fenced ```json ... ``` block
-    m = re.search(r"```json\s*(\{.*?\})\s*```", md, re.DOTALL)
-    if not m:
-        m = re.search(r"```\s*(\{.*?\})\s*```", md, re.DOTALL)
-    if not m:
-        # fall back: first balanced-looking {...} with our key
-        m = re.search(r"(\{[^{}]*\"ma_deal_count_5y\".*?\})", md, re.DOTALL)
-    if not m:
-        return {}
-    raw = m.group(1)
+def _balanced_object(md, start):
+    """Return the substring of a balanced {...} starting at index `start`."""
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(md)):
+        ch = md[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                return md[start:i + 1]
+    return None
+
+
+def _try_load(raw):
     try:
         return json.loads(raw)
     except json.JSONDecodeError:
-        # tolerate trailing commas
-        cleaned = re.sub(r",(\s*[}\]])", r"\1", raw)
+        cleaned = re.sub(r",(\s*[}\]])", r"\1", raw)  # trailing commas
         try:
             return json.loads(cleaned)
         except json.JSONDecodeError:
-            return {}
+            return None
+
+
+def extract_json_block(md):
+    # 1) fenced ```json block — take its opening brace, then brace-match
+    fence = re.search(r"```(?:json)?\s*(\{)", md)
+    if fence:
+        obj = _balanced_object(md, fence.start(1))
+        if obj:
+            r = _try_load(obj)
+            if r is not None:
+                return r
+    # 2) bare block: first { that begins an object containing our anchor key
+    for m in re.finditer(r"\{", md):
+        obj = _balanced_object(md, m.start())
+        if obj and "ma_deal_count_5y" in obj:
+            r = _try_load(obj)
+            if r is not None:
+                return r
+    return {}
 
 
 def extract_citations(md):
