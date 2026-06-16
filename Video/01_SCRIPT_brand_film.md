@@ -72,3 +72,15 @@ Master brand line, mono gold, centered:
   - Scene 8 small lion shows faint rectangular edge at 300px — tighten mask.
   - Add music bed (sparse cello/piano), then VO if approved.
   - Final render: 30fps, --quality high.
+
+---
+
+## v2 render status (2026-06-16)
+- **Draft v2 rendered**: `Video/renders/brand-film-v2-draft.mp4` — 1920×1080, 24fps,
+  62.0s, 8.6 MB, H.264. Faster cut, full-bleed lions, platform-in-action typing scene,
+  big wordmark closer.
+- All 9 sampled beats verified in the final MP4, incl. the Readiness-Gates panel
+  typing/checking in sequence (frames 35s empty → 38s filled).
+- Still pending (v3 / final): music bed (sparse cello/piano), optional VO,
+  final 30fps --quality high render. WhatsApp sent to TK 2026-06-16 promising an
+  early draft "in a day".
