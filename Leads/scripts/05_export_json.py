@@ -113,6 +113,36 @@ def main():
     except sqlite3.OperationalError:
         print("[research] no research table — skipping merge")
 
+    # Merge AS contacts (full contact object) per company, if the contacts table exists.
+    contact_fields = [
+        "ir_inbox_email", "ir_phone", "ir_head_name", "ir_head_title", "ir_head_email",
+        "ir_head_phone", "cs_name", "cs_email", "cfo_name", "cfo_email", "ceo_md_name",
+        "ceo_md_title", "chairman_name", "ir_advisor_firm", "ir_advisor_contact",
+        "rta_firm", "rta_email", "rta_phone", "registered_office", "corporate_office",
+        "website", "primary_name", "primary_email", "primary_email_kind",
+        "best_channel_note", "contact_source", "contact_date", "contact_confidence",
+    ]
+    try:
+        cconn = sqlite3.connect(DB_PATH)
+        cconn.row_factory = sqlite3.Row
+        contacts = {}
+        for r in cconn.execute("SELECT * FROM contacts"):
+            d = dict(r)
+            contacts[d["nse_symbol"]] = {f: d.get(f) for f in contact_fields}
+        cconn.close()
+        cmerged = 0
+        for l in leads:
+            rec = contacts.get(l["nse_symbol"])
+            if rec:
+                l["contact"] = rec
+                l["has_contact"] = 1
+                cmerged += 1
+            else:
+                l["has_contact"] = 0
+        print(f"[contacts] merged contact objects into {cmerged} leads")
+    except sqlite3.OperationalError:
+        print("[contacts] no contacts table — skipping merge")
+
     # Summary stats
     by_tier = {}
     slow_count = 0
@@ -136,6 +166,7 @@ def main():
         "compound_strong_count": compound_strong,
         "compound_aligned_count": compound_aligned,
         "research_count": sum(1 for l in leads if l.get("has_research")),
+        "contact_count": sum(1 for l in leads if l.get("has_contact")),
         "leads": leads,
     }
 

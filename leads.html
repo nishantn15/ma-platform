@@ -288,6 +288,25 @@ tbody tr.slow-growth:hover { background: rgba(201,168,76,.10); }
 .status-select[data-status="won"] { color: #a5d6a7; }
 .status-select[data-status="lost"] { color: #ef9a9a; opacity: .6; }
 
+/* ── Contacts column ── */
+.contact-cell { font-size: 11px; line-height: 1.35; max-width: 210px; }
+.contact-cell .c-name { color: var(--text-on-dark); font-weight: 500; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.contact-cell .c-email { color: var(--gold-bright); font-family: 'JetBrains Mono', monospace; font-size: 10px; text-decoration: none; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.contact-cell .c-email:hover { text-decoration: underline; }
+.contact-cell .c-needs { color: var(--text-dim); font-style: italic; }
+.chan-badge { display: inline-block; margin-top: 2px; padding: 0 5px; border-radius: 2px; font-size: 8px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+.chan-badge.named_direct { background: var(--gold); color: var(--navy); }
+.chan-badge.ir_inbox { background: rgba(144,202,249,.18); color: #90caf9; }
+.chan-badge.advisor { background: rgba(206,147,216,.18); color: #ce93d8; }
+.chan-badge.rta { background: rgba(255,255,255,.07); color: var(--text-dim); }
+
+/* ── Drawer contact section ── */
+.d-contact-primary { padding: 12px; background: var(--navy); border: 1px solid var(--gold-line); border-radius: 4px; margin-bottom: 12px; }
+.d-contact-primary .cp-name { color: #fff; font-weight: 600; font-size: 14px; }
+.d-contact-primary .cp-email { color: var(--gold-bright); font-family: 'JetBrains Mono', monospace; font-size: 12px; text-decoration: none; display: inline-block; margin-top: 2px; }
+.d-contact-primary .cp-email:hover { text-decoration: underline; }
+.d-contact-prov { font-size: 10px; color: var(--text-dim); margin-top: 8px; line-height: 1.4; font-family: 'JetBrains Mono', monospace; }
+
 .detail-btn { padding: 3px 8px; background: transparent; border: 1px solid var(--gray-rule); border-radius: 3px; color: var(--text-dim); cursor: pointer; font-size: 11px; transition: all .2s; }
 .detail-btn:hover { color: var(--gold); border-color: var(--gold); }
 
@@ -390,6 +409,9 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
   <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
     <input id="compound-only" type="checkbox" /> COMPOUND-FLAG ONLY
   </label>
+  <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);font-family:'JetBrains Mono',monospace;letter-spacing:1px;">
+    <input id="contact-only" type="checkbox" /> CONTACT READY
+  </label>
   <div class="filter-result-count" id="result-count"></div>
 </div>
 
@@ -448,6 +470,7 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
     <button type="button" class="group-toggle is-on" data-group="outreach" aria-pressed="true">
       <span class="dot"></span>Outreach
     </button>
+    <span class="filter-result-count" id="coverage-count" style="margin-left:auto;"></span>
   </div>
 
   <table id="leads-table">
@@ -458,7 +481,7 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
         <th class="g g-mna" colspan="5"><span>M&amp;A Intel &middot; AlphaSense</span></th>
         <th class="g g-scale" colspan="6"><span>Scale &middot; Industry Standing</span></th>
         <th class="g g-financial" colspan="9"><span>Financial Detail</span></th>
-        <th class="g g-outreach" colspan="3"><span>Outreach</span></th>
+        <th class="g g-outreach" colspan="4"><span>Outreach</span></th>
       </tr>
       <!-- Column header row -->
       <tr>
@@ -508,12 +531,13 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
         <th class="g-financial num" data-sort="op_margin_5y_growth_pct">5y Op &Delta;pp</th>
 
         <!-- Outreach (always on) -->
+        <th class="g-outreach" title="Best actionable contact from AlphaSense — named-exec direct email where literally published, else IR inbox / advisor / registrar">Contact</th>
         <th class="g-outreach">Status</th>
         <th class="g-outreach">Owner</th>
         <th class="g-outreach"></th>
       </tr>
     </thead>
-    <tbody id="tbody"><tr><td colspan="30" class="loading">Loading 752 leads…</td></tr></tbody>
+    <tbody id="tbody"><tr><td colspan="31" class="loading">Loading 752 leads…</td></tr></tbody>
   </table>
 </div>
 
@@ -578,6 +602,24 @@ footer { padding: 24px; text-align: center; border-top: 1px solid var(--gray-rul
       <div class="drawer-row"><span>Op margin</span><span id="d-opm">—</span></div>
       <div class="drawer-row"><span>5y profit CAGR</span><span id="d-cagr">—</span></div>
     </div>
+    <div class="drawer-section" id="d-contact-section" style="display:none;">
+      <div class="drawer-label">Contacts &middot; <span style="color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:10px;">AlphaSense</span></div>
+      <div class="d-contact-primary" id="d-contact-primary">
+        <div class="cp-name" id="d-cp-name">—</div>
+        <a class="cp-email" id="d-cp-email" href="#">—</a>
+        <div id="d-cp-kind" style="margin-top:4px;"></div>
+      </div>
+      <div class="drawer-row"><span>IR inbox</span><span id="d-c-irinbox">—</span></div>
+      <div class="drawer-row"><span>IR head</span><span id="d-c-irhead">—</span></div>
+      <div class="drawer-row"><span>Company secretary</span><span id="d-c-cs">—</span></div>
+      <div class="drawer-row"><span>CFO</span><span id="d-c-cfo">—</span></div>
+      <div class="drawer-row"><span>CEO / MD</span><span id="d-c-ceo">—</span></div>
+      <div class="drawer-row"><span>Chairman</span><span id="d-c-chair">—</span></div>
+      <div class="drawer-row"><span>IR advisor</span><span id="d-c-advisor">—</span></div>
+      <div class="drawer-row"><span>Registrar (RTA)</span><span id="d-c-rta">—</span></div>
+      <div class="drawer-note" id="d-c-note" style="margin-top:10px;display:none;"></div>
+      <div class="d-contact-prov" id="d-c-prov"></div>
+    </div>
     <div class="drawer-section">
       <div class="drawer-label">Outreach</div>
       <label style="font-size:11px;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-family:'JetBrains Mono',monospace;">Status</label>
@@ -639,7 +681,7 @@ fetch('assets/leads.json')
     applyFilters();
   })
   .catch(err => {
-    $('tbody').innerHTML = `<tr><td colspan="30" class="error">Failed to load leads.json — ${err.message}</td></tr>`;
+    $('tbody').innerHTML = `<tr><td colspan="31" class="error">Failed to load leads.json — ${err.message}</td></tr>`;
   });
 
 function populateSectors() {
@@ -665,6 +707,11 @@ function renderStats(data) {
     : STATE.leads.filter(l => l.ars_compound_flag).length;
   $('stat-compound').textContent = compoundTotal;
   $('stat-skip').textContent = (c.skip || 0) + (c.skip_financial || 0);
+  // Contact coverage line
+  const withContact = STATE.leads.filter(l => l.contact && l.contact.primary_email).length;
+  const named = STATE.leads.filter(l => l.contact && l.contact.primary_email_kind === 'named_direct').length;
+  const researched = data.research_count != null ? data.research_count : STATE.leads.filter(l => l.has_research).length;
+  $('coverage-count').textContent = `Contacts: ${withContact} ready (${named} named-direct) · of ${researched} researched`;
 }
 
 // ── Filters / search / sort ──
@@ -675,6 +722,7 @@ function applyFilters() {
   const status = $('status-filter').value;
   const slowOnly = $('slow-only').checked;
   const compoundOnly = $('compound-only').checked;
+  const contactOnly = $('contact-only').checked;
 
   STATE.filtered = STATE.leads.filter(l => {
     if (tier && l.tier !== tier) return false;
@@ -682,6 +730,7 @@ function applyFilters() {
     if (status && (l.outreach_status || 'pending') !== status) return false;
     if (slowOnly && !l.slow_growth_signal) return false;
     if (compoundOnly && !l.ars_compound_flag) return false;
+    if (contactOnly && !(l.contact && l.contact.primary_email)) return false;
     if (q) {
       const hay = `${l.nse_symbol} ${l.name} ${l.sector}`.toLowerCase();
       if (!hay.includes(q)) return false;
@@ -766,11 +815,27 @@ function mnaCells(l) {
     `<td class="g-mna mna-brief">${brief}</td>`;
 }
 
+const CHAN_LABEL = { named_direct: 'Direct', ir_inbox: 'IR inbox', advisor: 'Advisor', rta: 'Registrar' };
+function contactCell(l) {
+  const c = l.contact;
+  if (!c || !c.primary_email) {
+    return `<td class="g-outreach contact-cell"><span class="c-needs">Needs research</span></td>`;
+  }
+  const kind = c.primary_email_kind || 'ir_inbox';
+  const who = c.primary_name || c.ir_head_name || c.cs_name || '';
+  const badge = `<span class="chan-badge ${kind}">${CHAN_LABEL[kind] || kind}</span>`;
+  return `<td class="g-outreach contact-cell" title="${escape((who ? who + ' — ' : '') + c.primary_email)}">
+    ${who ? `<span class="c-name">${escape(who)}</span>` : ''}
+    <a class="c-email" href="mailto:${escape(c.primary_email)}" onclick="event.stopPropagation()">${escape(c.primary_email)}</a>
+    ${badge}
+  </td>`;
+}
+
 function renderTable() {
   const tb = $('tbody');
   $('result-count').textContent = `${STATE.filtered.length} of ${STATE.leads.length}`;
   if (!STATE.filtered.length) {
-    tb.innerHTML = '<tr><td colspan="30" class="loading">No leads match those filters.</td></tr>';
+    tb.innerHTML = '<tr><td colspan="31" class="loading">No leads match those filters.</td></tr>';
     return;
   }
   tb.innerHTML = STATE.filtered.map(l => {
@@ -810,6 +875,7 @@ function renderTable() {
       <td class="num g-financial">${fmtPct(l.op_margin_last_yr_pct)}</td>
       <td class="num g-financial">${fmtPP(l.op_margin_5y_growth_pct)}</td>
 
+      ${contactCell(l)}
       <td class="g-outreach"><select class="status-select" data-status="${status}" data-sym="${escape(l.nse_symbol)}">
         ${['pending','contacted','meeting','proposal','won','lost'].map(s => `<option value="${s}"${s===status?' selected':''}>${s}</option>`).join('')}
       </select></td>
@@ -854,6 +920,7 @@ $('sector-filter').addEventListener('change', () => applyFilters());
 $('status-filter').addEventListener('change', () => applyFilters());
 $('slow-only').addEventListener('change', () => applyFilters());
 $('compound-only').addEventListener('change', () => applyFilters());
+$('contact-only').addEventListener('change', () => applyFilters());
 
 document.querySelectorAll('thead th[data-sort]').forEach(th => {
   th.addEventListener('click', () => {
@@ -897,6 +964,8 @@ document.body.addEventListener('change', e => {
     saveOverride(sym, { outreach_status: status, last_contacted: status === 'contacted' ? new Date().toISOString().slice(0,10) : undefined });
     const l = STATE.leads.find(x => x.nse_symbol === sym);
     if (l) l.outreach_status = status;
+    // If a status filter is active, the edited row may no longer match — re-apply so the table stays consistent.
+    if ($('status-filter').value) applyFilters();
   }
 });
 
@@ -974,13 +1043,44 @@ function openDrawer(sym) {
   $('d-np').textContent = l.npat_last_yr_cr != null ? 'Rs ' + fmtNum(l.npat_last_yr_cr, 0) + ' Cr' : (l.net_profit_ttm_cr != null ? 'Rs ' + fmtNum(l.net_profit_ttm_cr, 0) + ' Cr' : '—');
   $('d-opm').textContent = l.op_margin_last_yr_pct != null ? fmtNum(l.op_margin_last_yr_pct, 1) + '%' : '—';
   $('d-cagr').textContent = l.profit_5y_cagr != null ? fmtNum(l.profit_5y_cagr, 1) + '%' : '—';
+  // Contacts (AlphaSense) — read-only block + prefill of editable fields
+  const c = l.contact;
+  if (c && c.primary_email) {
+    $('d-contact-section').style.display = 'block';
+    const kind = c.primary_email_kind || 'ir_inbox';
+    $('d-cp-name').textContent = c.primary_name || c.ir_head_name || c.cs_name || 'Best channel';
+    const cpe = $('d-cp-email');
+    cpe.textContent = c.primary_email;
+    cpe.href = 'mailto:' + c.primary_email;
+    $('d-cp-kind').innerHTML = `<span class="chan-badge ${kind}">${CHAN_LABEL[kind] || kind}</span>`;
+    const pair = (name, email, phone) => {
+      const bits = [name, email, phone].filter(Boolean);
+      return bits.length ? escape(bits.join(' · ')) : '—';
+    };
+    $('d-c-irinbox').textContent = pair(null, c.ir_inbox_email, c.ir_phone);
+    $('d-c-irhead').textContent  = pair(c.ir_head_name, c.ir_head_email, c.ir_head_phone) + (c.ir_head_title ? ` (${escape(c.ir_head_title)})` : '');
+    $('d-c-cs').textContent      = pair(c.cs_name, c.cs_email);
+    $('d-c-cfo').textContent     = pair(c.cfo_name, c.cfo_email);
+    $('d-c-ceo').textContent     = c.ceo_md_name ? escape(c.ceo_md_name) + (c.ceo_md_title ? ` (${escape(c.ceo_md_title)})` : '') : '—';
+    $('d-c-chair').textContent   = c.chairman_name || '—';
+    $('d-c-advisor').textContent = c.ir_advisor_firm ? escape(c.ir_advisor_firm) + (c.ir_advisor_contact ? ` — ${escape(c.ir_advisor_contact)}` : '') : '—';
+    $('d-c-rta').textContent     = pair(c.rta_firm, c.rta_email, c.rta_phone);
+    const noteEl = $('d-c-note');
+    if (c.best_channel_note) { noteEl.style.display = 'block'; noteEl.textContent = c.best_channel_note; }
+    else noteEl.style.display = 'none';
+    const prov = [c.contact_source, c.contact_date, c.contact_confidence ? 'confidence: ' + c.contact_confidence : ''].filter(Boolean).join(' · ');
+    $('d-c-prov').textContent = prov ? 'Source: ' + prov : '';
+  } else {
+    $('d-contact-section').style.display = 'none';
+  }
   $('d-status').value = l.outreach_status || 'pending';
   $('d-owner').value = l.lead_owner || '';
   $('d-action').value = l.next_action || '';
   $('d-action-date').value = l.next_action_date || '';
-  $('d-cfo').value = l.cfo_name || '';
-  $('d-email').value = l.ir_email || '';
-  $('d-phone').value = l.ir_phone || '';
+  // Prefill editable contact fields from AS data when the user hasn't set their own
+  $('d-cfo').value = l.cfo_name || (c && (c.primary_name || c.ir_head_name) ? `${c.primary_name || c.ir_head_name}${c.ir_head_title ? ', ' + c.ir_head_title : ''}` : '');
+  $('d-email').value = l.ir_email || (c && c.primary_email ? c.primary_email : '');
+  $('d-phone').value = l.ir_phone || (c && (c.ir_phone || c.ir_head_phone) ? (c.ir_phone || c.ir_head_phone) : '');
   $('d-channel').value = l.preferred_channel || '';
   $('d-notes').value = l.notes || '';
   drawer.classList.add('open'); drawer.setAttribute('aria-hidden','false');
@@ -1010,7 +1110,7 @@ $('d-save').addEventListener('click', () => {
   saveOverride(sym, patch);
   const l = STATE.leads.find(x => x.nse_symbol === sym);
   if (l) Object.assign(l, patch);
-  renderTable();
+  applyFilters();  // re-filter + re-sort + re-render so the row reflects its new status/owner and respects active filters
   $('d-save').textContent = 'Saved ✓'; setTimeout(() => $('d-save').textContent = 'Save (local)', 1400);
 });
 
