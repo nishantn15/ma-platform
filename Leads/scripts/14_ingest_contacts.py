@@ -44,15 +44,37 @@ def g(d, *path):
     return cur or None
 
 
+# Generic role-mailbox local-parts. An email whose local-part is one of these is
+# a desk/inbox, never a person — even when it differs from the company's primary
+# IR inbox (AS sometimes lists a person with a secondary role inbox like cs@ or
+# info@ in their email field). Such an address must NOT be tagged 'named_direct'.
+_GENERIC_LOCALPARTS = {
+    "info", "ir", "investor", "investors", "investorrelations", "investor.relations",
+    "investorsfeedback", "investorhelp", "investorhelpdesk", "secretarial", "secretary",
+    "compliance", "complianceofficer", "companysecretary", "cs", "legal", "grievances",
+    "grievance", "brr", "enduringvalue", "contact", "contactus", "helpdesk", "care",
+}
+
+
+def _is_generic_inbox(email):
+    """True if the email's local-part is a generic role mailbox (not a person)."""
+    local = (email or "").strip().lower().split("@", 1)[0]
+    # strip any +tag and dotted role variants like investor.relations already covered
+    local = local.split("+", 1)[0]
+    return local in _GENERIC_LOCALPARTS
+
+
 def derive_primary(ir_head_name, ir_head_email, ir_inbox, advisor_contact,
                    advisor_firm, rta_email, rta_firm, cs_name):
     """Best actionable channel: named-direct email > IR inbox > advisor > RTA.
-    A named email only counts as 'direct' if it differs from the generic IR
-    inbox — AS often repeats the inbox in a person's email field, which is
-    NOT a personal address and must not be mislabelled as named_direct."""
+    A named email only counts as 'direct' if it (a) differs from the generic IR
+    inbox AND (b) is not itself a generic role mailbox (cs@, info@, ir@, …).
+    AS often puts a desk address in a person's email field; that is NOT a
+    personal address and must not be mislabelled as named_direct."""
     def norm(e):
         return (e or "").strip().lower()
-    if ir_head_email and norm(ir_head_email) != norm(ir_inbox):
+    if (ir_head_email and norm(ir_head_email) != norm(ir_inbox)
+            and not _is_generic_inbox(ir_head_email)):
         return ir_head_name, ir_head_email, "named_direct"
     if ir_inbox:
         # address it to a human if we have one
