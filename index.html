@@ -19,6 +19,7 @@
       --navy-mid: #162a4a;
       --gold: #c9a84c;
       --gold-light: #ddc06a;
+      --gold-ink: #7a5f1f; /* deep gold for TEXT on cream/light bg — passes WCAG AA */
       --gold-dim: rgba(201,168,76,0.15);
       --gold-line: rgba(201,168,76,0.18);
       --gold-line-strong: rgba(201,168,76,0.30);
@@ -537,6 +538,17 @@
 
     .section-cream { background: var(--cream); color: var(--ink); }
 
+    /* ----- Gold-text readability: on cream/light backgrounds, gold text uses
+       the deeper --gold-ink (WCAG AA). Bright --gold stays for navy sections,
+       rules, borders, and large display. Component rules that live ONLY in navy
+       (btn-ghost, day-list-*, layer-tag, hero-eyebrow, promise) keep bright gold.
+       The rules below retarget gold text that renders on cream. Placed here so
+       source order beats equal-specificity component rules. ----- */
+    .section-cream .label,
+    .section-cream .section-eyebrow,
+    .section-cream .pill,
+    .section-cream .duration-chip { color: var(--gold-ink); }
+
     .section-eyebrow {
       display: inline-block;
       margin-bottom: 24px;
@@ -920,7 +932,7 @@
       height: 1px;
       background: var(--gold);
     }
-    .account-step .label-muted { color: var(--gold); margin-bottom: 14px; display: block; }
+    .account-step .label-muted { color: var(--gold-ink); margin-bottom: 14px; display: block; }
     .account-step .step-title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -1103,7 +1115,8 @@
     .toolkit.dark {
       background: var(--navy-light);
     }
-    .toolkit .label { color: var(--gold); display: block; margin-bottom: 14px; }
+    .toolkit .label { color: var(--gold-ink); display: block; margin-bottom: 14px; }
+    .toolkit.dark .label { color: var(--gold); }
     .toolkit .toolkit-name {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -1166,7 +1179,7 @@
       padding: 22px 0;
       border-bottom: 1px solid var(--cream-dark);
     }
-    .stack-row .label-muted { color: var(--gold); }
+    .stack-row .label-muted { color: var(--gold-ink); }
     .stack-row .stack-title {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -1242,7 +1255,7 @@
       color: var(--ink-muted);
       margin-bottom: 18px;
     }
-    .tier.featured .tier-tag { color: var(--gold); }
+    .tier.featured .tier-tag { color: var(--gold-ink); }
     .tier h3 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -1254,7 +1267,7 @@
       font-family: 'Playfair Display', serif;
       font-weight: 600;
       font-size: 22px;
-      color: var(--gold);
+      color: var(--gold-ink);
       margin-bottom: 24px;
     }
     .tier ul {
@@ -1314,13 +1327,13 @@
       color: var(--ink);
       margin: 0 0 16px;
     }
-    .roi-cell .roi-fig .gold { color: var(--gold); }
+    .roi-cell .roi-fig .gold { color: var(--gold-ink); }
     .roi-cell .badge {
       display: inline-flex;
       align-items: center;
       padding: 6px 14px;
       background: rgba(201,168,76,0.12);
-      color: var(--gold);
+      color: var(--gold-ink);
       border: 1px solid var(--gold-line-strong);
       border-radius: 20px;
       font-family: 'JetBrains Mono', monospace;
@@ -1426,7 +1439,7 @@
       width: 1px;
       background: var(--cream-dark);
     }
-    .roadmap-cell .label-muted { color: var(--gold); margin-bottom: 14px; display: block; }
+    .roadmap-cell .label-muted { color: var(--gold-ink); margin-bottom: 14px; display: block; }
     .roadmap-cell h4 {
       font-family: 'Playfair Display', serif;
       font-weight: 600;
@@ -2033,7 +2046,7 @@
   <div class="container">
     <div class="deep-grid flip">
       <div class="deep-content reveal">
-        <span class="label-muted section-eyebrow" style="color: var(--gold);">The Corporate Package</span>
+        <span class="label-muted section-eyebrow">The Corporate Package</span>
         <h2 class="headline">M&amp;A Capability Building Stack</h2>
         <p class="deep-positioning">The end-to-end bundle. L1, L2, and L3 sold as one capability stack. One account, three layers, acquisition capability top to bottom.</p>
 

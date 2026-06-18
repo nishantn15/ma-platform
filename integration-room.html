@@ -14,6 +14,7 @@
     --navy-mid: #162a4a;
     --gold: #c9a84c;
     --gold-light: #ddc06a;
+    --gold-ink: #7a5f1f; /* deep gold for TEXT on cream/light bg — passes WCAG AA */
     --gold-dim: rgba(201,168,76,0.15);
     --gold-line: rgba(201,168,76,0.18);
     --cream: #f8f6f0;
@@ -277,7 +278,7 @@
   .phase:first-child { padding-top: 0; }
   .phase:last-child { border-bottom: none; padding-bottom: 0; }
   .phase-head { margin-bottom: 28px; }
-  .phase-head .label { color: var(--gold); margin-bottom: 16px; }
+  .phase-head .label { color: var(--gold-ink); margin-bottom: 16px; }
   .phase-head h3 {
     font: 600 clamp(28px, 3vw, 36px)/1.2 'Playfair Display', serif;
     letter-spacing: -0.01em;
@@ -360,7 +361,7 @@
     color: var(--ink);
   }
   .panel-chrome .panel-stamp {
-    color: var(--gold);
+    color: var(--gold-ink);
   }
   .panel h5 {
     font: 600 16px/1.35 'Playfair Display', serif;
@@ -403,7 +404,7 @@
     text-transform: uppercase;
     color: var(--ink-muted);
   }
-  .row-list-item .meta.gold { color: var(--gold); }
+  .row-list-item .meta.gold { color: var(--gold-ink); }
 
   /* Phase-specific small components */
   .stat-grid {
@@ -425,7 +426,7 @@
   }
   .stat .delta {
     font-size: 11px;
-    color: var(--gold);
+    color: var(--gold-ink);
     margin-left: 6px;
     letter-spacing: 0.04em;
     font-weight: 500;
