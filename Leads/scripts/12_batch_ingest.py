@@ -148,6 +148,62 @@ T3 = {
     "BSOFT": ("TK58615", "Birlasoft"),
 }
 
+# --- T3 Run-3 (52): the 40-50 ARS band, taking T3 coverage down to ARS>=40 ---
+T3_RUN3 = {
+    "ELECTCAST": ("TK188877", "Electrosteel Castings"),
+    "GODREJCP": ("TK109414", "Godrej Consumer"),
+    "PCBL": ("TK545844", "PCBL"),
+    "NTPC": ("TK183249", "NTPC Ltd"),
+    "MAHSEAMLES": ("TK180049", "Maharashtra Seamless"),
+    "UBL": ("TK168412", "United Breweries Ltd"),
+    "ARE&M": ("__WEB__", "Amara Raja"),
+    "BERGEPAINT": ("TK111661", "Berger Paints"),
+    "NLCINDIA": ("TK331927", "NLC India"),
+    "DYNAMATECH": ("TK180975", "Dynamatic"),
+    "RATNAMANI": ("__WEB__", "Ratnamani"),
+    "GOKEX": ("TK285319", "Gokaldas"),
+    "GMDCLTD": ("__WEB__", "Gujarat Mineral Development"),
+    "APOLLOTYRE": ("TK716154", "Apollo Tyres"),
+    "BEML": ("__WEB__", "BEML"),
+    "SHREECEM": ("TK731796", "Shree Cement"),
+    "USHAMART": ("TK717596", "Usha Martin Ltd"),
+    "BBTC": ("__WEB__", "Bombay Burmah"),
+    "KANSAINER": ("TK111738", "Kansai Nerolac"),
+    "PETRONET": ("TK226811", "Petronet LNG"),
+    "TEGA": ("TK898322", "Tega Industries"),
+    "AMBUJACEM": ("TK716830", "Ambuja Cements"),
+    "DALBHARAT": ("TK714602", "Dalmia Bharat Ltd"),
+    "PGIL": ("TK361616", "Pearl Global"),
+    "PFIZER": ("__WEB__", "Pfizer"),
+    "EPL": ("__WEB__", "EPL Ltd"),
+    "APLLTD": ("TK516939", "Alembic Pharmaceuticals"),
+    "CIPLA": ("TK167945", "Cipla Ltd"),
+    "HAVELLS": ("TK216503", "Havells"),
+    "COLPAL": ("TK524664", "Colgate"),
+    "GODREJAGRO": ("TK768519", "Godrej Agrovet"),
+    "MSUMI": ("TK865684", "Motherson Sumi Wiring"),
+    "AURIONPRO": ("TK303535", "Aurionpro"),
+    "KIRLOSBROS": ("TK111813", "Kirloskar Brothers"),
+    "TORNTPOWER": ("TK344526", "Torrent Power"),
+    "PIIND": ("TK277334", "PI Industries"),
+    "CAMPUS": ("TK913861", "Campus Activewear"),
+    "ELECON": ("TK112868", "Elecon Engineering"),
+    "BALKRISIND": ("TK127419", "Balkrishna Industries"),
+    "ZENSARTECH": ("TK331522", "Zensar"),
+    "HERITGFOOD": ("TK343169", "Heritage Foods Ltd"),
+    "ARVIND": ("__WEB__", "Arvind Ltd"),
+    "BLUEJET": ("TK946589", "Blue Jet Healthcare"),
+    "ALKEM": ("TK705381", "Alkem Laboratories"),
+    "ASHOKA": ("TK522431", "Ashoka Buildcon"),
+    "RAILTEL": ("TK870611", "RailTel"),
+    "GAIL": ("TK586809", "GAIL"),
+    "OFSS": ("TK156252", "Oracle Financial Services"),
+    "CCAVENUE": ("__WEB__", "Avenues"),
+    "JINDALSAW": ("TK112505", "Jindal Saw Ltd"),
+    "FINCABLES": ("TK716823", "Finolex Cables"),
+    "HINDZINC": ("TK168922", "Hindustan Zinc"),
+}
+
 
 def company_in_prompt(path):
     try:
@@ -163,7 +219,7 @@ def main():
     # newest first so re-runs pick the latest result per company
     files = sorted(OUT.glob("*M_A-readiness*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     done = set()
-    universe = {**T1, **T3}
+    universe = {**T1, **T3, **T3_RUN3}
     for tkr, (cid, sub) in universe.items():
         if tkr in done:
             continue
