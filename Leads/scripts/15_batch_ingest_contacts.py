@@ -57,7 +57,7 @@ def symbol_in_prompt(prompt):
 
 
 def main():
-    files = sorted(OUT.glob("*EXHAUSTIVE_contact*.json"),
+    files = sorted(OUT.glob("*EXHAUSTIVE*.json"),
                    key=lambda p: p.stat().st_mtime, reverse=True)
     # symbol -> AS id (for stamping)
     conn = sqlite3.connect(DB)

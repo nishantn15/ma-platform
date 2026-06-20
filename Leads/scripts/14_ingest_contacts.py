@@ -48,20 +48,32 @@ def g(d, *path):
 # a desk/inbox, never a person — even when it differs from the company's primary
 # IR inbox (AS sometimes lists a person with a secondary role inbox like cs@ or
 # info@ in their email field). Such an address must NOT be tagged 'named_direct'.
+# Exact role-mailbox local-parts (after stripping . _ - separators).
 _GENERIC_LOCALPARTS = {
-    "info", "ir", "investor", "investors", "investorrelations", "investor.relations",
-    "investorsfeedback", "investorhelp", "investorhelpdesk", "secretarial", "secretary",
-    "compliance", "complianceofficer", "companysecretary", "cs", "legal", "grievances",
-    "grievance", "brr", "enduringvalue", "contact", "contactus", "helpdesk", "care",
+    "info", "ir", "investor", "investors", "investorrelations", "investorrelation",
+    "investorsfeedback", "investorhelp", "investorhelpdesk", "investorcare",
+    "investorservices", "investorgrievance", "investorgrievances", "secretarial",
+    "secretary", "compliance", "complianceofficer", "companysecretary",
+    "companysecretaryteam", "cosec", "cs", "legal", "grievances", "grievance", "brr",
+    "enduringvalue", "contact", "contactus", "helpdesk", "care", "mail", "cfo",
 }
+# Role stems: if the separator-stripped local-part CONTAINS one of these, it is a
+# desk/inbox, not a person (catches cosec, investorrelations@rpsg, csteam, etc.).
+_GENERIC_STEMS = (
+    "investorrelation", "investorgrievance", "investorcare", "investorservice",
+    "companysecretary", "cosec", "compliance", "secretarial", "grievance", "helpdesk",
+)
 
 
 def _is_generic_inbox(email):
     """True if the email's local-part is a generic role mailbox (not a person)."""
     local = (email or "").strip().lower().split("@", 1)[0]
-    # strip any +tag and dotted role variants like investor.relations already covered
     local = local.split("+", 1)[0]
-    return local in _GENERIC_LOCALPARTS
+    # normalise separators so investor_relations / investor.relations / co-sec collapse
+    norm = local.replace(".", "").replace("_", "").replace("-", "")
+    if norm in _GENERIC_LOCALPARTS:
+        return True
+    return any(stem in norm for stem in _GENERIC_STEMS)
 
 
 def derive_primary(ir_head_name, ir_head_email, ir_inbox, advisor_contact,

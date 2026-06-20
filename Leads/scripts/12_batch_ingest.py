@@ -204,6 +204,88 @@ T3_RUN3 = {
     "HINDZINC": ("TK168922", "Hindustan Zinc"),
 }
 
+# --- T3 Run-4 (77): uncovered mid-market ICP firms (250-2500 Cr revenue) ---
+# Fixes the large-cap skew; these are the platform's actual buyer/user profile.
+T3_RUN4 = {
+    "LATENTVIEW": ("TK896212", "Latent View"),
+    "REFEX": ("TK392634", "Refex Industries"),
+    "AXISCADES": ("TK102561", "AXISCADES"),
+    "STYL": ("d9fcd8b34a9647bd89aff2a356af9f4b", "Seshaasai"),
+    "SANOFICONR": ("TK943328", "Sanofi Consumer"),
+    "ANTHEM": ("TK994853", "Anthem Bioscience"),
+    "LLOYDSENT": ("TK587705", "Lloyds Enterprises"),
+    "VOLTAMP": ("TK340686", "Voltamp Transformers"),
+    "MAPMYINDIA": ("__WEB__", "C.E. Info Systems"),
+    "BECTORFOOD": ("TK865653", "Bectors Food"),
+    "LLOYDSENGG": ("TK658053", "Lloyds Engineering"),
+    "RAINBOW": ("TK913420", "Rainbow Childrens"),
+    "JLHL": ("TK942191", "Jupiter Life Line"),
+    "SUDEEPPHRM": ("1767ec93173a4ad39928ee91ff5b3878", "Sudeep Pharma"),
+    "NAZARA": ("TK873615", "Nazara"),
+    "YATHARTH": ("__WEB__", "Yatharth Hospital"),
+    "GPPL": ("TK522478", "Gujarat Pipavav"),
+    "INDIGOPNTS": ("TK868011", "Indigo Paints"),
+    "IGIL": ("__WEB__", "International Gem"),
+    "NETWEB": ("TK939067", "Netweb Technologies"),
+    "SHILPAMED": ("TK359272", "Shilpa Medicare"),
+    "EIEL": ("TK973979", "Enviro Infra"),
+    "NESCO": ("__WEB__", "NESCO"),
+    "TIPSMUSIC": ("TK93478", "Tips Music"),
+    "AARTIPHARM": ("TK888884", "Aarti Pharmalabs"),
+    "QPOWER": ("TK979811", "Quality Power"),
+    "ETHOSLTD": ("__WEB__", "Ethos"),
+    "INDIAMART": ("TK823538", "IndiaMART"),
+    "TRITURBINE": ("TK505801", "Triveni Turbine"),
+    "REDTAPE": ("__WEB__", "Redtape"),
+    "KRN": ("__WEB__", "KRN Heat Exchanger"),
+    "SAFARI": ("__WEB__", "Safari Industries"),
+    "POLYMED": ("TK445140", "Poly Medicure"),
+    "TRAVELFOOD": ("TK994327", "Travel Food Services"),
+    "LOTUSDEV": ("__WEB__", "Sri Lotus Developers"),
+    "RATEGAIN": ("TK898992", "Rategain"),
+    "SUPRIYA": ("TK899945", "Supriya Lifescience"),
+    "AGARWALEYE": ("__WEB__", "Agarwal's Health Care"),
+    "CAPLIPOINT": ("TK322794", "Caplin Point"),
+    "PARAS": ("TK891517", "Paras Defence"),
+    "KIRLPNU": ("TK155497", "Kirloskar Pneumatic"),
+    "GRWRHITECH": ("TK471123", "Garware Hi-Tech"),
+    "KFINTECH": ("TK927133", "KFin Technologies"),
+    "ANUP": ("TK787628", "Anup Engineering"),
+    "INOXINDIA": ("__WEB__", "INOX India"),
+    "HONASA": ("__WEB__", "Honasa"),
+    "AETHER": ("TK915066", "Aether Industries"),
+    "ASTRAMICRO": ("TK186349", "Astra Microwave"),
+    "SHAILY": ("TK370179", "Shaily Engineering"),
+    "JUSTDIAL": ("TK622031", "Just Dial"),
+    "NEWGEN": ("TK781204", "Newgen Software"),
+    "ZAGGLE": ("TK942835", "Zaggle"),
+    "CRIZAC": ("TK993941", "Crizac"),
+    "CORONA": ("4cc4a473913e4f2d966360918467e744", "Corona Remedies"),
+    "ZENTEC": ("TK255777", "Zen Technologies"),
+    "DOMS": ("__WEB__", "DOMS Industries"),
+    "DATAPATTNS": ("__WEB__", "Data Patterns"),
+    "ATLANTAELE": ("__WEB__", "Atlanta Electricals"),
+    "BALUFORGE": ("TK416437", "Balu Forge"),
+    "SUNTECK": ("TK790940", "Sunteck Realty"),
+    "ACUTAAS": ("__WEB__", "Acutaas"),
+    "PTCIL": ("TK366643", "PTC Industries"),
+    "NEULANDLAB": ("TK252090", "Neuland Laboratories"),
+    "SAILIFE": ("TK975441", "Sai Life Sciences"),
+    "APOLLO": ("TK780556", "Apollo Micro"),
+    "CARTRADE": ("TK887221", "CarTrade"),
+    "TDPOWERSYS": ("TK562958", "TD Power Systems"),
+    "CUPID": ("__WEB__", "Cupid Ltd"),
+    "VIJAYA": ("TK889302", "Vijaya Diagnostic"),
+    "AZAD": ("TK950262", "Azad Engineering"),
+    "JSLL": ("TK907569", "Jeena Sikho"),
+    "PICCADIL": ("TK352338", "Piccadily Agro"),
+    "TI": ("TK111692", "Tilaknagar"),
+    "OLECTRA": ("TK109422", "Olectra Greentech"),
+    "CONCORDBIO": ("TK939974", "Concord Biotech"),
+    "MANORAMA": ("TK803372", "Manorama Industries"),
+    "OSWALPUMPS": ("TK991870", "Oswal Pumps"),
+}
+
 
 def company_in_prompt(path):
     try:
@@ -219,7 +301,7 @@ def main():
     # newest first so re-runs pick the latest result per company
     files = sorted(OUT.glob("*M_A-readiness*.json"), key=lambda p: p.stat().st_mtime, reverse=True)
     done = set()
-    universe = {**T1, **T3, **T3_RUN3}
+    universe = {**T1, **T3, **T3_RUN3, **T3_RUN4}
     for tkr, (cid, sub) in universe.items():
         if tkr in done:
             continue
