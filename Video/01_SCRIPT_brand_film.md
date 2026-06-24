@@ -84,3 +84,47 @@ Master brand line, mono gold, centered:
 - Still pending (v3 / final): music bed (sparse cello/piano), optional VO,
   final 30fps --quality high render. WhatsApp sent to TK 2026-06-16 promising an
   early draft "in a day".
+
+---
+
+## v3 render status (2026-06-22)
+Rebuilt to 9 scenes (~72s) on a consistent navy chamber. Changes vs v2:
+- **No blinding white**: the old full-screen cream "turn" scene (s4) redesigned on
+  navy with an "Integration" ghost-word.
+- **4-5 year discipline beat** (TK pt 1, his most emphatic note): new scene on a
+  bespoke cadence lion (concentric floor rings = the multi-year horizon), line
+  "Integration is not a hundred-day sprint. It is a 4-5 year discipline, nurtured
+  each year."
+- **Capability-compounds beat** (TK pt 8): pride-pyramid lion, "Capability is
+  earned, not announced. Several disciplined acquisitions earn the right to one
+  bold one."
+- **Closer fixed** to the locked master line: "Boardroom judgment · Integration
+  leadership · Enterprise-wide M&A capability."
+- **Manifesto** moved onto the profile lion's negative space (fixes v2 text/lion
+  overlap).
+- **Gold readability** (TK pt 4): bright gold only on navy; the cream cockpit card
+  uses the deeper gold-ink.
+- Built with the installed **HyperFrames skill** (lint 0 errors; layout inspect
+  0 issues). New cadence lion generated via Codex imagegen, then **regenerated with
+  the original lions attached as visual reference** after a first attempt drifted
+  too bright/yellow — final asset matches the antique bronze-gold sculpt family.
+
+## v4 render status (2026-06-24) — CURRENT
+Three targeted changes on top of v3 (TK review):
+- **Hero no longer double-pops**: old scenes 1+2 merged into ONE continuous 15s
+  hero shot (#s1, 0-15s). The hero lion fades in once and holds; the eyebrow yields
+  to "You built a company." over the same shot — no fade-out/re-pop.
+- **Richer interactive showcase** (replaces the simplistic 4-row Readiness card):
+  scene 5 is now the **Anchor × Polaris Integration Cockpit** — the real 7-gate
+  spine (Pre-LOI · Diligence · Signing · Day 1 Readiness [active] · Day 100 · Value
+  Capture · Capability Build) with gold progress bars and statuses (3 passed /
+  1 active / 3 pending), an active-gate detail panel (Owner / Evidence / Decision)
+  and live metrics (Workstreams green 9/11 meter, Founder retention Locked).
+  Consistent with the current integration-room.html.
+- **Hyphens, not em/en dashes**, throughout the script and on-screen copy.
+- Draft: `Video/renders/brand-film-v4-draft.mp4` (24fps). Final:
+  `Video/renders/brand-film-v4.mp4` (30fps, --quality high).
+- Still pending: audio (sparse cello/piano music bed + optional VO) — film is silent
+  for now, to be layered after visual lock. Lion-age-by-stage (TK pt: older lion in
+  boardroom, adults in integration, cubs for legacy) is partially expressed (cub on
+  plinths, pride pyramid) but not yet a full age-graded pass.
