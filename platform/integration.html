@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deal Integration - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  .gates{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:6px 0 26px}
+  .g{background:linear-gradient(180deg,rgba(22,42,74,.5),rgba(15,31,58,.35));border:1px solid var(--gold-line);border-radius:8px;padding:14px}
+  .g.passed{border-color:var(--gold-line-strong)} .g.active{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold-dim)}
+  .g .gn{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold-ink)}
+  .g .gnm{font-family:'Playfair Display',serif;font-size:15px;color:#fff;margin:3px 0 8px;min-height:38px}
+  .g .gbar{height:5px;border-radius:3px;background:rgba(255,255,255,.1)}
+  .g.passed .gbar,.g.active .gbar{background:var(--gold)}
+  .g .gs{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;margin-top:8px;color:rgba(255,255,255,.5)}
+  .g.passed .gs,.g.active .gs{color:var(--gold)}
+  .g .go{font-size:11.5px;color:rgba(255,255,255,.6);margin-top:8px;line-height:1.4}
+  .reg{display:flex;gap:10px;flex-wrap:wrap}
+  .reg .r{font-family:'JetBrains Mono',monospace;font-size:11px;padding:6px 12px;border-radius:6px;border:1px solid var(--gold-line)}
+  .reg .r.active{background:var(--gold-dim);color:var(--gold);border-color:var(--gold-line-strong)}
+  .reg .r.na{color:rgba(255,255,255,.4)}
+  .val5{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;background:var(--gold-line);border:1px solid var(--gold-line);border-radius:8px;overflow:hidden}
+  .val5 .v{background:var(--navy);padding:13px}
+  .val5 .v.cur{background:var(--navy-mid)}
+  .val5 .v h4{font-size:13px;color:var(--gold)} .val5 .v p{font-size:12px;color:rgba(255,255,255,.6);margin-top:6px}
+  .moment{border-left:2px solid var(--gold);padding-left:14px;margin:10px 0;color:rgba(255,255,255,.8);font-size:14px}
+</style>
+</head>
+<body>
+  <div class="crumb">CAUSAL THREAD &nbsp;M1 gap &rarr; M4 target &rarr; <b>M5 deal integration</b></div>
+  <div class="phead">
+    <span class="eyebrow">Module 5 · Transaction</span>
+    <h1 id="dtitle">Deal Integration</h1>
+    <p class="lede" id="dlede"></p>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(4,1fr)" id="dkpis"></div>
+
+  <div class="srow"><span class="n">01</span><h2>The seven-gate spine</h2></div>
+  <p class="muted" style="margin-bottom:6px;max-width:82ch">Each gate has an owner, evidence and a single decision. Nothing advances on optimism. The active gate is where the deal sits today.</p>
+  <div class="gates" id="gates"></div>
+
+  <div class="srow"><span class="n">02</span><h2>Integration as a 4-5 year arc</h2></div>
+  <p class="muted" style="margin-bottom:12px;max-width:82ch">The 100-day plan is the opening phase, not the whole. Value is realised - and protected - across the full window.</p>
+  <div class="val5" id="val5"></div>
+
+  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:26px">
+    <div class="card"><span class="lbl">Where it earns the brand</span><div id="moments"></div></div>
+    <div class="card"><span class="lbl">India regulatory lane</span><div class="reg" id="reg" style="margin-top:6px"></div>
+      <div class="muted" style="font-size:12px;margin-top:14px">Workstreams green <b class="gold" id="wsg"></b> · Founder retention <b class="gold" id="fr"></b></div></div>
+  </div>
+
+  <hr class="rule">
+  <p class="muted" style="font-size:13px">This module productises the <a class="gold" href="../integration-room.html">Integration Leadership Room</a> per deal - the full narrative walkthrough (strategic intent, target selection, diligence, guidance, cadence) lives there.</p>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("integration");
+  const d = s.deal;
+  document.getElementById("dtitle").textContent = d.acquirer + " × " + d.target;
+  document.getElementById("dlede").textContent =
+    d.strategicLogic + " · " + d.structure + " · ₹" + d.consideration_cr + " Cr at " + d.multiple + " · " + d.span + ".";
+
+  const active = d.gates.find(g=>g.status==="active");
+  document.getElementById("dkpis").innerHTML = [
+    { l:"Consideration", v:"₹"+d.consideration_cr+" Cr", note:d.multiple },
+    { l:"Active gate", v:"Gate "+active.n+" / 7", note:active.name },
+    { l:"Workstreams green", v:d.workstreamsGreen, note:"Day-1 readiness" },
+    { l:"Founder retention", v:d.founderRetention, note:"key bench + architects" }
+  ].map(k=>`<div class="card"><span class="lbl">${k.l}</span><div class="kpi"><span class="g">${k.v}</span></div><div class="muted" style="font-size:12.5px;margin-top:6px">${k.note}</div></div>`).join("");
+
+  document.getElementById("gates").innerHTML = d.gates.map(g=>`
+    <div class="g ${g.status}">
+      <div class="gn">Gate 0${g.n}</div><div class="gnm">${g.name}</div>
+      <div class="gbar"></div>
+      <div class="gs">${g.status}</div>
+      <div class="go"><b class="mono" style="font-size:9px;color:var(--gold-ink)">OWNER</b> ${g.owner}<br><b class="mono" style="font-size:9px;color:var(--gold-ink)">DECISION</b> ${g.decision}</div>
+    </div>`).join("");
+
+  document.getElementById("val5").innerHTML = s.timeline.map((y,i)=>`
+    <div class="v ${i===0?"cur":""}"><h4>${y.year.split(" (")[0]}</h4><p><b class="gold mono" style="font-size:9px;letter-spacing:.1em">DEAL</b><br>${y.deal}</p><p><b class="gold mono" style="font-size:9px;letter-spacing:.1em">VALUE</b><br>${y.value}</p></div>`).join("");
+
+  document.getElementById("moments").innerHTML = d.provenMoments.map(m=>`<div class="moment">${m}</div>`).join("");
+  document.getElementById("reg").innerHTML = d.regLane.map(r=>{
+    const na = /N\/A/.test(r.status);
+    return `<span class="r ${na?"na":"active"}">${r.body} · ${r.status}</span>`;
+  }).join("");
+  document.getElementById("wsg").textContent = d.workstreamsGreen;
+  document.getElementById("fr").textContent = d.founderRetention;
+})();
+</script>
+</body>
+</html>

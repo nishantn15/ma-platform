@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Learning Journey - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  .layers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .arc{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--gold-line);border:1px solid var(--gold-line);border-radius:10px;overflow:hidden;margin-top:6px}
+  .arc .m{background:var(--navy);padding:18px}
+  .arc .m.done{background:linear-gradient(180deg,rgba(75,143,109,.12),var(--navy))}
+  .arc .m.active{background:var(--navy-mid)}
+  .arc .m h3{font-size:17px} .arc .m .th{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .loop{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}
+  .loop span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--gold-line);border-radius:5px;color:rgba(255,255,255,.6)}
+  .persona{display:flex;align-items:baseline;gap:8px;margin-top:10px;font-size:13px}
+  .persona .nm{color:#fff;font-weight:600}
+</style>
+</head>
+<body>
+  <div class="crumb">CAUSAL THREAD &nbsp;<b>M1 surfaces the capability gap</b> &rarr; M2 idea &rarr; M4 target &rarr; M5 deal</div>
+  <div class="phead">
+    <span class="eyebrow">Module 1 · Capability build</span>
+    <h1>Learning Journey</h1>
+    <p class="lede">The same firm sends leaders to all three layers, three times a year, for several years - a promoter, a senior leader and a functional manager travelling one journey at their own altitude. Teaching is experiential-first: challenge, then gap, then just-in-time theory.</p>
+  </div>
+
+  <div class="srow"><span class="n">01</span><h2>The three layers &middot; this cohort</h2></div>
+  <div class="layers" id="layers"></div>
+
+  <div class="srow"><span class="n">02</span><h2>The yearly arc</h2></div>
+  <p class="muted" style="margin-bottom:6px;max-width:82ch">One shared arc across all three layers. M1 is where Anchor's leaders <b>discovered their own capability gap</b> - the gap that now drives the idea, the target search and the deal.</p>
+  <div class="arc" id="arc"></div>
+
+  <div class="card light" style="margin-top:24px">
+    <span class="lbl">Signature opener &middot; M1 Foundation</span>
+    <h3>"The engine we couldn't build, and the rail we did"</h3>
+    <p style="margin-top:8px;color:var(--ink)">ISRO's cryogenic engine flew after 22 years of failing forward; the Kaveri jet engine, started earlier, still hasn't - because an easy "buy" option quietly killed the will to build. Then UPI: a rail India built and gave the world. The lesson for the room: <b>capability cannot be imported - the artifact is not the capability</b>. Absorbing it is a three-to-five-year act of leadership. That is integration.</p>
+    <div class="persona" style="color:var(--ink-muted)"><span class="tag">This case runs at all three depths - board dilemma (L1), deep-end simulation (L2/L3).</span></div>
+  </div>
+
+  <hr class="rule">
+  <div class="card">
+    <span class="lbl">What M1 produced for this account</span>
+    <div id="gapout" style="font-size:15px;color:#fff"></div>
+  </div>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("learning");
+  document.getElementById("layers").innerHTML = s.learning.layers.map(L=>`
+    <div class="card"><span class="lbl">${L.id} · ${L.name}</span>
+      <div style="color:#fff;font-size:14px">${L.audience}</div>
+      <div class="muted mono" style="font-size:10.5px;letter-spacing:.08em;margin-top:8px">${L.cadence} · ${L.seatFilled} enrolled</div>
+      <div class="muted" style="font-size:12.5px;margin-top:10px">${L.shift}</div>
+      <div class="persona"><span class="tag">MEDIAN PERSONA</span></div>
+      <div style="font-size:13px"><span class="nm">${L.persona.name}</span> - ${L.persona.role}</div>
+      <div class="muted" style="font-size:12px">${L.persona.median}</div>
+    </div>`).join("");
+
+  document.getElementById("arc").innerHTML = s.learning.yearArc.map(m=>`
+    <div class="m ${m.status==="completed"?"done":(m.status==="in_progress"?"active":"")}">
+      <div class="th">${m.id}</div><h3>${m.theme}</h3>
+      ${m.id==="M1"?`<div class="loop">${m.loop.split(" -> ").map(x=>`<span>${x}</span>`).join("")}</div>`:""}
+      <div class="muted" style="font-size:12.5px;margin-top:8px">${m.case}</div>
+      <div class="mono" style="font-size:10px;color:var(--gold-ink);margin-top:10px;letter-spacing:.08em">OUTPUT</div>
+      <div style="font-size:12.5px;color:rgba(255,255,255,.8)">${m.output}</div>
+      <div style="margin-top:10px">${Shell.chip(m.status.replace("_"," "), m.status)}</div>
+    </div>`).join("");
+
+  const g = s.capabilityGap;
+  document.getElementById("gapout").innerHTML =
+    `<b class="gold">Named capability gap:</b> ${g.statement}<br>
+     <span class="muted" style="font-size:13px">Power layer: ${g.powerLayer}. ${g.namedIn} This gap is the seed for the Ideas Funnel (M2) and the capability-gap filter in Target Sourcing (M4).</span>`;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Target Sourcing - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  .tas-head{display:grid;grid-template-columns:2fr repeat(4,1fr) auto;gap:0;align-items:end}
+  .dimchip{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-align:center}
+  .scorecell{text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px}
+  .bar{height:5px;border-radius:3px;background:rgba(255,255,255,.1);margin-top:5px;overflow:hidden}
+  .bar>span{display:block;height:100%;background:var(--gold);border-radius:3px}
+  .totbadge{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold)}
+  .sel{border-left:3px solid var(--gold)}
+  .flow{display:flex;gap:0;margin:6px 0 26px;flex-wrap:wrap}
+  .flow .st{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+    padding:7px 14px;border:1px solid var(--gold-line);color:rgba(255,255,255,.55);border-right:none}
+  .flow .st:last-child{border-right:1px solid var(--gold-line)}
+  .flow .st.on{background:var(--gold-dim);color:var(--gold);border-color:var(--gold-line-strong)}
+  .dt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px}
+  .dt .b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+</style>
+</head>
+<body>
+  <div class="crumb">CAUSAL THREAD &nbsp;<b>M1 gap</b> &rarr; <b>M4 target sourcing</b> &rarr; M5 deal</div>
+  <div class="phead">
+    <span class="eyebrow">Module 4 · Transaction</span>
+    <h1>Target Sourcing</h1>
+    <p class="lede">Capability-led acquisition sourcing. We start from the named capability gap - not a target list - and score candidates on how attractive they are <em>as a target</em>. This is a distinct lens from the Acquisition-Ready Score (which rates acquirers).</p>
+  </div>
+
+  <div class="flow" id="flow"></div>
+
+  <div class="card" style="margin-bottom:26px">
+    <span class="lbl">The gap driving this search</span>
+    <div id="gapbox" style="font-size:16px;color:#fff"></div>
+  </div>
+
+  <div class="srow"><span class="n">TAS</span><h2>Target Attractiveness Score</h2></div>
+  <p class="muted" style="margin-bottom:8px;max-width:82ch">Four orthogonal dimensions (no double-counting), weighted. Scarcity is a tie-breaker, not a scored factor. Every target carries a <b>data-confidence</b> flag - what AlphaSense supplies directly vs what needs manual enrichment.</p>
+  <div id="dims" class="grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px"></div>
+
+  <div class="card light">
+    <table class="t" id="tastable"></table>
+  </div>
+
+  <div class="srow"><span class="n">▸</span><h2>Why Polaris</h2></div>
+  <div class="grid" style="grid-template-columns:1fr 1fr 1fr" id="whichwhy"></div>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("targets");
+  const ts = s.targetSourcing, gap = s.capabilityGap;
+
+  document.getElementById("gapbox").innerHTML =
+    gap.statement + ` <span class="muted">(${gap.powerLayer}; surfaced by ${gap.surfacedBy})</span>`;
+
+  // funnel flow
+  const stages = ["Capability gap","Search criteria","Longlist","TAS scoring","Shortlist","Fit + diligence","Outreach","Selected"];
+  document.getElementById("flow").innerHTML = stages.map((x,i)=>`<span class="st ${i<=7?"on":""}">${x}</span>`).join("");
+
+  // dimension cards
+  document.getElementById("dims").innerHTML = ts.tasDimensions.map(d=>`
+    <div class="card"><span class="lbl">${d.label}</span>
+      <div class="kpi"><span class="g">${Math.round(d.weight*100)}%</span></div>
+      <div class="muted" style="font-size:11.5px;margin-top:6px">${d.note}</div></div>`).join("");
+
+  // TAS table
+  const dims = ts.tasDimensions;
+  let head = `<thead><tr><th>Target</th>` +
+    dims.map(d=>`<th style="text-align:center">${d.label.replace(" (inverse)","")}</th>`).join("") +
+    `<th style="text-align:center">TAS</th><th>Capability match</th></tr></thead>`;
+  let rows = ts.longlist.map(t=>{
+    const cells = dims.map(d=>{
+      const v = t.tas[d.id];
+      return `<td class="scorecell">${v}<div class="bar"><span style="width:${v}%"></span></div></td>`;
+    }).join("");
+    return `<tr class="${t.selected?"sel":""}">
+      <td><b>${t.name}</b><div class="tag">₹${t.revenue_cr} Cr · ${t.ownership}${t.selected?' · SELECTED':(t.shortlisted?' · shortlisted':'')}</div></td>
+      ${cells}
+      <td class="scorecell"><span class="totbadge">${t.tasTotal}</span></td>
+      <td style="font-size:13px">${t.capabilityMatch}<div class="tag" style="margin-top:6px">Data confidence: ${t.dataConfidenceNote}</div></td>
+    </tr>`;
+  }).join("");
+  document.getElementById("tastable").innerHTML = head + "<tbody>" + rows + "</tbody>";
+
+  // why grid
+  const sel = ts.longlist.find(t=>t.selected);
+  const others = ts.longlist.filter(t=>!t.selected);
+  document.getElementById("whichwhy").innerHTML = `
+    <div class="card"><span class="lbl">Thesis filter</span>
+      <div style="color:#fff">${ts.thesisFilter}</div>
+      <div class="muted" style="font-size:12px;margin-top:8px">${ts.outreach.note}</div></div>
+    <div class="card sel"><span class="lbl">Selected · ${sel.name}</span>
+      <div class="totbadge">${sel.tasTotal} TAS</div>
+      <div style="color:#fff;font-size:14px;margin-top:6px">${sel.capabilityMatch}</div>
+      <div class="muted mono" style="font-size:11px;margin-top:10px">${ts.outreach.status}</div></div>
+    <div class="card"><span class="lbl">Why not the others</span>
+      ${others.map(o=>`<div style="margin-bottom:10px"><b>${o.name}</b> <span class="muted">(${o.tasTotal})</span><div class="muted" style="font-size:12px">${o.capabilityMatch}</div></div>`).join("")}</div>`;
+})();
+</script>
+</body>
+</html>

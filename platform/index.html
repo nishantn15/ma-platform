@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Account Home - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+  <div class="phead">
+    <span class="eyebrow">The five-year capability workspace</span>
+    <h1 id="h-title">Account Home</h1>
+    <p class="lede" id="h-lede"></p>
+  </div>
+
+  <div class="grid" style="grid-template-columns:repeat(4,1fr)" id="kpis"></div>
+
+  <div class="srow"><span class="n">01</span><h2>The five-year arc</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:80ch">One company, one capability journey. Every module reports onto this spine - learning surfaces the gap, ideas and targets act on it, the deal integrates it, and value compounds over five years.</p>
+  <div class="spine" id="spine"></div>
+
+  <div class="srow"><span class="n">02</span><h2>Modules, live</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:80ch">Each tile shows the real state of that module for this account - not a placeholder. Click through to work in it.</p>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr)" id="modtiles"></div>
+
+  <hr class="rule">
+  <p class="muted" style="font-size:12.5px">The workspace does not end when the classroom ends. Modules for Ideas, Patents and Integration remain usable across the full five-year window for each onboarded account.</p>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("home");
+  const a = s.account, gap = s.capabilityGap, d = s.deal, ts = s.targetSourcing;
+  document.getElementById("h-title").textContent = a.company;
+  document.getElementById("h-lede").textContent =
+    "Onboarded " + a.onboarded + " · " + (a.seats.L1+a.seats.L2+a.seats.L3) +
+    " leaders across L1/L2/L3 · " + a.tagline + ".";
+
+  // KPIs pulled live from the spine
+  const activeGate = d.gates.find(g => g.status === "active") || d.gates[d.gates.length-1];
+  const kpis = [
+    { l:"Capability gap", v:"Named", note: gap.powerLayer },
+    { l:"Target selected", v: ts.longlist.find(t=>t.selected).name.split(" ")[0], note: "TAS "+ts.longlist.find(t=>t.selected).tasTotal+" · of "+ts.longlist.length+" scored" },
+    { l:"Deal stage", v:"Gate "+activeGate.n+" / 7", note: activeGate.name },
+    { l:"Workstreams green", v:d.workstreamsGreen, note:"Founder retention "+d.founderRetention.toLowerCase() }
+  ];
+  document.getElementById("kpis").innerHTML = kpis.map(k => `
+    <div class="card"><span class="lbl">${k.l}</span>
+      <div class="kpi"><span class="g">${k.v}</span></div>
+      <div class="muted" style="font-size:12.5px;margin-top:6px">${k.note}</div></div>`).join("");
+
+  // 5-year spine
+  document.getElementById("spine").innerHTML = s.timeline.map((y,i) => `
+    <div class="yr ${i===0?"cur":""}">
+      <h4>${y.year}</h4>
+      <div class="row"><b>Learning</b>${y.learning}</div>
+      <div class="row"><b>Ideas</b>${y.ideas}</div>
+      <div class="row"><b>Targets</b>${y.targets}</div>
+      <div class="row"><b>Deal</b>${y.deal}</div>
+      <div class="row"><b>Value</b>${y.value}</div>
+    </div>`).join("");
+
+  // module tiles with real state
+  const m1done = s.learning.yearArc.filter(m=>m.status==="completed").length;
+  const idea = s.idea;
+  const tiles = [
+    { id:"learning", href:"learning.html", n:"M1", t:"Learning Journey",
+      state:`${m1done}/3 modules complete this year · ${a.seats.L1+a.seats.L2+a.seats.L3} leaders`,
+      hook:`Gap surfaced: ${gap.powerLayer}` },
+    { id:"ideas", href:"ideas.html", n:"M2", t:"Ideas Funnel",
+      state:`"${idea.title}" · stage: ${idea.stage}`,
+      hook:`${idea.horizonYears}-year horizon · from the named gap` },
+    { id:"exchange", href:"exchange.html", n:"M3", t:"Patent Exchange",
+      state:`${s.patentAlternative.institute} · lineage-engine patent evaluated`,
+      hook:`Decision: ${s.patentAlternative.pathway}` },
+    { id:"targets", href:"targets.html", n:"M4", t:"Target Sourcing",
+      state:`${ts.longlist.length} scored · ${ts.longlist.find(t=>t.selected).name} selected`,
+      hook:`TAS on 4 dimensions · ${ts.outreach.status}` },
+    { id:"integration", href:"integration.html", n:"M5", t:"Deal Integration",
+      state:`${d.acquirer} × ${d.target} · ₹${d.consideration_cr} Cr`,
+      hook:`Gate ${activeGate.n}/7 active · ${d.workstreamsGreen} green` }
+  ];
+  document.getElementById("modtiles").innerHTML = tiles.map(m => `
+    <a class="card" href="${m.href}" style="display:block">
+      <span class="lbl">${m.n} · ${m.t}</span>
+      <div style="font-size:15px;color:#fff;margin:4px 0 8px">${m.state}</div>
+      <div class="muted" style="font-size:12.5px">${m.hook}</div>
+      <div class="gold mono" style="font-size:11px;margin-top:12px;letter-spacing:.1em">OPEN &rarr;</div>
+    </a>`).join("");
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "name": "Anchor x Polaris canonical data spine",
+    "purpose": "Single source of truth every platform module reads from. Shared IDs, dates, scores, labels keep the 5 modules causally connected (state continuity). Edit here, not in pages.",
+    "version": "1.0",
+    "generated": "2026-07-09"
+  },
+
+  "account": {
+    "id": "anchor",
+    "company": "Anchor Tech Services Ltd",
+    "revenue_cr": 4800,
+    "listing": "Listed",
+    "sector": "BFSI technology services",
+    "onboarded": "2026-04",
+    "programYear": 1,
+    "programSpan": 5,
+    "cohort": "Cohort 1 - 2026",
+    "seats": { "L1": 2, "L2": 5, "L3": 9 },
+    "tagline": "Year 1 of 5 - capability build in progress"
+  },
+
+  "capabilityGap": {
+    "id": "gap-specialty-data-eng",
+    "statement": "Anchor's growth runway in BFSI is bound by specialty data-engineering capacity, not by client demand.",
+    "namedIn": "Board commitment, in writing - a five-year capability shortfall with named consequences.",
+    "powerLayer": "Design / IP + Process know-how",
+    "surfacedBy": "L1 Council - The Stillness (M1 Foundation), 2026-05",
+    "closesWith": "build / buy / partner / acquire decision -> acquire (Polaris)"
+  },
+
+  "learning": {
+    "layers": [
+      { "id": "L1", "name": "The Council", "audience": "Board, CEOs, promoters", "cadence": "2.5 days x3 / year", "shift": "decision-maker -> invention-agenda owner", "seatFilled": 2,
+        "persona": { "name": "Vikram Anand", "role": "Managing Director, Anchor", "median": "promoter-CEO, 25+ yrs, growth-hungry but capability-constrained" } },
+      { "id": "L2", "name": "The Watch", "audience": "BU heads, VPs, senior & integration leaders", "cadence": "4.5 days x3 / year", "shift": "senior leader -> growth architect", "seatFilled": 5,
+        "persona": { "name": "Meera Rao", "role": "SVP Delivery, Anchor", "median": "CXO/BU lead, 18-25 yrs, owns the P&L and the integration" } },
+      { "id": "L3", "name": "The Pride", "audience": "Functional & high-potential leaders (8-15 yrs)", "cadence": "4.5 days x3 / year", "shift": "functional manager -> enterprise-aware innovator", "seatFilled": 9,
+        "persona": { "name": "Arjun Nair", "role": "Engineering Manager, Anchor", "median": "budding functional leader who can grow into an enterprise lead" } }
+    ],
+    "yearArc": [
+      { "id": "M1", "theme": "Foundation - discover the gap", "loop": "challenge -> gap analysis -> just-in-time theory -> synthesis",
+        "case": "The engine we couldn't build (ISRO cryogenic vs Kaveri jet) - capability cannot be imported; absorption is a 3-5 year act.",
+        "output": "Enterprise Invention Agenda + personal Driver Statement", "status": "completed", "date": "2026-05" },
+      { "id": "M2", "theme": "Design the Capability Pathway - Patent, Partner or Acquire",
+        "case": "Anchor's specialty data-engineering gap scored across build/license/collaborate/partner/invest/acquire.",
+        "output": "Capability Pathway Design (scored)", "status": "completed", "date": "2026-08" },
+      { "id": "M3", "theme": "Practical Hands-On - integrate and apply",
+        "case": "Polaris integration simulation; Integration Leadership Room capstone (L1).",
+        "output": "Enterprise Growth & Integration Charter", "status": "in_progress", "date": "2026-11" }
+    ]
+  },
+
+  "idea": {
+    "id": "idea-bfsi-data-accelerator",
+    "title": "BFSI Specialty Data-Engineering Accelerator",
+    "origin": "M1 Foundation - Anchor's named capability gap",
+    "stage": "sponsored",
+    "stages": ["submitted","brainstormed","evaluated","shortlisted","sponsored","funded","team","pilot","milestones","scaled"],
+    "canvas": {
+      "problem": "BFSI clients need specialty data-engineering Anchor cannot staff fast enough.",
+      "capabilityCreated": "An in-house specialty data-engineering practice (people + process + IP).",
+      "route": "Buy beats build on speed; a patent alternative was evaluated and did not close the talent gap.",
+      "first90": "Stand up a 12-person nucleus; win one lighthouse BFSI mandate."
+    },
+    "horizonYears": 5,
+    "linkedGap": "gap-specialty-data-eng"
+  },
+
+  "patentAlternative": {
+    "id": "patent-streaming-lineage",
+    "title": "Real-time data-lineage engine for regulated pipelines",
+    "institute": "IIT Roorkee",
+    "inventor": "Dr. S. Iyer, Dept. of Computer Science",
+    "brief": "A method for automated, audit-grade data lineage across streaming financial pipelines - directly relevant to BFSI compliance.",
+    "decisionInThread": "Evaluated against the Polaris acquisition for closing Anchor's gap.",
+    "verdict": "License-and-build considered; did NOT beat Polaris because the patent supplies invention-side IP but not the trained senior bench and live BFSI client relationships Anchor needed on a 12-month horizon. Kept as a Year-2 licensing option to deepen the acquired capability.",
+    "pathway": "license / sponsored research (deferred to Year 2)"
+  },
+
+  "targetSourcing": {
+    "thesisFilter": "founder-led, balance-sheet vulnerable, BFSI-friendly, senior bench depth",
+    "tasDimensions": [
+      { "id": "transactability", "label": "Transactability", "weight": 0.30, "note": "valuation headroom + promoter/succession exit signal + distress/turnaround" },
+      { "id": "strategicFit", "label": "Strategic fit", "weight": 0.35, "note": "capability match to the named gap + fragmentation/roll-up fit" },
+      { "id": "integrationRisk", "label": "Integration risk (inverse)", "weight": 0.25, "note": "size ratio + founder-dependency + regulatory/execution friction (India reg lane)" },
+      { "id": "dataConfidence", "label": "Data confidence", "weight": 0.10, "note": "how much is AlphaSense-supplied vs needs manual enrichment" }
+    ],
+    "scaleNote": "Each dimension scored 0-100; TAS = weighted sum. Scarcity is a tie-breaker, not a scored factor.",
+    "longlist": [
+      { "id": "polaris", "name": "Polaris Data Group", "revenue_cr": 380, "ownership": "Founder-led", "shortlisted": true, "selected": true,
+        "tas": { "transactability": 82, "strategicFit": 91, "integrationRisk": 70, "dataConfidence": 65 }, "tasTotal": 83,
+        "capabilityMatch": "Specialty data engineering - exact match to the gap; strong BFSI client base.",
+        "dataConfidenceNote": "Financials + ownership AlphaSense-supplied; succession/culture manually enriched." },
+      { "id": "meridian", "name": "Meridian Analytics", "revenue_cr": 520, "ownership": "PE-backed", "shortlisted": true, "selected": false,
+        "tas": { "transactability": 55, "strategicFit": 74, "integrationRisk": 60, "dataConfidence": 72 }, "tasTotal": 65,
+        "capabilityMatch": "Adjacent analytics; partial gap fit. PE ownership lowers transactability (price + timing).",
+        "dataConfidenceNote": "Mostly AlphaSense-supplied." },
+      { "id": "cobalt", "name": "Cobalt Systems", "revenue_cr": 240, "ownership": "Founder-led", "shortlisted": true, "selected": false,
+        "tas": { "transactability": 78, "strategicFit": 63, "integrationRisk": 48, "dataConfidence": 55 }, "tasTotal": 64,
+        "capabilityMatch": "Strong bench but generalist; higher integration risk (founder-dependency, thin process).",
+        "dataConfidenceNote": "Private; succession + margin trend need manual enrichment." }
+    ],
+    "outreach": { "selected": "polaris", "status": "LOI issued -> signed", "note": "Three names cleared the thesis filter; Polaris chosen on highest TAS + exact capability match." }
+  },
+
+  "deal": {
+    "id": "deal-polaris",
+    "acquirer": "Anchor Tech Services",
+    "target": "Polaris Data Group",
+    "consideration_cr": 1150,
+    "multiple": "3.0x revenue",
+    "structure": "Cash + earnout",
+    "strategicLogic": "Specialty data engineering; BFSI client unlock",
+    "span": "Day 0 -> Year 5",
+    "gates": [
+      { "n": 1, "name": "Pre-LOI", "status": "passed", "owner": "Strategy Head + Board Sponsor", "decision": "Approach approved - LOI issued" },
+      { "n": 2, "name": "Diligence", "status": "passed", "owner": "CFO + Diligence Lead", "decision": "Findings cleared - valuation confirmed at 3.0x" },
+      { "n": 3, "name": "Signing", "status": "passed", "owner": "Board + Legal", "decision": "Definitive agreement executed; founder retention + non-compete; CCI clearance" },
+      { "n": 4, "name": "Day 1 Readiness", "status": "active", "owner": "IMO Lead", "decision": "Confirm close-ready - target 9 of 11 workstreams green" },
+      { "n": 5, "name": "Day 100", "status": "pending", "owner": "IMO Lead + Business Head", "decision": "Confirm integration thesis holding" },
+      { "n": 6, "name": "Value Capture", "status": "pending", "owner": "CFO + Business Head", "decision": "Deal economics on track through the 4-5 year window" },
+      { "n": 7, "name": "Capability Build", "status": "pending", "owner": "Board + L2 Cohort", "decision": "Authorise programmatic acquisition roadmap" }
+    ],
+    "workstreamsGreen": "9 / 11",
+    "founderRetention": "Locked",
+    "provenMoments": [
+      "Client stop-work in week 6 - response runtime 36 hours.",
+      "Key architects waver in Year 3 - retention design holds the value most deals leak."
+    ],
+    "regLane": [
+      { "body": "CCI", "status": "active" },
+      { "body": "Ind AS 103", "status": "active" },
+      { "body": "SEBI / NCLT / FEMA", "status": "N/A - private deal" }
+    ]
+  },
+
+  "timeline": [
+    { "year": "Year 1 (2026)", "learning": "M1-M3 across L1/L2/L3; gap named", "ideas": "Accelerator idea sponsored", "targets": "Longlist scored; Polaris selected", "deal": "Gates 1-4 (LOI -> Day 1)", "value": "Integration begins" },
+    { "year": "Year 2 (2027)", "learning": "Year-2 cohort; patent licensing option revisited", "ideas": "Accelerator funded + piloted", "targets": "Roadmap for next programmatic target", "deal": "Day 100 -> Value Capture", "value": "Synergy realisation begins" },
+    { "year": "Year 3 (2028)", "learning": "L3 champions graduate", "ideas": "Accelerator scaling", "targets": "-", "deal": "Retention holds (architects); value protected", "value": "Cross-sell pipeline live" },
+    { "year": "Year 4 (2029)", "learning": "Capability institutionalised", "ideas": "New ideas from combined entity", "targets": "Second target evaluated", "deal": "Capability build gate", "value": "Deal economics on plan" },
+    { "year": "Year 5 (2030)", "learning": "Enterprise Renewal Charter", "ideas": "Portfolio governed", "targets": "Programmatic acquirer", "deal": "Institutional renewal", "value": "Capability owned, not rented" }
+  ]
+}

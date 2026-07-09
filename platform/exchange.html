@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Patent-to-Enterprise Exchange - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .pat{background:linear-gradient(180deg,rgba(22,42,74,.5),rgba(15,31,58,.35));border:1px solid var(--gold-line);border-radius:9px;padding:16px}
+  .pat.match{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-dim)}
+  .pat .inst{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+  .pat h3{font-size:15px;margin:6px 0} .pat p{font-size:12.5px;color:rgba(255,255,255,.62)}
+  .pat .path{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+  .funnel{display:flex;flex-wrap:wrap;gap:0;margin:6px 0 8px}
+  .funnel span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gold-line);border-right:none;color:rgba(255,255,255,.55)}
+  .funnel span:last-child{border-right:1px solid var(--gold-line)}
+  .verdict{border-left:3px solid var(--gold)}
+</style>
+</head>
+<body>
+  <div class="crumb">CAUSAL THREAD &nbsp;M1 gap &rarr; <b>M3 patent exchange</b> (evaluated vs the deal) &rarr; M4/M5</div>
+  <div class="phead">
+    <span class="eyebrow">Module 3 · Capability build</span>
+    <h1>Patent-to-Enterprise Exchange</h1>
+    <p class="lede">A curated industry-university translation room. Not an academic exhibition - leaders explore patents as business capability and decide: license, sponsor, pilot, invest, or acquire-adjacent. Anchored by IIT Roorkee, expanding to other institutes.</p>
+  </div>
+
+  <div class="funnel" id="funnel"></div>
+
+  <div class="srow"><span class="n">▸</span><h2>The decision that mattered here</h2></div>
+  <p class="muted" style="margin-bottom:8px;max-width:82ch">One patent addressed Anchor's exact capability gap - so it was scored <b>against the Polaris acquisition</b>. The Exchange is a decision system, not a library.</p>
+  <div class="card light verdict" id="decision"></div>
+
+  <div class="srow"><span class="n">01</span><h2>Gallery &middot; IIT Roorkee &amp; partners</h2></div>
+  <div class="gallery" id="gallery"></div>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("exchange");
+  const pa = s.patentAlternative;
+
+  document.getElementById("funnel").innerHTML =
+    ["Gallery","Walkthrough","Canvas","EOI","Technical deep-dive","Commercial assessment","IP discussion","Pilot"]
+    .map((x,i)=>`<span>${x}</span>`).join("");
+
+  document.getElementById("decision").innerHTML = `
+    <span class="lbl">${pa.title} · ${pa.institute}</span>
+    <h3 style="margin:4px 0">Patent vs acquisition - why the deal won</h3>
+    <p style="color:var(--ink);font-size:14px">${pa.brief}</p>
+    <p style="color:var(--ink);font-size:14px;margin-top:10px"><b>Verdict:</b> ${pa.verdict}</p>
+    <div class="tag" style="margin-top:10px;color:var(--gold-ink)">PATHWAY: ${pa.pathway}</div>`;
+
+  // gallery: the decision patent + a plausible curated set across BFSI-relevant domains
+  const patents = [
+    { inst:pa.institute, title:pa.title, use:"Audit-grade lineage for regulated financial pipelines.", path:pa.pathway, match:true, who:pa.inventor },
+    { inst:"IIT Roorkee", title:"Privacy-preserving federated credit scoring", use:"Train risk models across banks without sharing raw data.", path:"sponsored research" },
+    { inst:"IIT Roorkee", title:"Low-latency fraud-graph engine", use:"Real-time transaction fraud detection at scale.", path:"license / pilot" },
+    { inst:"IIT Kanpur", title:"Explainable-AI toolkit for lending decisions", use:"Regulator-ready model explanations.", path:"joint development" },
+    { inst:"IISc", title:"Homomorphic encryption for analytics", use:"Compute on encrypted BFSI data.", path:"invest / co-develop" },
+    { inst:"IIT Bombay", title:"Document-intelligence for KYC", use:"Automated extraction from onboarding documents.", path:"license" }
+  ];
+  document.getElementById("gallery").innerHTML = patents.map(p=>`
+    <div class="pat ${p.match?"match":""}">
+      <div class="inst">${p.inst}${p.match?" · gap match":""}</div>
+      <h3>${p.title}</h3>
+      <p>${p.use}</p>
+      ${p.who?`<p class="muted" style="font-size:11px;margin-top:6px">${p.who}</p>`:""}
+      <div class="path">${p.path}</div>
+    </div>`).join("");
+})();
+</script>
+</body>
+</html>
