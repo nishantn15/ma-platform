@@ -13,7 +13,7 @@
   .bar{height:5px;border-radius:3px;background:rgba(255,255,255,.1);margin-top:5px;overflow:hidden}
   .bar>span{display:block;height:100%;background:var(--gold);border-radius:3px}
   .totbadge{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold)}
-  .sel{border-left:3px solid var(--gold)}
+  .sel{border:1px solid var(--gold);box-shadow:0 0 0 1px var(--gold-dim)}
   .flow{display:flex;gap:0;margin:6px 0 26px;flex-wrap:wrap}
   .flow .st{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
     padding:7px 14px;border:1px solid var(--gold-line);color:rgba(255,255,255,.55);border-right:none}
@@ -21,6 +21,7 @@
   .flow .st.on{background:var(--gold-dim);color:var(--gold);border-color:var(--gold-line-strong)}
   .dt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px}
   .dt .b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+  @media(max-width:860px){.dt{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -40,14 +41,14 @@
 
   <div class="srow"><span class="n">TAS</span><h2>Target Attractiveness Score</h2></div>
   <p class="muted" style="margin-bottom:8px;max-width:82ch">Four orthogonal dimensions (no double-counting), weighted. Scarcity is a tie-breaker, not a scored factor. Every target carries a <b>data-confidence</b> flag - what AlphaSense supplies directly vs what needs manual enrichment.</p>
-  <div id="dims" class="grid" style="grid-template-columns:repeat(4,1fr);margin-bottom:20px"></div>
+  <div id="dims" class="cols-4" style="margin-bottom:20px"></div>
 
   <div class="card light">
     <table class="t" id="tastable"></table>
   </div>
 
   <div class="srow"><span class="n">▸</span><h2>Why Polaris</h2></div>
-  <div class="grid" style="grid-template-columns:1fr 1fr 1fr" id="whichwhy"></div>
+  <div class="cols-3" id="whichwhy"></div>
 
 <script src="assets/shell.js"></script>
 <script>

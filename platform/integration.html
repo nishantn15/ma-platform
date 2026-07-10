@@ -25,7 +25,8 @@
   .val5 .v{background:var(--navy);padding:13px}
   .val5 .v.cur{background:var(--navy-mid)}
   .val5 .v h4{font-size:13px;color:var(--gold)} .val5 .v p{font-size:12px;color:rgba(255,255,255,.6);margin-top:6px}
-  .moment{border-left:2px solid var(--gold);padding-left:14px;margin:10px 0;color:rgba(255,255,255,.8);font-size:14px}
+  .moment{border:1px solid var(--gold-line);border-radius:8px;padding:12px 14px;margin:10px 0;color:rgba(255,255,255,.82);font-size:14px;background:var(--gold-glow)}
+  @media(max-width:860px){.gates{grid-template-columns:repeat(2,1fr)!important}.val5{grid-template-columns:1fr!important}.dt{grid-template-columns:1fr!important}}
 </style>
 </head>
 <body>
@@ -36,17 +37,17 @@
     <p class="lede" id="dlede"></p>
   </div>
 
-  <div class="grid" style="grid-template-columns:repeat(4,1fr)" id="dkpis"></div>
+  <div class="cols-4" id="dkpis"></div>
 
-  <div class="srow"><span class="n">01</span><h2>The seven-gate spine</h2></div>
+  <div class="srow"><span class="n">Gates</span><h2>The seven-gate spine</h2></div>
   <p class="muted" style="margin-bottom:6px;max-width:82ch">Each gate has an owner, evidence and a single decision. Nothing advances on optimism. The active gate is where the deal sits today.</p>
   <div class="gates" id="gates"></div>
 
-  <div class="srow"><span class="n">02</span><h2>Integration as a 4-5 year arc</h2></div>
+  <div class="srow"><span class="n">5yr</span><h2>Integration as a 4-5 year arc</h2></div>
   <p class="muted" style="margin-bottom:12px;max-width:82ch">The 100-day plan is the opening phase, not the whole. Value is realised - and protected - across the full window.</p>
   <div class="val5" id="val5"></div>
 
-  <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:26px">
+  <div class="cols-2" style="margin-top:26px">
     <div class="card"><span class="lbl">Where it earns the brand</span><div id="moments"></div></div>
     <div class="card"><span class="lbl">India regulatory lane</span><div class="reg" id="reg" style="margin-top:6px"></div>
       <div class="muted" style="font-size:12px;margin-top:14px">Workstreams green <b class="gold" id="wsg"></b> · Founder retention <b class="gold" id="fr"></b></div></div>

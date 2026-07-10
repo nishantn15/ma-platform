@@ -7,7 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <style>
-  .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
   .pat{background:linear-gradient(180deg,rgba(22,42,74,.5),rgba(15,31,58,.35));border:1px solid var(--gold-line);border-radius:9px;padding:16px}
   .pat.match{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-dim)}
   .pat .inst{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
@@ -16,7 +16,7 @@
   .funnel{display:flex;flex-wrap:wrap;gap:0;margin:6px 0 8px}
   .funnel span{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--gold-line);border-right:none;color:rgba(255,255,255,.55)}
   .funnel span:last-child{border-right:1px solid var(--gold-line)}
-  .verdict{border-left:3px solid var(--gold)}
+  .verdict{box-shadow:0 0 0 1px var(--gold-dim)}
 </style>
 </head>
 <body>
@@ -33,7 +33,7 @@
   <p class="muted" style="margin-bottom:8px;max-width:82ch">One patent addressed Anchor's exact capability gap - so it was scored <b>against the Polaris acquisition</b>. The Exchange is a decision system, not a library.</p>
   <div class="card light verdict" id="decision"></div>
 
-  <div class="srow"><span class="n">01</span><h2>Gallery &middot; IIT Roorkee &amp; partners</h2></div>
+  <div class="srow"><span class="n">Gallery</span><h2>IIT Roorkee &amp; partners</h2></div>
   <div class="gallery" id="gallery"></div>
 
 <script src="assets/shell.js"></script>
