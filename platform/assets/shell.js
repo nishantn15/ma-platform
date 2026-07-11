@@ -18,6 +18,14 @@ const Shell = (() => {
     return _spine;
   }
 
+  // M4 live public-data capability screen (real AlphaSense-sourced comparables)
+  let _targets = null;
+  async function targets() {
+    if (_targets) return _targets;
+    _targets = await fetch("data/targets.json").then(r => r.json());
+    return _targets;
+  }
+
   function nav(active) {
     let html = "", lastGrp = "";
     for (const m of MODULES) {
@@ -65,5 +73,5 @@ const Shell = (() => {
   const chipClass = st => ({ passed:"done", done:"done", completed:"done", active:"active", in_progress:"active" }[st] || "pending");
   const chip = (txt, st) => `<span class="chip ${chipClass(st)}">${txt}</span>`;
 
-  return { mount, spine, chip, chipClass, MODULES };
+  return { mount, spine, targets, chip, chipClass, MODULES };
 })();

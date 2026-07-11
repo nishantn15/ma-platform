@@ -7,20 +7,23 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/theme.css">
 <style>
-  .tas-head{display:grid;grid-template-columns:2fr repeat(4,1fr) auto;gap:0;align-items:end}
-  .dimchip{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);text-align:center}
-  .scorecell{text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px}
-  .bar{height:5px;border-radius:3px;background:rgba(255,255,255,.1);margin-top:5px;overflow:hidden}
+  .scorecell{text-align:center;font-family:'JetBrains Mono',monospace;font-size:13px;white-space:nowrap}
+  .bar{height:5px;border-radius:3px;background:#ece6d8;margin-top:5px;overflow:hidden}
   .bar>span{display:block;height:100%;background:var(--gold);border-radius:3px}
-  .totbadge{font-family:'Playfair Display',serif;font-size:26px;color:var(--gold)}
-  .sel{border:1px solid var(--gold);box-shadow:0 0 0 1px var(--gold-dim)}
+  .totbadge{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold-ink);line-height:1}
+  .sel td{background:rgba(201,168,76,.06)}
   .flow{display:flex;gap:0;margin:6px 0 26px;flex-wrap:wrap}
   .flow .st{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;
     padding:7px 14px;border:1px solid var(--gold-line);color:rgba(255,255,255,.55);border-right:none}
   .flow .st:last-child{border-right:1px solid var(--gold-line)}
   .flow .st.on{background:var(--gold-dim);color:var(--gold);border-color:var(--gold-line-strong)}
-  .dt{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:6px}
-  .dt .b{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink)}
+  .rank{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold-ink);width:18px;display:inline-block}
+  .src{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.04em;color:var(--ink-muted);margin-top:6px}
+  .excl{display:flex;flex-direction:column;gap:9px}
+  .excl .x b{color:#fff} .card.light .excl .x b{color:var(--ink)}
+  .live-note{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--gold);border:1px solid var(--gold-line-strong);background:var(--gold-dim);border-radius:20px;
+    padding:5px 13px;display:inline-flex;gap:8px;align-items:center}
   @media(max-width:860px){.dt{grid-template-columns:1fr!important}}
 </style>
 </head>
@@ -29,7 +32,7 @@
   <div class="phead">
     <span class="eyebrow">Module 4 · Transaction</span>
     <h1>Target Sourcing</h1>
-    <p class="lede">Capability-led acquisition sourcing. We start from the named capability gap - not a target list - and score candidates on how attractive they are <em>as a target</em>. This is a distinct lens from the Acquisition-Ready Score (which rates acquirers).</p>
+    <p class="lede">Capability-led acquisition sourcing. We start from the named capability gap - not a target list - and score candidates on how attractive they are <em>as a target</em>. This is a distinct lens from the Acquisition-Ready Score, which rates acquirers.</p>
   </div>
 
   <div class="flow" id="flow"></div>
@@ -39,68 +42,107 @@
     <div id="gapbox" style="font-size:16px;color:#fff"></div>
   </div>
 
-  <div class="srow"><span class="n">TAS</span><h2>Target Attractiveness Score</h2></div>
-  <p class="muted" style="margin-bottom:8px;max-width:82ch">Four orthogonal dimensions (no double-counting), weighted. Scarcity is a tie-breaker, not a scored factor. Every target carries a <b>data-confidence</b> flag - what AlphaSense supplies directly vs what needs manual enrichment.</p>
+  <div class="srow"><span class="n">Live</span><h2>Public-data capability screen</h2></div>
+  <div id="livehead" style="margin-bottom:14px"></div>
+
+  <div class="srow" style="margin-top:8px"><span class="n">TAS</span><h2>Target Attractiveness Score</h2></div>
+  <p class="muted" style="margin-bottom:8px;max-width:82ch">Four orthogonal dimensions (no double-counting), weighted. Scarcity is a tie-breaker, not a scored factor. Every candidate carries a <b>data-confidence</b> flag - what AlphaSense supplies directly vs what needs manual enrichment.</p>
   <div id="dims" class="cols-4" style="margin-bottom:20px"></div>
 
-  <div class="card light">
+  <div class="card light" style="margin-bottom:12px">
     <table class="t" id="tastable"></table>
   </div>
+  <p class="muted" id="disc" style="font-size:12px;max-width:88ch;margin-bottom:34px"></p>
 
-  <div class="srow"><span class="n">▸</span><h2>Why Polaris</h2></div>
-  <div class="cols-3" id="whichwhy"></div>
+  <div class="cols-2" style="margin-bottom:34px">
+    <div class="card"><span class="lbl">Read of the screen</span><div id="readout"></div></div>
+    <div class="card"><span class="lbl">Filtered out (and why)</span><div class="excl" id="excl" style="margin-top:6px"></div></div>
+  </div>
+
+  <hr class="rule">
+
+  <div class="srow"><span class="n">Case</span><h2>The illustrative acquisition thread</h2></div>
+  <div class="card light">
+    <div id="threadbox"></div>
+  </div>
 
 <script src="assets/shell.js"></script>
 <script>
 (async () => {
   const s = await Shell.mount("targets");
-  const ts = s.targetSourcing, gap = s.capabilityGap;
+  const T = await Shell.targets();
+  const gap = s.capabilityGap, ts = s.targetSourcing;
 
   document.getElementById("gapbox").innerHTML =
     gap.statement + ` <span class="muted">(${gap.powerLayer}; surfaced by ${gap.surfacedBy})</span>`;
 
   // funnel flow
-  const stages = ["Capability gap","Search criteria","Longlist","TAS scoring","Shortlist","Fit + diligence","Outreach","Selected"];
-  document.getElementById("flow").innerHTML = stages.map((x,i)=>`<span class="st ${i<=7?"on":""}">${x}</span>`).join("");
+  const stages = ["Capability gap","Search criteria","Public screen","TAS scoring","Read + filter","Confidential targets","Selection","Deal"];
+  document.getElementById("flow").innerHTML = stages.map((x,i)=>`<span class="st ${i<=6?"on":""}">${x}</span>`).join("");
 
-  // dimension cards
+  // live source header
+  document.getElementById("livehead").innerHTML = `
+    <span class="live-note">● AlphaSense market scan · as of ${T._meta.asOf}</span>
+    <p class="muted" style="margin-top:12px;max-width:88ch">${T._meta.disclaimer} Screened on listed comparables against Anchor's thesis: <em>${T._meta.thesis}</em></p>`;
+
+  // dimension cards (from the canonical spine - one definition of TAS everywhere)
   document.getElementById("dims").innerHTML = ts.tasDimensions.map(d=>`
     <div class="card"><span class="lbl">${d.label}</span>
       <div class="kpi"><span class="g">${Math.round(d.weight*100)}%</span></div>
       <div class="muted" style="font-size:11.5px;margin-top:6px">${d.note}</div></div>`).join("");
 
-  // TAS table
+  // ranked TAS table over the REAL candidates
   const dims = ts.tasDimensions;
-  let head = `<thead><tr><th>Target</th>` +
+  const ranked = [...T.candidates].sort((a,b)=>b.tasTotal-a.tasTotal);
+  let head = `<thead><tr><th>Candidate (listed)</th>` +
     dims.map(d=>`<th style="text-align:center">${d.label.replace(" (inverse)","")}</th>`).join("") +
-    `<th style="text-align:center">TAS</th><th>Capability match</th></tr></thead>`;
-  let rows = ts.longlist.map(t=>{
+    `<th style="text-align:center">TAS</th><th>Capability fit &amp; signal</th></tr></thead>`;
+  let rows = ranked.map((t,i)=>{
     const cells = dims.map(d=>{
       const v = t.tas[d.id];
       return `<td class="scorecell">${v}<div class="bar"><span style="width:${v}%"></span></div></td>`;
     }).join("");
-    return `<tr class="${t.selected?"sel":""}">
-      <td><b>${t.name}</b><div class="tag">₹${t.revenue_cr} Cr · ${t.ownership}${t.selected?' · SELECTED':(t.shortlisted?' · shortlisted':'')}</div></td>
+    const size = t.revenue_cr ? `₹${t.revenue_cr} Cr ${t.revNote}` : "";
+    const own = `${t.ownership}${t.promoterPct?` · ${t.promoterPct}%`:""}`;
+    return `<tr>
+      <td><b>${t.name}</b> <span class="tag">${t.ticker}</span>
+        <div class="tag" style="margin-top:3px">${size} · ${own}</div></td>
       ${cells}
-      <td class="scorecell"><span class="totbadge">${t.tasTotal}</span></td>
-      <td style="font-size:13px">${t.capabilityMatch}<div class="tag" style="margin-top:6px">Data confidence: ${t.dataConfidenceNote}</div></td>
+      <td class="scorecell"><span class="rank">#${i+1}</span><br><span class="totbadge">${t.tasTotal}</span></td>
+      <td style="font-size:12.5px">${t.fit}
+        <div class="muted" style="font-size:11.5px;margin-top:6px">${t.signal}</div>
+        <div class="src">Data confidence: ${t.dataConfidenceNote}</div>
+        <div class="src">${t.sources.map(x=>`${x.pub} · ${x.date}`).join(" | ")}</div></td>
     </tr>`;
   }).join("");
   document.getElementById("tastable").innerHTML = head + "<tbody>" + rows + "</tbody>";
+  document.getElementById("disc").textContent = T._meta.source + ". " + T._meta.scaleNote;
 
-  // why grid
+  // read of the screen
+  const top = ranked[0], best = ranked.slice(0,3).map(t=>t.name.split(" ")[0]).join(", ");
+  document.getElementById("readout").innerHTML = `
+    <div style="color:#fff;font-size:14px">On public data alone, <b class="gold">${top.name}</b> tops the screen (TAS ${top.tasTotal}) -
+    a pure-play BFSI platform that bolts on cleanly. But the screen's real lesson is the
+    <b class="gold">transactability</b> spread: the best capability fits (${best}) are mostly <em>unavailable</em> -
+    founders buying in, re-committing for five-year terms, or unlevered and content.</div>
+    <div class="muted" style="font-size:12.5px;margin-top:12px">The one clear exit signal in the pool is a founder block-sale for succession - which is exactly
+    why real sourcing moves off the listed screen and onto confidential, founder-led names. The public screen
+    sizes the market and calibrates the score; it rarely surfaces the actual target.</div>`;
+
+  // exclusions
+  document.getElementById("excl").innerHTML = T.exclusions.map(e=>`
+    <div class="x"><b>${e.name}</b> <span class="muted" style="font-size:12.5px">- ${e.reason}</span></div>`).join("");
+
+  // illustrative thread (anonymized private case flowing into M5)
   const sel = ts.longlist.find(t=>t.selected);
-  const others = ts.longlist.filter(t=>!t.selected);
-  document.getElementById("whichwhy").innerHTML = `
-    <div class="card"><span class="lbl">Thesis filter</span>
-      <div style="color:#fff">${ts.thesisFilter}</div>
-      <div class="muted" style="font-size:12px;margin-top:8px">${ts.outreach.note}</div></div>
-    <div class="card sel"><span class="lbl">Selected · ${sel.name}</span>
-      <div class="totbadge">${sel.tasTotal} TAS</div>
-      <div style="color:#fff;font-size:14px;margin-top:6px">${sel.capabilityMatch}</div>
-      <div class="muted mono" style="font-size:11px;margin-top:10px">${ts.outreach.status}</div></div>
-    <div class="card"><span class="lbl">Why not the others</span>
-      ${others.map(o=>`<div style="margin-bottom:10px"><b>${o.name}</b> <span class="muted">(${o.tasTotal})</span><div class="muted" style="font-size:12px">${o.capabilityMatch}</div></div>`).join("")}</div>`;
+  const th = T.illustrativeThread;
+  document.getElementById("threadbox").innerHTML = `
+    <p style="max-width:82ch;color:var(--ink)">${th.note}</p>
+    <div class="cols-3" style="margin-top:16px">
+      <div><span class="lbl">Named gap (M1)</span><div style="color:var(--ink)">${gap.powerLayer}</div></div>
+      <div><span class="lbl">Selected on TAS (M4)</span><div style="color:var(--ink)"><b>${sel.name}</b> · TAS ${sel.tasTotal}<div class="tag" style="margin-top:3px">₹${sel.revenue_cr} Cr · ${sel.ownership} · exact capability match</div></div></div>
+      <div><span class="lbl">Flows into (M5)</span><div style="color:var(--ink)"><a class="gold" href="integration.html">Seven-gate deal &rarr;</a><div class="tag" style="margin-top:3px">${ts.outreach.status}</div></div></div>
+    </div>`;
 })();
 </script>
 </body>

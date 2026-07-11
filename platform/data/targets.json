@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "name": "M4 live public-data capability screen (AlphaSense-sourced)",
+    "purpose": "Real, cited target-screening data that demonstrates what Module 4 actually does: pull public-company data and score it on the Target Attractiveness Score. This is a capability demonstration on listed comparables, NOT a solicitation and NOT investment advice. The anonymized Anchor x Polaris thread in spine.json remains the illustrative private-deal case that flows into M5.",
+    "source": "AlphaSense market scan (GenSearch, web-augmented) + AlphaSense broker/earnings citations",
+    "asOf": "2026-07-11",
+    "disclaimer": "Public-data screen for capability demonstration only. Figures are approximate, drawn from public filings and market data as cited; not a recommendation, valuation, or approach to any company. Real mid-market acquisition targets are typically private and confidential - see the illustrative thread below.",
+    "acquirerContext": "Anchor Tech Services Ltd - listed BFSI technology-services firm, ~Rs 4,800 Cr revenue, seeking specialty data-engineering capability.",
+    "thesis": "Specialty data-engineering / BFSI-facing, founder- or promoter-led, listed, revenue roughly Rs 250-2,500 Cr, absorbable into a Rs 4,800 Cr acquirer.",
+    "scaleNote": "Each TAS dimension scored 0-100 from the cited signals; TAS = weighted sum (Transactability 30, Strategic fit 35, Integration risk inverse 25, Data confidence 10). Scarcity is a tie-breaker, not a scored factor."
+  },
+
+  "candidates": [
+    {
+      "id": "nucleus",
+      "name": "Nucleus Software Exports",
+      "ticker": "NUCLEUS",
+      "revenue_cr": 876,
+      "revNote": "FY26",
+      "mcap_cr": 1996,
+      "ownership": "Promoter-led (Vishnu Dusad)",
+      "promoterPct": 73.6,
+      "tas": { "transactability": 66, "strategicFit": 82, "integrationRisk": 68, "dataConfidence": 90 },
+      "tasTotal": 75,
+      "fit": "Pure-play BFSI lending platforms and data - closest to the named gap; clean bolt-on at ~18% of acquirer revenue.",
+      "signal": "Cheap at ~16x P/E, net cash ~Rs 416 Cr, but margins compressed 32.5%->15.6% YoY on AI-first reinvestment; first non-promoter professional Chair appointed Mar 2026 (governance professionalisation).",
+      "dataConfidenceNote": "Listed - financials, ownership and board changes AlphaSense-supplied; succession intent needs manual enrichment.",
+      "sources": [
+        { "pub": "Axis Direct / Bitget / MarketsMojo", "note": "P/E ~16x, net cash ~Rs 416 Cr, margin compression", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "aurionpro",
+      "name": "Aurionpro Solutions",
+      "ticker": "AURIONPRO",
+      "revenue_cr": 1411,
+      "revNote": "FY26",
+      "mcap_cr": 4660,
+      "ownership": "Promoter-led (Paresh Zaveri)",
+      "promoterPct": 26.9,
+      "tas": { "transactability": 62, "strategicFit": 78, "integrationRisk": 58, "dataConfidence": 88 },
+      "tasTotal": 69,
+      "fit": "High BFSI focus - transaction banking, fintech, data-centre buildout; strong capability adjacency.",
+      "signal": "Low promoter stake (26.9%, flagged as a watchpoint) with FII interest at ~16.3%; net cash ~Rs 331 Cr, growing ~20% YoY but a weak Q4FY26 and near 52-week low.",
+      "dataConfidenceNote": "Listed - AlphaSense-supplied incl. DAM Capital broker note; control dynamics at low promoter stake need judgement.",
+      "sources": [
+        { "pub": "DAM Capital", "note": "Aurionpro Q4FY26 (Buy) - weak quarter; large datacentre deal to aid FY27", "date": "2026-05-12" },
+        { "pub": "ICICIdirect / Whalesbook", "note": "Promoter 26.9%, net cash ~Rs 331 Cr", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "happiestminds",
+      "name": "Happiest Minds Technologies",
+      "ticker": "HAPPSTMNDS",
+      "revenue_cr": 2315,
+      "revNote": "FY26",
+      "mcap_cr": 5500,
+      "ownership": "Promoter-led (Ashok Soota)",
+      "promoterPct": 44.0,
+      "tas": { "transactability": 78, "strategicFit": 68, "integrationRisk": 40, "dataConfidence": 90 },
+      "tasTotal": 66,
+      "fit": "Digital / product engineering + GenAI, some BFSI - capability adjacent but not specialty-data pure-play; near the top of the size band.",
+      "signal": "Strongest exit signal in the pool: founder sold 6% (~Rs 763 Cr block) for philanthropy and succession, promoter now ~44%; but stock -40% in a year and now leveraged (D/E ~0.86, debt ~Rs 1,350 Cr).",
+      "dataConfidenceNote": "Listed - stake sale and leverage AlphaSense-supplied; large size + new leverage raise integration risk.",
+      "sources": [
+        { "pub": "Whalesbook / Finology / ScanX", "note": "6% founder block for succession; D/E ~0.86", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "latentview",
+      "name": "Latent View Analytics",
+      "ticker": "LATENTVIEW",
+      "revenue_cr": 1060,
+      "revNote": "FY26",
+      "mcap_cr": 6200,
+      "ownership": "Founder-led (A.V. Venkatraman, P. Jandhyala)",
+      "promoterPct": 65.1,
+      "tas": { "transactability": 40, "strategicFit": 85, "integrationRisk": 60, "dataConfidence": 90 },
+      "tasTotal": 66,
+      "fit": "Data analytics and AI-first services - excellent capability match to specialty data engineering; crossed Rs 1,000 Cr revenue in FY26.",
+      "signal": "Low transactability: founders re-appointed for five-year terms in 2026 and hold a stable 65.1%; expensive at ~31x P/E; very strong balance sheet (net cash ~Rs 728 Cr, ~zero debt).",
+      "dataConfidenceNote": "Listed - AlphaSense-supplied; founder commitment signals make a sale unlikely near term.",
+      "sources": [
+        { "pub": "Whalesbook / Tijori / Multibagg", "note": "Founders re-appointed 5-yr terms; P/E ~31x; net cash ~Rs 728 Cr", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "saksoft",
+      "name": "Saksoft Ltd",
+      "ticker": "SAKSOFT",
+      "revenue_cr": 1010,
+      "revNote": "FY26E (9M Rs 758 Cr)",
+      "mcap_cr": 2260,
+      "ownership": "Promoter-led (Aditya Krishna)",
+      "promoterPct": 66.7,
+      "tas": { "transactability": 42, "strategicFit": 76, "integrationRisk": 70, "dataConfidence": 90 },
+      "tasTotal": 66,
+      "fit": "Data and digital engineering with moderate BFSI exposure; debt-free and cleanly absorbable.",
+      "signal": "Low transactability: promoter is an active open-market buyer (~80k shares Feb-Apr 2026), zero pledge, stake up to 66.7% - a commitment signal, not an exit; attractive at ~16-18x P/E, growing ~18%.",
+      "dataConfidenceNote": "Listed - AlphaSense-supplied; promoter buying reduces near-term availability.",
+      "sources": [
+        { "pub": "ScanX / Finology / Screener", "note": "Promoter buying, zero pledge, ~18% growth", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "ksolves",
+      "name": "Ksolves India",
+      "ticker": "KSOLVES",
+      "revenue_cr": 163,
+      "revNote": "FY26",
+      "mcap_cr": 684,
+      "ownership": "Promoter-led (R.K. Srivastava)",
+      "promoterPct": 58.9,
+      "tas": { "transactability": 40, "strategicFit": 62, "integrationRisk": 80, "dataConfidence": 85 },
+      "tasTotal": 62,
+      "fit": "Data-engineering delivery (big-data, Odoo, Salesforce), emerging BFSI - lowest integration risk as a small, debt-free tuck-in (~3% of acquirer revenue).",
+      "signal": "Founders active, exceptional capital efficiency (ROE ~137%), net debt-free; management explicitly stated in early 2026 there are no plans to sell or buy back at current levels.",
+      "dataConfidenceNote": "Listed micro-cap - AlphaSense-supplied incl. Q4FY26 investor deck; thin BFSI depth needs enrichment.",
+      "sources": [
+        { "pub": "Ksolves Investor Presentation Q4FY26", "note": "Revenue Rs 162.7 Cr, +18.4% YoY", "date": "2026-04-30" },
+        { "pub": "Motilal Oswal / ETMoney", "note": "ROE ~137%, net debt-free", "date": "2026-07" }
+      ]
+    },
+    {
+      "id": "intellect",
+      "name": "Intellect Design Arena",
+      "ticker": "INTELLECT",
+      "revenue_cr": 3038,
+      "revNote": "FY26",
+      "mcap_cr": null,
+      "ownership": "Promoter-led (Arun Jain)",
+      "promoterPct": 29.7,
+      "tas": { "transactability": 50, "strategicFit": 66, "integrationRisk": 32, "dataConfidence": 88 },
+      "tasTotal": 55,
+      "fit": "Pure-play BFSI product platforms - strong domain, but a platform/product company above the size band (~63% of acquirer revenue) - a merger, not a bolt-on.",
+      "signal": "Promoter stake ~29.7% with no distress or stated review; growth intact. Above the target size band on both revenue and scale.",
+      "dataConfidenceNote": "Listed - AlphaSense-supplied; flagged out-of-band on size.",
+      "sources": [
+        { "pub": "AlphaSense company scan", "note": "Revenue ~Rs 3,038 Cr, promoter ~29.7%", "date": "2026-07" }
+      ]
+    }
+  ],
+
+  "exclusions": [
+    { "name": "Expleo Solutions", "reason": "MNC-owned (Expleo Group, France) - no independent promoter to transact with." },
+    { "name": "KFin Technologies", "reason": "PE-backed (General Atlantic) - a financial-sponsor exit, not a founder sale; different price and process." },
+    { "name": "Cigniti Technologies", "reason": "Already acquired by Coforge - no longer independent." },
+    { "name": "63 Moons Technologies", "reason": "Pure-play fintech with a heavy legacy litigation/regulatory overhang - reputational and integration risk outweigh fit." }
+  ],
+
+  "illustrativeThread": {
+    "note": "The end-to-end walkthrough (M1 gap -> M4 selection -> M5 seven-gate deal) follows an anonymized private target, Polaris Data Group. Real mid-market targets are typically private and confidential; a public-data screen like the one above surfaces listed comparables and market signals, while the actual acquisition thread is illustrated on an anonymized case.",
+    "anonymizedTarget": "Polaris Data Group",
+    "flowsInto": "deal-polaris"
+  }
+}
