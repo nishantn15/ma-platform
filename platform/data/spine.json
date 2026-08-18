@@ -1,9 +1,29 @@
 {
   "_meta": {
     "name": "Anchor x Polaris canonical data spine",
-    "purpose": "Single source of truth every platform module reads from. Shared IDs, dates, scores, labels keep the 5 modules causally connected (state continuity). Edit here, not in pages.",
-    "version": "1.0",
-    "generated": "2026-07-09"
+    "purpose": "Single source of truth every platform module reads from. Shared IDs, dates, scores, labels keep the modules causally connected (state continuity). Edit here, not in pages.",
+    "version": "1.1",
+    "generated": "2026-07-09",
+    "revised": "2026-08-16",
+    "revisionNote": "v1.1 reconciles module vocabulary with the customers deck (09 Aug 2026 v2) and restructures the information architecture per Programme Blueprint v3.0: the Ideas Development Funnel and the Patent-to-Enterprise Exchange are intake engines upstream of the Strategic Growth Pathway Matrix, not peer modules alongside it. The matrix is now a first-class screen and Target Sourcing is one of five routes off it."
+  },
+
+  "vocabulary": {
+    "_note": "Customer-facing names come from TK's customers deck and are canonical. M1-M5 survive only as internal shorthand - they may appear as a nav index or in internal notes, never as the name of a thing in front of a client.",
+    "canonicalSource": "MA_Platform_Customers_Discussion_Deck_9 Aug 2026_v2.pptx, solutions suite slide",
+    "modules": [
+      { "code": "EGC","id": "charter",     "name": "Enterprise Growth Charter",       "role": "diagnostic + account spine document", "priorName": null },
+      { "code": "M1", "id": "learning",    "name": "Leadership Learning",             "role": "capability journey", "priorName": "Learning Journey" },
+      { "code": "M2", "id": "ideas",       "name": "Ideas Development Funnel",        "role": "intake engine",      "priorName": "Ideas Funnel" },
+      { "code": "M3", "id": "exchange",    "name": "Patent-to-Enterprise Exchange",   "role": "intake engine",      "priorName": "Patent Exchange" },
+      { "code": "PM", "id": "pathway",     "name": "Strategic Growth Pathway Matrix", "role": "decision",           "priorName": null },
+      { "code": "M4", "id": "targets",     "name": "Target Sourcing & Strategic Fit", "role": "execution route",    "priorName": "Target Sourcing" },
+      { "code": "M5", "id": "integration", "name": "Deals Integration Room",          "role": "execution route",    "priorName": "Deal Integration" }
+    ],
+    "openNames": [
+      "The deck calls the suite five solutions and lists Leadership Learning first; the blueprint calls the same objects M1-M5. Both are now mapped above so neither document has to change.",
+      "The deck names the five pathways by their source (Ideas, Patents, Partners, Invest, Acquire). The blueprint names the same five by their transaction form (Build, License, Partner, Invest, Acquire). Both labels are carried on every route in pathwayMatrix.routes so the deck and the classroom stay in sync."
+    ]
   },
 
   "account": {
@@ -29,25 +49,119 @@
     "closesWith": "build / buy / partner / acquire decision -> acquire (Polaris)"
   },
 
+  "charter": {
+    "name": "Enterprise Growth Charter",
+    "structureSource": "Leadership_for_Enterprise_Growth_v0.2.docx, Part D section 18 (Charter Structure); M1 output per section 11.",
+    "pullThroughNote": "M1 deliberately leaves sections 5-8 incomplete. That is the pull-through into M2 and M3 - and it is also the sales argument: a CEO walks out of the diagnostic holding a named document, opened in their own words, with four sections they will complete in M1 and four that only M2 and M3 can close.",
+    "sections": [
+      { "n": 1, "name": "Enterprise Vision",                        "completedIn": "M1",      "from": "q1",         "status": "drafted" },
+      { "n": 2, "name": "Leadership Commitment",                    "completedIn": "M1",      "from": "q4",         "status": "drafted" },
+      { "n": 3, "name": "Strategic Capability Gap",                 "completedIn": "M1",      "from": "q2+q3",      "status": "drafted" },
+      { "n": 4, "name": "Strategic Growth Pathway Choice",          "completedIn": "M1",      "from": "q3+routeLean","status": "drafted",
+        "aliasNote": "Section 11 of the blueprint calls this 'Provisional Growth Pathway Choice'; the Part D table calls it 'Strategic Growth Pathway Choice'. Same section - the provisional wording is the honest one at M1." },
+      { "n": 5, "name": "Capability / Acquisition Thesis",          "completedIn": "M2",      "from": null, "status": "open" },
+      { "n": 6, "name": "Integration / Institutionalization Thesis","completedIn": "M2 / M3", "from": null, "status": "open" },
+      { "n": 7, "name": "Deal or Pathway Structure",                "completedIn": "M2",      "from": null, "status": "open" },
+      { "n": 8, "name": "90-Day Action Commitment",                 "completedIn": "M3",      "from": null, "status": "open" }
+    ],
+
+    "diagnostic": {
+      "occasion": "Diagnostic workshop with the top management team. The first 15 minutes, before anything is presented.",
+      "deckSource": "MA_Platform_Customers_Discussion_Deck_9 Aug 2026_v2.pptx, slide 4 - 'OPENING DISCUSSION - FIRST 15 MINUTES'.",
+      "verbatimNote": "The four questions below are verbatim in wording, with dashes normalised: the deck writes '3-5 years' with an en dash and 'own - not just' with an em dash, and this file uses hyphens throughout. Nothing else is changed, added or reordered.",
+      "promise": "You leave with your own answers on the record - the raw material for Charter sections 1 to 4, which you draft and sign off inside M1.",
+      "promiseNote": "Deliberately not 'you leave with sections 1 to 4 drafted'. The blueprint makes sections 1-4 an M1 output across 2.5 days, and slide 12's own stated output for the diagnostic is 'a clear view on gaps, fit, priority capability development agenda and growth pathways'. Promising the drafted sections in 15 free minutes both over-promises and cannibalises the paid deliverable. This sheet is the input to M1, captured in the CEO's words so M1 starts from evidence instead of a blank page.",
+      "why": "Four questions asked well are the differentiation. Four questions asked without a common capture format are ten sets of notes and zero comparable data.",
+      "durationMin": 15,
+      "rule": "Capture in the CEO's words, not in ours. A paraphrase loses the one thing this sheet exists to keep.",
+      "questions": [
+        { "id": "q1", "n": 1, "charterSection": 1,
+          "verbatim": "Where do you want the enterprise to be in the next 3-5 years?",
+          "capture": ["The ambition in the CEO's own words", "The number attached to it", "The date they actually said"],
+          "probe": "Ask for the number. A vision without a number cannot expose a capability gap.",
+          "answer": "Double BFSI revenue to about 9,000 Cr by FY2031, and stop being a staffing-shaped services firm - a third of revenue from products and platforms we own rather than people we bill.",
+          "number": "9,000 Cr by FY2031 · one third from owned IP" },
+        { "id": "q2", "n": 2, "charterSection": 3,
+          "verbatim": "What gaps or constraints do you foresee on that path?",
+          "capture": ["Constraint as the CEO frames it", "Whether it is demand-side or capability-side", "What it has already cost"],
+          "probe": "Push past 'talent'. Ask which deal was lost, and at which stage.",
+          "answer": "We are losing mandates we were technically shortlisted for. It is not price and it is not demand - we cannot staff senior specialty data-engineering at the depth the BFSI buyer now audits for.",
+          "number": "3 shortlisted mandates lost in FY2026" },
+        { "id": "q3", "n": 3, "charterSection": 3,
+          "verbatim": "Which capabilities must you truly own - not just access or outsource?",
+          "capture": ["Must own", "Fine to access", "Where the line is currently drawn wrong"],
+          "probe": "This is the question that separates a build/acquire route from a license/partner one. Make them sort, not list.",
+          "answer": "Own: data-engineering design judgement and the IP around lineage and observability. Access: cloud hosting, commodity QA, L1 support. We have been treating design as accessible, which is the mistake.",
+          "number": "own 2 of 5 layers · access 3" },
+        { "id": "q4", "n": 4, "charterSection": 2, "alsoFeeds": 3,
+          "sectionNote": "Read literally, q4 is a capability-readiness question about the top team, which is section 3 material - the gap is in the TMT, not only in the enterprise. It is mapped to section 2 because Leadership Commitment is unanswerable without it: a team that has never integrated an acquisition can still commit, but only with named consequences. So the honest read is captured twice - the team's readiness lands in section 3, and the commitment that follows from it lands in section 2. The follow-up below is what makes the section 2 half real rather than assumed.",
+          "followUp": "Given that read on the team, what are you personally committing to over the next five years, and what has the board already approved in writing?",
+          "verbatim": "Is your top management team equipped to build, buy, acquire and integrate them?",
+          "capture": ["Honest read on the team, not the org chart", "Who has done this before", "What the board has already committed"],
+          "probe": "Ask who on the team has personally integrated an acquisition. The silence is the finding.",
+          "answer": "The board can fund it. The team has never absorbed an acquisition - two of nine BU heads have integration experience and both of those were sell-side. We are committing to a five-year capability build with named consequences, in writing.",
+          "number": "2 of 9 BU heads · both sell-side" }
+      ],
+
+      "routeLean": {
+        "_note": "Not on slide 4. The four deck questions produce charter sections 1, 2 and 3 but nothing for section 4 - so the sheet closes with a fifth prompt. Narrow claim, not a general one: the only deck change this sheet asks for is a fifth opening prompt on slide 4, and only if the diagnostic is expected to seed section 4. Slide 12 already brainstorms growth pathways later in the workshop, so the route question is not absent from the deck - it is absent from the first 15 minutes, which is where the CEO's unrehearsed lean is worth recording.",
+        "prompt": "If you had to lean today, which route closes this gap: build it, license it, partner for it, invest in it, or acquire it? And what would change your mind?",
+        "options": ["Build", "License", "Partner", "Invest", "Acquire"],
+        "lean": "Acquire, with a parallel build",
+        "confidence": 6,
+        "confidenceScale": 10,
+        "confidenceNote": "Recorded as a baseline so the M1 exit poll can be compared against it. A 6 at the diagnostic is healthy; a 9 usually means the gap has not been examined.",
+        "changeMyMind": [
+          "A target with a trained senior bench turns out not to exist at a payable price.",
+          "The lineage patent out of the Exchange proves it can be productised in under two quarters.",
+          "Our own hiring funnel doubles senior throughput two quarters running."
+        ]
+      },
+
+      "handoff": {
+        "_note": "The eight questions each participant carries out of M1, verbatim from Leadership_for_Enterprise_Growth_v0.2.docx section 19 (M1-to-M2 Handoff). The diagnostic sheet seeds the first four of them.",
+        "questions": [
+          "What enterprise are we building?",
+          "What capability is missing?",
+          "Why does this capability matter for growth?",
+          "What pathway are we leaning toward?",
+          "What assumptions must be tested?",
+          "What would make us change the pathway?",
+          "What would need to be integrated if this pathway succeeds?",
+          "What evidence is needed before committing capital?"
+        ]
+      },
+
+      "captured": {
+        "workshop": "Diagnostic workshop - Anchor Tech Services Ltd",
+        "date": "2026-03-18",
+        "present": "MD, CFO, SVP Delivery, Head of BFSI vertical",
+        "facilitator": "TK",
+        "outcome": "Sections 1-4 opened in the room in the MD's own words; drafted and signed off in M1; Anchor onboarded 2026-04.",
+        "traceNote": "This is the sheet that became the gap statement in capabilityGap and the route lean the Pathway Matrix later scored. Same document, five months apart."
+      }
+    }
+  },
+
   "learning": {
     "layers": [
-      { "id": "L1", "name": "The Council", "audience": "Board, CEOs, promoters", "cadence": "2.5 days x3 / year", "shift": "decision-maker -> invention-agenda owner", "seatFilled": 2,
+      { "id": "L1", "name": "The Council", "audience": "Board, CEOs, promoters", "cadence": "2.5 days x3 / year", "cadenceSource": "Blueprint v3.0; deck slide 9 gives the repeated-cohort structure but not the 2.5 days", "shift": "decision-maker -> invention-agenda owner", "seatFilled": 2,
         "persona": { "name": "Vikram Anand", "role": "Managing Director, Anchor", "median": "promoter-CEO, 25+ yrs, growth-hungry but capability-constrained" } },
-      { "id": "L2", "name": "The Watch", "audience": "BU heads, VPs, senior & integration leaders", "cadence": "4.5 days x3 / year", "shift": "senior leader -> growth architect", "seatFilled": 5,
+      { "id": "L2", "name": "The Watch", "audience": "BU heads, VPs, senior & integration leaders", "cadence": "4.5 days x3 / year", "cadenceSource": "ASSUMPTION - not set in the deck or Blueprint v3.0; mine, pending TK", "shift": "senior leader -> growth architect", "seatFilled": 5,
         "persona": { "name": "Meera Rao", "role": "SVP Delivery, Anchor", "median": "CXO/BU lead, 18-25 yrs, owns the P&L and the integration" } },
-      { "id": "L3", "name": "The Pride", "audience": "Functional & high-potential leaders (8-15 yrs)", "cadence": "4.5 days x3 / year", "shift": "functional manager -> enterprise-aware innovator", "seatFilled": 9,
+      { "id": "L3", "name": "The Pride", "audience": "Functional & high-potential leaders (8-15 yrs)", "cadence": "4.5 days x3 / year", "cadenceSource": "ASSUMPTION - not set in the deck or Blueprint v3.0; mine, pending TK", "shift": "functional manager -> enterprise-aware innovator", "seatFilled": 9,
         "persona": { "name": "Arjun Nair", "role": "Engineering Manager, Anchor", "median": "budding functional leader who can grow into an enterprise lead" } }
     ],
     "yearArc": [
       { "id": "M1", "theme": "Foundation - discover the gap", "loop": "challenge -> gap analysis -> just-in-time theory -> synthesis",
         "case": "The engine we couldn't build (ISRO cryogenic vs Kaveri jet) - capability cannot be imported; absorption is a 3-5 year act.",
-        "output": "Enterprise Invention Agenda + personal Driver Statement", "status": "completed", "date": "2026-05" },
+        "output": "Enterprise Growth Charter sections 1-4 (vision, commitment, gap, provisional pathway) + personal Driver Statement", "status": "completed", "date": "2026-05" },
       { "id": "M2", "theme": "Design the Capability Pathway - Patent, Partner or Acquire",
         "case": "Anchor's specialty data-engineering gap scored across build/license/collaborate/partner/invest/acquire.",
-        "output": "Capability Pathway Design (scored)", "status": "completed", "date": "2026-08" },
+        "output": "Capability Pathway Design (scored) = Charter sections 5 and 7, with section 6 drafted", "status": "completed", "date": "2026-08" },
       { "id": "M3", "theme": "Practical Hands-On - integrate and apply",
         "case": "Polaris integration simulation; Integration Leadership Room capstone (L1).",
-        "output": "Enterprise Growth & Integration Charter", "status": "in_progress", "date": "2026-11" }
+        "output": "Charter sections 6 and 8 finalised - the Enterprise Growth Charter closes with a 90-day commitment", "status": "in_progress", "date": "2026-11" }
     ]
   },
 
@@ -56,7 +170,9 @@
     "title": "BFSI Specialty Data-Engineering Accelerator",
     "origin": "M1 Foundation - Anchor's named capability gap",
     "stage": "sponsored",
-    "stages": ["submitted","brainstormed","evaluated","shortlisted","sponsored","funded","team","pilot","milestones","scaled"],
+    "stages": ["submitted","brainstormed","evaluated","shortlisted","pathway","sponsored","funded","team","pilot","milestones","scaled"],
+    "exitStage": "pathway",
+    "exitNote": "An idea leaves the funnel by being routed, not by being approved. At the pathway stage it enters the Strategic Growth Pathway Matrix and is scored against all five routes - which is how this idea produced a build-and-acquire answer rather than a build-only one.",
     "canvas": {
       "problem": "BFSI clients need specialty data-engineering Anchor cannot staff fast enough.",
       "capabilityCreated": "An in-house specialty data-engineering practice (people + process + IP).",
@@ -70,12 +186,80 @@
   "patentAlternative": {
     "id": "patent-streaming-lineage",
     "title": "Real-time data-lineage engine for regulated pipelines",
-    "institute": "IIT Roorkee",
+    "institute": "Institute A (name withheld until consent - illustrative)",
     "inventor": "Dr. S. Iyer, Dept. of Computer Science",
     "brief": "A method for automated, audit-grade data lineage across streaming financial pipelines - directly relevant to BFSI compliance.",
     "decisionInThread": "Evaluated against the Polaris acquisition for closing Anchor's gap.",
     "verdict": "License-and-build considered; did NOT beat Polaris because the patent supplies invention-side IP but not the trained senior bench and live BFSI client relationships Anchor needed on a 12-month horizon. Kept as a Year-2 licensing option to deepen the acquired capability.",
-    "pathway": "license / sponsored research (deferred to Year 2)"
+    "pathway": "license / sponsored research (deferred to Year 2)",
+    "stages": ["Gallery","Walkthrough","Canvas","EOI","Technical deep-dive","Commercial assessment","Pathway matrix","IP discussion","Pilot"],
+    "stage": "Pathway matrix",
+    "exitStage": "Pathway matrix",
+    "exitNote": "The Exchange does not decide. It qualifies a patent to the point where it can be scored as a route, then hands it to the Strategic Growth Pathway Matrix alongside build, partner, invest and acquire."
+  },
+
+  "pathwayMatrix": {
+    "id": "matrix-anchor-y1",
+    "title": "Strategic Growth Pathway Matrix",
+    "purpose": "The single decision surface where a named capability gap is scored against every available route. Both intake engines feed it. Every execution module hangs off it.",
+    "namedIn": "Programme Blueprint v3.0 only, which names the Matrix and places the Ideas Funnel and Patent Exchange as 'the front door into it - rather than a sixth route alongside it'. The customers deck names the five pathways and 'Pathway design' but does not name the Matrix itself.",
+    "decidesFor": "gap-specialty-data-eng",
+    "decidedAt": "M2 - The Capability Pathway, 2026-08",
+    "charterSections": "Feeds Enterprise Growth Charter sections 5 and 7; section 6 drafted here and closed in M3.",
+    "weightsNote": "Weights are a per-account board decision, not a product constant. These are Anchor's, set by the L1 Council in M2. Changing them re-ranks the routes, which is the point of running it live in the room.",
+    "dimensions": [
+      { "id": "capabilityDepth",   "label": "Capability depth",   "weight": 0.20, "inverse": false, "note": "How much of the capability the enterprise ends up owning, not renting." },
+      { "id": "speed",             "label": "Speed to capability","weight": 0.18, "inverse": false, "note": "Time to a working capability at client-facing quality." },
+      { "id": "longTermValue",     "label": "Long-term value",    "weight": 0.16, "inverse": false, "note": "Value still compounding at the end of the five-year window." },
+      { "id": "control",           "label": "Control",            "weight": 0.14, "inverse": false, "note": "Decision rights over roadmap, people and IP." },
+      { "id": "risk",              "label": "Risk",               "weight": 0.12, "inverse": true,  "note": "Scored as favourability - a high score means low risk." },
+      { "id": "cost",              "label": "Cost",               "weight": 0.10, "inverse": true,  "note": "Scored as favourability - a high score means affordable." },
+      { "id": "integrationBurden", "label": "Integration burden", "weight": 0.10, "inverse": true,  "note": "Scored as favourability - a high score means little to integrate." }
+    ],
+    "routes": [
+      { "id": "build", "deckName": "Ideas", "form": "Build", "label": "Build organically",
+        "intake": "ideas", "intakeLabel": "Ideas Development Funnel", "downstream": null,
+        "scores": { "capabilityDepth": 85, "speed": 30, "longTermValue": 78, "control": 92, "risk": 55, "cost": 62, "integrationBurden": 95 },
+        "total": 70, "verdict": "run in parallel",
+        "why": "Deepest ownership and nothing to integrate, but it fails on the only constraint that matters here - Anchor cannot staff specialty data engineering fast enough. Sponsored anyway as the Accelerator, because the acquisition buys the bench and the build keeps it." },
+      { "id": "license", "deckName": "Patents", "form": "License", "label": "License or sponsor research",
+        "intake": "exchange", "intakeLabel": "Patent-to-Enterprise Exchange", "downstream": null,
+        "scores": { "capabilityDepth": 45, "speed": 66, "longTermValue": 62, "control": 58, "risk": 60, "cost": 84, "integrationBurden": 80 },
+        "total": 63, "verdict": "deferred to Year 2",
+        "why": "Cheapest route to invention-side IP and the lineage-engine patent is an exact technical fit, but a patent supplies no trained senior bench and no live client relationships. Revisited in Year 2 to deepen what the acquisition brings in." },
+      { "id": "partner", "deckName": "Partners", "form": "Partner", "label": "Partner or joint venture",
+        "intake": null, "intakeLabel": null, "downstream": null,
+        "scores": { "capabilityDepth": 38, "speed": 78, "longTermValue": 44, "control": 40, "risk": 52, "cost": 76, "integrationBurden": 70 },
+        "total": 55, "verdict": "rejected",
+        "why": "Fastest to revenue and cheap, and it is the route most mid-market firms default to. It also rents the capability rather than owning it, which is the exact failure the programme exists to name." },
+      { "id": "invest", "deckName": "Invest", "form": "Invest", "label": "Minority investment",
+        "intake": null, "intakeLabel": null, "downstream": null,
+        "scores": { "capabilityDepth": 42, "speed": 66, "longTermValue": 52, "control": 34, "risk": 58, "cost": 58, "integrationBurden": 78 },
+        "total": 54, "verdict": "rejected",
+        "why": "Buys optionality and a look inside, but no decision rights over the roadmap or the bench. Sensible when the gap is unclear; Anchor's gap was named in writing, so optionality is not what it needed." },
+      { "id": "acquire", "deckName": "Acquire", "form": "Acquire", "label": "Acquire for control",
+        "intake": null, "intakeLabel": null, "downstream": "targets", "downstreamLabel": "Target Sourcing & Strategic Fit",
+        "scores": { "capabilityDepth": 90, "speed": 88, "longTermValue": 86, "control": 88, "risk": 62, "cost": 38, "integrationBurden": 45 },
+        "total": 76, "verdict": "selected",
+        "why": "The only route that delivers a trained senior bench and live BFSI relationships inside twelve months. It is the most expensive and carries the real integration burden - which is why gate discipline in the Deals Integration Room is the price of choosing it." }
+    ],
+    "verdict": {
+      "selected": "acquire",
+      "portfolio": true,
+      "statement": "Acquire now, build in parallel, license in Year 2.",
+      "reasoning": "The matrix does not return one winner. Acquire clears the speed constraint, the sponsored Accelerator keeps the capability being built rather than only bought, and the institute patent stays live as a Year-2 deepening option. A single-route answer would have been the wrong answer.",
+      "boardNote": "Recorded as Charter section 5 by the L1 Council, 2026-08. Section 6 drafted, closes in M3."
+    },
+    "intakeQueue": [
+      { "source": "ideas", "sourceLabel": "Ideas Development Funnel", "item": "BFSI Specialty Data-Engineering Accelerator", "arrived": "2026-08", "status": "scored", "outcome": "build - run in parallel" },
+      { "source": "exchange", "sourceLabel": "Patent-to-Enterprise Exchange", "item": "Real-time data-lineage engine for regulated pipelines", "arrived": "2026-08", "status": "scored", "outcome": "license - deferred to Year 2" },
+      { "source": "ideas", "sourceLabel": "Ideas Development Funnel", "item": "Cross-sell model for combined entity", "arrived": "2026-09", "status": "awaiting scoring", "outcome": null },
+      { "source": "exchange", "sourceLabel": "Patent-to-Enterprise Exchange", "item": "Privacy-preserving federated credit scoring", "arrived": "2026-09", "status": "awaiting scoring", "outcome": null }
+    ],
+    "gaps": [
+      "Partner and Invest are scoreable routes with no module behind them. If a company picks either, the platform currently hands them nothing. Lowest-cost fix is an alliance/stake tracker sharing the Deals Integration Room gate spine.",
+      "Weights are hard-coded here. Making them editable in the room is what turns this screen from a report into an instrument."
+    ]
   },
 
   "targetSourcing": {

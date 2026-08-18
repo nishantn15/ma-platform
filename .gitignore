@@ -1,4 +1,4 @@
-# Source decks contain embedded contact info — kept locally only
+# Source decks contain embedded contact info - kept locally only
 Reference Decks/
 *.pptx
 *.pdf
@@ -6,7 +6,7 @@ Reference Decks/
 *.jpeg
 *.png
 
-# Brand Assets folder — originals kept local only (high-res PNGs)
+# Brand Assets folder - originals kept local only (high-res PNGs)
 Brand Assets/
 
 # But DO track the optimised public assets (overrides *.jpg / *.png above)
@@ -16,7 +16,39 @@ Brand Assets/
 !assets/**/*.png
 !assets/**/*.webp
 
+# WhatsApp-sourced material, added 17 Aug 2026. This repo is PUBLIC and decision D6
+# on the project board has not been taken, so nothing sourced from the TK thread is
+# allowed to become publishable by an accidental `git add -A`. Covers TK's Blueprint
+# v3.0, the v0.2 research appendix, the customer deck and the chat transcripts.
+# NOTE: this prevents NEW leaks only. It does not un-publish anything already in
+# commit 28046a0 - see Platform_Architecture/Retrospective_2026-08-17.md.
+Meeting Notes/tk-whatsapp-attachments/
+Meeting Notes/15_tk_messages_jul03_to_aug16.md
+Meeting Notes/16_self_notes_jul03_to_aug16.md
+Meeting Notes/17_synthesis_jul03_to_aug16.md
+
+# Internal working material, added 18 Aug 2026. Same reason as the block above: this
+# repo is PUBLIC. These are the files we reason in, not the ones we publish.
+#   Project_Tracker  - the 34-item programme plan, including risks and open decisions
+#                      written in plain internal language about named people.
+#   Paper_Triage     - TK's 443-paper corpus and its tags. His collection, shared with
+#                      me and Prof in confidence. It lives in his Drive, not on Pages.
+#   Catchup_Pack /   - internal status and retrospective prose.
+#   Retrospective /
+#   Sync_State
+#   drive_backup*    - Drive folder ids, including TK's private folder.
+Curriculum/Paper_Triage/
+Platform_Architecture/Project_Tracker/
+Platform_Architecture/Catchup_Pack/
+Platform_Architecture/Retrospective_*.md
+Platform_Architecture/Sync_State_*.md
+Platform_Architecture/drive_backup.py
+Platform_Architecture/csv_to_sheets.py
+Platform_Architecture/drive_backup_state*.json
+
 # OS / editor noise
+__pycache__/
+*.pyc
 .DS_Store
 Thumbs.db
 *.swp

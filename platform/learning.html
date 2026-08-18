@@ -20,15 +20,15 @@
 </style>
 </head>
 <body>
-  <div class="crumb">CAUSAL THREAD &nbsp;<b>M1 surfaces the capability gap</b> &rarr; M2 idea &rarr; M4 target &rarr; M5 deal</div>
   <div class="phead">
-    <span class="eyebrow">Module 1 · Capability build</span>
-    <h1>Learning Journey</h1>
+    <span class="eyebrow">M1 · Capability journey</span>
+    <h1>Leadership Learning</h1>
     <p class="lede">The same firm sends leaders to all three layers, three times a year, for several years - a promoter, a senior leader and a functional manager travelling one journey at their own altitude. Teaching is experiential-first: challenge, then gap, then just-in-time theory.</p>
   </div>
 
   <div class="srow"><span class="n">Layers</span><h2>The three layers &middot; this cohort</h2></div>
   <div class="layers" id="layers"></div>
+  <p class="muted" style="font-size:12.5px;margin-top:10px;max-width:82ch">L1's cadence is Blueprint v3.0's figure; slide 9 says only that the same cohort returns three times. The L2 and L3 cadences marked <b>(assumed)</b> are not set in the deck or in Blueprint v3.0 - they are a placeholder pending TK's decision, and no client should be quoted them.</p>
 
   <div class="srow"><span class="n">Arc</span><h2>The yearly arc</h2></div>
   <p class="muted" style="margin-bottom:6px;max-width:82ch">One shared arc across all three layers. M1 is where Anchor's leaders <b>discovered their own capability gap</b> - the gap that now drives the idea, the target search and the deal.</p>
@@ -54,7 +54,7 @@
   document.getElementById("layers").innerHTML = s.learning.layers.map(L=>`
     <div class="card"><span class="lbl">${L.id} · ${L.name}</span>
       <div style="color:#fff;font-size:14px">${L.audience}</div>
-      <div class="muted mono" style="font-size:10.5px;letter-spacing:.08em;margin-top:8px">${L.cadence} · ${L.seatFilled} enrolled</div>
+      <div class="muted mono" style="font-size:10.5px;letter-spacing:.08em;margin-top:8px">${L.cadence}${/^ASSUMPTION/.test(L.cadenceSource || "") ? " <span title=\"" + L.cadenceSource + "\">(assumed)</span>" : ""} · ${L.seatFilled} enrolled</div>
       <div class="muted" style="font-size:12.5px;margin-top:10px">${L.shift}</div>
       <div class="persona"><span class="tag">MEDIAN PERSONA</span></div>
       <div style="font-size:13px"><span class="nm">${L.persona.name}</span> - ${L.persona.role}</div>

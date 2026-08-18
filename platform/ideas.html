@@ -11,6 +11,9 @@
   .col{background:rgba(15,31,58,.4);border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:10px;min-height:120px}
   .col h4{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px}
   .col.here h4{color:var(--gold)}
+  .col.exit{background:linear-gradient(180deg,rgba(201,168,76,.10),rgba(15,31,58,.4));border-color:var(--gold-line-strong);border-style:dashed}
+  .col.exit h4{color:var(--gold)}
+  .col.exit .out{display:block;margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
   .icard{background:linear-gradient(180deg,rgba(22,42,74,.7),rgba(15,31,58,.5));border:1px solid var(--gold-line);border-radius:7px;padding:11px;margin-bottom:8px}
   .icard.lead{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-dim)}
   .icard .t{font-size:13px;color:#fff;font-weight:600;line-height:1.3}
@@ -21,14 +24,14 @@
 </style>
 </head>
 <body>
-  <div class="crumb">CAUSAL THREAD &nbsp;M1 gap &rarr; <b>M2 ideas funnel</b> &rarr; M4 target &rarr; M5 deal</div>
   <div class="phead">
-    <span class="eyebrow">Module 2 · Capability build</span>
-    <h1>Ideas Funnel</h1>
-    <p class="lede">Ideas generated in the classroom should not die after the workshop. The funnel nurtures each one over a five-year horizon - because serious ideas, patents and capability builds take time to mature.</p>
+    <span class="eyebrow">M2 · Intake engine</span>
+    <h1>Ideas Development Funnel</h1>
+    <p class="lede">Ideas generated in the classroom should not die after the workshop. The funnel nurtures each one over a five-year horizon - because serious ideas, patents and capability builds take time to mature. This is a front door, not a destination: an idea leaves by being <em>routed</em>, scored against all five growth pathways rather than simply approved.</p>
   </div>
 
-  <div class="srow"><span class="n">Flow</span><h2>The pipeline</h2></div>
+  <div class="srow"><span class="n">Flow</span><h2>The pipeline, and where it lets go</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:82ch" id="exitnote"></p>
   <div class="board" id="board"></div>
 
   <div class="srow"><span class="n">Canvas</span><h2>Lead idea &middot; Patent-to-Enterprise Canvas</h2></div>
@@ -49,24 +52,27 @@
     { t: idea.title, stage: idea.stage, lead:true, note:"from M1 gap" },
     { t:"Compliance auto-lineage tooling", stage:"funded", note:"L2 Watch" },
     { t:"BFSI data-quality scorecard", stage:"pilot", note:"L3 Pride" },
-    { t:"Cross-sell model for combined entity", stage:"evaluated", note:"L2 Watch" },
+    { t:"Cross-sell model for combined entity", stage:"pathway", note:"L2 Watch · awaiting scoring" },
     { t:"Founder-led delivery pod playbook", stage:"shortlisted", note:"L3 Pride" },
     { t:"Regulated-cloud migration kit", stage:"brainstormed", note:"L3 Pride" },
     { t:"Talent-retention analytics", stage:"submitted", note:"L1 Council" }
   ];
-  // 5 visible columns spanning the pipeline
+  // 5 visible columns spanning the pipeline. Column 3 is the exit into the
+  // Pathway Matrix - the funnel's job ends there, so it is drawn as a doorway.
   const cols = [
     { key:["submitted","brainstormed"], label:"Submitted / Brainstormed" },
     { key:["evaluated","shortlisted"], label:"Evaluated / Shortlisted" },
-    { key:["sponsored"], label:"Sponsored" },
-    { key:["funded","team"], label:"Funded / Team" },
+    { key:["pathway"], label:"&rarr; Pathway Matrix", exit:true },
+    { key:["sponsored","funded","team"], label:"Sponsored / Funded" },
     { key:["pilot","milestones","scaled"], label:"Pilot -> Scaled" }
   ];
+  document.getElementById("exitnote").textContent = idea.exitNote;
   document.getElementById("board").innerHTML = cols.map(c=>{
     const items = portfolio.filter(p=>c.key.includes(p.stage));
     const here = items.some(i=>i.lead);
-    return `<div class="col ${here?"here":""}"><h4>${c.label}</h4>` +
+    return `<div class="col ${here?"here":""} ${c.exit?"exit":""}"><h4>${c.label}</h4>` +
       items.map(i=>`<div class="icard ${i.lead?"lead":""}"><div class="t">${i.t}</div><div class="meta">${i.stage.toUpperCase()} · ${i.note}</div></div>`).join("") +
+      (c.exit?`<a class="out" href="pathway.html">Score against all five routes &rarr;</a>`:"") +
       `</div>`;
   }).join("");
 

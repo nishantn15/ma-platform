@@ -20,12 +20,12 @@
   <p class="muted" style="margin-bottom:14px;max-width:80ch">One company, one capability journey. Every module reports onto this spine - learning surfaces the gap, ideas and targets act on it, the deal integrates it, and value compounds over five years.</p>
   <div class="spine" id="spine"></div>
 
-  <div class="srow"><span class="n">Live</span><h2>Modules, live</h2></div>
-  <p class="muted" style="margin-bottom:14px;max-width:80ch">Each tile shows the real state of that module for this account - not a placeholder. Click through to work in it.</p>
+  <div class="srow"><span class="n">Live</span><h2>The suite, live</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:80ch">Read this left to right, because it is a pipeline and not a menu. The <b class="gold">Enterprise Growth Charter</b> opens at the diagnostic and is the one document that runs the length of the account. Leadership Learning names the gap. The two intake engines - Ideas and Patents - are front doors, not destinations. Everything they surface converges on the <b class="gold">Strategic Growth Pathway Matrix</b>, which scores it against all five growth routes. Only then does an execution route open. Each tile shows real state for this account, not a placeholder.</p>
   <div class="cols-3" id="modtiles"></div>
 
   <hr class="rule">
-  <p class="muted" style="font-size:12.5px">The workspace does not end when the classroom ends. Modules for Ideas, Patents and Integration remain usable across the full five-year window for each onboarded account.</p>
+  <p class="muted" style="font-size:12.5px">The workspace does not end when the classroom ends. The Ideas Development Funnel, the Patent-to-Enterprise Exchange and the Deals Integration Room remain usable across the full five-year window for each onboarded account.</p>
 
 <script src="assets/shell.js"></script>
 <script>
@@ -64,25 +64,42 @@
   // module tiles with real state
   const m1done = s.learning.yearArc.filter(m=>m.status==="completed").length;
   const idea = s.idea;
+  // names come from the spine vocabulary (canonical against the customers deck);
+  // M1-M5 stay on the tile only as the internal index
+  const pm = s.pathwayMatrix;
+  const won = pm.routes.find(r => r.id === pm.verdict.selected);
+  const queued = pm.intakeQueue.filter(q => q.status !== "scored").length;
+  const ch = s.charter;
+  const chDrafted = ch.sections.filter(x => x.status === "drafted").length;
   const tiles = [
-    { id:"learning", href:"learning.html", n:"M1", t:"Learning Journey",
+    { id:"charter", href:"charter.html",
+      state:`Sections ${chDrafted > 0 ? "1-" + chDrafted : "0"} of ${ch.sections.length} drafted`,
+      hook:`Opened at the diagnostic · closes with a 90-day commitment in M3` },
+    { id:"learning", href:"learning.html",
       state:`${m1done}/3 modules complete this year · ${a.seats.L1+a.seats.L2+a.seats.L3} leaders`,
       hook:`Gap surfaced: ${gap.powerLayer}` },
-    { id:"ideas", href:"ideas.html", n:"M2", t:"Ideas Funnel",
+    { id:"ideas", href:"ideas.html",
       state:`"${idea.title}" · stage: ${idea.stage}`,
-      hook:`${idea.horizonYears}-year horizon · from the named gap` },
-    { id:"exchange", href:"exchange.html", n:"M3", t:"Patent Exchange",
-      state:`${s.patentAlternative.institute} · lineage-engine patent evaluated`,
-      hook:`Decision: ${s.patentAlternative.pathway}` },
-    { id:"targets", href:"targets.html", n:"M4", t:"Target Sourcing",
+      hook:`Intake engine · ${idea.horizonYears}-year horizon` },
+    { id:"exchange", href:"exchange.html",
+      state:`${s.patentAlternative.institute} · lineage-engine patent qualified`,
+      hook:`Intake engine · handed to the matrix` },
+    { id:"pathway", href:"pathway.html",
+      state:`${pm.verdict.statement}`,
+      hook:`${won.form} scored ${won.total} of 5 routes · ${queued} awaiting scoring`, pivot:true },
+    { id:"targets", href:"targets.html",
       state:`${ts.longlist.length} scored · ${ts.longlist.find(t=>t.selected).name} selected`,
-      hook:`TAS on 4 dimensions · ${ts.outreach.status}` },
-    { id:"integration", href:"integration.html", n:"M5", t:"Deal Integration",
+      hook:`Acquire route · TAS on 4 dimensions · ${ts.outreach.status}` },
+    { id:"integration", href:"integration.html",
       state:`${d.acquirer} × ${d.target} · ₹${d.consideration_cr} Cr`,
       hook:`Gate ${activeGate.n}/7 active · ${d.workstreamsGreen} green` }
   ];
+  for (const t of tiles) {
+    const m = Shell.MODULES.find(x => x.id === t.id);
+    t.n = m.code; t.t = m.label;
+  }
   document.getElementById("modtiles").innerHTML = tiles.map(m => `
-    <a class="card" href="${m.href}" style="display:block">
+    <a class="card" href="${m.href}" style="display:block${m.pivot?";border-color:var(--gold-line-strong);background:linear-gradient(180deg,rgba(201,168,76,.09),var(--navy-light))":""}">
       <span class="lbl">${m.n} · ${m.t}</span>
       <div style="font-size:15px;color:#fff;margin:4px 0 8px">${m.state}</div>
       <div class="muted" style="font-size:12.5px">${m.hook}</div>

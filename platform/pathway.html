@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Strategic Growth Pathway Matrix - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  /* the join: two intake engines -> the matrix -> five routes */
+  .join{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:16px;align-items:center;margin-bottom:8px}
+  .join .side{display:grid;gap:10px}
+  .feeder{background:linear-gradient(180deg,rgba(22,42,74,.6),rgba(15,31,58,.4));border:1px dashed var(--gold-line-strong);border-radius:9px;padding:12px 14px;display:block}
+  .feeder .who{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+  .feeder .what{font-size:13px;color:#fff;margin-top:4px;line-height:1.35}
+  .feeder .n{font-size:11.5px;color:var(--text-on-dark-dim);margin-top:5px}
+  .hinge{text-align:center;padding:16px 18px;border:1px solid var(--gold);border-radius:12px;background:var(--gold-dim);min-width:126px}
+  .hinge .d{font-size:26px;color:var(--gold);line-height:1}
+  .hinge .l{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-top:7px;line-height:1.4}
+  .rt{background:linear-gradient(180deg,rgba(22,42,74,.55),rgba(15,31,58,.35));border:1px solid var(--gold-line);border-radius:9px;padding:11px 14px}
+  .rt.sel{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold-dim);background:linear-gradient(180deg,rgba(201,168,76,.11),rgba(15,31,58,.4))}
+  .rt .hd{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+  .rt .form{font-size:14px;color:#fff;font-weight:600}
+  .rt .sc{font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--gold)}
+  .rt .deck{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);margin-top:3px}
+
+  /* the scoring grid */
+  table.mx{width:100%;border-collapse:collapse;font-size:13.5px}
+  table.mx th{font-family:'JetBrains Mono',monospace;font-size:9.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--gold);text-align:center;padding:9px 6px;border-bottom:1px solid var(--gold-line);vertical-align:bottom;line-height:1.35}
+  table.mx th.dim{text-align:left;width:30%}
+  table.mx th .wt{display:block;color:var(--text-on-dark-dim);font-size:9px;letter-spacing:.04em;margin-top:3px;text-transform:none}
+  table.mx td{padding:0;border-bottom:1px solid rgba(255,255,255,.06)}
+  table.mx td.dim{padding:11px 10px 11px 0;vertical-align:top}
+  table.mx td.dim b{color:#fff;font-weight:500;font-size:13.5px}
+  table.mx td.dim>span{display:block;color:var(--text-on-dark-dim);font-size:11.5px;line-height:1.4;margin-top:2px}
+  .cellwrap{padding:9px 6px;text-align:center}
+  .cell{display:block;font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#fff;margin-bottom:5px}
+  .bar{height:5px;border-radius:3px;background:rgba(255,255,255,.09);overflow:hidden}
+  .bar>i{display:block;height:100%;border-radius:3px;background:var(--gold-line-strong)}
+  td.win .cell{color:var(--gold)} td.win .bar>i{background:var(--gold)}
+  tr.tot td{border-bottom:none;padding-top:6px}
+  tr.tot .cellwrap{padding-top:12px}
+  tr.tot .cell{font-size:20px;font-family:'Playfair Display',serif}
+  tr.tot td.win .cell{color:var(--gold)}
+  .vd{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-on-dark-dim);display:block;margin-top:5px}
+  td.win .vd{color:var(--gold)}
+  .inv{font-family:'JetBrains Mono',monospace;font-size:8.5px;color:var(--gold-ink);letter-spacing:.06em}
+
+  .why{display:grid;gap:12px}
+  .why .r{border-left:2px solid var(--gold-line);padding:2px 0 2px 14px}
+  .why .r.sel{border-left-color:var(--gold)}
+  .why .r h4{font-family:'Playfair Display',serif;font-size:16px;color:#fff}
+  .why .r h4 em{font-style:normal;color:var(--gold);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;margin-left:8px}
+  .why .r p{font-size:13.5px;color:var(--text-on-dark-dim);margin-top:4px;max-width:88ch}
+  .q .lbl{margin-bottom:6px}
+  .gapbox{border:1px dashed rgba(255,255,255,.18);border-radius:9px;padding:14px 16px}
+  .gapbox li{font-size:13.5px;color:var(--text-on-dark-dim);margin-bottom:7px;line-height:1.5}
+  .gapbox li:last-child{margin-bottom:0}
+  @media(max-width:900px){
+    .join{grid-template-columns:1fr} .hinge{width:100%}
+    table.mx{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
+    table.mx td.dim>span{white-space:normal;min-width:210px;display:block}
+  }
+</style>
+</head>
+<body>
+  <div class="phead">
+    <span class="eyebrow">◈ · The decision</span>
+    <h1>Strategic Growth Pathway Matrix</h1>
+    <p class="lede" id="lede"></p>
+  </div>
+
+  <div class="srow" style="margin-top:8px"><span class="n">Join</span><h2>What feeds it, what it opens</h2></div>
+  <p class="muted" style="margin-bottom:16px;max-width:84ch">The Ideas Development Funnel and the Patent-to-Enterprise Exchange are the two front doors into this screen - not a sixth and seventh route alongside it. Everything they qualify arrives here and is scored against the same five routes on the same seven dimensions. That is the whole reason the matrix exists: so a good idea cannot quietly become a build, and an interesting patent cannot quietly become a licence, without either being tested against acquiring the capability outright.</p>
+  <div class="join">
+    <div class="side" id="feeders"></div>
+    <div class="hinge"><div class="d">◈</div><div class="l">Pathway<br>Matrix</div></div>
+    <div class="side" id="routes"></div>
+  </div>
+  <p class="muted" style="font-size:12px;margin-top:10px" id="joinnote"></p>
+
+  <div class="srow"><span class="n">Score</span><h2>The scoring grid</h2></div>
+  <p class="muted" style="margin-bottom:6px;max-width:84ch" id="wnote"></p>
+  <p style="margin-bottom:16px"><span class="inv">THREE DIMENSIONS ARE SCORED AS FAVOURABILITY, NOT MAGNITUDE - A HIGH RISK SCORE MEANS LOW RISK.</span></p>
+  <div class="card" style="overflow:hidden">
+    <table class="mx" id="grid"></table>
+  </div>
+
+  <div class="srow"><span class="n">Verdict</span><h2>What the matrix returned</h2></div>
+  <div class="card light" id="verdict" style="margin-bottom:22px"></div>
+
+  <div class="srow"><span class="n">Why</span><h2>Route by route</h2></div>
+  <div class="why" id="why"></div>
+
+  <div class="srow"><span class="n">Queue</span><h2>Waiting on a decision</h2></div>
+  <div class="card" style="padding:8px 24px"><table class="t" id="queue"></table></div>
+
+  <div class="srow"><span class="n">Honest</span><h2>What this screen does not yet do</h2></div>
+  <div class="gapbox"><ul style="margin:0;padding-left:18px" id="gaps"></ul></div>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("pathway");
+  const pm = s.pathwayMatrix, gap = s.capabilityGap;
+  const dims = pm.dimensions, routes = pm.routes;
+  const best = Math.max(...routes.map(r => r.total));
+
+  document.getElementById("lede").textContent =
+    "One capability gap, five routes, one grid. " + pm.purpose +
+    " Decided at " + pm.decidedAt + ". " + pm.charterSections;
+
+  // ---- the join: feeders on the left, routes on the right
+  const feeders = [
+    { id:"ideas", href:"ideas.html", item:s.idea.title, note:"exits at the " + s.idea.exitStage + " stage" },
+    { id:"exchange", href:"exchange.html", item:s.patentAlternative.title, note:"exits after commercial assessment" }
+  ];
+  document.getElementById("feeders").innerHTML = feeders.map(f => `
+    <a class="feeder" href="${f.href}">
+      <div class="who">${Shell.nameOf(f.id)}</div>
+      <div class="what">${f.item}</div>
+      <div class="n">${f.note} &rarr;</div>
+    </a>`).join("");
+
+  document.getElementById("routes").innerHTML = routes.map(r => {
+    const down = r.downstream
+      ? `<div class="n">opens ${r.downstreamLabel} &rarr;</div>`
+      : `<div class="n" style="color:var(--gold-ink)">no module behind this route yet</div>`;
+    const inner = `
+      <div class="hd"><span class="form">${r.form}</span><span class="sc">${r.total}</span></div>
+      <div class="deck">deck calls this &ldquo;${r.deckName}&rdquo; &middot; ${r.verdict}</div>
+      ${down}`;
+    return r.downstream
+      ? `<a class="rt ${r.verdict === "selected" ? "sel" : ""}" href="${r.downstream}.html">${inner}</a>`
+      : `<div class="rt ${r.verdict === "selected" ? "sel" : ""}">${inner}</div>`;
+  }).join("");
+
+  document.getElementById("joinnote").textContent =
+    "Deciding for: " + gap.statement + " (" + pm.decidesFor + ")";
+
+  // ---- scoring grid
+  document.getElementById("wnote").textContent = pm.weightsNote;
+  const head = `<tr><th class="dim">Dimension<span class="wt">weight</span></th>` +
+    routes.map(r => `<th>${r.form}<span class="wt">${r.deckName}</span></th>`).join("") + `</tr>`;
+  let body = dims.map(d => {
+    const top = Math.max(...routes.map(r => r.scores[d.id]));
+    const wt = (d.weight * 100).toFixed(0);
+    return `<tr>
+      <td class="dim"><b>${d.label}${d.inverse ? ' <span class="inv">INV</span>' : ""}
+        <span class="inv">&middot; ${wt}%</span></b><span>${d.note}</span></td>` +
+      routes.map(r => {
+        const v = r.scores[d.id];
+        return `<td class="${v === top ? "win" : ""}"><div class="cellwrap">
+          <span class="cell">${v}</span>
+          <div class="bar"><i style="width:${v}%"></i></div></div></td>`;
+      }).join("") + `</tr>`;
+  }).join("");
+  body += `<tr class="tot"><td class="dim"><b>Weighted total</b><span>sum of score &times; weight across all seven dimensions</span></td>` +
+    routes.map(r => `<td class="${r.total === best ? "win" : ""}"><div class="cellwrap">
+      <span class="cell">${r.total}</span><span class="vd">${r.verdict}</span></div></td>`).join("") + `</tr>`;
+  document.getElementById("grid").innerHTML =
+    `<thead>${head}</thead><tbody>${body}</tbody>`;
+
+  // ---- verdict
+  const v = pm.verdict;
+  document.getElementById("verdict").innerHTML = `
+    <span class="lbl">${pm.decidedAt} &middot; ${v.portfolio ? "portfolio answer" : "single route"}</span>
+    <h3 style="margin:2px 0 8px">${v.statement}</h3>
+    <p style="color:var(--ink);font-size:14.5px;max-width:86ch">${v.reasoning}</p>
+    <div class="tag" style="margin-top:12px;color:var(--gold-ink)">${v.boardNote}</div>`;
+
+  // ---- route by route
+  document.getElementById("why").innerHTML = routes
+    .slice().sort((a, b) => b.total - a.total).map(r => `
+    <div class="r ${r.verdict === "selected" ? "sel" : ""}">
+      <h4>${r.label} <em>${r.total} &middot; ${r.verdict}</em></h4>
+      <p>${r.why}</p>
+    </div>`).join("");
+
+  // ---- intake queue
+  document.getElementById("queue").innerHTML =
+    `<thead><tr><th>Item</th><th>From</th><th>Arrived</th><th>Status</th><th>Outcome</th></tr></thead><tbody>` +
+    pm.intakeQueue.map(q => `<tr>
+      <td>${q.item}</td>
+      <td class="muted">${q.sourceLabel}</td>
+      <td class="mono muted" style="font-size:12px">${q.arrived}</td>
+      <td>${Shell.chip(q.status, q.status === "scored" ? "done" : "pending")}</td>
+      <td class="muted">${q.outcome || "&mdash;"}</td></tr>`).join("") + `</tbody>`;
+
+  // ---- honest gaps
+  document.getElementById("gaps").innerHTML =
+    pm.gaps.map(g => `<li>${g}</li>`).join("");
+})();
+</script>
+</body>
+</html>

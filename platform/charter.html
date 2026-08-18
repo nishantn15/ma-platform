@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Enterprise Growth Charter - M&A Leadership Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/theme.css">
+<style>
+  /* ---- the capture sheet (screen) ---- */
+  .tools{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .tools .btn{padding:9px 17px;font-size:12.5px}
+  .q{border:1px solid var(--gold-line);border-radius:10px;padding:14px 16px;margin-bottom:12px;
+     background:linear-gradient(180deg,rgba(22,42,74,.5),rgba(15,31,58,.32))}
+  .q.extra{border-style:dashed;border-color:var(--gold-line-strong);background:linear-gradient(180deg,rgba(201,168,76,.08),rgba(15,31,58,.34))}
+  .q .qh{display:flex;gap:12px;align-items:baseline}
+  .q .qn{font-family:'Playfair Display',serif;font-size:24px;color:var(--gold);line-height:1;min-width:24px}
+  .q .qt{font-size:15.5px;color:#fff;line-height:1.4;font-weight:500}
+  .q .maps{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-ink);margin-top:6px}
+  .q .cap{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0 4px}
+  .q .cap span{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--text-on-dark-dim);border:1px solid rgba(255,255,255,.13);border-radius:20px;padding:3px 9px}
+  .q .probe{font-size:12.5px;color:var(--gold);margin:6px 0 9px;line-height:1.45}
+  .q textarea{width:100%;min-height:74px;resize:vertical;background:rgba(6,15,30,.55);color:#fff;
+    border:1px solid rgba(255,255,255,.14);border-radius:7px;padding:10px 12px;font:400 14px/1.5 'DM Sans',sans-serif}
+  .q textarea:focus{outline:none;border-color:var(--gold)}
+  .q .num{margin-top:8px}
+  .q .num input{width:100%;background:rgba(6,15,30,.55);color:var(--gold);border:1px solid rgba(255,255,255,.14);
+    border-radius:7px;padding:7px 11px;font:500 12px/1.4 'JetBrains Mono',monospace}
+  .q .num input:focus{outline:none;border-color:var(--gold)}
+  .conf{display:flex;align-items:center;gap:12px;margin-top:10px;flex-wrap:wrap}
+  .conf input[type=range]{flex:1;min-width:180px;accent-color:var(--gold)}
+  .conf .v{font-family:'Playfair Display',serif;font-size:22px;color:var(--gold)}
+  .cmm li{font-size:13px;color:var(--text-on-dark-dim);line-height:1.45;margin-bottom:4px}
+
+  /* ---- the generated draft ---- */
+  .sec{border-left:2px solid var(--gold);padding:4px 0 4px 15px;margin-bottom:16px}
+  .sec.open{border-left-color:rgba(255,255,255,.16)}
+  .sec .sh{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+  .sec .sn{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.1em}
+  .sec.open .sn{color:var(--text-on-dark-dim)}
+  .sec h4{font-family:'Playfair Display',serif;font-size:17px;color:#fff}
+  .sec p{font-size:14px;color:rgba(255,255,255,.8);margin-top:5px;max-width:92ch;line-height:1.55}
+  .sec .src{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-ink);margin-top:6px}
+  .sec.open p{color:var(--text-on-dark-dim);font-style:italic}
+  .hand{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:8px}
+  .hand div{font-size:13.5px;color:var(--text-on-dark-dim);border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:9px 12px}
+  .hand div.seeded{border-color:var(--gold-line-strong);color:#fff}
+  .hand div .k{font-family:'JetBrains Mono',monospace;font-size:8.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink);display:block;margin-bottom:3px}
+  .gapbox{border:1px dashed rgba(255,255,255,.18);border-radius:9px;padding:14px 16px}
+  .gapbox p{font-size:13.5px;color:var(--text-on-dark-dim);line-height:1.5;max-width:92ch}
+  .saved{font-family:'JetBrains Mono',monospace;font-size:9.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--gold-ink)}
+
+  /* ---- print: this page IS the room sheet. Two pages by design, not one:
+         the ask side is what goes on the table, the draft side is what gets
+         handed back, and .pagebreak below is what separates them. ---- */
+  .printonly{display:none}
+  @media print{
+    @page{size:A4;margin:12mm 13mm}
+    body{background:#fff!important;color:#111!important}
+    .app>.sidebar,.app .topbar,.crumb,.tools,.noprint{display:none!important}
+    .app,.app .main,.content{display:block!important;padding:0!important;margin:0!important;max-width:none!important;background:#fff!important}
+    .printonly{display:block}
+    *{box-shadow:none!important;text-shadow:none!important}
+    .phead{margin:0 0 6mm;border:none;padding:0}
+    .phead h1{font-size:19pt;color:#111!important}
+    .phead .eyebrow{color:#7a5f1f!important;font-size:7.5pt}
+    .phead .lede{font-size:9pt;color:#333!important;max-width:none}
+    .srow{margin:5mm 0 2mm;border-top:.4pt solid #c9a84c;padding-top:2mm}
+    .srow .n,.srow h2{color:#111!important;font-size:11pt}
+    .q{border:.5pt solid #bbb;border-radius:2mm;padding:2.6mm 3mm;margin-bottom:2.4mm;background:#fff!important;break-inside:avoid}
+    .q.extra{border-style:dashed;border-color:#c9a84c}
+    .q .qn{color:#c9a84c;font-size:13pt}
+    .q .qt{color:#111!important;font-size:9.6pt}
+    .q .maps{color:#7a5f1f!important;font-size:6.5pt;margin-top:2pt}
+    .q .cap span{color:#555!important;border-color:#ccc;font-size:6.2pt;padding:1pt 4pt}
+    .q .probe{color:#7a5f1f!important;font-size:7.6pt;margin:2pt 0 3pt}
+    .q textarea,.q .num input{background:#fff!important;color:#111!important;border:none;border-bottom:.5pt solid #999;
+      border-radius:0;min-height:0;height:auto;padding:1mm 0;font-size:9pt}
+    .q textarea{height:13mm}
+    .blank .q textarea,.blank .q .num input{color:transparent!important}
+    .conf input[type=range]{display:none}
+    .conf .v{color:#111!important;font-size:11pt}
+    .sec,.hand,.gapbox,.card{background:#fff!important;color:#111!important}
+    .sec p,.hand div{color:#222!important}
+    .sec .sn{color:#7a5f1f!important}
+    .sec h4{color:#111!important}
+    .pagebreak{break-before:page}
+    .foot-print{margin-top:4mm;border-top:.4pt solid #c9a84c;padding-top:2mm;font-size:7.4pt;color:#555}
+  }
+</style>
+</head>
+<body>
+  <div class="phead">
+    <span class="eyebrow" id="eyebrow">EGC · Diagnostic and account spine</span>
+    <h1>Enterprise Growth Charter</h1>
+    <p class="lede" id="lede"></p>
+  </div>
+
+  <div class="printonly" id="printhdr"></div>
+
+  <div class="tools noprint" id="tools"></div>
+
+  <div class="srow"><span class="n">Ask</span><h2>The first fifteen minutes</h2></div>
+  <p class="muted" style="margin-bottom:6px;max-width:86ch" id="asknote"></p>
+  <p class="muted" style="margin-bottom:14px;max-width:86ch"><b class="gold" id="rule"></b></p>
+  <div id="questions"></div>
+
+  <div class="srow"><span class="n">Open</span><h2>The question the deck does not ask</h2></div>
+  <div class="gapbox" style="margin-bottom:16px"><p id="leannote"></p></div>
+  <div id="lean"></div>
+
+  <div class="srow pagebreak"><span class="n">Draft</span><h2>Sections 1 to 4, as captured in the room</h2></div>
+  <p class="muted" style="margin-bottom:8px;max-width:86ch">Generated from the answers above. Edit an answer and this redrafts. What the CEO leaves with is this block, on letterhead, with their own words in it.</p>
+  <p class="muted" style="margin-bottom:14px;max-width:86ch" id="promisenote"></p>
+  <div id="draft"></div>
+
+  <div class="srow"><span class="n">Pull</span><h2>What stays open, and where it closes</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:86ch" id="pullnote"></p>
+  <div id="openSecs"></div>
+
+  <div class="srow"><span class="n">Carry</span><h2>What M1 carries into M2</h2></div>
+  <p class="muted" style="margin-bottom:14px;max-width:86ch" id="handnote"></p>
+  <div class="hand" id="hand"></div>
+
+  <div class="srow"><span class="n">Trace</span><h2>Where this document went</h2></div>
+  <div class="card light" id="trace"></div>
+
+  <div class="printonly foot-print" id="footprint"></div>
+
+<script src="assets/shell.js"></script>
+<script>
+(async () => {
+  const s = await Shell.mount("charter");
+  const c = s.charter, dg = c.diagnostic, a = s.account, rl = dg.routeLean;
+  const KEY = "egc:" + a.id;
+
+  document.getElementById("lede").textContent =
+    dg.promise + " " + dg.occasion + " " + dg.why;
+  document.getElementById("asknote").textContent =
+    dg.deckSource + " " + dg.verbatimNote + " The capture guidance and the numbers row are the instrument around them.";
+  document.getElementById("promisenote").textContent = dg.promiseNote;
+  document.getElementById("rule").textContent = dg.rule;
+  document.getElementById("pullnote").textContent = c.pullThroughNote;
+  document.getElementById("handnote").textContent = dg.handoff._note;
+  document.getElementById("leannote").textContent = rl._note;
+
+  document.getElementById("printhdr").innerHTML = `
+    <div style="display:flex;gap:14px;font-size:8.5pt;color:#333">
+      <div style="flex:1;border-bottom:.5pt solid #999">Company</div>
+      <div style="flex:1;border-bottom:.5pt solid #999">Date</div>
+      <div style="flex:1;border-bottom:.5pt solid #999">Present</div>
+      <div style="flex:1;border-bottom:.5pt solid #999">Facilitator</div>
+    </div>`;
+  document.getElementById("footprint").textContent =
+    dg.promise + " Charter structure: " + c.structureSource;
+
+  // Everything a facilitator types is interpolated into innerHTML further down, so
+  // it goes through esc() first. A CEO who says "margins < 8% & falling" should see
+  // that sentence back, not a broken layout.
+  const esc = t => String(t == null ? "" : t)
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+
+  // ---- state: spine answers are the default, edits persist in this browser only
+  let st = { ans:{}, num:{}, lean: rl.lean, conf: rl.confidence };
+  for (const q of dg.questions) { st.ans[q.id] = q.answer; st.num[q.id] = q.number || ""; }
+  try { const saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) st = Object.assign(st, saved); } catch (e) {}
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) {}
+    document.getElementById("savedmark").textContent = "saved in this browser"; };
+
+  // ---- tools
+  document.getElementById("tools").innerHTML = `
+    <button class="btn btn-primary" id="print">Print the capture sheet</button>
+    <button class="btn btn-ghost" id="blank">Blank sheet for a new client</button>
+    <button class="btn btn-ghost" id="reset">Restore ${a.company}</button>
+    <button class="btn btn-ghost" id="copy">Copy sections 1-4</button>
+    <span class="saved" id="savedmark" style="align-self:center">loaded from the spine</span>`;
+
+  // ---- the four questions
+  function renderQuestions() {
+    document.getElementById("questions").innerHTML = dg.questions.map(q => `
+      <div class="q">
+        <div class="qh"><span class="qn">${q.n}</span><div>
+          <div class="qt">${q.verbatim}</div>
+          <div class="maps">Charter section ${q.charterSection} &middot; ${c.sections[q.charterSection-1].name}${
+            q.alsoFeeds ? ` &middot; also feeds section ${q.alsoFeeds}, ${c.sections[q.alsoFeeds-1].name}` : ""}</div>
+        </div></div>
+        <div class="cap">${q.capture.map(x => `<span>${esc(x)}</span>`).join("")}</div>
+        <div class="probe">Probe: ${esc(q.probe)}</div>
+        <textarea data-q="${q.id}" placeholder="In their words, not ours.">${esc(st.ans[q.id])}</textarea>
+        <div class="num"><input data-n="${q.id}" placeholder="The number, if they gave one" value="${esc(st.num[q.id])}"></div>
+        ${q.followUp ? `<div class="probe" style="margin:7px 0 0">Then ask: ${esc(q.followUp)}</div>` : ""}
+      </div>`).join("");
+    for (const t of document.querySelectorAll("[data-q]"))
+      t.addEventListener("input", e => { st.ans[e.target.dataset.q] = e.target.value; save(); redraft(); });
+    for (const t of document.querySelectorAll("[data-n]"))
+      t.addEventListener("input", e => { st.num[e.target.dataset.n] = e.target.value; save(); redraft(); });
+  }
+
+  // ---- the fifth prompt (section 4 has no deck question behind it)
+  document.getElementById("lean").innerHTML = `
+    <div class="q extra">
+      <div class="qh"><span class="qn">5</span><div>
+        <div class="qt">${rl.prompt}</div>
+        <div class="maps">Charter section 4 &middot; ${c.sections[3].name} &middot; not on slide 4</div>
+      </div></div>
+      <div class="cap">${rl.options.map(o => `<span>${esc(o)}</span>`).join("")}</div>
+      <textarea id="leantx" placeholder="Route lean, in their words.">${esc(st.lean)}</textarea>
+      <div class="conf">
+        <span class="lbl" style="margin:0">Route confidence</span>
+        <input type="range" min="1" max="${rl.confidenceScale}" value="${st.conf}" id="confr">
+        <span class="v" id="confv">${st.conf}/${rl.confidenceScale}</span>
+      </div>
+      <p class="muted" style="font-size:12.5px;margin-top:8px">${esc(rl.confidenceNote)}</p>
+      <div class="lbl" style="margin:12px 0 5px">What would change their mind</div>
+      <ul class="cmm" style="margin:0;padding-left:17px">${rl.changeMyMind.map(x => `<li>${esc(x)}</li>`).join("")}</ul>
+    </div>`;
+  document.getElementById("leantx").addEventListener("input", e => { st.lean = e.target.value; save(); redraft(); });
+  document.getElementById("confr").addEventListener("input", e => {
+    st.conf = +e.target.value;
+    document.getElementById("confv").textContent = st.conf + "/" + rl.confidenceScale;
+    save(); redraft();
+  });
+
+  // ---- draft generator: four sections out of five prompts
+  const A = id => (st.ans[id] || "").trim();
+  const N = id => (st.num[id] || "").trim();
+  function drafts() {
+    const withNum = (t, n) => t ? (n ? `${esc(t)} <span class="gold">[${esc(n)}]</span>` : esc(t)) : `<i>not captured</i>`;
+    return [
+      { n:1, body: withNum(A("q1"), N("q1")), src: "Q1 verbatim" },
+      { n:2, body: withNum(A("q4"), N("q4")), src: "Q4 verbatim" },
+      { n:3, body: [
+          A("q2") ? `<b>Constraint:</b> ${withNum(A("q2"), N("q2"))}` : "",
+          A("q3") ? `<b>Own versus access:</b> ${withNum(A("q3"), N("q3"))}` : "",
+          A("q4") ? `<b>Readiness of the team:</b> ${withNum(A("q4"), N("q4"))}` : ""
+        ].filter(Boolean).join("<br>") || "<i>not captured</i>", src: "Q2 + Q3 + the team half of Q4" },
+      { n:4, body: (st.lean ? `<b>Leaning:</b> ${esc(st.lean)}. <b>Confidence:</b> ${st.conf}/${rl.confidenceScale} at the diagnostic, to be re-polled at the M1 exit.` : "<i>not captured</i>") +
+          `<br><b>Would change the decision:</b> ${rl.changeMyMind.map(esc).join(" / ")}`, src: "Q3 + route-lean prompt" }
+    ];
+  }
+  function redraft() {
+    document.getElementById("draft").innerHTML = drafts().map(d => {
+      const sec = c.sections[d.n-1];
+      return `<div class="sec">
+        <div class="sh"><span class="sn">SECTION ${d.n}</span><h4>${sec.name}</h4>
+          ${Shell.chip("captured in the room", "done")}</div>
+        <p>${d.body}</p>
+        <div class="src">from ${d.src} &middot; drafted and signed off in ${sec.completedIn}</div>
+      </div>`;
+    }).join("");
+  }
+
+  renderQuestions(); redraft();
+
+  // ---- sections 5 to 8, visibly open
+  document.getElementById("openSecs").innerHTML = c.sections.slice(4).map(sec => `
+    <div class="sec open">
+      <div class="sh"><span class="sn">SECTION ${sec.n}</span><h4>${sec.name}</h4>
+        ${Shell.chip("opens in " + sec.completedIn, "pending")}</div>
+      <p>Deliberately empty at the diagnostic. This is the pull-through, not an omission.</p>
+    </div>`).join("");
+
+  // ---- M1 to M2 handoff
+  document.getElementById("hand").innerHTML = dg.handoff.questions.map((h, i) => `
+    <div class="${i < 4 ? "seeded" : ""}"><span class="k">${i < 4 ? "seeded by this sheet" : "answered in M1 / M2"}</span>${h}</div>`).join("");
+
+  // ---- trace
+  const cap = dg.captured, pm = s.pathwayMatrix;
+  document.getElementById("trace").innerHTML = `
+    <span class="lbl">${cap.workshop} &middot; ${cap.date} &middot; facilitated by ${cap.facilitator}</span>
+    <h3 style="margin:3px 0 8px">${cap.outcome}</h3>
+    <p style="color:var(--ink);font-size:14px;max-width:88ch">${cap.traceNote}</p>
+    <p style="color:var(--ink);font-size:14px;margin-top:9px">Section 3 became the gap statement now driving the account: <b>${s.capabilityGap.statement}</b>
+      Section 4's lean was scored against all five routes in the
+      <a href="pathway.html" style="color:var(--gold-ink)"><b>Strategic Growth Pathway Matrix</b></a>,
+      which returned <b>${pm.verdict.statement}</b></p>
+    <div class="tag" style="margin-top:11px;color:var(--gold-ink)">SECTIONS 5 AND 7 CLOSED IN M2 &middot; 6 AND 8 CLOSE IN M3</div>`;
+
+  // ---- tool wiring
+  document.getElementById("print").onclick = () => { document.body.classList.remove("blank"); window.print(); };
+  document.getElementById("blank").onclick = () => {
+    document.body.classList.add("blank"); window.print();
+    setTimeout(() => document.body.classList.remove("blank"), 1200);
+  };
+  document.getElementById("reset").onclick = () => {
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    st = { ans:{}, num:{}, lean: rl.lean, conf: rl.confidence };
+    for (const x of dg.questions) { st.ans[x.id] = x.answer; st.num[x.id] = x.number || ""; }
+    renderQuestions(); redraft();
+    document.getElementById("leantx").value = st.lean;
+    document.getElementById("confr").value = st.conf;
+    document.getElementById("confv").textContent = st.conf + "/" + rl.confidenceScale;
+    document.getElementById("savedmark").textContent = "restored from the spine";
+  };
+  document.getElementById("copy").onclick = () => {
+    const txt = [`ENTERPRISE GROWTH CHARTER - DIAGNOSTIC CAPTURE - ${a.company}`,
+      `Diagnostic workshop ${cap.date}. Raw material for sections 1 to 4 of 8,`,
+      `in the client's own words. Drafted and signed off in M1.`, ""]
+      .concat(drafts().map(d => {
+        // the draft bodies are HTML-escaped for innerHTML; the clipboard wants the
+        // CEO's characters back, so strip tags then undo the escaping (&amp; last)
+        const body = d.body.replace(/<br>/g, "\n").replace(/<[^>]+>/g, "")
+          .replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"')
+          .replace(/&#39;/g, "'").replace(/&amp;/g, "&");
+        return `${d.n}. ${c.sections[d.n-1].name.toUpperCase()}\n${body}\n`;
+      }))
+      .concat([`Sections 5 to 8 remain open: ` + c.sections.slice(4).map(x => `${x.n} ${x.name} (${x.completedIn})`).join("; ")])
+      .join("\n");
+    // clipboard is blocked on http:// origins and in some in-app browsers, which is
+    // exactly where a facilitator will open this. Falling back to "copy manually"
+    // with nothing to copy is useless, so show the text, selected, instead.
+    const fallback = () => {
+      let box = document.getElementById("copyout");
+      if (!box) {
+        const wrap = document.createElement("div");
+        wrap.className = "noprint";
+        wrap.style.cssText = "margin-top:10px";
+        wrap.innerHTML = `<div class="lbl" style="margin-bottom:5px">Clipboard blocked by the browser - the text is below, already selected</div>
+          <textarea id="copyout" readonly style="width:100%;min-height:180px;font-family:'JetBrains Mono',monospace;font-size:12px"></textarea>`;
+        document.getElementById("tools").after(wrap);
+        box = document.getElementById("copyout");
+      }
+      box.value = txt;
+      box.focus(); box.select();
+      document.getElementById("savedmark").textContent = "clipboard blocked - text shown below";
+    };
+    (navigator.clipboard && navigator.clipboard.writeText
+      ? navigator.clipboard.writeText(txt) : Promise.reject())
+      .then(() => document.getElementById("savedmark").textContent = "sections 1-4 copied")
+      .catch(fallback);
+  };
+})();
+</script>
+</body>
+</html>
